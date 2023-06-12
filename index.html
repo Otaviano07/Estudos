@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gerar Link Preenchido</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .form-row {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-row">
+      <label for="estudoBiblico">Estudo Bíblico:</label>
+      <select class="form-control" id="estudoBiblico" name="estudoBiblico">
+        <option value="">Selecione</option>
+        <option value="estudo01">01 - A Bíblia Sagrada</option>
+        <option value="estudo02">02 - A beleza da criação</option>
+        <option value="estudo03">03 - A origem do mal</option>
+        <option value="estudo04">04 - O plano da salvação</option>
+        <option value="estudo05">05 - Fé, arrependimento e confissão</option>
+        <option value="estudo06">06 - Sinais da volta de Cristo</option>
+        <option value="estudo07">07 - A volta de Cristo</option>
+        <option value="estudo08">08 - O Milênio</option>
+        <option value="estudo09">09 - A verdade sobre a morte</option>
+        <option value="estudo10">10 - A nova terra</option>
+        <option value="estudo11">11 - Salvação pela graça</option>
+        <option value="estudo12">12 - O Santuário</option>
+        <option value="estudo13">13 - O Juízo</option>
+        <option value="estudo14">14 - As leis na Bíblia</option>
+        <option value="estudo15">15 - A Lei Moral</option>
+        <option value="estudo16">16 - O mandamento esquecido</option>
+        <option value="estudo17">17 - Do sábado para o domingo</option>
+        <option value="estudo18">18 - Princípios de Saúde</option>
+        <option value="estudo19">19 - O dom de profecia</option>
+        <option value="estudo20">20 - O dízimo</option>
+        <option value="estudo21">21 - As ofertas</option>
+        <option value="estudo22">22 - A igreja verdadeira</option>
+        <option value="estudo23">23 - O Batismo</option>
+        <option value="estudo24">24 - Princípios de vida Cristã</option>
+        <option value="estudo25">25 - Educação Cristã</option>
+        <option value="estudo26">26 - Vida no Espírito</option>
+        <option value="estudo27">27 - Ministério para Todos</option>
+        <option value="estudo-apendices">Apêndices</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label for="nomeProfessor">Nome do Professor:</label>
+      <input type="text" class="form-control" id="nomeProfessor" name="nomeProfessor">
+    </div>
+    <div class="form-row">
+      <label for="nomeEstudante">Nome do Estudante:</label>
+      <input type="text" class="form-control" id="nomeEstudante" name="nomeEstudante">
+    </div>
+    <div class="form-row">
+      <label for="contatoTelefonico">Contato Telefônico:</label>
+      <input type="text" class="form-control" id="contatoTelefonico" name="contatoTelefonico" oninput="mascaraTelefone(this)">
+    </div>
+    <div class="form-row">
+      <button class="btn btn-primary" onclick="gerarLink()">Gerar Link</button>
+    </div>
+    <div class="form-row">
+      <label for="linkGerado">Link Gerado:</label>
+      <input type="text" class="form-control" id="linkGerado" readonly>
+    </div>
+  </div>
+
+  <script>
+    function mascaraTelefone(input) {
+      input.value = input.value.replace(/[^\d()\-]/g, "");
+
+      if (input.value.match(/[^\d()\-]/)) {
+        alert("Digite somente números no campo de telefone.");
+        input.value = input.value.replace(/[^\d()\-]/g, "");
+      }
+    }
+
+    function gerarLink() {
+      var estudoBiblico = document.getElementById("estudoBiblico").value;
+      var nomeProfessor = document.getElementById("nomeProfessor").value;
+      var nomeEstudante = document.getElementById("nomeEstudante").value;
+      var contatoTelefonico = document.getElementById("contatoTelefonico").value;
+
+      var linkBase = "https://sites.google.com/view/aprendendomais/ouvindo-a-voz-de-deus/";
+
+      var linkGerado = linkBase + estudoBiblico + "?nomeProfessor=" + encodeURIComponent(nomeProfessor) + "&nomeEstudante=" + encodeURIComponent(nomeEstudante) + "&contatoTelefonico=" + encodeURIComponent(contatoTelefonico);
+
+      document.getElementById("linkGerado").value = linkGerado;
+    }
+  </script>
+</body>
+
+</html>
