@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+
+    <!-- Adicione o link para a biblioteca confetti-js no cabeçalho do seu documento -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+
+
+    <title>A Bíblia Sagrada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            padding-left: 20px;
+            /* Define o padding esquerdo */
+            padding-right: 20px;
+            /* Define o padding direito */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .introduction::first-letter {
+            font-size: 200%;
+        }
+
+        .introduction {
+            margin-bottom: 20px;
+        }
+
+
+        .form-check-input {
+            float: left;
+            margin-right: 5px;
+        }
+
+        .question textarea {
+            margin-bottom: 10px;
+            width: 100%;
+            height: 60px;
+        }
+
+        .commitment {
+            margin-bottom: 30px;
+        }
+
+        .commitment textarea {
+            margin-bottom: 20px;
+            width: 100%;
+            height: 80px;
+        }
+
+        .signature textarea {
+            margin-bottom: 40px;
+            width: 100%;
+            height: 50px;
+        }
+
+        .form-control textarea {
+            margin-bottom: 10px;
+            width: 50%;
+            height: 60px;
+        }
+
+        .leiaMais {
+            margin-top: 10px;
+        }
+        
+        .recap textarea {
+            width: 100%;
+            height: 100px;
+        }
+
+        .recap {
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .recap p {
+            margin-bottom: 20px;
+        }
+
+        .drop-area {
+            border: 1px dashed #aaa;
+            background-color: #a2e5f8;
+            border-radius: 4px;
+            padding: 16px;
+            margin-top: 10px;
+            max-width: 400px;
+            word-wrap: break-word;
+            display: inline-block;
+            width: fit-content;
+            transition: background-color 0.4s;
+        }
+
+        .drop-area.green {
+            background-color: rgb(98, 240, 85);
+        }
+
+        .drop-area.success {
+            background-color: lightgreen;
+            border-color: green;
+        }
+
+        .flex-row {
+            margin-left: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            margin-top: 10px;
+        }
+
+        .selected-word {
+            padding: 0px 20px;
+            background-color: #a2e5f8;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            cursor: move;
+            display: inline-block;
+            margin: 5px;
+            text-align: center;
+            user-select: none;
+        }
+
+        #buttonMais1,
+        #buttonMais2,
+        #buttonMais3,
+        #buttonMais4,
+        #buttonMais5,
+        #buttonMais6,
+        #buttonMais7,
+        #buttonMais8,
+        #buttonMais9,
+        #buttonMais10 {
+            margin-bottom: 30px;
+        }
+
+        .question input {
+            width: 20px;
+            /* Largura inicial do campo */
+            min-width: 100px;
+            /* Largura mínima do campo */
+        }
+
+        .background-img {
+            margin-top: 3%;
+            margin-left: 15%;
+            width: 70%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .question-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #67260E;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Estilos para o contêiner do vídeo */
+        .player-container {
+            width: 80%; /* Largura de 80% em dispositivos maiores */
+            max-width: 640px; /* Largura máxima em pixels */
+            margin: 0 auto; /* Centralizar horizontalmente */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para tornar o contêiner responsivo em dispositivos móveis */
+        @media only screen and (max-width: 600px) {
+            .player-container {
+                width: 100%; /* Largura de 100% em dispositivos móveis */
+            }
+        }
+
+        /* Estilos para o vídeo */
+        .player-container iframe {
+            max-width: 100%; /* Ajuste de tamanho em dispositivos móveis */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img class="background-img" src="https://docs.google.com/uc?id=1kiYOtzGuAVd1Kh5BacgFkZ6h_1PmBO1m" alt="tiruloestudo" >
+    </header>
+    
+    <!--
+    <h6>Estudo 1</h6>
+    <h4>Ouvindo a Voz de Deus</h4>
+    <h2>A Bíblia Sagrada</h2>
+    -->
+
+    <div class="introduction text-center">
+        <p class="introduction text-justify">A Bíblia é um livro diferente. Na verdade, trata-se de uma pequena
+            biblioteca, composta de 66 livros escritos por cerca de 40 autores, das mais variadas culturas,
+            origens e ocupações, durante um período de 1.600 anos. Milhares de pessoas já deram a vida, literalmente,
+            em defesa das verdades nela contidas. Por abraçarem essas verdades, blasfemos já se tornaram reverentes;
+            ébrios se tornaram sóbrios; criminosos se tornaram confiáveis, ladrões se tornaram honestos; adúlteros
+            se tornaram puros. O que torna a Bíblia um livro tão especial? De onde vem seu poder? Que valor tem ela
+            para o homem atual? Essas perguntas serão respondidas neste estudo.</p>
+    </div>
+
+
+    <div class="questions">
+        <!-- Adicione as classes "question" e "modal-container" à div principal -->
+        <div class="question">
+            <p>
+            <span class="question-number">1</span>
+            <strong>Como Jesus considerava a Bíblia?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal1">Ler João 17:17</span>
+            </p>
+            <p>Santifica-os na verdade, a Tua Palavra é a <input type="text" id="resposta1" class="blank"
+                    placeholder="Resposta" oninput="ajustarTamanhoCampo(this)">.
+        </div>
+
+        <!-- Adicione o modal com id "verseModal" -->
+        <div class="modal fade" id="verseModal1" tabindex="-1" role="dialog" aria-labelledby="verseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verseModalLabel">Versão Almeida Revista e Atualizada</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Santifica-os na tua verdade; a tua palavra é a verdade.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="leiaMais">
+            <p class="sabemais text-justify">A Bíblia é nossa regra de fé e prática. Ela é a <span
+                    id="pontos1">...</span><span id="mais1" style="display: none;">fonte real de toda a verdade. Sem ela
+                    andamos nas trevas
+                    que o pecado nos trouxe. Embora o mundo contemporâneo seja relativista quanto aos ensinos
+                    bíblicos, ela não deixa de exercer seu poder transformador e santificador na vida do leitor.
+                    “Seca-se a
+                    erva e cai a flor, mas a Palavra de Deus permanece para sempre” (Is 40:8). Jesus disse: “Conhecereis
+                    a
+                    verdade e a verdade vos libertará” (Jo 8:32).</span></p>
+            <button type="button" class="btn btn-info" id="buttonMais1"
+                onclick="leiaMais('pontos1', 'mais1', 'buttonMais1')">Leia mais</button>
+        </div>
+
+        <!-- Adicione as classes "question" e "modal-container" à div principal -->
+        <div class="question">
+            <p>
+            <span class="question-number">2</span>
+            <strong>Qual é a situação de muitos estudantes da Bíblia, e o que necessitam para
+                    entendê-la?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal2">Ler Atos 8:26-31</span>
+            </p>
+            <p>Estudam e não <input type="text" id="resposta21" class="blank" placeholder="Resposta"
+                    oninput="ajustarTamanhoCampo(this)">. Para entendê-la, alguém
+                precisa <input type="text" id="resposta22" class="blank" placeholder="Resposta"
+                    oninput="ajustarTamanhoCampo(this)">.</p>
+        </div>
+
+        <!-- Adicione o modal com id "verseModal" -->
+        <div class="modal fade" id="verseModal2" tabindex="-1" role="dialog" aria-labelledby="verseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verseModalLabel">Versão Almeida Revista e Atualizada</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>E o anjo do Senhor falou a Filipe, dizendo: Levanta-te, e vai em direção do sul, pelo caminho
+                            que desce de Jerusalém para Gaza, o qual está deserto.
+                            Atos 8:26-31</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="leiaMais">
+            <p class="sabemais text-justify">À semelhança do eunuco, há milhares de pessoas que anelam compreender
+                plenamente <span id="pontos2">...</span><span id="mais2" style="display: none;">as Escrituras.
+                    No entanto, nem tudo na Bíblia é fácil de entender, como alguns pensam, por isso devemos seguir a
+                    orientação bíblica que vimos na experiência do eunuco. Precisamos de um guia e de alguém como
+                    Felipe, que orientou o eunuco. Entretanto, é o Espírito Santo que nos guia em toda a verdade (Jo
+                    16:13). “Algumas passagens da Escritura nunca serão perfeitamente compreendidas até que, na vida
+                    futura, Cristo as explique. Há mistérios a serem elucidados, declarações que a mente humana não pode
+                    harmonizar” (Obreiros Evangélicos, p. 312).</span></p>
+            <button type="button" class="btn btn-info" id="buttonMais2"
+                onclick="leiaMais('pontos2', 'mais2', 'buttonMais2')">Leia mais</button>
+        </div>
+
+        <!-- Adicione as classes "question" e "modal-container" à div principal -->
+        <div class="question">
+            <p>
+            <span class="question-number">3</span>
+            <strong>Qual é a maneira correta de estudar a Bíblia?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal3">Ler Isaías 28:10</span> (marque
+                V ou
+                F)
+            </p>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheck01"
+                onchange="updateCheckboxLabel('flexCheck01')">(
+            <span id="labelText01"></span> )
+            <label class="form-check-label" for="flexCheck01">
+                Comparar os textos que tratam do mesmo assunto.
+            </label>
+
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheck02"
+                onchange="updateCheckboxLabel('flexCheck02')">(
+            <span id="labelText02"></span> )
+            <label class="form-check-label" for="flexCheck02">
+                Buscar outras passagens que explicam o assunto.
+            </label>
+
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheck03"
+                onchange="updateCheckboxLabel('flexCheck03')">(
+            <span id="labelText03"></span> )
+            <label class="form-check-label" for="flexCheck03">
+                Estudar sem pedir a orientação do Espírito Santo.
+            </label>
+
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheck04"
+                onchange="updateCheckboxLabel('flexCheck04')">(
+            <span id="labelText04"></span> )
+            <label class="form-check-label" for="flexCheck04">
+                Um pouco aqui, e um pouco ali sobre o mesmo assunto.
+            </label>
+
+        </div>
+
+        <!-- Adicione o modal com id "verseModal" -->
+        <div class="modal fade" id="verseModal3" tabindex="-1" role="dialog" aria-labelledby="verseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verseModalLabel">Versão Almeida Revista e Atualizada</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>"Pois é preceito sobre preceito, preceito sobre preceito; regra sobre regra, regra sobre
+                            regra; um pouco aqui, um pouco ali.
+                            Isaías 28:10</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="leiaMais">
+            <p class="sabemais text-justify">Ao estudar as Escrituras devemos lembrar que a Bíblia é sua própria <span
+                    id="pontos3">...</span><span id="mais3" style="display: none;">intérprete. A abordagem moderna
+                    de interpretação bíblica é humanista, racionalista, existencialista e relativista. Nesse modelo
+                    destaca-se
+                    o pluralismo religioso, que aceita todas as interpretações e manifesta indiferença contra os
+                    princípios
+                    e
+                    doutrinas, comprometendo a unidade e os princípios bíblicos. Ao estudar um tema considere todas as
+                    passagens que tratam do assunto para ter uma visão do todo e não apenas de um verso fora do
+                    contexto. As passagens difíceis devem ser entendidas à luz das passagens mais claras.</span></p>
+            <button type="button" class="btn btn-info" id="buttonMais3"
+                onclick="leiaMais('pontos3', 'mais3', 'buttonMais3')">Leia mais</button>
+        </div>
+
+        <!-- Adicione as classes "question" e "modal-container" à div principal -->
+        <div class="question">
+            <p>
+                <span class="question-number">4</span>
+                <strong>Que benefício recebe o estudante das Escrituras?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal4">Ler João 5:39</span>
+            </p>
+            <p>Através da Bíblia, encontramos a vida <input type="text" id="resposta41" class="blank"
+                    placeholder="Resposta" oninput="ajustarTamanhoCampo(this)">.
+                Ela testifica de <input type="text" id="resposta42" class="blank" placeholder="Resposta"
+                    oninput="ajustarTamanhoCampo(this)">.</p>
+        </div>
+
+        <!-- Adicione o modal com id "verseModal" -->
+        <div class="modal fade" id="verseModal4" tabindex="-1" role="dialog" aria-labelledby="verseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verseModalLabel">Versão Almeida Revista e Atualizada</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>"Pois é preceito sobre preceito, preceito sobre preceito; regra sobre regra, regra sobre
+                            regra; um pouco aqui, um pouco ali.
+                            João 5:39
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="leiaMais">
+            <p class="sabemais text-justify">Jesus é o personagem central da Bíblia. Cada página revela <span
+                    id="pontos4">...</span><span id="mais4" style="display: none;">Seu amor e Seu desejo de nos salvar.
+                    Lendoa,
+                    encontramos o caminho da salvação. O principal benefício de estudar as Escrituras é conhecer a
+                    mensagem de salvação que ela nos dá por meio de Jesus Cristo. A expressão “examinais as Escrituras”
+                    refere-se ao “Antigo Testamento”. Os discípulos deviam crer em tudo o que a Seu respeito estava
+                    escrito “na lei de Moisés, nos profetas, e nos salmos” (Lc 24:44).</span></p>
+            <button type="button" class="btn btn-info" id="buttonMais4"
+                onclick="leiaMais('pontos4', 'mais4', 'buttonMais4')">Leia mais</button>
+        </div>
+
+        <!-- Adicione as classes "question" e "modal-container" à div principal -->
+        <div class="question">
+            <p>
+                <span class="question-number">5</span>
+                <strong>Que outro benefício prático advém de examinar a Bíblia?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal5">Ler João 16:13; 8:32</span>
+            </p>
+            <p>O Espírito Santo guia em toda a <input type="text" id="resposta51" class="blank" placeholder="Resposta"
+                    oninput="ajustarTamanhoCampo(this)">. E é a
+                verdade que nos <input type="text" id="resposta52" class="blank" placeholder="Resposta"
+                    oninput="ajustarTamanhoCampo(this)">.</p>
+        </div>
+
+        <!-- Adicione o modal com id "verseModal" -->
+        <div class="modal fade" id="verseModal5" tabindex="-1" role="dialog" aria-labelledby="verseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verseModalLabel">Versão Almeida Revista e Atualizada</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Quando vier, porém, aquele, o Espírito da verdade, ele vos guiará a toda a verdade; porque
+                            não falará por si mesmo, mas dirá o que tiver ouvido, e vos anunciará as coisas vindouras.
+                            João 17:17</p>
+                        <p>E conhecereis a verdade, e a verdade vos libertará.
+                            João 8:32</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="leiaMais">
+            <p class="sabemais text-justify">Embora nem todas as pessoas aceitem as verdades <span
+                    id="pontos5">...</span><span id="mais5" style="display: none;">contidas na Palavra de Deus, elas
+                    estão
+                    disponíveis
+                    a todos os que as buscam. Conhecer a verdade é conhecer o próprio Cristo, o que implica em amar,
+                    obedecer, honrar e seguir fielmente os Seus ensinos. Esse conhecimento resultará em uma mudança
+                    radical, numa nova visão do mundo e de si mesmo. Isso é uma exigência porque define que a Bíblia é
+                    nossa regra de fé e prática, e porque diz que a verdade deve ser praticada por nós.</span></p>
+            <button type="button" class="btn btn-info" id="buttonMais5"
+                onclick="leiaMais('pontos5', 'mais5', 'buttonMais5')">Leia mais</button>
+        </div>
+
+        <!-- Adicione as classes "question" e "modal-container" à div principal -->
+        <div class="question">
+            <p>
+                <span class="question-number">6</span>
+                <strong>Quem dirigiu os profetas ao escreverem a Bíblia?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal6">Ler 2 Pedro 1:21</span>
+            </p>
+
+            <p>Homens santos falaram da parte de Deus <input type="text" id="resposta61" class="blank"
+                    placeholder="Resposta" oninput="ajustarTamanhoCampo(this)">
+                pelo <input type="text" id="resposta62" class="blank" placeholder="Resposta"
+                    oninput="ajustarTamanhoCampo(this)"> Santo.</p>
+        </div>
+
+        <!-- Adicione o modal com id "verseModal" -->
+        <div class="modal fade" id="verseModal6" tabindex="-1" role="dialog" aria-labelledby="verseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verseModalLabel">Versão Almeida Revista e Atualizada</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Porque a profecia nunca foi produzida por vontade dos homens, mas os homens santos de Deus
+                            falaram inspirados pelo Espírito Santo.
+                            2 Pedro 1:21
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="leiaMais">
+            <p class="sabemais text-justify">Os profetas bíblicos não escreveram independentes de Deus, mas o fizeram
+                pela
+                divina providência. O
+                conteúdo e significado da <span id="pontos6">...</span><span id="mais6" style="display: none;">mensagem
+                    do
+                    profeta é proveniente da divindade, mas as palavras variam de acordo com o contexto e a cultura do
+                    escritor
+                    bíblico, ou seja, o Espírito Santo inspirou a mente do profeta, não as palavras. Vários meios foram
+                    usados
+                    por Deus para transmitir Sua Palavra: voz audível (Gn 3:8-15; Nm 12:7-8); face a face (Ex 33:11; Dt
+                    34:10);
+                    anjos (Zc 1:9; Lc 1:11, 18 e 19); visões (Dn 7:2; Ap 1:19); sonhos (Nm 12:6; Gn 37:5 e 9); Espírito
+                    Santo
+                    (2Pe 1:21; 2Sm 23:11,12); Cristo (Jo 17:34; Hb 1:1 e 2). A essa dinâmica damos o nome de Inspiração,
+                    isto é,
+                    a atuação do Espírito Santo na “mente” do profeta, dando-lhe palavras e/ou ideias para comunicar a
+                    mensagem
+                    e seu significado.
+            </p>
+
+            <button type="button" class="btn btn-info" id="buttonMais6"
+                onclick="leiaMais('pontos6', 'mais6', 'buttonMais6')">Leia mais</button>
+        </div>
+
+        <!-- Adicione as classes "question" e "modal-container" à div principal -->
+        <div class="question">
+            <p>
+                <span class="question-number">7</span>    
+                <strong>Quanto do texto bíblico é inspirado por Deus?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal7">Ler Timóteo 3:16</span> (marque
+                V
+                ou F)
+            </p>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheck05"
+                onchange="updateCheckboxLabel('flexCheck05')">(
+            <span id="labelText05"></span> )
+            <label class="form-check-label" for="flexCheck05">
+                Somente o Antigo Testamento.
+            </label>
+
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheck06"
+                onchange="updateCheckboxLabel('flexCheck06')">(
+            <span id="labelText06"></span> )
+            <label class="form-check-label" for="flexCheck06">
+                Somente o Novo Testamento.
+            </label>
+
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheck07"
+                onchange="updateCheckboxLabel('flexCheck07')">(
+            <span id="labelText07"></span> )
+            <label class="form-check-label" for="flexCheck07">
+                Toda a Bíblia é inspirada por Deus.
+            </label>
+
+        </div>
+
+        <!-- Adicione o modal com id "verseModal" -->
+        <div class="modal fade" id="verseModal7" tabindex="-1" role="dialog" aria-labelledby="verseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verseModalLabel">Versão Almeida Revista e Atualizada</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Toda Escritura é divinamente inspirada e proveitosa para ensinar, para repreender, para
+                            corrigir, para instruir em justiça;
+                            2 Timóteo 3:16</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="leiaMais">
+            <p class="sabemais text-justify">Segundo este texto, a Bíblia é útil para o ensino, repreensão, correção e
+                <span id="pontos7">...</span><span id="mais7" style="display: none;">para a educação na justiça. Pela
+                    leitura da Bíblia nosso caráter é transformado. A aceitação da Bíblia como livro inspirado é um ato
+                    de
+                    decisão e fé. As evidências de que toda a Escritura é inspirada por Deus podem ser confirmadas pela
+                    unidade entre seus escritores, a arqueologia, as profecias e as vidas que foram transformadas após
+                    estudo e compreensão.</span>
+            </p>
+            <button type="button" class="btn btn-info" id="buttonMais7"
+                onclick="leiaMais('pontos7', 'mais7', 'buttonMais7')">Leia mais</button>
+        </div>
+
+        
+        <!-- Adicione as classes "question" e "modal-container" à div principal -->
+        <div class="question">
+            <p>
+                <span class="question-number">8</span>
+                <strong>Que parte da Bíblia não foi escrita pelos apóstolos?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal8">Ler Êxodo 31:18</span>
+            </p>
+            <textarea class="form-control" id="resposta08"></textarea>
+        </div>
+
+        <!-- Adicione o modal com id "verseModal" -->
+        <div class="modal fade" id="verseModal8" tabindex="-1" role="dialog" aria-labelledby="verseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verseModalLabel">Versão Almeida Revista e Atualizada</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>E deu a Moisés, quando acabou de falar com ele no monte Sinai, as duas tábuas do testemunho,
+                            tábuas de pedra, escritas pelo dedo de Deus.
+                            Êxodo 31:18</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="leiaMais">
+            <p class="sabemais text-justify">A Lei foi dada por Deus em duas tábuas de pedras escritas pela <span
+                    id="pontos8">...</span><span id="mais8" style="display: none;">Sua própria mão. Perceba a santidade
+                    da Lei do Senhor. Ela é a representação do caráter divino e deve ser considerada na mais alta
+                    estima.
+                    Ao obedecê-la, reconhecemos a soberania do Senhor em nossa vida e mostramos nossa disposição em
+                    sermos fiéis.</span></p>
+            <button type="button" class="btn btn-info" id="buttonMais8"
+                onclick="leiaMais('pontos8', 'mais8', 'buttonMais8')">Leia mais</button>
+        </div>
+
+        <!-- Adicione as classes "question" e "modal-container" à div principal -->
+        <div class="question">
+            <p>
+                
+                <span class="question-number">9</span>
+                <strong>Está alguém autorizado a alterar a Bíblia?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal9">Ler Malaquias 3:6;
+                    Apocalipse 22:18,
+                    19</span>
+            </p>
+            <textarea id="resposta09" class="form-control"></textarea>
+        </div>
+
+        <!-- Adicione o modal com id "verseModal" -->
+        <div class="modal fade" id="verseModal9" tabindex="-1" role="dialog" aria-labelledby="verseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verseModalLabel">Versão Almeida Revista e Atualizada</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Pois eu, o Senhor, não mudo; por isso vós, ó filhos de Jacó, não sois consumidos.
+                            Malaquias 3:6</p>
+                        <p>Eu testifico a todo aquele que ouvir as palavras da profecia deste livro: Se alguém lhes
+                            acrescentar alguma coisa, Deus lhe acrescentará as pragas que estão escritas neste livro; e
+                            se alguém tirar qualquer coisa das palavras do livro desta profecia, Deus lhe tirará a sua
+                            parte da árvore da vida, e da cidade santa, que estão descritas neste livro.
+                            Apocalipse 22:18-19</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="leiaMais">
+            <p class="sabemais text-justify">O sábio Salomão declara: “Toda palavra de Deus é pura; Ele é <span
+                    id="pontos9">...</span><span id="mais9" style="display: none;">escudo para os que nEle confiam. Nada
+                    acrescentes às Suas palavras, para que não te repreenda, e sejas achado mentiroso” (Pv 30:5-6). A
+                    Palavra de Deus não deve ser alterada. Seus escritos, significado e propósitos devem ser estudados
+                    com
+                    oração e cuidadosamente guardados e seguidos pelos cristãos.</span></p>
+
+            <button type="button" class="btn btn-info" id="buttonMais9"
+                onclick="leiaMais('pontos9', 'mais9', 'buttonMais9')">Leia
+                mais</button>
+        </div>
+
+        <!-- Adicione as classes "question" e "modal-container" à div principal -->
+        <div class="question">
+            <p>
+                <span class="question-number">10</span>
+                <strong>Como são chamados os praticantes dos ensinos bíblicos?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal10">Ler João 13:17; Tiago
+                    1:22</span>
+            </p>
+            <p>Bem <input type="text" id="resposta101" class="blank" placeholder="Resposta"
+                    oninput="ajustarTamanhoCampo(this)"> se praticardes os <input type="text" id="resposta102"
+                    class="blank" placeholder="Resposta" oninput="ajustarTamanhoCampo(this)"> da Bíblia.</p>
+        </div>
+
+        <!-- Adicione o modal com id "verseModal" -->
+        <div class="modal fade" id="verseModal10" tabindex="-1" role="dialog" aria-labelledby="verseModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verseModalLabel">Versão Almeida Revista e Atualizada</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Se sabeis estas coisas, bem-aventurados sois se as praticardes.
+                            João 13:17</p>
+                        <p>E sede cumpridores da palavra e não somente ouvintes, enganando-vos a vós mesmos.
+                            Tiago 1:22</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="leiaMais">
+            <p class="sabemais text-justify">Nesta declaração Jesus apresenta a fórmula do crescimento espiritual. A
+                <span id="pontos10">...</span><span id="mais10" style="display: none;">felicidade, portanto, resulta de
+                    conhecer a vontade de Deus expressa em Sua Palavra, e obedecê-la. O problema de muitos crentes é
+                    que não se aplicam ao estudo dos princípios bíblicos e, por isso, não sabem o que Deus espera
+                    deles.</span></p>
+            <button type="button" class="btn btn-info" id="buttonMais10"
+                onclick="leiaMais('pontos10', 'mais10', 'buttonMais10')">Leia mais</button>
+        </div>
+    </div>
+    <div class="player-container" id="player">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SYYsT9HEf7g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="recap">
+        <h5><strong>Recapitulação</strong></h5>
+        <p>
+            Para Jesus, a Palavra de Deus é a fonte da
+            <span class="drop-area" id="drop-area1" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span>.
+            Muitos estudam e não
+            <span class="drop-area" id="drop-area2" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span>.
+            A forma correta de estudar a Bíblia é um
+            <span class="drop-area" id="drop-area3" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span> aqui e um pouco
+            <span class="drop-area" id="drop-area4" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span>,
+            sobre o mesmo
+            <span class="drop-area" id="drop-area5" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span>.
+            Toda a Bíblia é inspirada por
+            <span class="drop-area" id="drop-area6" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span>.
+            Não podemos
+            <span class="drop-area" id="drop-area7" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span> nem
+            <span class="drop-area" id="drop-area8" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span>
+            nada às Escrituras.
+        </p>
+        <button class="btn btn-primary" onclick="resetExercise()">Limpar</button>
+    </div>
+
+    <div>
+        <p style="margin-left: 20px"><strong>Complete a frase com cada uma das palavras abaixo arrastando para os
+                quadrados:</strong></p>
+    </div>
+
+    <div class="flex-row">
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ALI" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ALI</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ASSUNTO" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ASSUNTO</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ACRESCENTAR" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ACRESCENTAR</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="VERDADE" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">VERDADE</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ENTENDEM" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ENTENDEM</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="DEUS" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">DEUS</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="POUCO" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">POUCO</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="TIRAR" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">TIRAR</div>
+    </div>
+
+
+
+
+
+    <div class="commitment">
+        <h5><strong>Compromisso</strong></h5>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheck08">
+            <label class="form-check-label" for="flexCheck08">
+                Aceito toda a Bíblia como regra de fé para minha vida.
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheck09">
+            <label class="form-check-label" for="flexCheck09">
+                Quero dedicar tempo cada dia para estudar a Bíblia.
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheck10">
+            <label class="form-check-label" for="flexCheck10">
+                Farei todo o possível para colocar em prática seus ensinos em minha vida.
+            </label>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="signature" id="dados">
+        <h5><strong>Dados:</strong></h5>
+            <div>
+                <div class="form-row">
+                    <label for="nomeEstudante">Nome do Estudante:</label>
+                    <input type="text" class="form-control" id="nomeEstudante" name="nomeEstudante">
+                  </div>
+                  <div class="form-row">
+                    <label for="nomeProfessor">Nome do Professor:</label>
+                    <input type="text" class="form-control" id="nomeProfessor" name="nomeProfessor">
+                  </div>
+                  <div class="form-row">
+                    <label for="contatoTelefonico">WhatsApp do Professor:</label>
+                    <input type="text" class="form-control" id="contatoTelefonico" name="contatoTelefonico">
+                  </div>
+                  <div class="form-row">
+                    <label>Data Atual:</label>
+                    <span id="dataAtual"></span>
+                  </div>
+            </div>
+          
+    </div>
+
+    <button type="button" id="respostasButton" class="btn btn-primary">Enviar respostas</button>
+
+</body>
+
+<script>
+    // Obter a referência para o elemento onde a data atual será exibida
+    var dataAtualElement = document.getElementById("dataAtual");
+  
+    // Função para obter a data atual no formato dd/mm/aaaa
+    function getDataAtualFormatada() {
+      var data = new Date();
+      var dia = String(data.getDate()).padStart(2, "0");
+      var mes = String(data.getMonth() + 1).padStart(2, "0");
+      var ano = data.getFullYear();
+      return dia + "/" + mes + "/" + ano;
+    }
+  
+    // Preencher o elemento com a data atual formatada
+    dataAtualElement.textContent = getDataAtualFormatada();
+  </script>
+  
+
+<!--Exiber versos biblicos-->
+<script>
+    var verseButtons = document.querySelectorAll('.show-verse');
+    verseButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // Exibir o modal usando o Bootstrap JavaScript
+            var targetModal = button.getAttribute('data-target');
+            var modal = document.querySelector(targetModal);
+            var bootstrapModal = new bootstrap.Modal(modal);
+            bootstrapModal.show();
+        });
+    });
+</script>
+
+<!--Enviar respostas para contato do professor-->
+<script>
+    // Adicione um event listener ao botão
+    document.getElementById("respostasButton").addEventListener("click", function () {
+      var apiWhatsapp = 'https://api.whatsapp.com/send?phone=55XXXXXXXXXXX'; // Substitua XXXXXXXXXXX pelo número de telefone correto
+  
+      var nomeEstudante = document.getElementById('nomeEstudante').value;
+      var nomeProfessor = document.getElementById('nomeProfessor').value;
+      var contatoTelefonico = document.getElementById('contatoTelefonico').value;
+      var estudoBiblico = document.getElementById('estudoBiblico').value;
+  
+      var respostas = '';
+      respostas += 'Resposta 1: ' + document.getElementById('resposta1').value + '\n';
+      respostas += 'Resposta 21: ' + document.getElementById('resposta21').value + '\n';
+      respostas += 'Resposta 22: ' + document.getElementById('resposta22').value + '\n';
+      respostas += 'Resposta 4: ' + document.getElementById('labelText01').value + '\n';
+      respostas += 'Resposta 5: ' + document.getElementById('labelText02').value + '\n';
+      respostas += 'Resposta 6: ' + document.getElementById('labelText03').value + '\n';
+      respostas += 'Resposta 41: ' + document.getElementById('resposta41').value + '\n';
+      respostas += 'Resposta 42: ' + document.getElementById('resposta42').value + '\n';
+      respostas += 'Resposta 51: ' + document.getElementById('resposta51').value + '\n';
+      respostas += 'Resposta 52: ' + document.getElementById('resposta52').value + '\n';
+      respostas += 'Resposta 61: ' + document.getElementById('resposta61').value + '\n';
+      respostas += 'Resposta 62: ' + document.getElementById('resposta62').value + '\n';
+      respostas += 'Resposta 8: ' + document.getElementById('resposta08').value + '\n';
+      respostas += 'Resposta 9: ' + document.getElementById('resposta09').value + '\n';
+      respostas += 'Resposta 10.1: ' + document.getElementById('resposta101').value + '\n';
+      respostas += 'Resposta 10.2: ' + document.getElementById('resposta102').value + '\n';
+      respostas += 'Resposta drop-area1: ' + document.getElementById('drop-area1').value + '\n';
+      respostas += 'Resposta drop-area2: ' + document.getElementById('drop-area2').value + '\n';
+      respostas += 'Resposta drop-area3: ' + document.getElementById('drop-area3').value + '\n';
+      respostas += 'Resposta drop-area4: ' + document.getElementById('drop-area4').value + '\n';
+      respostas += 'Resposta drop-area5: ' + document.getElementById('drop-area5').value + '\n';
+      respostas += 'Resposta drop-area6: ' + document.getElementById('drop-area6').value + '\n';
+      respostas += 'Resposta drop-area7: ' + document.getElementById('drop-area7').value + '\n';
+      respostas += 'Resposta drop-area8: ' + document.getElementById('drop-area8').value + '\n';
+      respostas += 'Resposta flexCheck08: ' + document.getElementById('flexCheck08').checked + '\n';
+      respostas += 'Resposta flexCheck09: ' + document.getElementById('flexCheck09').checked + '\n';
+      respostas += 'Resposta flexCheck10: ' + document.getElementById('flexCheck10').checked;
+  
+      var mensagem = 'Olá, gostaria de participar do estudo bíblico "' + estudoBiblico + '".\n\n';
+      mensagem += 'Nome do Estudante: ' + nomeEstudante + '\n';
+      mensagem += 'Nome do Professor: ' + nomeProfessor + '\n';
+      mensagem += 'Contato Telefônico: ' + contatoTelefonico + '\n\n';
+      mensagem += 'Respostas:\n' + respostas;
+  
+      var linkWhatsapp = apiWhatsapp + '&text=' + encodeURIComponent(mensagem);
+  
+      // Abre o link do WhatsApp em uma nova janela ou guia
+      window.open(linkWhatsapp);
+    });
+  </script>
+
+
+<script>
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function dragWord(event) {
+        event.dataTransfer.setData("text", event.target.dataset.word);
+    }
+
+    function dropWord(event) {
+        event.preventDefault();
+        var word = event.dataTransfer.getData("text");
+        var dropArea = event.target;
+        var selectedWord = document.querySelector('.draggable-word[data-word="' + word + '"]');
+
+        if (dropArea.classList.contains("drop-area")) {
+            if (!dropArea.textContent) {
+                // Se a área estiver vazia, simplesmente adiciona a palavra
+                dropArea.textContent = word;
+                selectedWord.style.display = "none";
+                dropArea.classList.add("green"); // Adiciona a classe "green" para a drop-area
+            } else {
+                // Se a área já contiver uma palavra, troca as palavras
+                var currentWord = dropArea.textContent;
+                dropArea.textContent = word;
+                selectedWord.textContent = currentWord;
+            }
+        }
+    }
+
+    function resetExercise() {
+        var dropAreas = document.querySelectorAll(".drop-area");
+        var selectedWords = document.querySelectorAll(".selected-word");
+
+        dropAreas.forEach(function (dropArea) {
+            dropArea.textContent = "";
+            dropArea.classList.remove("green"); // Remove a classe "green" das drop-areas
+        });
+
+        selectedWords.forEach(function (selectedWord) {
+            selectedWord.style.display = "block";
+        });
+    }
+</script>
+
+<script>
+    function updateCheckboxLabel(checkboxId) {
+        var checkbox = document.getElementById(checkboxId);
+        var labelText = document.getElementById("labelText" + checkboxId.slice(-2));
+
+        if (checkbox.checked) {
+            labelText.textContent = "V";
+        } else {
+            labelText.textContent = "F";
+        }
+    }
+
+</script>
+
+<!--Funcao para saber mais sobre o assunto-->
+<script>
+    function leiaMais(pontosId, maisId, btnId) {
+        var pontos = document.getElementById(pontosId);
+        var maisTexto = document.getElementById(maisId);
+        var btnLeiaMais = document.getElementById(btnId);
+
+        if (maisTexto.style.display === "none") {
+            pontos.style.display = "none";
+            maisTexto.style.display = "inline";
+            btnLeiaMais.innerHTML = "Leia menos";
+            btnLeiaMais.className = "btn btn-warning";
+        } else {
+            pontos.style.display = "inline";
+            maisTexto.style.display = "none";
+            btnLeiaMais.innerHTML = "Leia mais";
+            btnLeiaMais.className = "btn btn-info";
+        }
+    }
+</script>
+
+<!--Função para conffecion-->
+
+<script>
+    var fireworksEffect = function () {
+        var duration = 5 * 1000;
+        var animationEnd = Date.now() + duration;
+        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+        function randomInRange(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        var interval = setInterval(function () {
+            var timeLeft = animationEnd - Date.now();
+
+            if (timeLeft <= 0) {
+                return clearInterval(interval);
+            }
+
+            var particleCount = 50 * (timeLeft / duration);
+            // since particles fall down, start a bit higher than random
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.5), y: Math.random() - 0.2 } }));
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+        }, 250);
+    };
+
+    // School Pride Effect
+    var schoolprideEffect = function () {
+        var end = Date.now() + (5 * 1000);
+
+        // go Buckeyes!
+        var colors = ['#bb0500', '#ffffff'];
+
+        (function frame() {
+            confetti({
+                particleCount: 2,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: colors
+            });
+            confetti({
+                particleCount: 2,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: colors
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        }());
+    };
+
+    // Realistic Look Effect  
+    var realisticlookEffect = function () {
+        var count = 200;
+        var defaults = {
+            origin: { y: 0.7 }
+        };
+
+        function fire(particleRatio, opts) {
+            confetti(Object.assign({}, defaults, opts, {
+                particleCount: Math.floor(count * particleRatio)
+            }));
+        }
+
+        fire(0.25, {
+            spread: 26,
+            startVelocity: 55,
+        });
+        fire(0.2, {
+            spread: 60,
+        });
+        fire(0.35, {
+            spread: 100,
+            decay: 0.91,
+            scalar: 0.8
+        });
+        fire(0.1, {
+            spread: 120,
+            startVelocity: 25,
+            decay: 0.92,
+            scalar: 1.2
+        });
+        fire(0.1, {
+            spread: 120,
+            startVelocity: 45,
+        });
+    };
+
+    // Stars Effect
+    var starsEffect = function () {
+        var defaults = {
+            spread: 360,
+            ticks: 50,
+            gravity: 0,
+            decay: 0.94,
+            startVelocity: 30,
+            shapes: ['star'],
+            colors: ['FFE400', 'FFBD00', 'E89400', 'FFCA6C', 'FDFFB8']
+        };
+
+        function shoot() {
+            confetti({
+                ...defaults,
+                particleCount: 40,
+                scalar: 1.2,
+                shapes: ['star']
+            });
+
+            confetti({
+                ...defaults,
+                particleCount: 10,
+                scalar: 0.75,
+                shapes: ['circle']
+            });
+        }
+
+        setTimeout(shoot, 0);
+        setTimeout(shoot, 100);
+        setTimeout(shoot, 200);
+    };
+
+    // Snow Effect   
+    var snowEffect = function () {
+        var duration = 3 * 1000;
+        var animationEnd = Date.now() + duration;
+        var skew = 1;
+
+        function randomInRange(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        (function frame() {
+            var timeLeft = animationEnd - Date.now();
+            var ticks = Math.max(200, 300 * (timeLeft / duration));
+            skew = Math.max(0.8, skew - 0.001);
+
+            confetti({
+                particleCount: 1,
+                startVelocity: 0,
+                ticks: ticks,
+                origin: {
+                    x: Math.random(),
+                    // since particles fall down, skew start toward the top
+                    y: (Math.random() * skew) - 0.2
+                },
+                colors: ['#ffffff'],
+                shapes: ['circle'],
+                gravity: randomInRange(0.4, 0.6),
+                scalar: randomInRange(0.4, 1),
+                drift: randomInRange(-0.4, 0.4)
+            });
+
+            if (timeLeft > 0) {
+                requestAnimationFrame(frame);
+            }
+        }());
+    };
+    document.getElementById("flexCheck08").addEventListener("click", function () {
+        if (this.checked) {
+            fireworksEffect();
+            schoolprideEffect();
+            realisticlookEffect();
+            starsEffect();
+            snowEffect();
+        }
+    });
+
+    document.getElementById("flexCheck09").addEventListener("click", function () {
+        if (this.checked) {
+            fireworksEffect();
+            schoolprideEffect();
+            realisticlookEffect();
+            starsEffect();
+            snowEffect();
+        }
+    });
+
+    document.getElementById("flexCheck10").addEventListener("click", function () {
+        if (this.checked) {
+            fireworksEffect();
+            schoolprideEffect();
+            realisticlookEffect();
+            starsEffect();
+            snowEffect();
+        }
+    });
+</script>
+
+<!--Aumentar o tamanho dos inputs conforme letras forem sendo adicionada-->
+<script>
+    function ajustarTamanhoCampo(input) {
+        input.style.width = ((input.value.length + 1) * 8) + 'px'; // Ajusta a largura do campo
+
+    }
+</script>
+
+<script>
+    var currentTouchElement = null;
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function dragWord(event) {
+        event.dataTransfer.setData("text", event.target.dataset.word);
+    }
+
+    function touchStart(event) {
+        currentTouchElement = event.target;
+    }
+
+    function touchEnd(event) {
+        var selectedWord = currentTouchElement;
+        if (selectedWord) {
+            var word = selectedWord.dataset.word;
+            var dropArea = event.target;
+
+            if (dropArea.classList.contains("drop-area")) {
+                if (!dropArea.textContent) {
+                    // Se a área estiver vazia, simplesmente adiciona a palavra
+                    dropArea.textContent = word;
+                    selectedWord.style.display = "none";
+                    dropArea.classList.add("green"); // Adiciona a classe "green" para a drop-area
+                } else {
+                    // Se a área já contiver uma palavra, troca as palavras
+                    var currentWord = dropArea.textContent;
+                    dropArea.textContent = word;
+                    selectedWord.textContent = currentWord;
+                }
+            }
+
+            currentTouchElement = null;
+        }
+    }
+
+    function resetExercise() {
+        var dropAreas = document.querySelectorAll(".drop-area");
+        var selectedWords = document.querySelectorAll(".selected-word");
+
+        dropAreas.forEach(function (dropArea) {
+            dropArea.textContent = "";
+            dropArea.classList.remove("green"); // Remove a classe "green" das drop-areas
+        });
+
+        selectedWords.forEach(function (selectedWord) {
+            selectedWord.style.display = "block";
+        });
+    }
+</script>
+
+</html>
