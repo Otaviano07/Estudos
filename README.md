@@ -1,1 +1,1 @@
-# Estudos
+# Estudos Bíblicos
