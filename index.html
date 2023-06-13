@@ -7,7 +7,7 @@
   <!-- Adicione a referência ao Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
   <style>
     .form-row {
@@ -117,12 +117,9 @@
         input.value = input.value.replace(/[^\d()\-]/g, "");
       }
     }
-  </script>
 
-<!--Gerar Link-->
-<script>
     function gerarLink() {
-      var nomeEstudoBiblico = document.getElementById("nomeEstudoBiblico").value;
+      var estudoBiblico = document.getElementById("estudoBiblico").value;
       var numEstudoBiblico = document.getElementById("numEstudoBiblico").value;
       var nomeProfessor = document.getElementById("nomeProfessor").value;
       var nomeEstudante = document.getElementById("nomeEstudante").value;
@@ -131,22 +128,19 @@
 
       var linkBase = "https://otaviano07.github.io/estudos/";
 
-      var linkGerado = linkBase + estudoBiblico + contatoProfessor; 
+      var linkGerado = linkBase + estudoBiblico + numEstudoBiblico + "?professor=" + nomeProfessor + "&estudante=" + nomeEstudante + "&contatoProfessor=" + contatoProfessor + "&contatoEstudante=" + contatoEstudante;
 
       document.getElementById("linkGerado").value = linkGerado;
     }
+
+    function copiarLink() {
+      var linkGerado = document.getElementById('linkGerado');
+      linkGerado.select();
+      linkGerado.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+      alert('Link copiado para a área de transferência!');
+    }
   </script>
 </body>
-
-<!--Copia Link-->
-<script>
-  function copiarLink() {
-    var linkGerado = document.getElementById('linkGerado');
-    linkGerado.select();
-    linkGerado.setSelectionRange(0, 99999);
-    document.execCommand('copy');
-    alert('Link copiado para a área de transferência!');
-  }
-  </script>
 
 </html>
