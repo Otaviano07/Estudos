@@ -1,77 +1,67 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Gerar Link Preenchido</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Adicione a referência ao Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
-
-
 </head>
-
 <body>
-  <h2 style="text-align: center;margin-bottom: 20px;margin-top: 20px;">Gerador de link para estudo bíblico</h2>
+  <h2 style="text-align: center;margin-bottom: 30px;margin-top: 20px;">Compastilhe o link Estudo Bíblico para o estudante</h2>
   <div class="container">
     <div class="form-row">
-      <div class="col-6">
-        <label for="nomeEstudoBiblico">Nome do Estudo Bíblico:</label>
-        <input class="form-control" type="text" id="nomeEstudoBiblico" name="nomeEstudoBiblico" list="nome" required>
-
-        <datalist id="nome">
-          <option>Ouvindo a Voz de Deus</option>
-          <option>Ensinos de Jesus</option>
-        </datalist>
+      <div class="col-md-6 col-sm-12">
+        <label for="nomeEstudoBiblico"><strong>Nome do Estudo Bíblico:</strong></label>
+        <select class="form-control" id="nomeEstudoBiblico" name="nomeEstudoBiblico" required>
+          <option value="">Selecione um estudo</option>
+          <option value="Ouvindo a Voz de Deus">Ouvindo a Voz de Deus</option>
+          <option value="Ensinos de Jesus">Ensinos de Jesus</option>
+        </select>
       </div>
-
-      <div class="col-6">
-        <label for="temaEstudoBiblico">Número do Estudo: </label>
-        <input class="form-control" type="text" id="temaEstudoBiblico" name="temaEstudoBiblico" list="numero" required>
-
-        <datalist id="numero">
-          <option></option>
-        </datalist>
+      <div class="col-md-6 col-sm-12">
+        <label for="temaEstudoBiblico"><strong>Tema do Estudo:</strong></label>
+        <select class="form-control" id="temaEstudoBiblico" name="temaEstudoBiblico" required>
+          <option value="">Selecione um tema</option>
+        </select>
       </div>
     </div>
 
     <div class="form-row">
-      <div class="col-9">
-        <label for="nameProfessor">Nome do Professor</label>
+      <div class="col-md-9 col-sm-12">
+        <label for="nameProfessor" style="margin-top: 20px;"><strong>Nome do Professor</strong></label>
         <input type="text" class="form-control" id="nameProfessor" placeholder="Nome do Completo" name="nameProfessor"
           required>
       </div>
-      <div class="col-3">
-        <label for="whatsappProfessor">Whatsapp do Professor</label>
+      <div class="col-md-3 col-sm-12" style="margin-top: 20px;">
+        <label for="whatsappProfessor"><strong>Whatsapp do Professor</strong></label>
         <input type="tel" class="form-control" id="whatsappProfessor" maxlength="11" onkeyup="mascaraTelefone(this);"
           placeholder="Whatsapp" name="whatsappProfessor" required>
       </div>
     </div>
 
     <div class="form-row">
-      <div class="col-9">
-        <label for="nameEstudante">Nome do Estudante</label>
+      <div class="col-md-9 col-sm-12" style="margin-top: 20px;">
+        <label for="nameEstudante"><strong>Nome do Estudante</strong></label>
         <input type="text" class="form-control" id="nameEstudante" placeholder="Nome do Completo" name="nameEstudante"
           required>
       </div>
-      <div class="col-3">
-        <label for="whatsappEstudante">Whatsapp do Estudante</label>
+      <div class="col-md-3 col-sm-12" style="margin-top: 20px;">
+        <label for="whatsappEstudante"><strong>Whatsapp do Estudante</strong></label>
         <input type="tel" class="form-control" id="whatsappEstudante" maxlength="11" onkeyup="mascaraTelefone(this);"
           placeholder="Whatsapp" name="whatsappEstudante" required>
       </div>
     </div>
 
     <div class="form-row">
-      <button class="btn btn-primary" onclick="gerarLink()">Gerar Link</button>
+      <button class="btn btn-primary" style="margin-top: 20px;" id="gerarLink" onclick="gerarLink()">Gerar Link</button>
     </div>
     <div class="form-group">
-      <label for="linkGerado">Link Gerado:</label>
+      <label for="linkGerado" style="margin-top: 20px;">Link Gerado:</label>
       <div class="input-group">
         <input type="text" class="form-control" id="linkGerado" readonly>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="btnCopiarLink" onclick="copiarLink()">
+          <button class="btn btn-outline-secondary"  style="margin-bottom: 40px;" type="button" id="btnCopiarLink" onclick="copiarLink()">
             <span class="material-icons">content_copy</span> <!-- Corrigido: ícone para copiar -->
           </button>
         </div>
