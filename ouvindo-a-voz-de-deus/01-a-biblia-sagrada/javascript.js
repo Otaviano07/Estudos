@@ -463,3 +463,14 @@ function resetExercise() {
     selectedWord.style.display = "block";
   });
 }
+
+// Captura dos parâmetros da URL
+const params = new URLSearchParams(window.location.search);
+const contatoProfessor = params.get('contatoProfessor');
+const nomeProfessor = params.get('nomeProfessor');
+const nomeEstudande = params.get('nomeEstudande');
+
+// Preenchimento dos campos do formulário
+document.getElementById('contatoProfessor').value = contatoProfessor;
+document.getElementById('nomeProfessor').value = nomeProfessor;
+document.getElementById('nomeEstudande').value = nomeEstudande;
