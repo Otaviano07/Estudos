@@ -471,6 +471,6 @@ const nomeProfessor = params.get('nomeProfessor');
 const nomeEstudande = params.get('nomeEstudande');
 
 // Preenchimento dos campos do formulário
-document.getElementById('contatoProfessor').value = contatoProfessor;
-document.getElementById('nomeProfessor').value = nomeProfessor;
-document.getElementById('nomeEstudande').value = nomeEstudande;
+document.getElementById('whatsappProfessor').value = contatoProfessor;
+document.getElementById('nameProfessor').value = nomeProfessor;
+document.getElementById('nameEstudande').value = nomeEstudande;
