@@ -19,14 +19,14 @@ function mascaraTelefone(input) {
 function gerarLink() {
   var nomeEstudoBiblico = gerarSlug(document.getElementById("nomeEstudoBiblico").value);
   var temaEstudoBiblico = gerarSlug(document.getElementById("temaEstudoBiblico").value);
-  var nomeProfessor = document.getElementById("nameProfessor").value;
-  var nomeEstudante = document.getElementById("nameEstudante").value;
-  var contatoProfessor = document.getElementById("whatsappProfessor").value;
-  var contatoEstudante = document.getElementById("whatsappEstudante").value;
+  var nameProfessor = document.getElementById("nameProfessor").value;
+  var nameEstudante = document.getElementById("nameEstudante").value;
+  var whatsappProfessor = document.getElementById("whatsappProfessor").value;
+  var whatsappEstudante = document.getElementById("whatsappEstudante").value;
 
   var linkBase = "https://otaviano07.github.io/aprendendomais/";
 
-  var linkGerado = linkBase + nomeEstudoBiblico + '/' + temaEstudoBiblico + '/index.html' + "?nomeEstudoBiblico=" + encodeURIComponent(nomeProfessor) + "&nomeestudante=" + encodeURIComponent(nomeEstudante) + "&contatoProfessor=" + contatoProfessor;
+  var linkGerado = linkBase + nomeEstudoBiblico + '/' + temaEstudoBiblico + '/index.html' + "?nameProfessor=" + encodeURIComponent(nameProfessor) + "&nameEstudante=" + encodeURIComponent(nameEstudante) + "&whasappProfessor=" + whatsappProfessor;
 
   document.getElementById("linkGerado").value = linkGerado;
 }
