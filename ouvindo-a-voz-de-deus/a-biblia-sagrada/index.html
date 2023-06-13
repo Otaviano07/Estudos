@@ -85,7 +85,7 @@
         .leiaMais {
             margin-top: 10px;
         }
-        
+
         .recap textarea {
             width: 100%;
             height: 100px;
@@ -93,7 +93,7 @@
 
         .recap {
             padding: 20px;
-            background-color: #f2f2f2;
+            background-color: #ffffff;
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
@@ -114,6 +114,8 @@
             display: inline-block;
             width: fit-content;
             transition: background-color 0.4s;
+            font-size: inherit;
+            /* Adicionado esta linha */
         }
 
         .drop-area.green {
@@ -190,9 +192,12 @@
 
         /* Estilos para o contêiner do vídeo */
         .player-container {
-            width: 90%; /* Largura de 80% em dispositivos maiores */
-            max-width: 640px; /* Largura máxima em pixels */
-            margin: 0 auto; /* Centralizar horizontalmente */
+            width: 90%;
+            /* Largura de 80% em dispositivos maiores */
+            max-width: 640px;
+            /* Largura máxima em pixels */
+            margin: 0 auto;
+            /* Centralizar horizontalmente */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -202,23 +207,25 @@
         /* Estilos para tornar o contêiner responsivo em dispositivos móveis */
         @media only screen and (max-width: 600px) {
             .player-container {
-                width: 100%; /* Largura de 100% em dispositivos móveis */
+                width: 100%;
+                /* Largura de 100% em dispositivos móveis */
             }
         }
 
         /* Estilos para o vídeo */
         .player-container iframe {
-            max-width: 100%; /* Ajuste de tamanho em dispositivos móveis */
+            max-width: 100%;
+            /* Ajuste de tamanho em dispositivos móveis */
         }
-
-      </style>
+    </style>
 </head>
 
 <body>
     <header>
-        <img class="background-img" src="https://docs.google.com/uc?id=1kiYOtzGuAVd1Kh5BacgFkZ6h_1PmBO1m" alt="tiruloestudo" >
+        <img class="background-img" src="https://docs.google.com/uc?id=1kiYOtzGuAVd1Kh5BacgFkZ6h_1PmBO1m"
+            alt="tiruloestudo">
     </header>
-    
+
     <!--
     <h6>Estudo 1</h6>
     <h4>Ouvindo a Voz de Deus</h4>
@@ -240,9 +247,10 @@
         <!-- Adicione as classes "question" e "modal-container" à div principal -->
         <div class="question">
             <p>
-            <span class="question-number">1</span>
-            <strong>Como Jesus considerava a Bíblia?</strong>
-            <span class="show-verse" data-toggle="modal" data-target="#verseModal1"><a href="#" style="text-decoration: underline; color: blue;">Ler João 17:17</a></span> (Complete)
+                <span class="question-number">1</span>
+                <strong>Como Jesus considerava a Bíblia?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal1"><a href="#"
+                        style="text-decoration: underline; color: blue;">Ler João 17:17</a></span> (Complete)
             </p>
             <p>Santifica-os na verdade, a Tua Palavra é a <input type="text" id="resposta1" class="blank"
                     placeholder="Resposta" oninput="ajustarTamanhoCampo(this)">.
@@ -285,10 +293,11 @@
         <!-- Adicione as classes "question" e "modal-container" à div principal -->
         <div class="question">
             <p>
-            <span class="question-number">2</span>
-            <strong>Qual é a situação de muitos estudantes da Bíblia, e o que necessitam para
+                <span class="question-number">2</span>
+                <strong>Qual é a situação de muitos estudantes da Bíblia, e o que necessitam para
                     entendê-la?</strong>
-                <span class="show-verse" data-toggle="modal" data-target="#verseModal2"><a href="#" style="text-decoration: underline; color: blue;">Ler Atos 8:26-31</a></span> (Complete)
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal2"><a href="#"
+                        style="text-decoration: underline; color: blue;">Ler Atos 8:26-31</a></span> (Complete)
             </p>
             <p>Estudam e não <input type="text" id="resposta21" class="blank" placeholder="Resposta"
                     oninput="ajustarTamanhoCampo(this)">. Para entendê-la, alguém
@@ -334,9 +343,10 @@
         <!-- Adicione as classes "question" e "modal-container" à div principal -->
         <div class="question">
             <p>
-            <span class="question-number">3</span>
-            <strong>Qual é a maneira correta de estudar a Bíblia?</strong>
-                <span class="show-verse" data-toggle="modal" data-target="#verseModal3"><a href="#" style="text-decoration: underline; color: blue;">Ler Isaías 28:10</a></span> (marque
+                <span class="question-number">3</span>
+                <strong>Qual é a maneira correta de estudar a Bíblia?</strong>
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal3"><a href="#"
+                        style="text-decoration: underline; color: blue;">Ler Isaías 28:10</a></span> (marque
                 V ou
                 F)
             </p>
@@ -425,7 +435,8 @@
             <p>
                 <span class="question-number">4</span>
                 <strong>Que benefício recebe o estudante das Escrituras?</strong>
-                <span class="show-verse" data-toggle="modal" data-target="#verseModal4"><a href="#" style="text-decoration: underline; color: blue;">Ler João 5:39</a></span> (Complete)
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal4"><a href="#"
+                        style="text-decoration: underline; color: blue;">Ler João 5:39</a></span> (Complete)
             </p>
             <p>Através da Bíblia, encontramos a vida <input type="text" id="resposta41" class="blank"
                     placeholder="Resposta" oninput="ajustarTamanhoCampo(this)">.
@@ -474,7 +485,8 @@
             <p>
                 <span class="question-number">5</span>
                 <strong>Que outro benefício prático advém de examinar a Bíblia?</strong>
-                <span class="show-verse" data-toggle="modal" data-target="#verseModal5"><a href="#" style="text-decoration: underline; color: blue;">Ler João 16:13; 8:32</a></span> (Complete)
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal5"><a href="#"
+                        style="text-decoration: underline; color: blue;">Ler João 16:13; 8:32</a></span> (Complete)
             </p>
             <p>O Espírito Santo guia em toda a <input type="text" id="resposta51" class="blank" placeholder="Resposta"
                     oninput="ajustarTamanhoCampo(this)">. E é a
@@ -525,7 +537,8 @@
             <p>
                 <span class="question-number">6</span>
                 <strong>Quem dirigiu os profetas ao escreverem a Bíblia?</strong>
-                <span class="show-verse" data-toggle="modal" data-target="#verseModal6"><a href="#" style="text-decoration: underline; color: blue;">Ler 2 Pedro 1:21</a></span> (Complete)
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal6"><a href="#"
+                        style="text-decoration: underline; color: blue;">Ler 2 Pedro 1:21</a></span> (Complete)
             </p>
 
             <p>Homens santos falaram da parte de Deus <input type="text" id="resposta61" class="blank"
@@ -586,9 +599,10 @@
         <!-- Adicione as classes "question" e "modal-container" à div principal -->
         <div class="question">
             <p>
-                <span class="question-number">7</span>    
+                <span class="question-number">7</span>
                 <strong>Quanto do texto bíblico é inspirado por Deus?</strong>
-                <span class="show-verse" data-toggle="modal" data-target="#verseModal7"><a href="#" style="text-decoration: underline; color: blue;">Ler Timóteo 3:16</a></span> (marque
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal7"><a href="#"
+                        style="text-decoration: underline; color: blue;">Ler Timóteo 3:16</a></span> (marque
                 V
                 ou F)
             </p>
@@ -659,13 +673,14 @@
                 onclick="leiaMais('pontos7', 'mais7', 'buttonMais7')">Leia mais</button>
         </div>
 
-        
+
         <!-- Adicione as classes "question" e "modal-container" à div principal -->
         <div class="question">
             <p>
                 <span class="question-number">8</span>
                 <strong>Que parte da Bíblia não foi escrita pelos apóstolos?</strong>
-                <span class="show-verse" data-toggle="modal" data-target="#verseModal8"><a href="#" style="text-decoration: underline; color: blue;">Ler Êxodo 31:18</a></span> (Responda)
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal8"><a href="#"
+                        style="text-decoration: underline; color: blue;">Ler Êxodo 31:18</a></span> (Responda)
             </p>
             <textarea class="form-control" id="resposta08"></textarea>
         </div>
@@ -707,12 +722,13 @@
         <!-- Adicione as classes "question" e "modal-container" à div principal -->
         <div class="question">
             <p>
-                
+
                 <span class="question-number">9</span>
                 <strong>Está alguém autorizado a alterar a Bíblia?</strong>
-                <span class="show-verse" data-toggle="modal" data-target="#verseModal9"><a href="#" style="text-decoration: underline; color: blue;">Ler Malaquias 3:6;
-                    Apocalipse 22:18,
-                    19</a></span> (Responda)
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal9"><a href="#"
+                        style="text-decoration: underline; color: blue;">Ler Malaquias 3:6;
+                        Apocalipse 22:18,
+                        19</a></span> (Responda)
             </p>
             <textarea id="resposta09" class="form-control"></textarea>
         </div>
@@ -762,8 +778,9 @@
             <p>
                 <span class="question-number">10</span>
                 <strong>Como são chamados os praticantes dos ensinos bíblicos?</strong>
-                <span class="show-verse" data-toggle="modal" data-target="#verseModal10"><a href="#" style="text-decoration: underline; color: blue;">Ler João 13:17; Tiago
-                    1:22</a></span> (Complete)
+                <span class="show-verse" data-toggle="modal" data-target="#verseModal10"><a href="#"
+                        style="text-decoration: underline; color: blue;">Ler João 13:17; Tiago
+                        1:22</a></span> (Complete)
             </p>
             <p>Bem <input type="text" id="resposta101" class="blank" placeholder="Resposta"
                     oninput="ajustarTamanhoCampo(this)"> se praticardes os <input type="text" id="resposta102"
@@ -799,31 +816,42 @@
                 <span id="pontos10">...</span><span id="mais10" style="display: none;">felicidade, portanto, resulta de
                     conhecer a vontade de Deus expressa em Sua Palavra, e obedecê-la. O problema de muitos crentes é
                     que não se aplicam ao estudo dos princípios bíblicos e, por isso, não sabem o que Deus espera
-                    deles.</span></p>
+                    deles.</span>
+            </p>
             <button type="button" class="btn btn-info" id="buttonMais10"
                 onclick="leiaMais('pontos10', 'mais10', 'buttonMais10')">Leia mais</button>
         </div>
     </div>
     <div class="player-container" id="player">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/SYYsT9HEf7g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SYYsT9HEf7g" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
     </div>
 
     <div class="recap">
         <h5><strong>Recapitulação</strong></h5>
-    <div>
-        <p style="margin-left: 20px"><strong>Complete a frase com cada uma das palavras abaixo arrastando para os
-                quadrados:</strong></p>
-    </div>
+        <div>
+            <p style="margin-left: 20px"><strong>Complete a frase com cada uma das palavras abaixo arrastando para os
+                    quadrados:</strong></p>
+        </div>
         <div class="flex-row">
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ALI" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ALI</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ASSUNTO" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ASSUNTO</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ACRESCENTAR" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ACRESCENTAR</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="VERDADE" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">VERDADE</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ENTENDEM" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ENTENDEM</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="DEUS" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">DEUS</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="POUCO" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">POUCO</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="TIRAR" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">TIRAR</div>
-    </div>
+            <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ALI"
+                ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ALI</div>
+            <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ASSUNTO"
+                ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ASSUNTO</div>
+            <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)"
+                data-word="ACRESCENTAR" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ACRESCENTAR</div>
+            <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="VERDADE"
+                ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">VERDADE</div>
+            <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)"
+                data-word="ENTENDEM" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ENTENDEM</div>
+            <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="DEUS"
+                ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">DEUS</div>
+            <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="POUCO"
+                ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">POUCO</div>
+            <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="TIRAR"
+                ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">TIRAR</div>
+        </div>
 
         <p class="text-justify">
             Para Jesus, a Palavra de Deus é a fonte da
@@ -831,7 +859,8 @@
             Muitos estudam e não
             <span class="drop-area" id="drop-area2" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span>.
             A forma correta de estudar a Bíblia é um
-            <span class="drop-area" id="drop-area3" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span> aqui e um pouco
+            <span class="drop-area" id="drop-area3" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span> aqui
+            e um pouco
             <span class="drop-area" id="drop-area4" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span>,
             sobre o mesmo
             <span class="drop-area" id="drop-area5" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span>.
@@ -844,13 +873,6 @@
         </p>
         <button class="btn btn-primary" onclick="resetExercise()">Limpar</button>
     </div>
-
-    
-
-   
-
-
-
 
     <div class="commitment">
         <h5><strong>Compromisso</strong></h5>
@@ -882,29 +904,31 @@
     <div class="dadosParticipantes" id="dados">
         <h5><strong>Dados:</strong></h5>
         <div class="form-group">
-          <div class="form-row">
-            <div class="col-md-9 col-sm-12" style="margin-top: 10px;">
-              <label for="nomeProfessor">Nome do Professor</label>
-              <input type="text" class="form-control" id="nomeProfessor" placeholder="Nome Completo" name="nomeProfessor" required>
+            <div class="form-row">
+                <div class="col-md-9 col-sm-12" style="margin-top: 10px;">
+                    <label for="nomeProfessor">Nome do Professor</label>
+                    <input type="text" class="form-control" id="nomeProfessor" placeholder="Nome Completo"
+                        name="nomeProfessor" required>
+                </div>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="col-md-9 col-sm-12" style="margin-top: 10px;">
-              <label for="nomeEstudante">Nome do Estudante</label>
-              <input type="text" class="form-control" id="nomeEstudante" placeholder="Nome Completo" name="nomeEstudante" required>
+            <div class="form-row">
+                <div class="col-md-9 col-sm-12" style="margin-top: 10px;">
+                    <label for="nomeEstudante">Nome do Estudante</label>
+                    <input type="text" class="form-control" id="nomeEstudante" placeholder="Nome Completo"
+                        name="nomeEstudante" required>
+                </div>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="col-md-3 col-sm-12" style="margin-top: 10px;">
-              <label for="contatoProfessor">WhatsApp do Professor</label>
-              <input type="tel" class="form-control" id="contatoProfessor" maxlength="11" onkeyup="mascaraTelefone(this);"
-                placeholder="WhatsApp" name="contatoProfessor" required>
+            <div class="form-row">
+                <div class="col-md-3 col-sm-12" style="margin-top: 10px;">
+                    <label for="contatoProfessor">WhatsApp do Professor</label>
+                    <input type="tel" class="form-control" id="contatoProfessor" maxlength="11"
+                        onkeyup="mascaraTelefone(this);" placeholder="WhatsApp" name="contatoProfessor" required>
+                </div>
             </div>
-          </div>
         </div>
     </div>
-      
-      
+
+
     <div class="enviarRespostas" style="margin-top: 20px;margin-bottom: 30px;">
         <button type="button" id="respostasButton" class="btn btn-primary">Enviar respostas</button>
     </div>
@@ -914,20 +938,20 @@
 <script>
     // Obter a referência para o elemento onde a data atual será exibida
     var dataAtualElement = document.getElementById("dataAtual");
-  
+
     // Função para obter a data atual no formato dd/mm/aaaa
     function getDataAtualFormatada() {
-      var data = new Date();
-      var dia = String(data.getDate()).padStart(2, "0");
-      var mes = String(data.getMonth() + 1).padStart(2, "0");
-      var ano = data.getFullYear();
-      return dia + "/" + mes + "/" + ano;
+        var data = new Date();
+        var dia = String(data.getDate()).padStart(2, "0");
+        var mes = String(data.getMonth() + 1).padStart(2, "0");
+        var ano = data.getFullYear();
+        return dia + "/" + mes + "/" + ano;
     }
-  
+
     // Preencher o elemento com a data atual formatada
     dataAtualElement.textContent = getDataAtualFormatada();
-  </script>
-  
+</script>
+
 
 <!--Exiber versos biblicos-->
 <script>
@@ -947,54 +971,54 @@
 <script>
     // Adicione um event listener ao botão
     document.getElementById("respostasButton").addEventListener("click", function () {
-      var apiWhatsapp = 'https://api.whatsapp.com/send?phone=55XXXXXXXXXXX'; // Substitua XXXXXXXXXXX pelo número de telefone correto
-  
-      var nomeEstudante = document.getElementById('nomeEstudante').value;
-      var nomeProfessor = document.getElementById('nomeProfessor').value;
-      var contatoTelefonico = document.getElementById('contatoTelefonico').value;
-      var estudoBiblico = document.getElementById('estudoBiblico').value;
-  
-      var respostas = '';
-      respostas += 'Resposta 1: ' + document.getElementById('resposta1').value + '\n';
-      respostas += 'Resposta 21: ' + document.getElementById('resposta21').value + '\n';
-      respostas += 'Resposta 22: ' + document.getElementById('resposta22').value + '\n';
-      respostas += 'Resposta 4: ' + document.getElementById('labelText01').value + '\n';
-      respostas += 'Resposta 5: ' + document.getElementById('labelText02').value + '\n';
-      respostas += 'Resposta 6: ' + document.getElementById('labelText03').value + '\n';
-      respostas += 'Resposta 41: ' + document.getElementById('resposta41').value + '\n';
-      respostas += 'Resposta 42: ' + document.getElementById('resposta42').value + '\n';
-      respostas += 'Resposta 51: ' + document.getElementById('resposta51').value + '\n';
-      respostas += 'Resposta 52: ' + document.getElementById('resposta52').value + '\n';
-      respostas += 'Resposta 61: ' + document.getElementById('resposta61').value + '\n';
-      respostas += 'Resposta 62: ' + document.getElementById('resposta62').value + '\n';
-      respostas += 'Resposta 8: ' + document.getElementById('resposta08').value + '\n';
-      respostas += 'Resposta 9: ' + document.getElementById('resposta09').value + '\n';
-      respostas += 'Resposta 10.1: ' + document.getElementById('resposta101').value + '\n';
-      respostas += 'Resposta 10.2: ' + document.getElementById('resposta102').value + '\n';
-      respostas += 'Resposta drop-area1: ' + document.getElementById('drop-area1').value + '\n';
-      respostas += 'Resposta drop-area2: ' + document.getElementById('drop-area2').value + '\n';
-      respostas += 'Resposta drop-area3: ' + document.getElementById('drop-area3').value + '\n';
-      respostas += 'Resposta drop-area4: ' + document.getElementById('drop-area4').value + '\n';
-      respostas += 'Resposta drop-area5: ' + document.getElementById('drop-area5').value + '\n';
-      respostas += 'Resposta drop-area6: ' + document.getElementById('drop-area6').value + '\n';
-      respostas += 'Resposta drop-area7: ' + document.getElementById('drop-area7').value + '\n';
-      respostas += 'Resposta drop-area8: ' + document.getElementById('drop-area8').value + '\n';
-      respostas += 'Resposta flexCheck08: ' + document.getElementById('flexCheck08').checked + '\n';
-      respostas += 'Resposta flexCheck09: ' + document.getElementById('flexCheck09').checked + '\n';
-      respostas += 'Resposta flexCheck10: ' + document.getElementById('flexCheck10').checked;
-  
-      var mensagem = 'Olá, gostaria de participar do estudo bíblico "' + estudoBiblico + '".\n\n';
-      mensagem += 'Nome do Estudante: ' + nomeEstudante + '\n';
-      mensagem += 'Nome do Professor: ' + nomeProfessor + '\n';
-      mensagem += 'Contato Telefônico: ' + contatoTelefonico + '\n\n';
-      mensagem += 'Respostas:\n' + respostas;
-  
-      var linkWhatsapp = apiWhatsapp + '&text=' + encodeURIComponent(mensagem);
-  
-      // Abre o link do WhatsApp em uma nova janela ou guia
-      window.open(linkWhatsapp);
+        var apiWhatsapp = 'https://api.whatsapp.com/send?phone=55XXXXXXXXXXX'; // Substitua XXXXXXXXXXX pelo número de telefone correto
+
+        var nomeEstudante = document.getElementById('nomeEstudante').value;
+        var nomeProfessor = document.getElementById('nomeProfessor').value;
+        var contatoTelefonico = document.getElementById('contatoTelefonico').value;
+        var estudoBiblico = document.getElementById('estudoBiblico').value;
+
+        var respostas = '';
+        respostas += 'Resposta 1: ' + document.getElementById('resposta1').value + '\n';
+        respostas += 'Resposta 21: ' + document.getElementById('resposta21').value + '\n';
+        respostas += 'Resposta 22: ' + document.getElementById('resposta22').value + '\n';
+        respostas += 'Resposta 4: ' + document.getElementById('labelText01').value + '\n';
+        respostas += 'Resposta 5: ' + document.getElementById('labelText02').value + '\n';
+        respostas += 'Resposta 6: ' + document.getElementById('labelText03').value + '\n';
+        respostas += 'Resposta 41: ' + document.getElementById('resposta41').value + '\n';
+        respostas += 'Resposta 42: ' + document.getElementById('resposta42').value + '\n';
+        respostas += 'Resposta 51: ' + document.getElementById('resposta51').value + '\n';
+        respostas += 'Resposta 52: ' + document.getElementById('resposta52').value + '\n';
+        respostas += 'Resposta 61: ' + document.getElementById('resposta61').value + '\n';
+        respostas += 'Resposta 62: ' + document.getElementById('resposta62').value + '\n';
+        respostas += 'Resposta 8: ' + document.getElementById('resposta08').value + '\n';
+        respostas += 'Resposta 9: ' + document.getElementById('resposta09').value + '\n';
+        respostas += 'Resposta 10.1: ' + document.getElementById('resposta101').value + '\n';
+        respostas += 'Resposta 10.2: ' + document.getElementById('resposta102').value + '\n';
+        respostas += 'Resposta drop-area1: ' + document.getElementById('drop-area1').value + '\n';
+        respostas += 'Resposta drop-area2: ' + document.getElementById('drop-area2').value + '\n';
+        respostas += 'Resposta drop-area3: ' + document.getElementById('drop-area3').value + '\n';
+        respostas += 'Resposta drop-area4: ' + document.getElementById('drop-area4').value + '\n';
+        respostas += 'Resposta drop-area5: ' + document.getElementById('drop-area5').value + '\n';
+        respostas += 'Resposta drop-area6: ' + document.getElementById('drop-area6').value + '\n';
+        respostas += 'Resposta drop-area7: ' + document.getElementById('drop-area7').value + '\n';
+        respostas += 'Resposta drop-area8: ' + document.getElementById('drop-area8').value + '\n';
+        respostas += 'Resposta flexCheck08: ' + document.getElementById('flexCheck08').checked + '\n';
+        respostas += 'Resposta flexCheck09: ' + document.getElementById('flexCheck09').checked + '\n';
+        respostas += 'Resposta flexCheck10: ' + document.getElementById('flexCheck10').checked;
+
+        var mensagem = 'Olá, gostaria de participar do estudo bíblico "' + estudoBiblico + '".\n\n';
+        mensagem += 'Nome do Estudante: ' + nomeEstudante + '\n';
+        mensagem += 'Nome do Professor: ' + nomeProfessor + '\n';
+        mensagem += 'Contato Telefônico: ' + contatoTelefonico + '\n\n';
+        mensagem += 'Respostas:\n' + respostas;
+
+        var linkWhatsapp = apiWhatsapp + '&text=' + encodeURIComponent(mensagem);
+
+        // Abre o link do WhatsApp em uma nova janela ou guia
+        window.open(linkWhatsapp);
     });
-  </script>
+</script>
 
 
 <script>
