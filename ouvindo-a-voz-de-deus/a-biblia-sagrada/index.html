@@ -810,6 +810,21 @@
 
     <div class="recap">
         <h5><strong>Recapitulação</strong></h5>
+    <div>
+        <p style="margin-left: 20px"><strong>Complete a frase com cada uma das palavras abaixo arrastando para os
+                quadrados:</strong></p>
+    </div>
+        <div class="flex-row">
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ALI" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ALI</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ASSUNTO" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ASSUNTO</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ACRESCENTAR" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ACRESCENTAR</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="VERDADE" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">VERDADE</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ENTENDEM" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ENTENDEM</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="DEUS" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">DEUS</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="POUCO" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">POUCO</div>
+        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="TIRAR" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">TIRAR</div>
+    </div>
+
         <p class="text-justify">
             Para Jesus, a Palavra de Deus é a fonte da
             <span class="drop-area" id="drop-area1" ondrop="dropWord(event)" ondragover="allowDrop(event)"></span>.
@@ -830,22 +845,9 @@
         <button class="btn btn-primary" onclick="resetExercise()">Limpar</button>
     </div>
 
-    <div>
-        <p style="margin-left: 20px"><strong>Complete a frase com cada uma das palavras abaixo arrastando para os
-                quadrados:</strong></p>
-    </div>
+    
 
-    <div class="flex-row">
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ALI" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ALI</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ASSUNTO" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ASSUNTO</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ACRESCENTAR" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ACRESCENTAR</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="VERDADE" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">VERDADE</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="ENTENDEM" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">ENTENDEM</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="DEUS" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">DEUS</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="POUCO" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">POUCO</div>
-        <div class="selected-word draggable-word" draggable="true" ondragstart="dragWord(event)" data-word="TIRAR" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">TIRAR</div>
-    </div>
-
+   
 
 
 
@@ -879,33 +881,30 @@
 
     <div class="signature" id="dados">
         <h5><strong>Dados:</strong></h5>
-            <div>
-                <div class="form-row">
-                    <div class="col-9">
-                      <label for="nomeProfessor">Nome do Professor</label>
-                      <input type="text" class="form-control" id="nomeProfessor" placeholder="Nome do Completo" name="nomeProfessor" required>
-                    </div>
-                    <div class="col-3">
-                      <label for="contatoProfessor">Whatsapp do Professor</label>
-                      <input type="tel" class="form-control" id="contatoProfessor" maxlength="11" onkeyup="mascaraTelefone(this);"
-                        placeholder="Whatsapp" name="contatoProfessor" required>
-                    </div>
-                  </div>
-              
-                  <div class="form-row" style="margin-top: 10px;">
-                    <div class="col-9">
-                      <label for="nomeEstudante">Nome do Estudante</label>
-                      <input type="text" class="form-control" id="nomeEstudante" placeholder="Nome do Completo" name="nomeEstudante" required>
-                    </div>
-                    <div class="col-3">
-                      <label for="contatoEstudante">Whatsapp do Estudante</label>
-                      <input type="tel" class="form-control" id="contatoEstudante" maxlength="11" onkeyup="mascaraTelefone(this);"
-                        placeholder="Whatsapp" name="contatoEstudante" required>
-                    </div>
-                  </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-9 col-sm-12" style="margin-top: 10px;">
+              <label for="nomeProfessor">Nome do Professor</label>
+              <input type="text" class="form-control" id="nomeProfessor" placeholder="Nome Completo" name="nomeProfessor" required>
             </div>
-          
+          </div>
+          <div class="form-row">
+            <div class="col-md-9 col-sm-12" style="margin-top: 10px;">
+              <label for="nomeEstudante">Nome do Estudante</label>
+              <input type="text" class="form-control" id="nomeEstudante" placeholder="Nome Completo" name="nomeEstudante" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-3 col-sm-12" style="margin-top: 10px;">
+              <label for="contatoProfessor">WhatsApp do Professor</label>
+              <input type="tel" class="form-control" id="contatoProfessor" maxlength="11" onkeyup="mascaraTelefone(this);"
+                placeholder="WhatsApp" name="contatoProfessor" required>
+            </div>
+          </div>
+        </div>
     </div>
+      
+      
     <div class="enviarRespostas" style="margin-top: 20px;margin-bottom: 30px;">
         <button type="button" id="respostasButton" class="btn btn-primary">Enviar respostas</button>
     </div>
