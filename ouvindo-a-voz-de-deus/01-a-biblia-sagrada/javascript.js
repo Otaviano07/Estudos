@@ -1,20 +1,5 @@
-// Obter a referência para o elemento onde a data atual será exibida
-var dataAtualElement = document.getElementById("dataAtual");
-
-// Função para obter a data atual no formato dd/mm/aaaa
-function getDataAtualFormatada() {
-  var data = new Date();
-  var dia = String(data.getDate()).padStart(2, "0");
-  var mes = String(data.getMonth() + 1).padStart(2, "0");
-  var ano = data.getFullYear();
-  return dia + "/" + mes + "/" + ano;
-}
-
-// Preencher o elemento com a data atual formatada
-dataAtualElement.textContent = getDataAtualFormatada();
 
 //Exiber versos biblicos
-
 var verseButtons = document.querySelectorAll(".show-verse");
 verseButtons.forEach(function (button) {
   button.addEventListener("click", function () {
@@ -28,102 +13,48 @@ verseButtons.forEach(function (button) {
 
 //<!--Enviar respostas para contato do professor-->
 // Adicione um event listener ao botão
-document
-  .getElementById("respostasButton")
-  .addEventListener("click", function () {
-    var apiWhatsapp = "https://api.whatsapp.com/send?phone=55XXXXXXXXXXX"; // Substitua XXXXXXXXXXX pelo número de telefone correto
+document.getElementById("respostasButton").addEventListener("click", function () {
+    var apiWhatsapp = "https://api.whatsapp.com/send?phone=55";
 
-    var nomeEstudante = document.getElementById("nomeEstudante").value;
-    var nomeProfessor = document.getElementById("nomeProfessor").value;
-    var contatoTelefonico = document.getElementById("contatoTelefonico").value;
-    var estudoBiblico = document.getElementById("estudoBiblico").value;
+    var nomeEstudante = document.getElementById("nameEstudante").value;
+    var nomeProfessor = document.getElementById("nameProfessor").value;
+    var contantoProfessor = document.getElementById("whatsappProfessor").value;
+    var estudoBiblico = 'Ouvindo a Voz de Deus';
+    var tema = '01 - A Bliblia Sagrada';
 
-    var respostas = "";
-    respostas +=
-      "Resposta 1: " + document.getElementById("resposta1").value + "\n";
-    respostas +=
-      "Resposta 21: " + document.getElementById("resposta21").value + "\n";
-    respostas +=
-      "Resposta 22: " + document.getElementById("resposta22").value + "\n";
-    respostas +=
-      "Resposta 4: " + document.getElementById("labelText01").value + "\n";
-    respostas +=
-      "Resposta 5: " + document.getElementById("labelText02").value + "\n";
-    respostas +=
-      "Resposta 6: " + document.getElementById("labelText03").value + "\n";
-    respostas +=
-      "Resposta 41: " + document.getElementById("resposta41").value + "\n";
-    respostas +=
-      "Resposta 42: " + document.getElementById("resposta42").value + "\n";
-    respostas +=
-      "Resposta 51: " + document.getElementById("resposta51").value + "\n";
-    respostas +=
-      "Resposta 52: " + document.getElementById("resposta52").value + "\n";
-    respostas +=
-      "Resposta 61: " + document.getElementById("resposta61").value + "\n";
-    respostas +=
-      "Resposta 62: " + document.getElementById("resposta62").value + "\n";
-    respostas +=
-      "Resposta 8: " + document.getElementById("resposta08").value + "\n";
-    respostas +=
-      "Resposta 9: " + document.getElementById("resposta09").value + "\n";
-    respostas +=
-      "Resposta 10.1: " + document.getElementById("resposta101").value + "\n";
-    respostas +=
-      "Resposta 10.2: " + document.getElementById("resposta102").value + "\n";
-    respostas +=
-      "Resposta drop-area1: " +
-      document.getElementById("drop-area1").value +
-      "\n";
-    respostas +=
-      "Resposta drop-area2: " +
-      document.getElementById("drop-area2").value +
-      "\n";
-    respostas +=
-      "Resposta drop-area3: " +
-      document.getElementById("drop-area3").value +
-      "\n";
-    respostas +=
-      "Resposta drop-area4: " +
-      document.getElementById("drop-area4").value +
-      "\n";
-    respostas +=
-      "Resposta drop-area5: " +
-      document.getElementById("drop-area5").value +
-      "\n";
-    respostas +=
-      "Resposta drop-area6: " +
-      document.getElementById("drop-area6").value +
-      "\n";
-    respostas +=
-      "Resposta drop-area7: " +
-      document.getElementById("drop-area7").value +
-      "\n";
-    respostas +=
-      "Resposta drop-area8: " +
-      document.getElementById("drop-area8").value +
-      "\n";
-    respostas +=
-      "Resposta flexCheck08: " +
-      document.getElementById("flexCheck08").checked +
-      "\n";
-    respostas +=
-      "Resposta flexCheck09: " +
-      document.getElementById("flexCheck09").checked +
-      "\n";
-    respostas +=
-      "Resposta flexCheck10: " + document.getElementById("flexCheck10").checked;
+    var respostas1 = document.getElementById("resposta1").value;
+    var respostas21 = document.getElementById("resposta21").value;
+    var respostas22 = document.getElementById("resposta22").value;
+    var respostas31 = document.getElementById("labelText01").value;
+    var respostas32 = document.getElementById("labelText02").value;
+    var respostas33 = document.getElementById("labelText03").value;
+    var respostas34 = document.getElementById("labelText04").value;
+    var respostas41 = document.getElementById("resposta41").value;
+    var respostas42 = document.getElementById("resposta42").value;
+    var respostas51 = document.getElementById("resposta51").value;
+    var respostas52 = document.getElementById("resposta52").value;
+    var respostas61 = document.getElementById("resposta61").value;
+    var respostas62 = document.getElementById("resposta62").value;
+    var respostas71 = document.getElementById("labelText05").value;
+    var respostas72 = document.getElementById("labelText06").value;
+    var respostas73 = document.getElementById("labelText07").value;
+    var respostas8 = document.getElementById("resposta8").value;
+    var respostas9 = document.getElementById("resposta9").value;
+    var respostas101 = document.getElementById("resposta101").value;
+    var respostas102 = document.getElementById("resposta102").value;
+    var respostasDrop1 = document.getElementById("drop-area1").value;
+    var respostasDrop2 = document.getElementById("drop-area2").value;
+    var respostasDrop3 = document.getElementById("drop-area3").value;
+    var respostasDrop4 = document.getElementById("drop-area4").value;
+    var respostasDrop5 = document.getElementById("drop-area5").value;
+    var respostasDrop6 = document.getElementById("drop-area6").value;
+    var respostasDrop7 = document.getElementById("drop-area7").value;
+    var respostasDrop8 = document.getElementById("drop-area8").value;
+    var respostasCompr1 = document.getElementById("flexCheck08").checked;
+    var respostasCompr2 = document.getElementById("flexCheck09").checked;
+    var respostasCompr3 = document.getElementById("flexCheck10").checked;
 
-    var mensagem =
-      'Olá, gostaria de participar do estudo bíblico "' +
-      estudoBiblico +
-      '".\n\n';
-    mensagem += "Nome do Estudante: " + nomeEstudante + "\n";
-    mensagem += "Nome do Professor: " + nomeProfessor + "\n";
-    mensagem += "Contato Telefônico: " + contatoTelefonico + "\n\n";
-    mensagem += "Respostas:\n" + respostas;
-
-    var linkWhatsapp = apiWhatsapp + "&text=" + encodeURIComponent(mensagem);
+    var linkWhatsapp = apiWhatsapp + contantoProfessor + "&text=" + encodeURIComponent(mensagem);
 
     // Abre o link do WhatsApp em uma nova janela ou guia
     window.open(linkWhatsapp);
@@ -464,13 +395,13 @@ function resetExercise() {
   });
 }
 
-// Captura dos parâmetros da URL
-const params = new URLSearchParams(window.location.search);
-const contatoProfessor = params.get('contatoProfessor');
-const nomeProfessor = params.get('nomeProfessor');
-const nomeEstudande = params.get('nomeEstudande');
+    // Captura dos parâmetros da URL
+    const params = new URLSearchParams(window.location.search);
+    const contatoProfessor = params.get('contatoProfessor');
+    const nomeProfessor = params.get('nomeProfessor');
+    const nomeEstudante = params.get('nomeEstudante');
 
-// Preenchimento dos campos do formulário
-document.getElementById('whatsappProfessor').value = contatoProfessor;
-document.getElementById('nameProfessor').value = nomeProfessor;
-document.getElementById('nameEstudande').value = nomeEstudande;
+    // Preenchimento dos campos do formulário
+    document.getElementById('whatsappProfessor').value = contatoProfessor;
+    document.getElementById('nameProfessor').value = nomeProfessor;
+    document.getElementById('nameEstudante').value = nomeEstudante;
