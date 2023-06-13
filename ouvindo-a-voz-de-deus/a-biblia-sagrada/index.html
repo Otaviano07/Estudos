@@ -881,26 +881,34 @@
         <h5><strong>Dados:</strong></h5>
             <div>
                 <div class="form-row">
-                    <label for="nomeEstudante">Nome do Estudante:</label>
-                    <input type="text" class="form-control" id="nomeEstudante" name="nomeEstudante">
+                    <div class="col-9">
+                      <label for="nomeProfessor">Nome do Professor</label>
+                      <input type="text" class="form-control" id="nomeProfessor" placeholder="Nome do Completo" name="nomeProfessor" required>
+                    </div>
+                    <div class="col-3">
+                      <label for="contatoProfessor">Whatsapp do Professor</label>
+                      <input type="tel" class="form-control" id="contatoProfessor" max="11" onkeyup="mascaraTelefone(this);"
+                        placeholder="Whatsapp" name="contatoProfessor" required>
+                    </div>
                   </div>
-                  <div class="form-row">
-                    <label for="nomeProfessor">Nome do Professor:</label>
-                    <input type="text" class="form-control" id="nomeProfessor" name="nomeProfessor">
-                  </div>
-                  <div class="form-row">
-                    <label for="contatoTelefonico">WhatsApp do Professor:</label>
-                    <input type="text" class="form-control" id="contatoTelefonico" name="contatoTelefonico">
-                  </div>
-                  <div class="form-row">
-                    <label>Data Atual:</label>
-                    <span id="dataAtual"></span>
+              
+                  <div class="form-row" style="margin-top: 10px;">
+                    <div class="col-9">
+                      <label for="nomeEstudante">Nome do Estudante</label>
+                      <input type="text" class="form-control" id="nomeEstudante" placeholder="Nome do Completo" name="nomeEstudante" required>
+                    </div>
+                    <div class="col-3">
+                      <label for="contatoEstudante">Whatsapp do Estudante</label>
+                      <input type="tel" class="form-control" id="contatoEstudante" max="11" onkeyup="mascaraTelefone(this);"
+                        placeholder="Whatsapp" name="contatoEstudante" required>
+                    </div>
                   </div>
             </div>
           
     </div>
-
-    <button type="button" id="respostasButton" class="btn btn-primary">Enviar respostas</button>
+    <div class="enviarRespostas" style="margin-top: 20px;margin-bottom: 30px;">
+        <button type="button" id="respostasButton" class="btn btn-primary">Enviar respostas</button>
+    </div>
 
 </body>
 
