@@ -2,14 +2,17 @@
 //Exiber versos biblicos
 var verseButtons = document.querySelectorAll(".show-verse");
 verseButtons.forEach(function (button) {
-  button.addEventListener("click", function () {
-    // Exibir o modal usando o Bootstrap JavaScript
+  button.addEventListener("click", function (event) {
+    event.preventDefault(); // Impede o comportamento padrão do evento de clique
+    
     var targetModal = button.getAttribute("data-target");
     var modal = document.querySelector(targetModal);
     var bootstrapModal = new bootstrap.Modal(modal);
     bootstrapModal.show();
+    // Mantenha em branco se não quiser adicionar nenhuma ação
   });
 });
+
 
 //<!--Enviar respostas para contato do professor-->
 // Adicione um event listener ao botão
