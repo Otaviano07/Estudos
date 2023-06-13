@@ -25,46 +25,22 @@
   <div class="container">
     <div class="form-row">
       <div class="col-6">
-        <label for="estudoBiblico">Nome do Estudo Bíblico:</label>
-        <select class="form-control" id="estudoBiblico" name="estudoBiblico">
-          <option value="">Selecione</option>
-          <option value="ouvindo-a-voz-de-deus/">Ouvindo a Voz de Deus</option>
-        </select>
+        <label for="nomeEstudoBiblico">Nome do Estudo Bíblico:</label>
+        <input class="form-control" type="text" id="nomeEstudoBiblico" name="nomeEstudoBiblico" list="nome" required>
+
+        <datalist id="nome">
+          <option>Ouvindo a Voz de Deus</option>
+          <option>Ensinos de Jesus</option>
+        </datalist>
       </div>
 
       <div class="col-6">
         <label for="numEstudoBiblico">Número do Estudo: </label>
-        <select class="form-control" id="numEstudoBiblico" name="numEstudoBiblico">
-          <option value="">Selecione</option>
-          <option value="a-biblia-sagrada/index.html">01 - A Bíblia Sagrada</option>
-          <!--<option value="estudo02">02 - A beleza da criação</option>
-          <option value="estudo03">03 - A origem do mal</option>
-          <option value="estudo04">04 - O plano da salvação</option>
-          <option value="estudo05">05 - Fé, arrependimento e confissão</option>
-          <option value="estudo06">06 - Sinais da volta de Cristo</option>
-          <option value="estudo07">07 - A volta de Cristo</option>
-          <option value="estudo08">08 - O Milênio</option>
-          <option value="estudo09">09 - A verdade sobre a morte</option>
-          <option value="estudo10">10 - A nova terra</option>
-          <option value="estudo11">11 - Salvação pela graça</option>
-          <option value="estudo12">12 - O Santuário</option>
-          <option value="estudo13">13 - O Juízo</option>
-          <option value="estudo14">14 - As leis na Bíblia</option>
-          <option value="estudo15">15 - A Lei Moral</option>
-          <option value="estudo16">16 - O mandamento esquecido</option>
-          <option value="estudo17">17 - Do sábado para o domingo</option>
-          <option value="estudo18">18 - Princípios de Saúde</option>
-          <option value="estudo19">19 - O dom de profecia</option>
-          <option value="estudo20">20 - O dízimo</option>
-          <option value="estudo21">21 - As ofertas</option>
-          <option value="estudo22">22 - A igreja verdadeira</option>
-          <option value="estudo23">23 - O Batismo</option>
-          <option value="estudo24">24 - Princípios de vida Cristã</option>
-          <option value="estudo25">25 - Educação Cristã</option>
-          <option value="estudo26">26 - Vida no Espírito</option>
-          <option value="estudo27">27 - Ministério para Todos</option>
-          <option value="estudo-apendices">Apêndices</option>-->
-        </select>
+        <input class="form-control" type="text" id="numEstudoBiblico" name="numEstudoBiblico" list="numero" required>
+
+        <datalist id="numero">
+          <option></option>
+        </datalist>
       </div>
     </div>
 
@@ -103,9 +79,9 @@
           <button class="btn btn-outline-secondary" type="button" id="btnCopiarLink" onclick="copiarLink()">
             <span class="material-icons">content_copy</span> <!-- Corrigido: ícone para copiar -->
           </button>
-        </div>
       </div>
     </div>
+  </div>
   </div>
 
   <script>
@@ -142,5 +118,31 @@
     }
   </script>
 </body>
+
+<script>
+  const nomeInput = document.getElementById('nomeEstudoBiblico');
+  const numeroInput = document.getElementById('numEstudoBiblico');
+  const numeroPorNome = {
+    'Ouvindo a Voz de Deus': ['Selecione','01 - A Bíblia Sagrada','02 - A beleza da criação', '03 - A origem do mal', '04 - O plano da salvação', '05 - Fé, arrependimento e confissão', '06 - Sinais da volta de Cristo', '07 - A volta de Cristo', '08 - O Milênio', '09 - A verdade sobre a morte', '10 - A nova terra', '11 - Salvação pela graça', '12 - O Santuário', '13 - O Juízo', '14 - As leis na Bíblia', '15 - A Lei Moral', '16 - O mandamento esquecido', '17 - Do sábado para o domingo', '18 - Princípios de Saúde', '19 - O dom de profecia', '20 - O dízimo', '21 - As ofertas', '22 - A igreja verdadeira', '23 - O Batismo', '24 - Princípios de vida Cristã', '25 - Educação Cristã', '26 - Vida no Espírito', '27 - Ministério para Todos'],
+    'Ensinos de Jesus': ['Selecione','01 - O que JESUS ensinou sobre as ESCRITURAS','02 - O que JESUS ensinou sobre a SALVAÇÃO','03 - O que JESUS ensinou sobre a SANTIFICAÇÃO','04 - O que JESUS ensinou sobre o ESPÍRITO SANTO','05 - O que JESUS ensinou sobre a ORAÇÃO','06 - O que JESUS ensinou sobre o PERDÃO','07 - O que JESUS ensinou sobre o DINHEIRO','08 - O que JESUS ensinou sobre SUA VOLTA','09 - O que JESUS ensinou sobre a MORTE','10 - O que JESUS ensinou sobre a RESSURREIÇÃO','11 - O que JESUS ensinou sobre o JUÍZO','12 - O que JESUS ensinou sobre a LEI','13 - O que JESUS ensinou sobre o SÁBADO','14 - O que JESUS ensinou sobre a IGREJA','15 - O que JESUS ensinou sobre os PROFETAS','16 - O que JESUS ensinou sobre o BATISMO','17 - O que JESUS ensinou sobre o CUIDADO COM O CORPO','18 - O que JESUS ensinou sobre ritos e TRADIÇÕES']
+  };
+
+  nomeInput.addEventListener('change', function () {
+    const selectedNome = this.value;
+    const numero = numeroPorNome[selectedNome] || [];
+    const datalist = document.getElementById('numero');
+
+    // Limpar as opções atuais da lista
+    datalist.innerHTML = '';
+
+    // Adicionar as novas opções filtradas
+    numero.forEach(function (numero) {
+      const option = document.createElement('option');
+      option.value = numero;
+      datalist.appendChild(option);
+    });
+  });
+</script>
+
 
 </html>
