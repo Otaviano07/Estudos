@@ -4,20 +4,25 @@
 <head>
   <title>Gerar Link Preenchido</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Adicione a referência ao Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
   <style>
     .form-row {
       margin-bottom: 10px;
     }
 
-    .container{
+    .container {
       margin-top: 30px;
     }
   </style>
 </head>
 
 <body>
+  <h2 style="text-align: center;margin-bottom: 20px;margin-top: 20px;">Gerador de link para estudo bíblico</h2>
   <div class="container">
-    <h2 style="text-align: center;margin-bottom: 20px;">Gerador de link para estudo bíblico</h2>
     <div class="form-row">
       <div class="col-6">
         <label for="estudoBiblico">Nome do Estudo Bíblico:</label>
@@ -28,10 +33,10 @@
       </div>
 
       <div class="col-6">
-        <label for="estudoBiblico">Número do Estudo: </label>
-        <select class="form-control" id="estudoBiblico" name="estudoBiblico">
+        <label for="numEstudoBiblico">Número do Estudo: </label>
+        <select class="form-control" id="numEstudoBiblico" name="numEstudoBiblico">
           <option value="">Selecione</option>
-          <option value="/a-biblia-sagrada/index.html">01 - A Bíblia Sagrada</option>
+          <option value="a-biblia-sagrada/index.html">01 - A Bíblia Sagrada</option>
           <!--<option value="estudo02">02 - A beleza da criação</option>
           <option value="estudo03">03 - A origem do mal</option>
           <option value="estudo04">04 - O plano da salvação</option>
@@ -66,31 +71,40 @@
     <div class="form-row">
       <div class="col-9">
         <label for="nomeProfessor">Nome do Professor</label>
-        <input type="text" class="form-control" id="nomeProfessor" placeholder="Nome do Completo" required>
+        <input type="text" class="form-control" id="nomeProfessor" placeholder="Nome do Completo" name="nomeProfessor" required>
       </div>
       <div class="col-3">
         <label for="contatoProfessor">Whatsapp do Professor</label>
-        <input type="tel" class="form-control" id="contatoProfessor" max="11" onkeyup="mascaraTelefone(this);" placeholder="Whatsapp" required>
+        <input type="tel" class="form-control" id="contatoProfessor" max="11" onkeyup="mascaraTelefone(this);"
+          placeholder="Whatsapp" name="contatoProfessor" required>
       </div>
     </div>
 
     <div class="form-row">
       <div class="col-9">
         <label for="nomeEstudante">Nome do Estudante</label>
-        <input type="text" class="form-control" id="nomeEstudante" placeholder="Nome do Completo" required>
+        <input type="text" class="form-control" id="nomeEstudante" placeholder="Nome do Completo" name="nomeEstudante" required>
       </div>
       <div class="col-3">
         <label for="contatoEstudante">Whatsapp do Estudante</label>
-        <input type="tel" class="form-control" id="contatoEstudante" max="11" onkeyup="mascaraTelefone(this);" placeholder="Whatsapp" required>
+        <input type="tel" class="form-control" id="contatoEstudante" max="11" onkeyup="mascaraTelefone(this);"
+          placeholder="Whatsapp" name="contatoEstudante" required>
       </div>
     </div>
 
     <div class="form-row">
       <button class="btn btn-primary" onclick="gerarLink()">Gerar Link</button>
     </div>
-    <div class="form-row">
+    <div class="form-group">
       <label for="linkGerado">Link Gerado:</label>
-      <input type="text" class="form-control" id="linkGerado" readonly>
+      <div class="input-group">
+        <input type="text" class="form-control" id="linkGerado" readonly>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="btnCopiarLink" onclick="copiarLink()">
+            <span class="material-icons">content_copy</span> <!-- Corrigido: ícone para copiar -->
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -103,20 +117,36 @@
         input.value = input.value.replace(/[^\d()\-]/g, "");
       }
     }
+  </script>
 
+<!--Gerar Link-->
+<script>
     function gerarLink() {
-      var estudoBiblico = document.getElementById("estudoBiblico").value;
+      var nomeEstudoBiblico = document.getElementById("nomeEstudoBiblico").value;
+      var numEstudoBiblico = document.getElementById("numEstudoBiblico").value;
       var nomeProfessor = document.getElementById("nomeProfessor").value;
       var nomeEstudante = document.getElementById("nomeEstudante").value;
-      var contatoTelefonico = document.getElementById("contatoTelefonico").value;
+      var contatoProfessor = document.getElementById("contatoProfessor").value;
+      var contatoEstudante = document.getElementById("contatoEstudante").value;
 
-      var linkBase = "https://sites.google.com/view/aprendendomais/ouvindo-a-voz-de-deus/";
+      var linkBase = "https://otaviano07.github.io/estudos/";
 
-      var linkGerado = linkBase + estudoBiblico + "?nomeProfessor=" + encodeURIComponent(nomeProfessor) + "&nomeEstudante=" + encodeURIComponent(nomeEstudante) + "&contatoTelefonico=" + encodeURIComponent(contatoTelefonico);
+      var linkGerado = linkBase + estudoBiblico + contatoProfessor; 
 
       document.getElementById("linkGerado").value = linkGerado;
     }
   </script>
 </body>
+
+<!--Copia Link-->
+<script>
+  function copiarLink() {
+    var linkGerado = document.getElementById('linkGerado');
+    linkGerado.select();
+    linkGerado.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    alert('Link copiado para a área de transferência!');
+  }
+  </script>
 
 </html>
