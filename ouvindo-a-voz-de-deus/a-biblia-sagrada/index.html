@@ -21,203 +21,11 @@
 
     <!-- Adicione o link para a biblioteca confetti-js no cabeçalho do seu documento -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-
-
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+    <script type="text/javascript" src="javascript.js"></script>
 
     <title>A Bíblia Sagrada</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
-            padding-left: 20px;
-            /* Define o padding esquerdo */
-            padding-right: 20px;
-            /* Define o padding direito */
-        }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .introduction::first-letter {
-            font-size: 200%;
-        }
-
-        .introduction {
-            margin-bottom: 40px;
-        }
-
-
-        .form-check-input {
-            float: left;
-            margin-right: 5px;
-        }
-
-        .question textarea {
-            margin-bottom: 10px;
-            width: 100%;
-            height: 60px;
-        }
-
-        .commitment {
-            margin-bottom: 30px;
-        }
-
-        .commitment textarea {
-            margin-bottom: 20px;
-            width: 100%;
-            height: 80px;
-        }
-
-        .dadosParticipantes textarea {
-            margin-bottom: 40px;
-            width: 100%;
-            height: 50px;
-        }
-
-        .form-control textarea {
-            margin-bottom: 10px;
-            width: 50%;
-            height: 60px;
-        }
-
-        .leiaMais {
-            margin-top: 10px;
-        }
-
-        .recap textarea {
-            width: 100%;
-            height: 100px;
-        }
-
-        .recap {
-            padding: 20px;
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .recap p {
-            margin-bottom: 20px;
-        }
-
-        .drop-area {
-            border: 1px dashed #aaa;
-            background-color: #a2e5f8;
-            border-radius: 4px;
-            padding: 10px;
-            margin-top: 14px;
-            max-width: 400px;
-            word-wrap: break-word;
-            display: inline-block;
-            width: fit-content;
-            transition: background-color 0.4s;
-            font-size: inherit;
-            /* Adicionado esta linha */
-        }
-
-        .drop-area.green {
-            background-color: rgb(98, 240, 85);
-        }
-
-        .drop-area.success {
-            background-color: lightgreen;
-            border-color: green;
-        }
-
-        .flex-row {
-            margin-left: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
-            margin-top: 10px;
-        }
-
-        .selected-word {
-            padding: 0px 20px;
-            background-color: #a2e5f8;
-            border: 1px solid #dddddd;
-            border-radius: 4px;
-            cursor: move;
-            display: inline-block;
-            margin: 5px;
-            text-align: center;
-            user-select: none;
-        }
-
-        #buttonMais1,
-        #buttonMais2,
-        #buttonMais3,
-        #buttonMais4,
-        #buttonMais5,
-        #buttonMais6,
-        #buttonMais7,
-        #buttonMais8,
-        #buttonMais9,
-        #buttonMais10 {
-            margin-bottom: 30px;
-        }
-
-        .question input {
-            width: 20px;
-            /* Largura inicial do campo */
-            min-width: 100px;
-            /* Largura mínima do campo */
-        }
-
-        .background-img {
-            margin-top: 3%;
-            margin-bottom: 3%;
-            margin-left: 15%;
-            width: 70%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .question-number {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: #67260E;
-            color: #fff;
-            text-align: center;
-            line-height: 30px;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        /* Estilos para o contêiner do vídeo */
-        .player-container {
-            width: 90%;
-            /* Largura de 80% em dispositivos maiores */
-            max-width: 640px;
-            /* Largura máxima em pixels */
-            margin: 0 auto;
-            /* Centralizar horizontalmente */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        /* Estilos para tornar o contêiner responsivo em dispositivos móveis */
-        @media only screen and (max-width: 600px) {
-            .player-container {
-                width: 100%;
-                /* Largura de 100% em dispositivos móveis */
-            }
-        }
-
-        /* Estilos para o vídeo */
-        .player-container iframe {
-            max-width: 100%;
-            /* Ajuste de tamanho em dispositivos móveis */
-        }
-    </style>
 </head>
 
 <body>
@@ -268,7 +76,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Santifica-os na tua verdade; a tua palavra é a verdade.</p>
+                        <p>
+                        <h4>João 17:17</h4><small><sup>17</sup></small>Santifica-os na tua verdade; a tua palavra é a verdade.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -317,9 +126,16 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>E o anjo do Senhor falou a Filipe, dizendo: Levanta-te, e vai em direção do sul, pelo caminho
-                            que desce de Jerusalém para Gaza, o qual está deserto.
-                            Atos 8:26-31</p>
+                        <p>
+                        <h4>Atos 8:26-31</h4><small><sup>26</sup></small>"Um anjo do Senhor falou a Filipe, dizendo: Dispõe-te e vai para o lado
+                        do Sul, no caminho que desce de Jerusalém a Gaza; este se acha deserto. Ele se levantou e
+                        foi.<small><sup>27</sup></small>Eis que um etíope, eunuco, alto oficial de Candace, rainha dos etíopes, o qual era
+                        superintendente de todo o seu tesouro, que viera adorar em Jerusalém,
+                        <small><sup>28</sup></small>estava de volta e, assentado no seu carro, vinha lendo o profeta Isaías.
+                        <small><sup>29</sup></small>Então, disse o Espírito a Filipe: Aproxima-te desse carro e acompanha-o.
+                        <small><sup>30</sup></small>Correndo Filipe, ouviu-o ler o profeta Isaías e perguntou: Compreendes o que vens lendo?
+                        <small><sup>31</sup></small>Ele respondeu: Como poderei entender, se alguém não me explicar? E convidou Filipe a subir e a
+                        sentar-se junto a ele."</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -404,9 +220,9 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>"Pois é preceito sobre preceito, preceito sobre preceito; regra sobre regra, regra sobre
-                            regra; um pouco aqui, um pouco ali.
-                            Isaías 28:10</p>
+                        <p><h4>Isaías 28:10</h4><small><sup>10</sup></small>"Pois é preceito sobre preceito, preceito sobre preceito; regra sobre regra, regra sobre
+                            regra; um pouco aqui, um pouco ali."
+                            </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -456,9 +272,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>"Pois é preceito sobre preceito, preceito sobre preceito; regra sobre regra, regra sobre
-                            regra; um pouco aqui, um pouco ali.
-                            João 5:39
+                        <p><h4>João 5:39</h4><small><sup>39</sup></small>"Examinais as Escrituras, porque julgais ter nelas a vida eterna, e são elas mesmas que testificam de mim."     
                         </p>
                     </div>
                     <div class="modal-footer">
@@ -506,11 +320,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Quando vier, porém, aquele, o Espírito da verdade, ele vos guiará a toda a verdade; porque
-                            não falará por si mesmo, mas dirá o que tiver ouvido, e vos anunciará as coisas vindouras.
-                            João 17:17</p>
-                        <p>E conhecereis a verdade, e a verdade vos libertará.
-                            João 8:32</p>
+                        <p><h4>João 17:17</h4><small><sup>17</sup></small>"Quando vier, porém, aquele, o Espírito da verdade, ele vos guiará a toda a verdade; porque
+                            não falará por si mesmo, mas dirá o que tiver ouvido, e vos anunciará as coisas vindouras."
+                            </p>
+                        <p><h4>João 8:32</h4><small><sup>32</sup></small>"E conhecereis a verdade, e a verdade vos libertará."
+                            </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -559,9 +373,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Porque a profecia nunca foi produzida por vontade dos homens, mas os homens santos de Deus
-                            falaram inspirados pelo Espírito Santo.
-                            2 Pedro 1:21
+                        <p><h4>2 Pedro 1:21</h4><small><sup>21</sup></small>"Porque a profecia nunca foi produzida por vontade dos homens, mas os homens santos de Deus
+                            falaram inspirados pelo Espírito Santo."                            
                         </p>
                     </div>
                     <div class="modal-footer">
@@ -650,9 +463,9 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Toda Escritura é divinamente inspirada e proveitosa para ensinar, para repreender, para
-                            corrigir, para instruir em justiça;
-                            2 Timóteo 3:16</p>
+                        <p><h4>2 Timóteo 3:16</h4><small><sup>16</sup></small>"Toda Escritura é divinamente inspirada e proveitosa para ensinar, para repreender, para
+                            corrigir, para instruir em justiça;"
+                            </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -697,9 +510,9 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>E deu a Moisés, quando acabou de falar com ele no monte Sinai, as duas tábuas do testemunho,
-                            tábuas de pedra, escritas pelo dedo de Deus.
-                            Êxodo 31:18</p>
+                        <p><h4>Êxodo 31:18</h4><small><sup>18</sup></small>"E deu a Moisés, quando acabou de falar com ele no monte Sinai, as duas tábuas do testemunho,
+                            tábuas de pedra, escritas pelo dedo de Deus."
+                            </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -745,13 +558,13 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Pois eu, o Senhor, não mudo; por isso vós, ó filhos de Jacó, não sois consumidos.
-                            Malaquias 3:6</p>
-                        <p>Eu testifico a todo aquele que ouvir as palavras da profecia deste livro: Se alguém lhes
-                            acrescentar alguma coisa, Deus lhe acrescentará as pragas que estão escritas neste livro; e
+                        <p><h4>Malaquias 3:6</h4><small><sup>6</sup></small>"Pois eu, o Senhor, não mudo; por isso vós, ó filhos de Jacó, não sois consumidos."
+                            </p>
+                        <p><h4>Apocalipse 22:18-19</h4><small><sup>18</sup></small>"Eu testifico a todo aquele que ouvir as palavras da profecia deste livro: Se alguém lhes
+                            acrescentar alguma coisa, Deus lhe acrescentará as pragas que estão escritas neste livro; <small><sup>19</sup></small>e
                             se alguém tirar qualquer coisa das palavras do livro desta profecia, Deus lhe tirará a sua
-                            parte da árvore da vida, e da cidade santa, que estão descritas neste livro.
-                            Apocalipse 22:18-19</p>
+                            parte da árvore da vida, e da cidade santa, que estão descritas neste livro."
+                            </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -799,10 +612,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Se sabeis estas coisas, bem-aventurados sois se as praticardes.
-                            João 13:17</p>
-                        <p>E sede cumpridores da palavra e não somente ouvintes, enganando-vos a vós mesmos.
-                            Tiago 1:22</p>
+                        <p><h4>João 13:17</h4><small><sup>17</sup></small>"Se sabeis estas coisas, bem-aventurados sois se as praticardes."
+                            </p>
+                        <p><h4>Tiago 1:22</h4><small><sup>22</sup></small>"E sede cumpridores da palavra e não somente ouvintes, enganando-vos a vós mesmos."
+                            </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -934,425 +747,5 @@
     </div>
 
 </body>
-
-<script>
-    // Obter a referência para o elemento onde a data atual será exibida
-    var dataAtualElement = document.getElementById("dataAtual");
-
-    // Função para obter a data atual no formato dd/mm/aaaa
-    function getDataAtualFormatada() {
-        var data = new Date();
-        var dia = String(data.getDate()).padStart(2, "0");
-        var mes = String(data.getMonth() + 1).padStart(2, "0");
-        var ano = data.getFullYear();
-        return dia + "/" + mes + "/" + ano;
-    }
-
-    // Preencher o elemento com a data atual formatada
-    dataAtualElement.textContent = getDataAtualFormatada();
-</script>
-
-
-<!--Exiber versos biblicos-->
-<script>
-    var verseButtons = document.querySelectorAll('.show-verse');
-    verseButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            // Exibir o modal usando o Bootstrap JavaScript
-            var targetModal = button.getAttribute('data-target');
-            var modal = document.querySelector(targetModal);
-            var bootstrapModal = new bootstrap.Modal(modal);
-            bootstrapModal.show();
-        });
-    });
-</script>
-
-<!--Enviar respostas para contato do professor-->
-<script>
-    // Adicione um event listener ao botão
-    document.getElementById("respostasButton").addEventListener("click", function () {
-        var apiWhatsapp = 'https://api.whatsapp.com/send?phone=55XXXXXXXXXXX'; // Substitua XXXXXXXXXXX pelo número de telefone correto
-
-        var nomeEstudante = document.getElementById('nomeEstudante').value;
-        var nomeProfessor = document.getElementById('nomeProfessor').value;
-        var contatoTelefonico = document.getElementById('contatoTelefonico').value;
-        var estudoBiblico = document.getElementById('estudoBiblico').value;
-
-        var respostas = '';
-        respostas += 'Resposta 1: ' + document.getElementById('resposta1').value + '\n';
-        respostas += 'Resposta 21: ' + document.getElementById('resposta21').value + '\n';
-        respostas += 'Resposta 22: ' + document.getElementById('resposta22').value + '\n';
-        respostas += 'Resposta 4: ' + document.getElementById('labelText01').value + '\n';
-        respostas += 'Resposta 5: ' + document.getElementById('labelText02').value + '\n';
-        respostas += 'Resposta 6: ' + document.getElementById('labelText03').value + '\n';
-        respostas += 'Resposta 41: ' + document.getElementById('resposta41').value + '\n';
-        respostas += 'Resposta 42: ' + document.getElementById('resposta42').value + '\n';
-        respostas += 'Resposta 51: ' + document.getElementById('resposta51').value + '\n';
-        respostas += 'Resposta 52: ' + document.getElementById('resposta52').value + '\n';
-        respostas += 'Resposta 61: ' + document.getElementById('resposta61').value + '\n';
-        respostas += 'Resposta 62: ' + document.getElementById('resposta62').value + '\n';
-        respostas += 'Resposta 8: ' + document.getElementById('resposta08').value + '\n';
-        respostas += 'Resposta 9: ' + document.getElementById('resposta09').value + '\n';
-        respostas += 'Resposta 10.1: ' + document.getElementById('resposta101').value + '\n';
-        respostas += 'Resposta 10.2: ' + document.getElementById('resposta102').value + '\n';
-        respostas += 'Resposta drop-area1: ' + document.getElementById('drop-area1').value + '\n';
-        respostas += 'Resposta drop-area2: ' + document.getElementById('drop-area2').value + '\n';
-        respostas += 'Resposta drop-area3: ' + document.getElementById('drop-area3').value + '\n';
-        respostas += 'Resposta drop-area4: ' + document.getElementById('drop-area4').value + '\n';
-        respostas += 'Resposta drop-area5: ' + document.getElementById('drop-area5').value + '\n';
-        respostas += 'Resposta drop-area6: ' + document.getElementById('drop-area6').value + '\n';
-        respostas += 'Resposta drop-area7: ' + document.getElementById('drop-area7').value + '\n';
-        respostas += 'Resposta drop-area8: ' + document.getElementById('drop-area8').value + '\n';
-        respostas += 'Resposta flexCheck08: ' + document.getElementById('flexCheck08').checked + '\n';
-        respostas += 'Resposta flexCheck09: ' + document.getElementById('flexCheck09').checked + '\n';
-        respostas += 'Resposta flexCheck10: ' + document.getElementById('flexCheck10').checked;
-
-        var mensagem = 'Olá, gostaria de participar do estudo bíblico "' + estudoBiblico + '".\n\n';
-        mensagem += 'Nome do Estudante: ' + nomeEstudante + '\n';
-        mensagem += 'Nome do Professor: ' + nomeProfessor + '\n';
-        mensagem += 'Contato Telefônico: ' + contatoTelefonico + '\n\n';
-        mensagem += 'Respostas:\n' + respostas;
-
-        var linkWhatsapp = apiWhatsapp + '&text=' + encodeURIComponent(mensagem);
-
-        // Abre o link do WhatsApp em uma nova janela ou guia
-        window.open(linkWhatsapp);
-    });
-</script>
-
-
-<script>
-    function allowDrop(event) {
-        event.preventDefault();
-    }
-
-    function dragWord(event) {
-        event.dataTransfer.setData("text", event.target.dataset.word);
-    }
-
-    function dropWord(event) {
-        event.preventDefault();
-        var word = event.dataTransfer.getData("text");
-        var dropArea = event.target;
-        var selectedWord = document.querySelector('.draggable-word[data-word="' + word + '"]');
-
-        if (dropArea.classList.contains("drop-area")) {
-            if (!dropArea.textContent) {
-                // Se a área estiver vazia, simplesmente adiciona a palavra
-                dropArea.textContent = word;
-                selectedWord.style.display = "none";
-                dropArea.classList.add("green"); // Adiciona a classe "green" para a drop-area
-            } else {
-                // Se a área já contiver uma palavra, troca as palavras
-                var currentWord = dropArea.textContent;
-                dropArea.textContent = word;
-                selectedWord.textContent = currentWord;
-            }
-        }
-    }
-
-    function resetExercise() {
-        var dropAreas = document.querySelectorAll(".drop-area");
-        var selectedWords = document.querySelectorAll(".selected-word");
-
-        dropAreas.forEach(function (dropArea) {
-            dropArea.textContent = "";
-            dropArea.classList.remove("green"); // Remove a classe "green" das drop-areas
-        });
-
-        selectedWords.forEach(function (selectedWord) {
-            selectedWord.style.display = "block";
-        });
-    }
-</script>
-
-<script>
-    function updateCheckboxLabel(checkboxId) {
-        var checkbox = document.getElementById(checkboxId);
-        var labelText = document.getElementById("labelText" + checkboxId.slice(-2));
-
-        if (checkbox.checked) {
-            labelText.textContent = "V";
-        } else {
-            labelText.textContent = "F";
-        }
-    }
-
-</script>
-
-<!--Funcao para saber mais sobre o assunto-->
-<script>
-    function leiaMais(pontosId, maisId, btnId) {
-        var pontos = document.getElementById(pontosId);
-        var maisTexto = document.getElementById(maisId);
-        var btnLeiaMais = document.getElementById(btnId);
-
-        if (maisTexto.style.display === "none") {
-            pontos.style.display = "none";
-            maisTexto.style.display = "inline";
-            btnLeiaMais.innerHTML = "Leia menos";
-            btnLeiaMais.className = "btn btn-warning";
-        } else {
-            pontos.style.display = "inline";
-            maisTexto.style.display = "none";
-            btnLeiaMais.innerHTML = "Leia mais";
-            btnLeiaMais.className = "btn btn-info";
-        }
-    }
-</script>
-
-<!--Função para conffecion-->
-
-<script>
-    var fireworksEffect = function () {
-        var duration = 5 * 1000;
-        var animationEnd = Date.now() + duration;
-        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-        function randomInRange(min, max) {
-            return Math.random() * (max - min) + min;
-        }
-
-        var interval = setInterval(function () {
-            var timeLeft = animationEnd - Date.now();
-
-            if (timeLeft <= 0) {
-                return clearInterval(interval);
-            }
-
-            var particleCount = 50 * (timeLeft / duration);
-            // since particles fall down, start a bit higher than random
-            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.5), y: Math.random() - 0.2 } }));
-            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
-        }, 250);
-    };
-
-    // School Pride Effect
-    var schoolprideEffect = function () {
-        var end = Date.now() + (5 * 1000);
-
-        // go Buckeyes!
-        var colors = ['#bb0500', '#ffffff'];
-
-        (function frame() {
-            confetti({
-                particleCount: 2,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0 },
-                colors: colors
-            });
-            confetti({
-                particleCount: 2,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1 },
-                colors: colors
-            });
-
-            if (Date.now() < end) {
-                requestAnimationFrame(frame);
-            }
-        }());
-    };
-
-    // Realistic Look Effect  
-    var realisticlookEffect = function () {
-        var count = 200;
-        var defaults = {
-            origin: { y: 0.7 }
-        };
-
-        function fire(particleRatio, opts) {
-            confetti(Object.assign({}, defaults, opts, {
-                particleCount: Math.floor(count * particleRatio)
-            }));
-        }
-
-        fire(0.25, {
-            spread: 26,
-            startVelocity: 55,
-        });
-        fire(0.2, {
-            spread: 60,
-        });
-        fire(0.35, {
-            spread: 100,
-            decay: 0.91,
-            scalar: 0.8
-        });
-        fire(0.1, {
-            spread: 120,
-            startVelocity: 25,
-            decay: 0.92,
-            scalar: 1.2
-        });
-        fire(0.1, {
-            spread: 120,
-            startVelocity: 45,
-        });
-    };
-
-    // Stars Effect
-    var starsEffect = function () {
-        var defaults = {
-            spread: 360,
-            ticks: 50,
-            gravity: 0,
-            decay: 0.94,
-            startVelocity: 30,
-            shapes: ['star'],
-            colors: ['FFE400', 'FFBD00', 'E89400', 'FFCA6C', 'FDFFB8']
-        };
-
-        function shoot() {
-            confetti({
-                ...defaults,
-                particleCount: 40,
-                scalar: 1.2,
-                shapes: ['star']
-            });
-
-            confetti({
-                ...defaults,
-                particleCount: 10,
-                scalar: 0.75,
-                shapes: ['circle']
-            });
-        }
-
-        setTimeout(shoot, 0);
-        setTimeout(shoot, 100);
-        setTimeout(shoot, 200);
-    };
-
-    // Snow Effect   
-    var snowEffect = function () {
-        var duration = 3 * 1000;
-        var animationEnd = Date.now() + duration;
-        var skew = 1;
-
-        function randomInRange(min, max) {
-            return Math.random() * (max - min) + min;
-        }
-
-        (function frame() {
-            var timeLeft = animationEnd - Date.now();
-            var ticks = Math.max(200, 300 * (timeLeft / duration));
-            skew = Math.max(0.8, skew - 0.001);
-
-            confetti({
-                particleCount: 1,
-                startVelocity: 0,
-                ticks: ticks,
-                origin: {
-                    x: Math.random(),
-                    // since particles fall down, skew start toward the top
-                    y: (Math.random() * skew) - 0.2
-                },
-                colors: ['#ffffff'],
-                shapes: ['circle'],
-                gravity: randomInRange(0.4, 0.6),
-                scalar: randomInRange(0.4, 1),
-                drift: randomInRange(-0.4, 0.4)
-            });
-
-            if (timeLeft > 0) {
-                requestAnimationFrame(frame);
-            }
-        }());
-    };
-    document.getElementById("flexCheck08").addEventListener("click", function () {
-        if (this.checked) {
-            fireworksEffect();
-            schoolprideEffect();
-            realisticlookEffect();
-            starsEffect();
-            snowEffect();
-        }
-    });
-
-    document.getElementById("flexCheck09").addEventListener("click", function () {
-        if (this.checked) {
-            fireworksEffect();
-            schoolprideEffect();
-            realisticlookEffect();
-            starsEffect();
-            snowEffect();
-        }
-    });
-
-    document.getElementById("flexCheck10").addEventListener("click", function () {
-        if (this.checked) {
-            fireworksEffect();
-            schoolprideEffect();
-            realisticlookEffect();
-            starsEffect();
-            snowEffect();
-        }
-    });
-</script>
-
-<!--Aumentar o tamanho dos inputs conforme letras forem sendo adicionada-->
-<script>
-    function ajustarTamanhoCampo(input) {
-        input.style.width = ((input.value.length + 1) * 8) + 'px'; // Ajusta a largura do campo
-
-    }
-</script>
-
-<script>
-    var currentTouchElement = null;
-
-    function allowDrop(event) {
-        event.preventDefault();
-    }
-
-    function dragWord(event) {
-        event.dataTransfer.setData("text", event.target.dataset.word);
-    }
-
-    function touchStart(event) {
-        currentTouchElement = event.target;
-    }
-
-    function touchEnd(event) {
-        var selectedWord = currentTouchElement;
-        if (selectedWord) {
-            var word = selectedWord.dataset.word;
-            var dropArea = event.target;
-
-            if (dropArea.classList.contains("drop-area")) {
-                if (!dropArea.textContent) {
-                    // Se a área estiver vazia, simplesmente adiciona a palavra
-                    dropArea.textContent = word;
-                    selectedWord.style.display = "none";
-                    dropArea.classList.add("green"); // Adiciona a classe "green" para a drop-area
-                } else {
-                    // Se a área já contiver uma palavra, troca as palavras
-                    var currentWord = dropArea.textContent;
-                    dropArea.textContent = word;
-                    selectedWord.textContent = currentWord;
-                }
-            }
-
-            currentTouchElement = null;
-        }
-    }
-
-    function resetExercise() {
-        var dropAreas = document.querySelectorAll(".drop-area");
-        var selectedWords = document.querySelectorAll(".selected-word");
-
-        dropAreas.forEach(function (dropArea) {
-            dropArea.textContent = "";
-            dropArea.classList.remove("green"); // Remove a classe "green" das drop-areas
-        });
-
-        selectedWords.forEach(function (selectedWord) {
-            selectedWord.style.display = "block";
-        });
-    }
-</script>
 
 </html>
