@@ -7,6 +7,13 @@ body {
     /* Define o padding direito */
 }
 
+.letter-a {
+    font-size: 48px; /* Tamanho da letra "A" */
+    line-height: 1.2; /* Espaçamento entre linhas */
+    display: inline-block;
+    color: #67260E;
+}
+
 h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -69,6 +76,7 @@ h2 {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 .recap p {
@@ -104,7 +112,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     margin-top: 10px;
 }
 
