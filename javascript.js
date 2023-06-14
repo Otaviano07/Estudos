@@ -61,7 +61,7 @@ function gerarLink() {
     document.getElementById("linkGerado").value = linkGerado;
     document.getElementById("url").value = linkGerado;
   } else {
-    alert("Por favor, preencha todos os campos antes de gerar o link.");
+    alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link.");
   }
 }
 
@@ -175,6 +175,7 @@ function encurtarLink() {
   var nameEstudante = document.getElementById("nameEstudante").value;
   var contatoProfessor = document.getElementById("contatoProfessor").value;
   var contatoEstudante = document.getElementById("contatoEstudante").value;
+  var linkGerado = document.getElementById("linkGerado").value;
 
   // Verificar se todos os campos estão preenchidos
   if (
@@ -183,7 +184,8 @@ function encurtarLink() {
     nameProfessor &&
     nameEstudante &&
     contatoProfessor &&
-    contatoEstudante
+    contatoEstudante&&
+    linkGerado
   ) {
     var urlInput = document.getElementById("url");
     var urlLongo = urlInput.value;
@@ -193,7 +195,7 @@ function encurtarLink() {
     });
     document.getElementById("url").value = "";
   } else {
-    alert("Por favor, preencha todos os campos antes de gerar o link.");
+    alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link.");
   }
 }
 
@@ -209,6 +211,7 @@ function copiarLink() {
   var nameEstudante = document.getElementById("nameEstudante").value;
   var contatoProfessor = document.getElementById("contatoProfessor").value;
   var contatoEstudante = document.getElementById("contatoEstudante").value;
+  var linkGerado = document.getElementById("linkGerado").value;
 
   // Verificar se todos os campos estão preenchidos
   if (
@@ -217,7 +220,8 @@ function copiarLink() {
     nameProfessor &&
     nameEstudante &&
     contatoProfessor &&
-    contatoEstudante
+    contatoEstudante&&
+    linkGerado
   ) {
     var linkGeradoInput = document.getElementById("linkGerado");
     linkGeradoInput.select();
@@ -227,6 +231,7 @@ function copiarLink() {
         .writeText(linkGeradoInput.value)
         .then(function () {
           console.log("Link copiado com sucesso.");
+          exibirMensagemInstantanea();
         })
         .catch(function (error) {
           console.log("Erro ao copiar o link:", error);
@@ -239,11 +244,21 @@ function copiarLink() {
       tempInput.select();
       document.execCommand("copy");
       document.body.removeChild(tempInput);
+      exibirMensagemInstantanea();
     }
   } else {
-    alert("Por favor, preencha todos os campos antes de gerar o link.");
+    alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link.");
   }
 }
+
+function exibirMensagemInstantanea() {
+  var mensagemInstantanea = document.querySelector(".message-instant");
+  mensagemInstantanea.style.display = "inline";
+  setTimeout(function () {
+    mensagemInstantanea.style.display = "none";
+  }, 2000); // Exibe a mensagem por 2 segundos
+}
+
 
 //Envia a mensagem para o estudante pelo whatsapp
 function enviarMensagemWhatsapp() {
@@ -257,6 +272,7 @@ function enviarMensagemWhatsapp() {
   var nameEstudante = document.getElementById("nameEstudante").value;
   var contatoProfessor = document.getElementById("contatoProfessor").value;
   var contatoEstudante = document.getElementById("contatoEstudante").value;
+  var linkGerado = document.getElementById("linkGerado").value;
 
   // Verificar se todos os campos estão preenchidos
   if (
@@ -265,7 +281,8 @@ function enviarMensagemWhatsapp() {
     nameProfessor &&
     nameEstudante &&
     contatoProfessor &&
-    contatoEstudante
+    contatoEstudante&&
+    linkGerado
   ) {
     var numeroEstudante = document.getElementById("contatoEstudante").value;
     var linkGerado = document.getElementById("linkGerado").value;
@@ -287,7 +304,7 @@ function enviarMensagemWhatsapp() {
 
     window.open(url, "_blank");
   } else {
-    alert("Por favor, preencha todos os campos antes de gerar o link.");
+    alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link
   }
 }
 
@@ -311,6 +328,7 @@ function abrirLink() {
   var nameEstudante = document.getElementById("nameEstudante").value;
   var contatoProfessor = document.getElementById("contatoProfessor").value;
   var contatoEstudante = document.getElementById("contatoEstudante").value;
+  var linkGerado = document.getElementById("linkGerado").value;
 
   // Verificar se todos os campos estão preenchidos
   if (
@@ -319,11 +337,12 @@ function abrirLink() {
     nameProfessor &&
     nameEstudante &&
     contatoProfessor &&
-    contatoEstudante
+    contatoEstudante&&
+    linkGerado
   ) {
   var linkGerado = document.getElementById("linkGerado").value;
   window.open(linkGerado, "_blank");
 } else {
-  alert("Por favor, preencha todos os campos antes de gerar o link.");
+  alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link.");
 }
 }
