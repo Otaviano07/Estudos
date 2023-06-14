@@ -954,20 +954,26 @@
         <div class="form-group">
             <div class="form-row">
                 <div class="col-md-6 col-sm-12" style="margin-top: 6px;">
-                    <label for="nameProfessor"><strong>Nome do Professor</strong></label>
-                    <input type="text" class="form-control" id="nameProfessor" placeholder="Nome Completo"
-                        name="nameProfessor" readonly>
-                </div>
-
-                <div class="col-md-6 col-sm-12" style="margin-top: 6px;">
                     <label for="nameEstudante"><strong>Nome do Estudante</strong></label>
                     <input type="text" class="form-control" id="nameEstudante" placeholder="Nome Completo"
                         name="nameEstudante" readonly>
                 </div>
 
+                <div class="col-md-3 col-sm-12" style="margin-top: 6px;">
+                    <label for="whatsappEstudante"><strong>WhatsApp do Estudante</strong></label>
+                    <input type="tel" class="form-control" id="whatsappEstudante" maxlength="11"
+                        onkeyup="mascaraTelefone(this);" placeholder="WhatsApp" name="whatsappEstudante" readonly>
+                </div>
             </div>
+
             <div class="form-row">
-                <div class="col-md-3 col-sm-12" style="margin-top: 10px;">
+                <div class="col-md-6 col-sm-12" style="margin-top: 6px;">
+                    <label for="nameProfessor"><strong>Nome do Professor</strong></label>
+                    <input type="text" class="form-control" id="nameProfessor" placeholder="Nome Completo"
+                        name="nameProfessor" readonly>
+                </div>
+
+                <div class="col-md-3 col-sm-12" style="margin-top: 6px;">
                     <label for="whatsappProfessor"><strong>WhatsApp do Professor</strong></label>
                     <input type="tel" class="form-control" id="whatsappProfessor" maxlength="11"
                         onkeyup="mascaraTelefone(this);" placeholder="WhatsApp" name="whatsappProfessor" readonly>

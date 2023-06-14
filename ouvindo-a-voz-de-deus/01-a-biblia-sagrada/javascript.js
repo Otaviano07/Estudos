@@ -402,12 +402,14 @@ function resetExercise() {
 // Captura dos parâmetros da URL
 const params = new URLSearchParams(window.location.search);
 const contatoProfessor = params.get("contatoProfessor");
+const contatoEstudante = params.get("contatoEstudante");
 const nomeProfessor = params.get("nameProfessor");
 const nomeEstudante = params.get("nameEstudante");
 
 // Preenchimento dos campos do formulário
 document.getElementById("whatsappProfessor").value = contatoProfessor;
 document.getElementById("nameProfessor").value = nomeProfessor;
+document.getElementById("whatsappEstudante").value = contatoEstudante;
 document.getElementById("nameEstudante").value = nomeEstudante;
 
 // Ouvir os texto

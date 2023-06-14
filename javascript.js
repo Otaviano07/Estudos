@@ -22,7 +22,7 @@ function gerarLink() {
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
   var contatoProfessor = document.getElementById("contatoProfessor").value;
-  var whatsappEstudante = document.getElementById("whatsappEstudante").value;
+  var contatoEstudante = document.getElementById("contatoEstudante").value;
 
   // Verificar se todos os campos estão preenchidos
   if (
@@ -31,11 +31,11 @@ function gerarLink() {
     nameProfessor &&
     nameEstudante &&
     contatoProfessor &&
-    whatsappEstudante
+    contatoEstudante
   ) {
     var linkBase = "https://otaviano07.github.io/aprendendomais/";
 
-    var linkGerado = linkBase + nomeEstudoBiblico + '/' + temaEstudoBiblico + '/index.html' + "?nameProfessor=" + encodeURIComponent(nameProfessor) + "&nameEstudante=" + encodeURIComponent(nameEstudante) + "&contatoProfessor=" + contatoProfessor;
+    var linkGerado = linkBase + nomeEstudoBiblico + '/' + temaEstudoBiblico + '/index.html' + "?nameProfessor=" + encodeURIComponent(nameProfessor) + "&contatoProfessor=" + contatoProfessor + "&nameEstudante=" + encodeURIComponent(nameEstudante) + "&contatoEstudante=" + contatoEstudante;
 
     document.getElementById("linkGerado").value = linkGerado;
     document.getElementById("url").value = linkGerado;
