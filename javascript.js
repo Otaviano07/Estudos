@@ -64,37 +64,6 @@ function gerarLink() {
     alert("Por favor, preencha todos os campos antes de gerar o link.");
   }
 }
-/*
-function copiarLink() {
-    var nomeEstudoBiblico = gerarSlug(
-    document.getElementById("nomeEstudoBiblico").value
-  );
-  var temaEstudoBiblico = gerarSlug(
-    document.getElementById("temaEstudoBiblico").value
-  );
-  var nameProfessor = document.getElementById("nameProfessor").value;
-  var nameEstudante = document.getElementById("nameEstudante").value;
-  var contatoProfessor = document.getElementById("contatoProfessor").value;
-  var contatoEstudante = document.getElementById("contatoEstudante").value;
-
-  // Verificar se todos os campos estão preenchidos
-  if (
-    nomeEstudoBiblico &&
-    temaEstudoBiblico &&
-    nameProfessor &&
-    nameEstudante &&
-    contatoProfessor &&
-    contatoEstudante
-  ) {
-    var linkGerado = document.getElementById("linkGerado");
-    linkGerado.select();
-    linkGerado.setSelectionRange(0, 99999);
-    document.execCommand("copy");
-    alert("Link copiado para a área de transferência!");
-  } else {
-    alert("Por favor, preencha todos os campos antes de gerar o link.");
-  }
-}*/
 
 const nomeSelect = document.getElementById("nomeEstudoBiblico");
 const numeroSelect = document.getElementById("temaEstudoBiblico");
