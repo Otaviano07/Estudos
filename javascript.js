@@ -116,6 +116,7 @@ function encurtarLink() {
     .then(function(shortUrl) {
       updateUrl(shortUrl, urlLongo);
     });
+    document.getElementById("url").value = "";
 }
 
 function copiarLink() {
