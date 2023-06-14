@@ -141,3 +141,13 @@ function copiarLink() {
     document.body.removeChild(tempInput);
   }
 }
+
+function enviarMensagemWhatsapp() {
+  var numeroEstudante = document.getElementById("whatsappEstudante").value;
+  var linkGerado = document.getElementById("linkGerado").value;
+  
+  var mensagem = "Olá! Aqui está o link para o estudo: " + linkGerado;
+  var url = "https://api.whatsapp.com/send?phone=" + numeroEstudante + "&text=" + encodeURIComponent(mensagem);
+  
+  window.open(url, "_blank");
+}
