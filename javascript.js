@@ -61,7 +61,7 @@ function gerarLink() {
     document.getElementById("linkGerado").value = linkGerado;
     document.getElementById("url").value = linkGerado;
   } else {
-    alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link.");
+    alert("Por favor, preencha todos os campos antes de gerar o link.");
   }
 }
 
