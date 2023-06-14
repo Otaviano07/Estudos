@@ -401,7 +401,7 @@ function resetExercise() {
 
 // Captura dos parâmetros da URL
 const params = new URLSearchParams(window.location.search);
-const contatoProfessor = params.get("whatsappProfessor");
+const contatoProfessor = params.get("contatoProfessor");
 const nomeProfessor = params.get("nameProfessor");
 const nomeEstudante = params.get("nameEstudante");
 

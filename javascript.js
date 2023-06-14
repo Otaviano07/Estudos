@@ -21,15 +21,29 @@ function gerarLink() {
   var temaEstudoBiblico = gerarSlug(document.getElementById("temaEstudoBiblico").value);
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
-  var whatsappProfessor = document.getElementById("whatsappProfessor").value;
+  var contatoProfessor = document.getElementById("contatoProfessor").value;
   var whatsappEstudante = document.getElementById("whatsappEstudante").value;
 
-  var linkBase = "https://otaviano07.github.io/aprendendomais/";
+  // Verificar se todos os campos estão preenchidos
+  if (
+    nomeEstudoBiblico &&
+    temaEstudoBiblico &&
+    nameProfessor &&
+    nameEstudante &&
+    contatoProfessor &&
+    whatsappEstudante
+  ) {
+    var linkBase = "https://otaviano07.github.io/aprendendomais/";
 
-  var linkGerado = linkBase + nomeEstudoBiblico + '/' + temaEstudoBiblico + '/index.html' + "?nameProfessor=" + encodeURIComponent(nameProfessor) + "&nameEstudante=" + encodeURIComponent(nameEstudante) + "&whasappProfessor=" + whatsappProfessor;
+    var linkGerado = linkBase + nomeEstudoBiblico + '/' + temaEstudoBiblico + '/index.html' + "?nameProfessor=" + encodeURIComponent(nameProfessor) + "&nameEstudante=" + encodeURIComponent(nameEstudante) + "&contatoProfessor=" + contatoProfessor;
 
-  document.getElementById("linkGerado").value = linkGerado;
+    document.getElementById("linkGerado").value = linkGerado;
+    document.getElementById("url").value = linkGerado;
+  } else {
+    alert("Por favor, preencha todos os campos antes de gerar o link.");
+  }
 }
+
 
 function copiarLink() {
   var linkGerado = document.getElementById('linkGerado');
@@ -61,3 +75,68 @@ nomeSelect.addEventListener('change', function () {
     numeroSelect.appendChild(option);
   });
 });
+
+
+//Encurtador de link
+function shortenUrl(longUrl, customSlug) {
+  var apiUrl = "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(longUrl);
+  if (customSlug) {
+    apiUrl += "&alias=" + encodeURIComponent(customSlug);
+  }
+
+  //Seria para colocar a url original em id="url"
+  //document.getElementById("linkGerado").value = longUrl;
+  //document.getElementById("url").value = apiUrl;
+  
+  return fetch(apiUrl)
+    .then(function(response) {
+      return response.text();
+    
+    })
+    .catch(function(error) {
+      console.log("Erro ao encurtar o link:", error);
+    });
+
+    
+}
+
+function updateUrl(shortUrl, longUrl) {
+  var linkGeradoInput = document.getElementById("linkGerado");
+  var urlInput = document.getElementById("url");
+
+  linkGeradoInput.value = shortUrl;
+  urlInput.value = longUrl;
+}
+
+function encurtarLink() {
+  var urlInput = document.getElementById("url");
+  var urlLongo = urlInput.value;
+
+  shortenUrl(urlLongo)
+    .then(function(shortUrl) {
+      updateUrl(shortUrl, urlLongo);
+    });
+}
+
+function copiarLink() {
+  var linkGeradoInput = document.getElementById("linkGerado");
+  linkGeradoInput.select();
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(linkGeradoInput.value)
+      .then(function () {
+        console.log("Link copiado com sucesso.");
+      })
+      .catch(function (error) {
+        console.log("Erro ao copiar o link:", error);
+      });
+  } else {
+    // Fallback para navegadores que não suportam a API Clipboard
+    var tempInput = document.createElement("input");
+    tempInput.value = linkGeradoInput.value;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+  }
+}

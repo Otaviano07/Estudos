@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
   <h2 style="text-align: center;margin-bottom: 30px;margin-top: 20px;">Compastilhe o link Estudo Bíblico para o estudante</h2>
@@ -34,9 +35,9 @@
           required>
       </div>
       <div class="col-md-3 col-sm-12" style="margin-top: 20px;">
-        <label for="whatsappProfessor"><strong>Whatsapp do Professor</strong></label>
-        <input type="tel" class="form-control" id="whatsappProfessor" maxlength="11" onkeyup="mascaraTelefone(this);"
-          placeholder="Whatsapp" name="whatsappProfessor" required>
+        <label for="contatoProfessor"><strong>Whatsapp do Professor</strong></label>
+        <input type="tel" class="form-control" id="contatoProfessor" maxlength="11" onkeyup="mascaraTelefone(this);"
+          placeholder="Whatsapp" name="contatoProfessor" required>
       </div>
     </div>
 
@@ -54,20 +55,39 @@
     </div>
 
     <div class="form-row">
-      <button class="btn btn-primary" style="margin-top: 20px;" id="gerarLink" onclick="gerarLink()">Gerar Link</button>
+      <button class="btn btn-primary" style="margin-top: 20px;" id="gerarLink" onclick="gerarLink()"><strong>Gerar Link</strong></button>
     </div>
     <div class="form-group">
-      <label for="linkGerado" style="margin-top: 20px;">Link Gerado:</label>
+      <label for="linkGerado" style="margin-top: 20px;"><strong>Link Gerado:</strong></label>
       <div class="input-group">
         <input type="text" class="form-control" id="linkGerado" readonly>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary"  style="margin-bottom: 40px;" type="button" id="btnCopiarLink" onclick="copiarLink()">
-            <span class="material-icons">content_copy</span> <!-- Corrigido: ícone para copiar -->
+          <button class="btn btn-outline-secondary" style="margin-bottom: 10px;" type="button" id="btnCopiarLink" onclick="copiarLink()">
+            <span class="material-icons">content_copy</span>
           </button>
         </div>
       </div>
     </div>
+
+    <div class="form-group">
+      <label for="url"><strong>Insira o URL longo:</strong></label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="url">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" style="margin-bottom: 40px;" type="button" id="encurtado" onclick="encurtarLink()">
+            <span class="material-symbols-outlined">link</span>
+          </button>
+          <p id="linkEncurtado"></p>
+        </div>
+      </div>
+    </div>
+
+
   </div>
+</div>
+
+
+
   <script type="text/javascript" src="javascript.js"></script>
 </body>
 
