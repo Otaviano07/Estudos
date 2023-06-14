@@ -329,6 +329,7 @@ function isDispositivoMobile() {
   );
 }
 
+
 //Abrir Link gerado
 function abrirLink() {
   var nomeEstudoBiblico = gerarSlug(
