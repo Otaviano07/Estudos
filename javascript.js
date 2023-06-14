@@ -154,9 +154,9 @@ function enviarMensagemWhatsapp() {
   var mensagem = "Olá! Aqui está o link para o estudo: " + linkGerado;
   
   if (isDispositivoMobile()) {
-    var url = "https://api.whatsapp.com/send?phone=" + numeroEstudante + "&text=" + encodeURIComponent(mensagem);
+    var url = "https://api.whatsapp.com/send?phone=55" + numeroEstudante + "&text=" + encodeURIComponent(mensagem);
   } else {
-    var url = "https://web.whatsapp.com/send/?phone=" + numeroEstudante + "&text=" + encodeURIComponent(mensagem);
+    var url = "https://web.whatsapp.com/send/?phone=55" + numeroEstudante + "&text=" + encodeURIComponent(mensagem);
   }
   
   window.open(url, "_blank");
