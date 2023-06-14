@@ -304,7 +304,7 @@ function enviarMensagemWhatsapp() {
 
     window.open(url, "_blank");
   } else {
-    alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link
+    alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link");
   }
 }
 
