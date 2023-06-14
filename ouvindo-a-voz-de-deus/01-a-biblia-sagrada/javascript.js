@@ -1,10 +1,9 @@
-
 //Exiber versos biblicos
 var verseButtons = document.querySelectorAll(".show-verse");
 verseButtons.forEach(function (button) {
   button.addEventListener("click", function (event) {
     event.preventDefault(); // Impede o comportamento padrão do evento de clique
-    
+
     var targetModal = button.getAttribute("data-target");
     var modal = document.querySelector(targetModal);
     var bootstrapModal = new bootstrap.Modal(modal);
@@ -13,17 +12,18 @@ verseButtons.forEach(function (button) {
   });
 });
 
-
 //<!--Enviar respostas para contato do professor-->
 // Adicione um event listener ao botão
-document.getElementById("respostasButton").addEventListener("click", function () {
+document
+  .getElementById("respostasButton")
+  .addEventListener("click", function () {
     var apiWhatsapp = "https://api.whatsapp.com/send?phone=55";
 
     var nomeEstudante = document.getElementById("nameEstudante").value;
     var nomeProfessor = document.getElementById("nameProfessor").value;
     var contantoProfessor = document.getElementById("whatsappProfessor").value;
-    var estudoBiblico = 'Ouvindo a Voz de Deus';
-    var tema = '01 - A Bliblia Sagrada';
+    var estudoBiblico = "Ouvindo a Voz de Deus";
+    var tema = "01 - A Bliblia Sagrada";
 
     var respostas1 = document.getElementById("resposta1").value;
     var respostas21 = document.getElementById("resposta21").value;
@@ -57,7 +57,8 @@ document.getElementById("respostasButton").addEventListener("click", function ()
     var respostasCompr2 = document.getElementById("flexCheck09").checked;
     var respostasCompr3 = document.getElementById("flexCheck10").checked;
 
-    var linkWhatsapp = apiWhatsapp + contantoProfessor + "&text=" + encodeURIComponent(mensagem);
+    var linkWhatsapp =
+      apiWhatsapp + contantoProfessor + "&text=" + encodeURIComponent(mensagem);
 
     // Abre o link do WhatsApp em uma nova janela ou guia
     window.open(linkWhatsapp);
@@ -398,13 +399,72 @@ function resetExercise() {
   });
 }
 
-    // Captura dos parâmetros da URL
-    const params = new URLSearchParams(window.location.search);
-    const contatoProfessor = params.get('whatsappProfessor');
-    const nomeProfessor = params.get('nameProfessor');
-    const nomeEstudante = params.get('nameEstudante');
+// Captura dos parâmetros da URL
+const params = new URLSearchParams(window.location.search);
+const contatoProfessor = params.get("whatsappProfessor");
+const nomeProfessor = params.get("nameProfessor");
+const nomeEstudante = params.get("nameEstudante");
 
-    // Preenchimento dos campos do formulário
-    document.getElementById('whatsappProfessor').value = contatoProfessor;
-    document.getElementById('nameProfessor').value = nomeProfessor;
-    document.getElementById('nameEstudante').value = nomeEstudante;
+// Preenchimento dos campos do formulário
+document.getElementById("whatsappProfessor").value = contatoProfessor;
+document.getElementById("nameProfessor").value = nomeProfessor;
+document.getElementById("nameEstudante").value = nomeEstudante;
+
+// Ouvir os texto
+var utterance = null; // Variável global para controlar a síntese de fala
+
+function lerVersiculo(versiculoId) {
+  if (utterance && speechSynthesis.speaking) {
+    // Se já houver uma síntese em andamento, interrompa-a
+    speechSynthesis.cancel();
+    return;
+  }
+
+  var versiculoElement = document.getElementById(versiculoId);
+
+  // Verifique se o elemento do versículo existe
+  if (!versiculoElement) {
+    console.log("Erro: O elemento do versículo não foi encontrado.");
+    return;
+  }
+
+  var versiculo = versiculoElement.textContent.trim();
+
+  // Remover tags HTML do versículo
+  var regexTags = /<[^>]+>/g;
+  var regexNumeros = /\d+/g;
+
+  versiculo = versiculo.replace(regexTags, "");
+  versiculo = versiculo.replace(regexNumeros, "");
+
+  utterance = new SpeechSynthesisUtterance(versiculo);
+
+  // Obtenha a lista de vozes disponíveis
+  var voices = speechSynthesis.getVoices();
+
+  // Selecione uma voz feminina em português
+  var selectedVoice = voices.find(function (voice) {
+    if (voice.lang === "pt-BR" && voice.name.includes("Feminino")) {
+      return voice;
+    }
+  });
+
+  // Defina a voz selecionada na utterance
+  utterance.voice = selectedVoice;
+
+  speechSynthesis.speak(utterance);
+}
+
+function pausarVersiculo() {
+  if (utterance && speechSynthesis.speaking) {
+    // Pausa a síntese de fala
+    speechSynthesis.pause();
+  }
+}
+
+function retomarVersiculo() {
+  if (utterance && speechSynthesis.paused) {
+    // Retoma a síntese de fala
+    speechSynthesis.resume();
+  }
+}

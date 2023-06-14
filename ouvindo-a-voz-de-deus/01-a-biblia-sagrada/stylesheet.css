@@ -197,3 +197,11 @@ h2 {
     max-width: 100%;
     /* Ajuste de tamanho em dispositivos móveis */
 }
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }

@@ -18,7 +18,8 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Adicione o link para a biblioteca confetti-js no cabeçalho do seu documento -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
@@ -34,7 +35,8 @@
     </header>
 
     <div class="introduction text-center">
-        <p class="introduction text-justify"><span class="larger-a">A</span> Bíblia é um livro diferente. Na verdade, trata-se de uma pequena
+        <p class="introduction text-justify"><span class="larger-a">A</span> Bíblia é um livro diferente. Na verdade,
+            trata-se de uma pequena
             biblioteca, composta de 66 livros escritos por cerca de 40 autores, das mais variadas culturas,
             origens e ocupações, durante um período de 1.600 anos. Milhares de pessoas já deram a vida, literalmente,
             em defesa das verdades nela contidas. Por abraçarem essas verdades, blasfemos já se tornaram reverentes;
@@ -69,10 +71,28 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>
-                        <h4>João 17:17</h4><small><sup>17</sup></small>Santifica-os na tua verdade; a tua palavra é a
-                        verdade.</p>
+                        <h4>João 17:17</h4>
+                        <p id="versiculo1">
+                            <small><sup>17</sup></small>Santifica-os na tua verdade; a tua palavra é a verdade.
+                        </p>
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo1')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
                     </div>
+
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
@@ -120,23 +140,27 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>
-                        <h4>Atos 8:26-31</h4><small><sup>26</sup></small>"Um anjo do Senhor falou a Filipe, dizendo:
-                        Dispõe-te e vai para o lado
-                        do Sul, no caminho que desce de Jerusalém a Gaza; este se acha deserto. Ele se levantou e
-                        foi.<small><sup>27</sup></small>Eis que um etíope, eunuco, alto oficial de Candace, rainha dos
-                        etíopes, o qual era
-                        superintendente de todo o seu tesouro, que viera adorar em Jerusalém,
-                        <small><sup>28</sup></small>estava de volta e, assentado no seu carro, vinha lendo o profeta
-                        Isaías.
-                        <small><sup>29</sup></small>Então, disse o Espírito a Filipe: Aproxima-te desse carro e
-                        acompanha-o.
-                        <small><sup>30</sup></small>Correndo Filipe, ouviu-o ler o profeta Isaías e perguntou:
-                        Compreendes o que vens lendo?
-                        <small><sup>31</sup></small>Ele respondeu: Como poderei entender, se alguém não me explicar? E
-                        convidou Filipe a subir e a
-                        sentar-se junto a ele."</p>
+                        <h4>Atos 8:26-31</h4>
+                        <p id="versiculo2">
+                            <small><sup>26</sup></small>"Um anjo do Senhor falou a Filipe, dizendo: Dispõe-te e vai para o lado do Sul, no caminho que desce de Jerusalém a Gaza; este se acha deserto. Ele se levantou e foi. <small><sup>27</sup></small>Eis que um etíope, eunuco, alto oficial de Candace, rainha dos etíopes, o qual era superintendente de todo o seu tesouro, que viera adorar em Jerusalém, <small><sup>28</sup></small>estava de volta e, assentado no seu carro, vinha lendo o profeta Isaías. <small><sup>29</sup></small>Então, disse o Espírito a Filipe: Aproxima-te desse carro e acompanha-o. <small><sup>30</sup></small>Correndo Filipe, ouviu-o ler o profeta Isaías e perguntou:Compreendes o que vens lendo? <small><sup>31</sup></small>Ele respondeu: Como poderei entender, se alguém não me explicar? E convidou Filipe a subir e a sentar-se junto a ele."
+                        </p>
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo2')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
@@ -220,12 +244,27 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>
-                        <h4>Isaías 28:10</h4><small><sup>10</sup></small>"Pois é preceito sobre preceito, preceito sobre
-                        preceito; regra sobre regra, regra sobre
-                        regra; um pouco aqui, um pouco ali."
+                        <h4>Isaías 28:10</h4>
+                        <p id="versiculo3">
+                            <small><sup>10</sup></small>"Pois é preceito sobre preceito, preceito sobre preceito; regra sobre regra, regra sobre regra; um pouco aqui, um pouco ali."
                         </p>
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo3')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
@@ -274,11 +313,27 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>
-                        <h4>João 5:39</h4><small><sup>39</sup></small>"Examinais as Escrituras, porque julgais ter nelas
-                        a vida eterna, e são elas mesmas que testificam de mim."
+                        <h4>João 5:39</h4>
+                        <p id="versiculo4">
+                            <small><sup>39</sup></small>"Examinais as Escrituras, porque julgais ter nelas a vida eterna, e são elas mesmas que testificam de mim."
                         </p>
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo4')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
@@ -324,16 +379,47 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>
-                        <h4>João 16:13</h4><small><sup>13</sup></small>"Quando vier, porém, aquele, o Espírito da
-                        verdade, ele vos guiará a toda a verdade; porque
-                        não falará por si mesmo, mas dirá o que tiver ouvido, e vos anunciará as coisas vindouras."
+                        <h4>João 16:13</h4>
+                        <p id="versiculo51">
+                            <small><sup>13</sup></small>"Quando vier, porém, aquele, o Espírito da verdade, ele vos guiará a toda a verdade; porque não falará por si mesmo, mas dirá o que tiver ouvido, e vos anunciará as coisas vindouras."
                         </p>
-                        <p>
-                        <h4>João 8:32</h4><small><sup>32</sup></small>"E conhecereis a verdade, e a verdade vos
-                        libertará."
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo51')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
+
+                        <h4>João 8:32</h4>
+                        <p id="versiculo52">
+                            <small><sup>32</sup></small>"E conhecereis a verdade, e a verdade vos libertará."
                         </p>
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo52')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
@@ -381,12 +467,28 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>
-                        <h4>2 Pedro 1:21</h4><small><sup>21</sup></small>"Porque a profecia nunca foi produzida por
-                        vontade dos homens, mas os homens santos de Deus
-                        falaram inspirados pelo Espírito Santo."
+
+                        <h4>2 Pedro 1:21</h4>
+                        <p id="versiculo6">
+                            <small><sup>21</sup></small>"Porque a profecia nunca foi produzida por vontade dos homens, mas os homens santos de Deus falaram inspirados pelo Espírito Santo."
                         </p>
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo6')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
@@ -472,12 +574,28 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>
-                        <h4>2 Timóteo 3:16</h4><small><sup>16</sup></small>"Toda Escritura é divinamente inspirada e
-                        proveitosa para ensinar, para repreender, para
-                        corrigir, para instruir em justiça;"
+
+                        <h4>2 Timóteo 3:16</h4>
+                        <p id="versiculo7">
+                            <small><sup>16</sup></small>"Toda Escritura é divinamente inspirada e proveitosa para ensinar, para repreender, para corrigir, para instruir em justiça;"
                         </p>
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo7')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
@@ -521,12 +639,28 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>
-                        <h4>Êxodo 31:18</h4><small><sup>18</sup></small>"E deu a Moisés, quando acabou de falar com ele
-                        no monte Sinai, as duas tábuas do testemunho,
-                        tábuas de pedra, escritas pelo dedo de Deus."
+
+                        <h4>Êxodo 31:18</h4>
+                        <p id="versiculo8">
+                            <small><sup>18</sup></small>"E deu a Moisés, quando acabou de falar com ele no monte Sinai, as duas tábuas do testemunho, tábuas de pedra, escritas pelo dedo de Deus."
                         </p>
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo8')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
@@ -571,19 +705,48 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>
-                        <h4>Malaquias 3:6</h4><small><sup>6</sup></small>"Pois eu, o Senhor, não mudo; por isso vós, ó
-                        filhos de Jacó, não sois consumidos."
+                        
+                        <h4>Malaquias 3:6</h4>
+                        <p id="versiculo91">
+                            <small><sup>6</sup></small>"Pois eu, o Senhor, não mudo; por isso vós, ó filhos de Jacó, não sois consumidos."
                         </p>
-                        <p>
-                        <h4>Apocalipse 22:18-19</h4><small><sup>18</sup></small>"Eu testifico a todo aquele que ouvir as
-                        palavras da profecia deste livro: Se alguém lhes
-                        acrescentar alguma coisa, Deus lhe acrescentará as pragas que estão escritas neste livro;
-                        <small><sup>19</sup></small>e
-                        se alguém tirar qualquer coisa das palavras do livro desta profecia, Deus lhe tirará a sua
-                        parte da árvore da vida, e da cidade santa, que estão descritas neste livro."
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo91')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
+
+                        <h4>Apocalipse 22:18-19</h4>
+                        <p id="versiculo92">
+                        <small><sup>18</sup></small>"Eu testifico a todo aquele que ouvir as palavras da profecia deste livro: Se alguém lhes acrescentar alguma coisa, Deus lhe acrescentará as pragas que estão escritas neste livro; <small><sup>19</sup></small>e se alguém tirar qualquer coisa das palavras do livro desta profecia, Deus lhe tirará a sua parte da árvore da vida, e da cidade santa, que estão descritas neste livro."
                         </p>
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo92')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
@@ -630,15 +793,43 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>
-                        <h4>João 13:17</h4><small><sup>17</sup></small>"Se sabeis estas coisas, bem-aventurados sois se
-                        as praticardes."
-                        </p>
-                        <p>
-                        <h4>Tiago 1:22</h4><small><sup>22</sup></small>"E sede cumpridores da palavra e não somente
-                        ouvintes, enganando-vos a vós mesmos."
-                        </p>
+                        <h4>João 13:17</h4>
+                        <p id="versiculo101">
+                            <small><sup>17</sup></small>"Se sabeis estas coisas, bem-aventurados sois se as praticardes."
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo92')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
+
+                        <h4>Tiago 1:22</h4>
+                        <p id="versiculo102">
+                            <small><sup>22</sup></small>"E sede cumpridores da palavra e não somente ouvintes, enganando-vos a vós mesmos."
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-info" type="button" id="btnOuvirTexto"
+                                onclick="lerVersiculo('versiculo102')">
+                                <span class="material-symbols-outlined">volume_up</span>
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio"
+                                onclick="pausarVersiculo()">
+                                <span class="material-symbols-outlined">pause</span>
+                            </button>
+                            <button class="btn btn-success" type="button" id="btnContinuarAudio"
+                                onclick="retomarVersiculo()">
+                                <span class="material-symbols-outlined">play_arrow</span>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
@@ -768,7 +959,7 @@
         <button type="button" id="respostasButton" class="btn btn-primary">Enviar respostas</button>
     </div>
 
-    
+
 </body>
 
 <script type="text/javascript" src="javascript.js"></script>
