@@ -64,14 +64,25 @@
       <div class="input-group">
         <input type="text" class="form-control" id="linkGerado" readonly>
         <div class="input-group-append">
-          <button class="btn btn-warning btn-sm m-1" style="margin-bottom: 10px;" type="button" id="btnCopiarLink" onclick="copiarLink()">
+          <button class="btn btn-secondary btn-sm m-1" style="margin-bottom: 10px;" type="button" id="btnCopiarLink" onclick="copiarLink()" title="Copiar Link">
             <span class="material-icons">content_copy</span>
+          </button>
+          <button class="btn btn-warning btn-sm m-1" type="button" id="encurtado" onclick="encurtarLink()" title="Encurtar Link">
+            <span class="material-symbols-outlined">link</span>
+          </button>
+          <button class="btn btn-primary btn-sm m-1" style="margin-bottom: 10px;" type="button" id="btnAbrirLink" onclick="abrirLink()" title="Abrir Link">
+            <span class="material-icons">open_in_new</span>
+          </button>
+          <button class="btn btn-success btn-sm m-1" style="margin-bottom: 10px;" type="button" id="btnWhatsapp" onclick="enviarMensagemWhatsapp()" title="Enviar pelo WhatsApp">
+            <span class="material-icons">send</span>
           </button>
         </div>
       </div>
     </div>
+    
+    
 
-    <div class="form-group">
+    <div class="form-group d-none">
       <label for="url"><strong>Insira o URL longo:</strong></label>
       <div class="input-group">
         <input type="text" class="form-control" id="url">
@@ -83,7 +94,7 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-success" type="button" style="margin-bottom: 40px; margin-left: auto; margin-right: auto;" id="bntWhatsapp" onclick="enviarMensagemWhatsapp()">Enviar mensagem pelo WhatsApp</button>
+    <button class="btn btn-success d-none" type="button" style="margin-bottom: 40px; margin-left: auto; margin-right: auto;" id="bntWhatsapp" onclick="enviarMensagemWhatsapp()">Enviar mensagem pelo WhatsApp</button>
   </div>
 
 <script type="text/javascript" src="javascript.js"></script>
