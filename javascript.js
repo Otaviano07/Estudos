@@ -1,12 +1,15 @@
+//Remove os acentos da string
 function removerAcentos(texto) {
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
+//Formata a string, sem nenhum espaço substituindo por "-",somente letras minuscula
 function gerarSlug(texto) {
     var slug = removerAcentos(texto.toLowerCase()).replace(/[^a-z0-9]+/g, "-");
     return slug;
 }
 
+//Mascara para telefone
 function mascaraTelefone(input) {
   input.value = input.value.replace(/[^\d()\-]/g, "");
 
@@ -16,6 +19,7 @@ function mascaraTelefone(input) {
   }
 }
 
+//Gera o link para enviar estudo
 function gerarLink() {
   var nomeEstudoBiblico = gerarSlug(document.getElementById("nomeEstudoBiblico").value);
   var temaEstudoBiblico = gerarSlug(document.getElementById("temaEstudoBiblico").value);
@@ -65,7 +69,7 @@ nomeSelect.addEventListener('change', function () {
   const numeros = numeroPorNome[selectedNome] || [];
 
   // Limpar as opções atuais do select
-  numeroSelect.innerHTML = '<option value="">Selecione um número</option>';
+  numeroSelect.innerHTML = '<option value="">Selecione um tema</option>';
 
   // Adicionar as novas opções filtradas
   numeros.forEach(function (numero) {
@@ -119,6 +123,7 @@ function encurtarLink() {
     document.getElementById("url").value = "";
 }
 
+//Copia o link para outra area
 function copiarLink() {
   var linkGeradoInput = document.getElementById("linkGerado");
   linkGeradoInput.select();
@@ -142,12 +147,22 @@ function copiarLink() {
   }
 }
 
+//Envia a mensagem para o estudante pelo whatsapp
 function enviarMensagemWhatsapp() {
-  var numeroEstudante = document.getElementById("whatsappEstudante").value;
+  var numeroEstudante = document.getElementById("contatoEstudante").value;
   var linkGerado = document.getElementById("linkGerado").value;
-  
   var mensagem = "Olá! Aqui está o link para o estudo: " + linkGerado;
-  var url = "https://api.whatsapp.com/send?phone=" + numeroEstudante + "&text=" + encodeURIComponent(mensagem);
+  
+  if (isDispositivoMobile()) {
+    var url = "https://api.whatsapp.com/send?phone=" + numeroEstudante + "&text=" + encodeURIComponent(mensagem);
+  } else {
+    var url = "https://web.whatsapp.com/send/?phone=" + numeroEstudante + "&text=" + encodeURIComponent(mensagem);
+  }
   
   window.open(url, "_blank");
+}
+
+//Verifica se é dispositivo mobile
+function isDispositivoMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
