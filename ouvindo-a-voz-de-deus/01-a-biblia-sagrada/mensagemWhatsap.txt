@@ -1,6 +1,10 @@
-Olá #nomeProfessor#, 
+Olá #nameProfessor#, tudo bem! 
+
+Conseguie terminar o meu primeiro estudo da palavra de Deus com o tema #tema#. Então preciso que você faça a correção das minhas respostas. Segue abaixo:
 
 
 
 
-#nomeEstudante#
+
+
+#nameEstudante#

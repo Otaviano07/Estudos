@@ -205,3 +205,14 @@ h2 {
     'GRAD' 0,
     'opsz' 48
   }
+
+  .reflexao strong {
+    color: #67260E;
+    text-align: center;
+    line-height: 30px;
+    }
+
+    .reflexao p{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
