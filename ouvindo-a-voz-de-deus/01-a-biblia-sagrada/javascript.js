@@ -143,7 +143,7 @@ function leiaMais(pontosId, maisId, btnId) {
 //<!--Função para conffecion-->
 
 var fireworksEffect = function () {
-  var duration = 5 * 1000;
+  var duration = 2 * 1000;
   var animationEnd = Date.now() + duration;
   var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
@@ -177,10 +177,10 @@ var fireworksEffect = function () {
 
 // School Pride Effect
 var schoolprideEffect = function () {
-  var end = Date.now() + 5 * 1000;
+  var end = Date.now() + 2 * 1000;
 
   // go Buckeyes!
-  var colors = ["#bb0500", "#ffffff"];
+  var colors = ["#0db84e","#bb0500", "#1e0ad1"];
 
   (function frame() {
     confetti({
@@ -278,7 +278,7 @@ var starsEffect = function () {
 
 // Snow Effect
 var snowEffect = function () {
-  var duration = 3 * 1000;
+  var duration = 2 * 1000;
   var animationEnd = Date.now() + duration;
   var skew = 1;
 
@@ -300,7 +300,7 @@ var snowEffect = function () {
         // since particles fall down, skew start toward the top
         y: Math.random() * skew - 0.2,
       },
-      colors: ["#ffffff"],
+      colors: ["#e317be"],
       shapes: ["circle"],
       gravity: randomInRange(0.4, 0.6),
       scalar: randomInRange(0.4, 1),
@@ -317,15 +317,12 @@ document.getElementById("flexCheck08").addEventListener("click", function () {
     fireworksEffect();
     schoolprideEffect();
     realisticlookEffect();
-    starsEffect();
-    snowEffect();
   }
 });
 
 document.getElementById("flexCheck09").addEventListener("click", function () {
   if (this.checked) {
     fireworksEffect();
-    schoolprideEffect();
     realisticlookEffect();
     starsEffect();
     snowEffect();
@@ -334,11 +331,9 @@ document.getElementById("flexCheck09").addEventListener("click", function () {
 
 document.getElementById("flexCheck10").addEventListener("click", function () {
   if (this.checked) {
-    fireworksEffect();
     schoolprideEffect();
     realisticlookEffect();
     starsEffect();
-    snowEffect();
   }
 });
 

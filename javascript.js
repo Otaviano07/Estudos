@@ -19,6 +19,123 @@ function mascaraTelefone(input) {
   }
 }
 
+//Verificar numero de whatsapp
+function validarDDD(telefone) {
+  const dddsValidos = [
+    "119",   // São Paulo (SP)
+    "129",   // São José dos Campos e Região (SP)
+    "139",   // Baixada Santista (SP)
+    "149",   // Bauru e Região (SP)
+    "159",   // Sorocaba e Região (SP)
+    "169",   // Ribeirão Preto e Região (SP)
+    "179",   // São José do Rio Preto e Região (SP)
+    "189",   // Presidente Prudente e Região (SP)
+    "199",   // Campinas e Região (SP)
+    "219",   // Rio de Janeiro (RJ)
+    "229",   // Norte Fluminense (RJ)
+    "249",   // Serrana e Região (RJ)
+    "279",   // Espírito Santo (ES)
+    "289",   // Sul do Espírito Santo (ES)
+    "319",   // Belo Horizonte e Região (MG)
+    "329",   // Juiz de Fora e Região (MG)
+    "339",   // Governador Valadares e Região (MG)
+    "349",   // Uberlândia e Região (MG)
+    "359",   // Poços de Caldas e Região (MG)
+    "379",   // Divinópolis e Região (MG)
+    "389",   // Montes Claros e Região (MG)
+    "419",   // Curitiba e Região (PR)
+    "429",   // Ponta Grossa e Região (PR)
+    "439",   // Londrina e Região (PR)
+    "449",   // Maringá e Região (PR)
+    "459",   // Foz do Iguaçu e Região (PR)
+    "469",   // Francisco Beltrão e Região (PR)
+    "479",   // Joinville e Região (SC)
+    "489",   // Florianópolis e Região (SC)
+    "499",   // Chapecó e Região (SC)
+    "519",   // Porto Alegre e Região (RS)
+    "539",   // Pelotas e Região (RS)
+    "549",   // Caxias do Sul e Região (RS)
+    "559",   // Santa Maria e Região (RS)
+    "619",   // Distrito Federal (DF)
+    "629",   // Goiânia e Região (GO)
+    "639",   // Tocantins (TO)
+    "649",   // Rio Verde e Região (GO)
+    "659",   // Cuiabá e Região (MT)
+    "669",   // Rondonópolis e Região (MT)
+    "679",   // Mato Grosso do Sul (MS)
+    "689",   // Amapá (AP)
+    "699",   // Rondônia (RO)
+    "719",   // Salvador e Região (BA)
+    "739",   // Sul da Bahia (BA)
+    "749",   // Juazeiro e Região (BA)
+    "759",   // Feira de Santana e Região (BA)
+    "769",   // Rondônia e Região (RO)
+    "779",   // Barreiras e Região (BA)
+    "789",   // Tocantins (TO)
+    "819",   // Recife e Região (PE)
+    "829",   // Alagoas (AL)
+    "839",   // Paraíba (PB)
+    "849",   // Rio Grande do Norte (RN)
+    "859",   // Fortaleza e Região (CE)
+    "869",   // Piauí (PI)
+    "879",   // Petrolina e Região (PE)
+    "889",   // Ceará (CE)
+    "899",   // Sudoeste do Piauí (PI)
+    "919",   // Belém e Região (PA)
+    "929",   // Amazonas (AM)
+    "939",   // Oeste do Pará (PA)
+    "949",   // Marabá e Região (PA)
+    "959",   // Roraima (RR)
+    "969",   // Amapá (AP)
+    "979",   // Roraima e Região (RR)
+    "989",   // Maranhão (MA)
+    "999",   // Sul do Maranhão (MA)
+  ];
+
+  const dddTelefone = telefone.substring(0, 3);
+
+  if (dddsValidos.includes(dddTelefone)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function verificarNumeroWhatsapp() {
+  const telProfessor = document.getElementById("contatoProfessor");
+  const mensagemErroProfessor = document.getElementById("mensagemErroProfessor");
+
+  if (telProfessor.value.length > 0) {
+    if (!validarDDD(telProfessor.value) || telProfessor.value.length < 11) {
+      mensagemErroProfessor.innerText = "Número inválido.";
+      telProfessor.classList.remove("is-valid");
+      telProfessor.classList.add("is-invalid");
+    } else {
+      mensagemErroProfessor.innerText = "";
+      telProfessor.classList.remove("is-invalid");
+      telProfessor.classList.add("is-valid");
+    }
+  }
+}
+
+function verificarTelefone() {
+  const telEstudante = document.getElementById("contatoEstudante");
+  const mensagemErroEstudante = document.getElementById("mensagemErroEstudante");
+
+  if (telEstudante.value.length > 0) {
+    if (!validarDDD(telEstudante.value) || telEstudante.value.length < 11) {
+      mensagemErroEstudante.innerText = "Número inválido.";
+      telEstudante.classList.remove("is-valid");
+      telEstudante.classList.add("is-invalid");
+    } else {
+      mensagemErroEstudante.innerText = "";
+      telEstudante.classList.remove("is-invalid");
+      telEstudante.classList.add("is-valid");
+    }
+  }
+}
+
+
 //Gera o link para enviar estudo
 function gerarLink() {
   var nomeEstudoBiblico = gerarSlug(
@@ -48,8 +165,7 @@ function gerarLink() {
       nomeEstudoBiblico +
       "/" +
       temaEstudoBiblico +
-      "/index.html" +
-      "?nameProfessor=" +
+      "/?nameProfessor=" +
       encodeURIComponent(nameProfessor) +
       "&contatoProfessor=" +
       contatoProfessor +
