@@ -22,74 +22,74 @@ function mascaraTelefone(input) {
 //Verificar numero de whatsapp
 function validarDDD(telefone) {
   const dddsValidos = [
-    "119",   // São Paulo (SP)
-    "129",   // São José dos Campos e Região (SP)
-    "139",   // Baixada Santista (SP)
-    "149",   // Bauru e Região (SP)
-    "159",   // Sorocaba e Região (SP)
-    "169",   // Ribeirão Preto e Região (SP)
-    "179",   // São José do Rio Preto e Região (SP)
-    "189",   // Presidente Prudente e Região (SP)
-    "199",   // Campinas e Região (SP)
-    "219",   // Rio de Janeiro (RJ)
-    "229",   // Norte Fluminense (RJ)
-    "249",   // Serrana e Região (RJ)
-    "279",   // Espírito Santo (ES)
-    "289",   // Sul do Espírito Santo (ES)
-    "319",   // Belo Horizonte e Região (MG)
-    "329",   // Juiz de Fora e Região (MG)
-    "339",   // Governador Valadares e Região (MG)
-    "349",   // Uberlândia e Região (MG)
-    "359",   // Poços de Caldas e Região (MG)
-    "379",   // Divinópolis e Região (MG)
-    "389",   // Montes Claros e Região (MG)
-    "419",   // Curitiba e Região (PR)
-    "429",   // Ponta Grossa e Região (PR)
-    "439",   // Londrina e Região (PR)
-    "449",   // Maringá e Região (PR)
-    "459",   // Foz do Iguaçu e Região (PR)
-    "469",   // Francisco Beltrão e Região (PR)
-    "479",   // Joinville e Região (SC)
-    "489",   // Florianópolis e Região (SC)
-    "499",   // Chapecó e Região (SC)
-    "519",   // Porto Alegre e Região (RS)
-    "539",   // Pelotas e Região (RS)
-    "549",   // Caxias do Sul e Região (RS)
-    "559",   // Santa Maria e Região (RS)
-    "619",   // Distrito Federal (DF)
-    "629",   // Goiânia e Região (GO)
-    "639",   // Tocantins (TO)
-    "649",   // Rio Verde e Região (GO)
-    "659",   // Cuiabá e Região (MT)
-    "669",   // Rondonópolis e Região (MT)
-    "679",   // Mato Grosso do Sul (MS)
-    "689",   // Amapá (AP)
-    "699",   // Rondônia (RO)
-    "719",   // Salvador e Região (BA)
-    "739",   // Sul da Bahia (BA)
-    "749",   // Juazeiro e Região (BA)
-    "759",   // Feira de Santana e Região (BA)
-    "769",   // Rondônia e Região (RO)
-    "779",   // Barreiras e Região (BA)
-    "789",   // Tocantins (TO)
-    "819",   // Recife e Região (PE)
-    "829",   // Alagoas (AL)
-    "839",   // Paraíba (PB)
-    "849",   // Rio Grande do Norte (RN)
-    "859",   // Fortaleza e Região (CE)
-    "869",   // Piauí (PI)
-    "879",   // Petrolina e Região (PE)
-    "889",   // Ceará (CE)
-    "899",   // Sudoeste do Piauí (PI)
-    "919",   // Belém e Região (PA)
-    "929",   // Amazonas (AM)
-    "939",   // Oeste do Pará (PA)
-    "949",   // Marabá e Região (PA)
-    "959",   // Roraima (RR)
-    "969",   // Amapá (AP)
-    "979",   // Roraima e Região (RR)
-    "989",   // Maranhão (MA)
-    "999",   // Sul do Maranhão (MA)
+    "119", // São Paulo (SP)
+    "129", // São José dos Campos e Região (SP)
+    "139", // Baixada Santista (SP)
+    "149", // Bauru e Região (SP)
+    "159", // Sorocaba e Região (SP)
+    "169", // Ribeirão Preto e Região (SP)
+    "179", // São José do Rio Preto e Região (SP)
+    "189", // Presidente Prudente e Região (SP)
+    "199", // Campinas e Região (SP)
+    "219", // Rio de Janeiro (RJ)
+    "229", // Norte Fluminense (RJ)
+    "249", // Serrana e Região (RJ)
+    "279", // Espírito Santo (ES)
+    "289", // Sul do Espírito Santo (ES)
+    "319", // Belo Horizonte e Região (MG)
+    "329", // Juiz de Fora e Região (MG)
+    "339", // Governador Valadares e Região (MG)
+    "349", // Uberlândia e Região (MG)
+    "359", // Poços de Caldas e Região (MG)
+    "379", // Divinópolis e Região (MG)
+    "389", // Montes Claros e Região (MG)
+    "419", // Curitiba e Região (PR)
+    "429", // Ponta Grossa e Região (PR)
+    "439", // Londrina e Região (PR)
+    "449", // Maringá e Região (PR)
+    "459", // Foz do Iguaçu e Região (PR)
+    "469", // Francisco Beltrão e Região (PR)
+    "479", // Joinville e Região (SC)
+    "489", // Florianópolis e Região (SC)
+    "499", // Chapecó e Região (SC)
+    "519", // Porto Alegre e Região (RS)
+    "539", // Pelotas e Região (RS)
+    "549", // Caxias do Sul e Região (RS)
+    "559", // Santa Maria e Região (RS)
+    "619", // Distrito Federal (DF)
+    "629", // Goiânia e Região (GO)
+    "639", // Tocantins (TO)
+    "649", // Rio Verde e Região (GO)
+    "659", // Cuiabá e Região (MT)
+    "669", // Rondonópolis e Região (MT)
+    "679", // Mato Grosso do Sul (MS)
+    "689", // Amapá (AP)
+    "699", // Rondônia (RO)
+    "719", // Salvador e Região (BA)
+    "739", // Sul da Bahia (BA)
+    "749", // Juazeiro e Região (BA)
+    "759", // Feira de Santana e Região (BA)
+    "769", // Rondônia e Região (RO)
+    "779", // Barreiras e Região (BA)
+    "789", // Tocantins (TO)
+    "819", // Recife e Região (PE)
+    "829", // Alagoas (AL)
+    "839", // Paraíba (PB)
+    "849", // Rio Grande do Norte (RN)
+    "859", // Fortaleza e Região (CE)
+    "869", // Piauí (PI)
+    "879", // Petrolina e Região (PE)
+    "889", // Ceará (CE)
+    "899", // Sudoeste do Piauí (PI)
+    "919", // Belém e Região (PA)
+    "929", // Amazonas (AM)
+    "939", // Oeste do Pará (PA)
+    "949", // Marabá e Região (PA)
+    "959", // Roraima (RR)
+    "969", // Amapá (AP)
+    "979", // Roraima e Região (RR)
+    "989", // Maranhão (MA)
+    "999", // Sul do Maranhão (MA)
   ];
 
   const dddTelefone = telefone.substring(0, 3);
@@ -101,11 +101,11 @@ function validarDDD(telefone) {
   }
 }
 
-
-
 function verificarNumeroWhatsapp() {
   const telProfessor = document.getElementById("contatoProfessor");
-  const mensagemErroProfessor = document.getElementById("mensagemErroProfessor");
+  const mensagemErroProfessor = document.getElementById(
+    "mensagemErroProfessor"
+  );
 
   if (telProfessor.value.length > 0) {
     if (!validarDDD(telProfessor.value) || telProfessor.value.length < 11) {
@@ -122,7 +122,9 @@ function verificarNumeroWhatsapp() {
 
 function verificarTelefone() {
   const telEstudante = document.getElementById("contatoEstudante");
-  const mensagemErroEstudante = document.getElementById("mensagemErroEstudante");
+  const mensagemErroEstudante = document.getElementById(
+    "mensagemErroEstudante"
+  );
 
   if (telEstudante.value.length > 0) {
     if (!validarDDD(telEstudante.value) || telEstudante.value.length < 11) {
@@ -137,7 +139,6 @@ function verificarTelefone() {
   }
 }
 
-
 //Gera o link para enviar estudo
 function gerarLink() {
   var nomeEstudoBiblico = gerarSlug(
@@ -151,33 +152,53 @@ function gerarLink() {
   var contatoProfessor = document.getElementById("contatoProfessor").value;
   var contatoEstudante = document.getElementById("contatoEstudante").value;
 
-  // Verificar se todos os campos estão preenchidos
-  if (
-    nomeEstudoBiblico &&
-    temaEstudoBiblico &&
-    nameProfessor &&
-    nameEstudante &&
-    contatoProfessor &&
-    contatoEstudante
-  ) {
-    var linkBase = "https://otaviano07.github.io/aprendendomais/";
+  // Verificar se todos os campos estão marcados como "is-valid"
+  var camposValidos =
+    document
+      .getElementById("nomeEstudoBiblico")
+      .classList.contains("is-valid") &&
+    document
+      .getElementById("temaEstudoBiblico")
+      .classList.contains("is-valid") &&
+    document.getElementById("nameProfessor").classList.contains("is-valid") &&
+    document.getElementById("nameEstudante").classList.contains("is-valid") &&
+    document
+      .getElementById("contatoProfessor")
+      .classList.contains("is-valid") &&
+    document
+      .getElementById("contatoEstudante")
+      .classList.contains("is-valid") &&
+    document.getElementById("linkGerado").classList.contains("is-valid");
 
-    var linkGerado =
-      linkBase +
-      nomeEstudoBiblico +
-      "/" +
-      temaEstudoBiblico +
-      "/?nameProfessor=" +
-      encodeURIComponent(nameProfessor) +
-      "&contatoProfessor=" +
-      contatoProfessor +
-      "&nameEstudante=" +
-      encodeURIComponent(nameEstudante) +
-      "&contatoEstudante=" +
-      contatoEstudante;
+  if (camposValidos) {
+    // Verificar se todos os campos estão preenchidos
+    if (
+      nomeEstudoBiblico &&
+      temaEstudoBiblico &&
+      nameProfessor &&
+      nameEstudante &&
+      contatoProfessor &&
+      contatoEstudante
+    ) {
+      var linkBase = "https://otaviano07.github.io/aprendendomais/";
 
-    document.getElementById("linkGerado").value = linkGerado;
-    document.getElementById("url").value = linkGerado;
+      var linkGerado =
+        linkBase +
+        nomeEstudoBiblico +
+        "/" +
+        temaEstudoBiblico +
+        "/?nameProfessor=" +
+        encodeURIComponent(nameProfessor) +
+        "&contatoProfessor=" +
+        contatoProfessor +
+        "&nameEstudante=" +
+        encodeURIComponent(nameEstudante) +
+        "&contatoEstudante=" +
+        contatoEstudante;
+
+      document.getElementById("linkGerado").value = linkGerado;
+      document.getElementById("url").value = linkGerado;
+    }
   } else {
     alert("Por favor, preencha todos os campos antes de gerar o link.");
   }
@@ -295,25 +316,47 @@ function encurtarLink() {
   var contatoEstudante = document.getElementById("contatoEstudante").value;
   var linkGerado = document.getElementById("linkGerado").value;
 
-  // Verificar se todos os campos estão preenchidos
-  if (
-    nomeEstudoBiblico &&
-    temaEstudoBiblico &&
-    nameProfessor &&
-    nameEstudante &&
-    contatoProfessor &&
-    contatoEstudante&&
-    linkGerado
-  ) {
-    var urlInput = document.getElementById("url");
-    var urlLongo = urlInput.value;
+  // Verificar se todos os campos estão marcados como "is-valid"
+  var camposValidos =
+    document
+      .getElementById("nomeEstudoBiblico")
+      .classList.contains("is-valid") &&
+    document
+      .getElementById("temaEstudoBiblico")
+      .classList.contains("is-valid") &&
+    document.getElementById("nameProfessor").classList.contains("is-valid") &&
+    document.getElementById("nameEstudante").classList.contains("is-valid") &&
+    document
+      .getElementById("contatoProfessor")
+      .classList.contains("is-valid") &&
+    document
+      .getElementById("contatoEstudante")
+      .classList.contains("is-valid") &&
+    document.getElementById("linkGerado").classList.contains("is-valid");
 
-    shortenUrl(urlLongo).then(function (shortUrl) {
-      updateUrl(shortUrl, urlLongo);
-    });
-    document.getElementById("url").value = "";
+  if (camposValidos) {
+    // Verificar se todos os campos estão preenchidos
+    if (
+      nomeEstudoBiblico &&
+      temaEstudoBiblico &&
+      nameProfessor &&
+      nameEstudante &&
+      contatoProfessor &&
+      contatoEstudante &&
+      linkGerado
+    ) {
+      var urlInput = document.getElementById("url");
+      var urlLongo = urlInput.value;
+
+      shortenUrl(urlLongo).then(function (shortUrl) {
+        updateUrl(shortUrl, urlLongo);
+      });
+      document.getElementById("url").value = "";
+    }
   } else {
-    alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link.");
+    alert(
+      "Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link."
+    );
   }
 }
 
@@ -331,41 +374,63 @@ function copiarLink() {
   var contatoEstudante = document.getElementById("contatoEstudante").value;
   var linkGerado = document.getElementById("linkGerado").value;
 
-  // Verificar se todos os campos estão preenchidos
-  if (
-    nomeEstudoBiblico &&
-    temaEstudoBiblico &&
-    nameProfessor &&
-    nameEstudante &&
-    contatoProfessor &&
-    contatoEstudante&&
-    linkGerado
-  ) {
-    var linkGeradoInput = document.getElementById("linkGerado");
-    linkGeradoInput.select();
+  // Verificar se todos os campos estão marcados como "is-valid"
+  var camposValidos =
+    document
+      .getElementById("nomeEstudoBiblico")
+      .classList.contains("is-valid") &&
+    document
+      .getElementById("temaEstudoBiblico")
+      .classList.contains("is-valid") &&
+    document.getElementById("nameProfessor").classList.contains("is-valid") &&
+    document.getElementById("nameEstudante").classList.contains("is-valid") &&
+    document
+      .getElementById("contatoProfessor")
+      .classList.contains("is-valid") &&
+    document
+      .getElementById("contatoEstudante")
+      .classList.contains("is-valid") &&
+    document.getElementById("linkGerado").classList.contains("is-valid");
 
-    if (navigator.clipboard) {
-      navigator.clipboard
-        .writeText(linkGeradoInput.value)
-        .then(function () {
-          console.log("Link copiado com sucesso.");
-          exibirMensagemInstantanea();
-        })
-        .catch(function (error) {
-          console.log("Erro ao copiar o link:", error);
-        });
-    } else {
-      // Fallback para navegadores que não suportam a API Clipboard
-      var tempInput = document.createElement("input");
-      tempInput.value = linkGeradoInput.value;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      document.execCommand("copy");
-      document.body.removeChild(tempInput);
-      exibirMensagemInstantanea();
+  if (camposValidos) {
+    // Verificar se todos os campos estão preenchidos
+    if (
+      nomeEstudoBiblico &&
+      temaEstudoBiblico &&
+      nameProfessor &&
+      nameEstudante &&
+      contatoProfessor &&
+      contatoEstudante &&
+      linkGerado
+    ) {
+      var linkGeradoInput = document.getElementById("linkGerado");
+      linkGeradoInput.select();
+
+      if (navigator.clipboard) {
+        navigator.clipboard
+          .writeText(linkGeradoInput.value)
+          .then(function () {
+            console.log("Link copiado com sucesso.");
+            exibirMensagemInstantanea();
+          })
+          .catch(function (error) {
+            console.log("Erro ao copiar o link:", error);
+          });
+      } else {
+        // Fallback para navegadores que não suportam a API Clipboard
+        var tempInput = document.createElement("input");
+        tempInput.value = linkGeradoInput.value;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        exibirMensagemInstantanea();
+      }
     }
   } else {
-    alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link.");
+    alert(
+      "Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link."
+    );
   }
 }
 
@@ -376,7 +441,6 @@ function exibirMensagemInstantanea() {
     mensagemInstantanea.style.display = "none";
   }, 2000); // Exibe a mensagem por 2 segundos
 }
-
 
 //Envia a mensagem para o estudante pelo whatsapp
 function enviarMensagemWhatsapp() {
@@ -392,37 +456,59 @@ function enviarMensagemWhatsapp() {
   var contatoEstudante = document.getElementById("contatoEstudante").value;
   var linkGerado = document.getElementById("linkGerado").value;
 
-  // Verificar se todos os campos estão preenchidos
-  if (
-    nomeEstudoBiblico &&
-    temaEstudoBiblico &&
-    nameProfessor &&
-    nameEstudante &&
-    contatoProfessor &&
-    contatoEstudante&&
-    linkGerado
-  ) {
-    var numeroEstudante = document.getElementById("contatoEstudante").value;
-    var linkGerado = document.getElementById("linkGerado").value;
-    var mensagem = "Olá! Aqui está o link para o estudo: " + linkGerado;
+  // Verificar se todos os campos estão marcados como "is-valid"
+  var camposValidos =
+    document
+      .getElementById("nomeEstudoBiblico")
+      .classList.contains("is-valid") &&
+    document
+      .getElementById("temaEstudoBiblico")
+      .classList.contains("is-valid") &&
+    document.getElementById("nameProfessor").classList.contains("is-valid") &&
+    document.getElementById("nameEstudante").classList.contains("is-valid") &&
+    document
+      .getElementById("contatoProfessor")
+      .classList.contains("is-valid") &&
+    document
+      .getElementById("contatoEstudante")
+      .classList.contains("is-valid") &&
+    document.getElementById("linkGerado").classList.contains("is-valid");
 
-    if (isDispositivoMobile()) {
-      var url =
-        "https://api.whatsapp.com/send?phone=55" +
-        numeroEstudante +
-        "&text=" +
-        encodeURIComponent(mensagem);
-    } else {
-      var url =
-        "https://web.whatsapp.com/send/?phone=55" +
-        numeroEstudante +
-        "&text=" +
-        encodeURIComponent(mensagem);
+  if (camposValidos) {
+    // Verificar se todos os campos estão preenchidos
+    if (
+      nomeEstudoBiblico &&
+      temaEstudoBiblico &&
+      nameProfessor &&
+      nameEstudante &&
+      contatoProfessor &&
+      contatoEstudante &&
+      linkGerado
+    ) {
+      var numeroEstudante = document.getElementById("contatoEstudante").value;
+      var linkGerado = document.getElementById("linkGerado").value;
+      var mensagem = "Olá! Aqui está o link para o estudo: " + linkGerado;
+
+      if (isDispositivoMobile()) {
+        var url =
+          "https://api.whatsapp.com/send?phone=55" +
+          numeroEstudante +
+          "&text=" +
+          encodeURIComponent(mensagem);
+      } else {
+        var url =
+          "https://web.whatsapp.com/send/?phone=55" +
+          numeroEstudante +
+          "&text=" +
+          encodeURIComponent(mensagem);
+      }
+
+      window.open(url, "_blank");
     }
-
-    window.open(url, "_blank");
   } else {
-    alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link");
+    alert(
+      "Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link"
+    );
   }
 }
 
@@ -432,7 +518,6 @@ function isDispositivoMobile() {
     navigator.userAgent
   );
 }
-
 
 //Abrir Link gerado
 function abrirLink() {
@@ -448,33 +533,51 @@ function abrirLink() {
   var contatoEstudante = document.getElementById("contatoEstudante").value;
   var linkGerado = document.getElementById("linkGerado").value;
 
-  // Verificar se todos os campos estão preenchidos
-  if (
-    nomeEstudoBiblico &&
-    temaEstudoBiblico &&
-    nameProfessor &&
-    nameEstudante &&
-    contatoProfessor &&
-    contatoEstudante&&
-    linkGerado
-  ) {
-  var linkGerado = document.getElementById("linkGerado").value;
-  window.open(linkGerado, "_blank");
-} else {
-  alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link.");
+  // Verificar se todos os campos estão marcados como "is-valid"
+  var camposValidos =
+    document
+      .getElementById("nomeEstudoBiblico")
+      .classList.contains("is-valid") &&
+    document
+      .getElementById("temaEstudoBiblico")
+      .classList.contains("is-valid") &&
+    document.getElementById("nameProfessor").classList.contains("is-valid") &&
+    document.getElementById("nameEstudante").classList.contains("is-valid") &&
+    document
+      .getElementById("contatoProfessor")
+      .classList.contains("is-valid") &&
+    document
+      .getElementById("contatoEstudante")
+      .classList.contains("is-valid") &&
+    document.getElementById("linkGerado").classList.contains("is-valid");
+
+  if (camposValidos) {
+    // Verificar se todos os campos estão preenchidos
+    if (
+      nomeEstudoBiblico &&
+      temaEstudoBiblico &&
+      nameProfessor &&
+      nameEstudante &&
+      contatoProfessor &&
+      contatoEstudante &&
+      linkGerado
+    ) {
+      var linkGerado = document.getElementById("linkGerado").value;
+      window.open(linkGerado, "_blank");
+    }
+  } else {
+    alert(
+      "Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link."
+    );
+  }
 }
-}
 
-
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Selecionar todos os campos de entrada
   var camposEntrada = document.querySelectorAll("input, select");
 
   // Adicionar evento input a cada campo de entrada
-  camposEntrada.forEach(function(campo) {
+  camposEntrada.forEach(function (campo) {
     campo.addEventListener("input", verificarCampos);
   });
 });
@@ -483,7 +586,9 @@ function verificarCampos() {
   var nomeEstudoBiblico = document.getElementById("nomeEstudoBiblico");
   var temaEstudoBiblico = document.getElementById("temaEstudoBiblico");
   var nameProfessor = document.getElementById("nameProfessor");
+  var contatoProfessor = document.getElementById("contatoProfessor");
   var nameEstudante = document.getElementById("nameEstudante");
+  var contatoEstudante = document.getElementById("contatoEstudante");
 
   if (nomeEstudoBiblico.value === "") {
     nomeEstudoBiblico.classList.remove("is-valid");
@@ -509,11 +614,27 @@ function verificarCampos() {
     nameProfessor.classList.add("is-valid");
   }
 
+  if (contatoProfessor.value === "") {
+    contatoProfessor.classList.remove("is-valid");
+    contatoProfessor.classList.add("is-invalid");
+  } else {
+    contatoProfessor.classList.remove("is-invalid");
+    contatoProfessor.classList.add("is-valid");
+  }
+
   if (nameEstudante.value === "") {
     nameEstudante.classList.remove("is-valid");
     nameEstudante.classList.add("is-invalid");
   } else {
     nameEstudante.classList.remove("is-invalid");
     nameEstudante.classList.add("is-valid");
+  }
+
+  if (contatoEstudante.value === "") {
+    contatoEstudante.classList.remove("is-valid");
+    contatoEstudante.classList.add("is-invalid");
+  } else {
+    contatoEstudante.classList.remove("is-invalid");
+    contatoEstudante.classList.add("is-valid");
   }
 }
