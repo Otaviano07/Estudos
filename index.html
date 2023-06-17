@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Gerar Link Preenchido</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-
 </head>
-
 <body>
-  <h2 style="text-align: center;margin-bottom: 10px;margin-top: 20px;">Gerador de link de <br>Estudo Bíblico</h2>
+  <h2 style="text-align: center;margin-bottom: 10px;margin-top: 20px;">Link para Estudo Bíblico</h2>
   <div class="container">
     <div class="form-row">
       <div class="col-md-6 col-sm-12">
@@ -36,31 +32,25 @@
     <div class="form-row">
       <div class="col-md-9 col-sm-12">
         <label for="nameProfessor" style="margin-top: 20px;"><strong>Nome do Professor</strong></label>
-        <input type="text" class="form-control" id="nameProfessor" placeholder="Nome completo" name="nameProfessor"
-          required>
+        <input type="text" class="form-control" id="nameProfessor" placeholder="Nome completo" name="nameProfessor" required>
       </div>
       <div class="col-md-3 col-sm-12" style="margin-top: 20px;">
         <label for="contatoProfessor"><strong>Contato do Professor</strong></label>
-        <input type="tel" class="form-control" id="contatoProfessor" minlength="11" maxlength="11"
-          onkeyup="mascaraTelefone(this); verificarNumeroWhatsapp();" placeholder="Whatsapp" name="contatoProfessor" required>
+        <input type="tel" class="form-control" id="contatoProfessor" minlength="11" maxlength="11" onkeyup="mascaraTelefone(this); verificarNumeroWhatsapp();" placeholder="Whatsapp" name="contatoProfessor" required>
         <div id="mensagemErroProfessor" class="alert alert-danger" style="display: none;"></div>
       </div>
     </div>
-    
+
     <div class="form-row">
       <div class="col-md-9 col-sm-12" style="margin-top: 20px;">
         <label for="nameEstudante"><strong>Nome do Estudante</strong></label>
-        <input type="text" class="form-control" id="nameEstudante" placeholder="Nome completo" name="nameEstudante"
-          required>
+        <input type="text" class="form-control" id="nameEstudante" placeholder="Nome completo" name="nameEstudante" required>
       </div>
       <div class="col-md-3 col-sm-12" style="margin-top: 20px;">
         <label for="contatoEstudante"><strong>Contato do Estudante</strong></label>
-        <input type="tel" class="form-control" id="contatoEstudante" minlength="11" maxlength="11"
-          onkeyup="mascaraTelefone(this); verificarTelefone();" placeholder="WhatsApp" name="contatoEstudante" required>
+        <input type="tel" class="form-control" id="contatoEstudante" minlength="11" maxlength="11" onkeyup="mascaraTelefone(this); verificarTelefone();" placeholder="WhatsApp" name="contatoEstudante" required>
         <div id="mensagemErroEstudante" class="alert alert-danger" style="display: none;"></div>
       </div>
-    </div>
-    
     </div>
 
     <div class="form-group">
@@ -70,45 +60,46 @@
       </div>
     </div>
 
-    <div class="d-flex justify-content-center" style="margin-bottom: 30px;">
-
-      <div class="input-group mb-3">
-        <button class="btn btn-primary col-md-3 col-sm-12" style="width: 150px;" type="button" id="gerarLink"
-          onclick="gerarLink()" data-toggle="buttons" data-placement="bottom" title="Gerar Link">
-          <strong>Gerar</strong>
-        </button>
+    <div class="form-row justify-content-center mb-2" style="margin-bottom: 30px;">
+      <div class="form-row">
+        <div class="col-md-3 col-6 mb-2">
+          <button class="btn btn-warning btn-block" type="button" id="gerarLink" onclick="gerarLink()" data-toggle="buttons" data-placement="bottom" title="Gerar Link">
+            <strong>Gerar</strong>
+          </button>
+        </div>
+    
+        <div class="col-md-3 col-6 mb-2">
+          <button class="btn btn-primary btn-block" type="button" id="btnCopiarLink" onclick="copiarLink()" data-toggle="buttons" data-placement="bottom" title="Copiar Link">
+            <strong>Copiar</strong>
+          </button>
+          <span class="message-instant">Link copiado com sucesso!</span>
+        </div>
+    
+        <div class="col-md-3 col-6 mb-2">
+          <button class="btn btn-primary btn-block" type="button" id="encurtar" onclick="encurtarLink()" data-toggle="buttons" data-placement="bottom" title="Encurtar Link">
+            <strong>Encurtar</strong>
+          </button>
+        </div>
+        
+        <div class="col-md-3 col-6 mb-2">
+          <button class="btn btn-primary btn-block" type="button" id="btnAbrirLink" onclick="abrirLink()" data-toggle="buttons" data-placement="bottom" title="Abrir Link">
+            <strong>Abrir</strong>
+          </button>
+        </div>
+        
+        <div class="col-md-12 col-md-12 mb-2">  
+          <button class="btn btn-success btn-block" type="button" id="btnWhatsapp" onclick="enviarMensagemWhatsapp()" data-toggle="buttons" data-placement="bottom" title="Enviar pelo WhatsApp">
+            <strong>Whatsapp</strong>
+          </button>
+        </div>
       </div>
-
-      <div class="input-group mb-3">
-        <button class="btn btn-secondary col-md-3 col-sm-12" style="width: 120px;" type="button" id="btnCopiarLink"
-          onclick="copiarLink()" data-toggle="buttons" data-placement="bottom" title="Copiar Link">
-          <strong>Copiar Link</strong>
-        </button>
-        <span class="message-instant">Link copiado com sucesso!</span>
-      </div>
-
-      <div class="input-group mb-3">
-        <button class="btn btn-warning col-md-3 col-sm-12" style="width: 120px;" type="button" id="encurtar"
-          onclick="encurtarLink()" data-toggle="buttons" data-placement="bottom" title="Encurtar Link">
-          <strong>Encurtar Link</strong>
-        </button>
-      </div>
-
-      <div class="input-group mb-3">
-        <button class="btn btn-primary col-md-3 col-sm-12" style="width: 120px;" type="button" id="btnAbrirLink"
-          onclick="abrirLink()" data-toggle="buttons" data-placement="bottom" title="Abrir Link">
-          <strong>Abrir Link</strong>
-        </button>
-      </div>
-
-      <div class="input-group mb-3">
-        <button class="btn btn-success col-md-3 col-sm-12" style="width: 120px;" type="button" id="btnWhatsapp"
-          onclick="enviarMensagemWhatsapp()" data-toggle="buttons" data-placement="bottom" title="Enviar pelo WhatsApp">
-          <strong>Enviar Whatsapp</strong>
-        </button>
-      </div>
-
     </div>
+    
+    
+    
+    
+    
+        
 
     <script>
       $(function () {
@@ -128,15 +119,12 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-success d-none" type="button"
-      style="margin-bottom: 40px; margin-left: auto; margin-right: auto;" id="bntWhatsapp"
-      onclick="enviarMensagemWhatsapp()">Enviar mensagem pelo WhatsApp</button>
   </div>
 
-  <script type="text/javascript" src="javascript.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascript.js"></script>
 
 </body>
 
