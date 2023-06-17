@@ -101,6 +101,8 @@ function validarDDD(telefone) {
   }
 }
 
+
+
 function verificarNumeroWhatsapp() {
   const telProfessor = document.getElementById("contatoProfessor");
   const mensagemErroProfessor = document.getElementById("mensagemErroProfessor");
@@ -461,4 +463,57 @@ function abrirLink() {
 } else {
   alert("Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link.");
 }
+}
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Selecionar todos os campos de entrada
+  var camposEntrada = document.querySelectorAll("input, select");
+
+  // Adicionar evento input a cada campo de entrada
+  camposEntrada.forEach(function(campo) {
+    campo.addEventListener("input", verificarCampos);
+  });
+});
+
+function verificarCampos() {
+  var nomeEstudoBiblico = document.getElementById("nomeEstudoBiblico");
+  var temaEstudoBiblico = document.getElementById("temaEstudoBiblico");
+  var nameProfessor = document.getElementById("nameProfessor");
+  var nameEstudante = document.getElementById("nameEstudante");
+
+  if (nomeEstudoBiblico.value === "") {
+    nomeEstudoBiblico.classList.remove("is-valid");
+    nomeEstudoBiblico.classList.add("is-invalid");
+  } else {
+    nomeEstudoBiblico.classList.remove("is-invalid");
+    nomeEstudoBiblico.classList.add("is-valid");
+  }
+
+  if (temaEstudoBiblico.value === "") {
+    temaEstudoBiblico.classList.remove("is-valid");
+    temaEstudoBiblico.classList.add("is-invalid");
+  } else {
+    temaEstudoBiblico.classList.remove("is-invalid");
+    temaEstudoBiblico.classList.add("is-valid");
+  }
+
+  if (nameProfessor.value === "") {
+    nameProfessor.classList.remove("is-valid");
+    nameProfessor.classList.add("is-invalid");
+  } else {
+    nameProfessor.classList.remove("is-invalid");
+    nameProfessor.classList.add("is-valid");
+  }
+
+  if (nameEstudante.value === "") {
+    nameEstudante.classList.remove("is-valid");
+    nameEstudante.classList.add("is-invalid");
+  } else {
+    nameEstudante.classList.remove("is-invalid");
+    nameEstudante.classList.add("is-valid");
+  }
 }
