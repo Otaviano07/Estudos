@@ -180,7 +180,7 @@ var schoolprideEffect = function () {
   var end = Date.now() + 2 * 1000;
 
   // go Buckeyes!
-  var colors = ["#0db84e","#bb0500", "#1e0ad1"];
+  var colors = ["#0db84e", "#bb0500", "#1e0ad1"];
 
   (function frame() {
     confetti({
@@ -407,61 +407,97 @@ document.getElementById("nameProfessor").value = nomeProfessor;
 document.getElementById("whatsappEstudante").value = contatoEstudante;
 document.getElementById("nameEstudante").value = nomeEstudante;
 
-// Ouvir os texto
 var utterance = null; // Variável global para controlar a síntese de fala
+  var isPlaying = false; // Variável para controlar o estado de reprodução
+  var isPaused = false; // Variável para controlar o estado de pausa
+  var audioPosition = 0; // Variável para armazenar a posição de reprodução
 
-function lerVersiculo(versiculoId) {
-  if (utterance && speechSynthesis.speaking) {
-    // Se já houver uma síntese em andamento, interrompa-a
-    speechSynthesis.cancel();
-    return;
-  }
+  function alternarAudio(versiculoId) {
+    var btnOuvirTexto = document.getElementById("btnOuvirTexto");
+    var icone = document.getElementById("iconeAudio");
 
-  var versiculoElement = document.getElementById(versiculoId);
-
-  // Verifique se o elemento do versículo existe
-  if (!versiculoElement) {
-    console.log("Erro: O elemento do versículo não foi encontrado.");
-    return;
-  }
-
-  var versiculo = versiculoElement.textContent.trim();
-
-  // Remover tags HTML do versículo
-  var regexTags = /<[^>]+>/g;
-  var regexNumeros = /\d+/g;
-
-  versiculo = versiculo.replace(regexTags, "");
-  versiculo = versiculo.replace(regexNumeros, "");
-
-  utterance = new SpeechSynthesisUtterance(versiculo);
-
-  // Obtenha a lista de vozes disponíveis
-  var voices = speechSynthesis.getVoices();
-
-  // Selecione uma voz feminina em português
-  var selectedVoice = voices.find(function (voice) {
-    if (voice.lang === "pt-BR" && voice.name.includes("Feminino")) {
-      return voice;
+    if (!isPlaying) {
+      // Iniciar a reprodução de áudio ou retomar de onde parou
+      if (isPaused) {
+        retomarVersiculo();
+      } else {
+        lerVersiculo(versiculoId);
+      }
+      icone.textContent = "volume_off"; // Alterar o ícone para volume_off
+      btnOuvirTexto.classList.remove("btn-primary");
+      btnOuvirTexto.classList.add("btn-danger"); // Alterar a classe do botão para btn-danger
+    } else {
+      // Pausar a reprodução de áudio
+      pausarVersiculo();
+      icone.textContent = "play_arrow"; // Alterar o ícone para play_arrow
+      btnOuvirTexto.classList.remove("btn-danger");
+      btnOuvirTexto.classList.add("btn-primary"); // Alterar a classe do botão para btn-primary
     }
-  });
 
-  // Defina a voz selecionada na utterance
-  utterance.voice = selectedVoice;
-
-  speechSynthesis.speak(utterance);
-}
-
-function pausarVersiculo() {
-  if (utterance && speechSynthesis.speaking) {
-    // Pausa a síntese de fala
-    speechSynthesis.pause();
+    isPlaying = !isPlaying; // Alternar o estado de reprodução
+    isPaused = !isPlaying; // Alternar o estado de pausa
   }
-}
 
-function retomarVersiculo() {
-  if (utterance && speechSynthesis.paused) {
-    // Retoma a síntese de fala
-    speechSynthesis.resume();
+  function lerVersiculo(versiculoId) {
+    if (utterance && speechSynthesis.speaking) {
+      // Se já houver uma síntese em andamento, interrompa-a
+      speechSynthesis.cancel();
+      return;
+    }
+
+    var versiculoElement = document.getElementById(versiculoId);
+
+    // Verifique se o elemento do versículo existe
+    if (!versiculoElement) {
+      console.log("Erro: O elemento do versículo não foi encontrado.");
+      return;
+    }
+
+    var versiculo = versiculoElement.textContent.trim();
+
+    // Remover tags HTML do versículo
+    var regexTags = /<[^>]+>/g;
+    var regexNumeros = /\d+/g;
+
+    versiculo = versiculo.replace(regexTags, "");
+    versiculo = versiculo.replace(regexNumeros, "");
+
+    utterance = new SpeechSynthesisUtterance(versiculo);
+
+    // Obtenha a lista de vozes disponíveis
+    speechSynthesis.onvoiceschanged = function() {
+      var voices = speechSynthesis.getVoices();
+
+      // Selecione uma voz feminina em português
+      var selectedVoice = voices.find(function (voice) {
+        if (voice.lang === "pt-BR" && voice.name.includes("Feminino")) {
+          return voice;
+        }
+      });
+
+      // Defina a voz selecionada na utterance
+      utterance.voice = selectedVoice;
+
+      speechSynthesis.speak(utterance);
+    };
   }
-}
+
+  function pausarVersiculo() {
+    if (utterance && speechSynthesis.speaking) {
+      // Pausa a síntese de fala
+      speechSynthesis.pause();
+      // Atualize a variável 'audioPosition' com a posição de pausa
+      audioPosition = speechSynthesis.resume();
+    }
+    isPaused = true; // Define o estado de pausa como true
+  }
+
+  function retomarVersiculo() {
+    if (utterance && speechSynthesis.paused) {
+      // Retoma a síntese de fala
+      speechSynthesis.resume();
+      // Atualize a variável 'audioPosition' com a posição atual
+      audioPosition = speechSynthesis.resume();
+    }
+    isPaused = false; // Define o estado de pausa como false
+  }
