@@ -167,8 +167,7 @@ function gerarLink() {
       .classList.contains("is-valid") &&
     document
       .getElementById("contatoEstudante")
-      .classList.contains("is-valid") &&
-    document.getElementById("linkGerado").classList.contains("is-valid");
+      .classList.contains("is-valid")
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
@@ -314,7 +313,7 @@ function encurtarLink() {
   var nameEstudante = document.getElementById("nameEstudante").value;
   var contatoProfessor = document.getElementById("contatoProfessor").value;
   var contatoEstudante = document.getElementById("contatoEstudante").value;
-  var linkGerado = document.getElementById("linkGerado").value;
+  
 
   // Verificar se todos os campos estão marcados como "is-valid"
   var camposValidos =
@@ -331,8 +330,7 @@ function encurtarLink() {
       .classList.contains("is-valid") &&
     document
       .getElementById("contatoEstudante")
-      .classList.contains("is-valid") &&
-    document.getElementById("linkGerado").classList.contains("is-valid");
+      .classList.contains("is-valid")
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
@@ -342,8 +340,7 @@ function encurtarLink() {
       nameProfessor &&
       nameEstudante &&
       contatoProfessor &&
-      contatoEstudante &&
-      linkGerado
+      contatoEstudante
     ) {
       var urlInput = document.getElementById("url");
       var urlLongo = urlInput.value;
@@ -372,7 +369,7 @@ function copiarLink() {
   var nameEstudante = document.getElementById("nameEstudante").value;
   var contatoProfessor = document.getElementById("contatoProfessor").value;
   var contatoEstudante = document.getElementById("contatoEstudante").value;
-  var linkGerado = document.getElementById("linkGerado").value;
+  
 
   // Verificar se todos os campos estão marcados como "is-valid"
   var camposValidos =
@@ -389,8 +386,7 @@ function copiarLink() {
       .classList.contains("is-valid") &&
     document
       .getElementById("contatoEstudante")
-      .classList.contains("is-valid") &&
-    document.getElementById("linkGerado").classList.contains("is-valid");
+      .classList.contains("is-valid")
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
@@ -400,8 +396,7 @@ function copiarLink() {
       nameProfessor &&
       nameEstudante &&
       contatoProfessor &&
-      contatoEstudante &&
-      linkGerado
+      contatoEstudante
     ) {
       var linkGeradoInput = document.getElementById("linkGerado");
       linkGeradoInput.select();
@@ -454,7 +449,7 @@ function enviarMensagemWhatsapp() {
   var nameEstudante = document.getElementById("nameEstudante").value;
   var contatoProfessor = document.getElementById("contatoProfessor").value;
   var contatoEstudante = document.getElementById("contatoEstudante").value;
-  var linkGerado = document.getElementById("linkGerado").value;
+  
 
   // Verificar se todos os campos estão marcados como "is-valid"
   var camposValidos =
@@ -471,8 +466,7 @@ function enviarMensagemWhatsapp() {
       .classList.contains("is-valid") &&
     document
       .getElementById("contatoEstudante")
-      .classList.contains("is-valid") &&
-    document.getElementById("linkGerado").classList.contains("is-valid");
+      .classList.contains("is-valid")
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
@@ -482,8 +476,7 @@ function enviarMensagemWhatsapp() {
       nameProfessor &&
       nameEstudante &&
       contatoProfessor &&
-      contatoEstudante &&
-      linkGerado
+      contatoEstudante
     ) {
       var numeroEstudante = document.getElementById("contatoEstudante").value;
       var linkGerado = document.getElementById("linkGerado").value;
@@ -531,7 +524,7 @@ function abrirLink() {
   var nameEstudante = document.getElementById("nameEstudante").value;
   var contatoProfessor = document.getElementById("contatoProfessor").value;
   var contatoEstudante = document.getElementById("contatoEstudante").value;
-  var linkGerado = document.getElementById("linkGerado").value;
+  
 
   // Verificar se todos os campos estão marcados como "is-valid"
   var camposValidos =
@@ -548,8 +541,7 @@ function abrirLink() {
       .classList.contains("is-valid") &&
     document
       .getElementById("contatoEstudante")
-      .classList.contains("is-valid") &&
-    document.getElementById("linkGerado").classList.contains("is-valid");
+      .classList.contains("is-valid")
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
@@ -559,8 +551,7 @@ function abrirLink() {
       nameProfessor &&
       nameEstudante &&
       contatoProfessor &&
-      contatoEstudante &&
-      linkGerado
+      contatoEstudante
     ) {
       var linkGerado = document.getElementById("linkGerado").value;
       window.open(linkGerado, "_blank");
