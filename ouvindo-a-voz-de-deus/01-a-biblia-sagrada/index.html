@@ -19,7 +19,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" hef="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Adicione o link para a biblioteca confetti-js no cabeçalho do seu documento -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
@@ -77,15 +76,21 @@
                         </p>
 
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="alternarAudio('versiculo1')">
-                              <span id="iconeAudio" class="material-symbols-outlined">volume_up</span>
+                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="lerVersiculo('versiculo1')">
+                              Play
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio" onclick="pausarVersiculo()">
+                              Pausar
+                            </button>
+                            <button class="btn btn-success" style="margin-bottom: 10px;" type="button" id="btnContinuarAudio" onclick="retomarVersiculo()">
+                              Contiuar
                             </button>
                         </div>
                     </div>
 
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="pararAudio();">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -146,14 +151,21 @@
                         </p>
 
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="alternarAudio('versiculo2')">
-                              <span id="iconeAudio" class="material-symbols-outlined">volume_up</span>
+                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="lerVersiculo('versiculo2')">
+                              Play
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio" onclick="pausarVersiculo()">
+                              Pausar
+                            </button>
+                            <button class="btn btn-success" style="margin-bottom: 10px;" type="button" id="btnContinuarAudio" onclick="retomarVersiculo()">
+                              Contiuar
                             </button>
                         </div>
                     </div>
 
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="pararAudio();">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -242,14 +254,21 @@
                         </p>
 
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="alternarAudio('versiculo3')">
-                              <span id="iconeAudio" class="material-symbols-outlined">volume_up</span>
+                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="lerVersiculo('versiculo3')">
+                              Play
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio" onclick="pausarVersiculo()">
+                              Pausar
+                            </button>
+                            <button class="btn btn-success" style="margin-bottom: 10px;" type="button" id="btnContinuarAudio" onclick="retomarVersiculo()">
+                              Contiuar
                             </button>
                         </div>
                     </div>
 
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="pararAudio();">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -302,14 +321,21 @@
                         </p>
 
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="alternarAudio('versiculo4')">
-                              <span id="iconeAudio" class="material-symbols-outlined">volume_up</span>
+                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="lerVersiculo('versiculo4')">
+                              Play
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio" onclick="pausarVersiculo()">
+                              Pausar
+                            </button>
+                            <button class="btn btn-success" style="margin-bottom: 10px;" type="button" id="btnContinuarAudio" onclick="retomarVersiculo()">
+                              Contiuar
                             </button>
                         </div>
                     </div>
 
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="pararAudio();">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -372,14 +398,21 @@
                         </p>
 
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="alternarAudio('versiculo52')">
-                              <span id="iconeAudio" class="material-symbols-outlined">volume_up</span>
+                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="lerVersiculo('versiculo52')">
+                              Play
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio" onclick="pausarVersiculo()">
+                              Pausar
+                            </button>
+                            <button class="btn btn-success" style="margin-bottom: 10px;" type="button" id="btnContinuarAudio" onclick="retomarVersiculo()">
+                              Contiuar
                             </button>
                         </div>
                     </div>
 
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="pararAudio();">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -433,14 +466,21 @@
                         </p>
 
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="alternarAudio('versiculo6')">
-                              <span id="iconeAudio" class="material-symbols-outlined">volume_up</span>
+                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="lerVersiculo('versiculo6')">
+                              Play
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio" onclick="pausarVersiculo()">
+                              Pausar
+                            </button>
+                            <button class="btn btn-success" style="margin-bottom: 10px;" type="button" id="btnContinuarAudio" onclick="retomarVersiculo()">
+                              Contiuar
                             </button>
                         </div>
                     </div>
 
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="pararAudio();">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -532,14 +572,21 @@
                         </p>
 
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="alternarAudio('versiculo7')">
-                              <span id="iconeAudio" class="material-symbols-outlined">volume_up</span>
+                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="lerVersiculo('versiculo7')">
+                              Play
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio" onclick="pausarVersiculo()">
+                              Pausar
+                            </button>
+                            <button class="btn btn-success" style="margin-bottom: 10px;" type="button" id="btnContinuarAudio" onclick="retomarVersiculo()">
+                              Contiuar
                             </button>
                         </div>
                     </div>
 
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="pararAudio();">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -589,14 +636,21 @@
                         </p>
 
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="alternarAudio('versiculo8')">
-                              <span id="iconeAudio" class="material-symbols-outlined">volume_up</span>
+                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="lerVersiculo('versiculo8')">
+                              Play
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio" onclick="pausarVersiculo()">
+                              Pausar
+                            </button>
+                            <button class="btn btn-success" style="margin-bottom: 10px;" type="button" id="btnContinuarAudio" onclick="retomarVersiculo()">
+                              Contiuar
                             </button>
                         </div>
                     </div>
 
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="pararAudio();">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -647,8 +701,14 @@
                         </p>
 
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="alternarAudio('versiculo91')">
-                              <span id="iconeAudio" class="material-symbols-outlined">volume_up</span>
+                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="lerVersiculo('versiculo91')">
+                              Play
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio" onclick="pausarVersiculo()">
+                              Pausar
+                            </button>
+                            <button class="btn btn-success" style="margin-bottom: 10px;" type="button" id="btnContinuarAudio" onclick="retomarVersiculo()">
+                              Contiuar
                             </button>
                         </div>
 
@@ -662,14 +722,21 @@
                         </p>
 
                         <div class="d-flex justify-content-center">
-                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="alternarAudio('versiculo92')">
-                              <span id="iconeAudio" class="material-symbols-outlined">volume_up</span>
+                            <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="lerVersiculo('versiculo92')">
+                              Play
+                            </button>
+                            <button class="btn btn-secondary" type="button" id="btnPausarAudio" onclick="pausarVersiculo()">
+                              Pausar
+                            </button>
+                            <button class="btn btn-success" style="margin-bottom: 10px;" type="button" id="btnContinuarAudio" onclick="retomarVersiculo()">
+                              Contiuar
                             </button>
                         </div>
                     </div>
 
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="pararAudio();">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -730,15 +797,22 @@
                             <small><sup>22</sup></small>"E sede cumpridores da palavra e não somente ouvintes,
                             enganando-vos a vós mesmos."</p>
                             <div class="d-flex justify-content-center">
-                                <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="alternarAudio('versiculo101')">
-                                  <span id="iconeAudio" class="material-symbols-outlined">volume_up</span>
+                                <button class="btn btn-primary" type="button" id="btnOuvirTexto" onclick="lerVersiculo('versiculo101')">
+                                  Play
+                                </button>
+                                <button class="btn btn-secondary" type="button" id="btnPausarAudio" onclick="pausarVersiculo()">
+                                  Pausar
+                                </button>
+                                <button class="btn btn-success" style="margin-bottom: 10px;" type="button" id="btnContinuarAudio" onclick="retomarVersiculo()">
+                                  Contiuar
                                 </button>
                             </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    </div>
+                        </div>
+    
+    
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="pararAudio();">Fechar</button>
+                        </div>
                 </div>
             </div>
         </div>
