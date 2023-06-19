@@ -20,193 +20,192 @@ document
     enviarResposta();
   });
 
-function enviarResposta() {
-  var apiWhatsapp = "https://web.whatsapp.com/send/?phone=55";
+  function enviarResposta() {
+    var apiWhatsapp = "https://web.whatsapp.com/send/?phone=55";
+    var nomeEstudante = document.getElementById("nameEstudante").value;
+    var nomeProfessor = document.getElementById("nameProfessor").value;
+    var contatoProfessor = document.getElementById("whatsappProfessor").value;
+    var estudoBiblico = "Ouvindo a Voz de Deus";
+    var tema = "01 - A Bíblia Sagrada";
+    var respostas1 = document.getElementById("resposta1").value;
+    var respostas21 = document.getElementById("resposta21").value;
+    var respostas22 = document.getElementById("resposta22").value;
+    var respostas31 = document.getElementById("flexCheck01").value;
+    var respostas32 = document.getElementById("flexCheck02").value;
+    var respostas33 = document.getElementById("flexCheck03").value;
+    var respostas34 = document.getElementById("flexCheck04").value;
+    var respostas41 = document.getElementById("resposta41").value;
+    var respostas42 = document.getElementById("resposta42").value;
+    var respostas51 = document.getElementById("resposta51").value;
+    var respostas52 = document.getElementById("resposta52").value;
+    var respostas61 = document.getElementById("resposta61").value;
+    var respostas62 = document.getElementById("resposta62").value;
+    var respostas71 = document.getElementById("flexCheck05").value;
+    var respostas72 = document.getElementById("flexCheck06").value;
+    var respostas73 = document.getElementById("flexCheck07").value;
+    var respostas8 = document.getElementById("resposta8").value;
+    var respostas9 = document.getElementById("resposta9").value;
+    var respostas101 = document.getElementById("resposta101").value;
+    var respostas102 = document.getElementById("resposta102").value;
+    var respostasDrop1 = document.getElementById("drop-area1").value;
+    var respostasDrop2 = document.getElementById("drop-area2").value;
+    var respostasDrop3 = document.getElementById("drop-area3").value;
+    var respostasDrop4 = document.getElementById("drop-area4").value;
+    var respostasDrop5 = document.getElementById("drop-area5").value;
+    var respostasDrop6 = document.getElementById("drop-area6").value;
+    var respostasDrop7 = document.getElementById("drop-area7").value;
+    var respostasDrop8 = document.getElementById("drop-area8").value;
+    var respostasCompr1 = document.getElementById("flexCheck08").checked;
+    var respostasCompr2 = document.getElementById("flexCheck09").checked;
+    var respostasCompr3 = document.getElementById("flexCheck10").checked;
 
-  var nomeEstudante = document.getElementById("nameEstudante").value;
-  var nomeProfessor = document.getElementById("nameProfessor").value;
-  var contantoProfessor = document.getElementById("whatsappProfessor").value;
-  var estudoBiblico = "Ouvindo a Voz de Deus";
-  var tema = "01 - A Bliblia Sagrada";
-
-  var respostas1 = document.getElementById("resposta1").value;
-  var respostas21 = document.getElementById("resposta21").value;
-  var respostas22 = document.getElementById("resposta22").value;
-  var respostas31 = document.getElementById("labelText01").value;
-  var respostas32 = document.getElementById("labelText02").value;
-  var respostas33 = document.getElementById("labelText03").value;
-  var respostas34 = document.getElementById("labelText04").value;
-  var respostas41 = document.getElementById("resposta41").value;
-  var respostas42 = document.getElementById("resposta42").value;
-  var respostas51 = document.getElementById("resposta51").value;
-  var respostas52 = document.getElementById("resposta52").value;
-  var respostas61 = document.getElementById("resposta61").value;
-  var respostas62 = document.getElementById("resposta62").value;
-  var respostas71 = document.getElementById("labelText05").value;
-  var respostas72 = document.getElementById("labelText06").value;
-  var respostas73 = document.getElementById("labelText07").value;
-  var respostas8 = document.getElementById("resposta8").value;
-  var respostas9 = document.getElementById("resposta9").value;
-  var respostas101 = document.getElementById("resposta101").value;
-  var respostas102 = document.getElementById("resposta102").value;
-  var respostasDrop1 = document.getElementById("drop-area1").value;
-  var respostasDrop2 = document.getElementById("drop-area2").value;
-  var respostasDrop3 = document.getElementById("drop-area3").value;
-  var respostasDrop4 = document.getElementById("drop-area4").value;
-  var respostasDrop5 = document.getElementById("drop-area5").value;
-  var respostasDrop6 = document.getElementById("drop-area6").value;
-  var respostasDrop7 = document.getElementById("drop-area7").value;
-  var respostasDrop8 = document.getElementById("drop-area8").value;
-  var respostasCompr1 = document.getElementById("flexCheck08").checked;
-  var respostasCompr2 = document.getElementById("flexCheck09").checked;
-  var respostasCompr3 = document.getElementById("flexCheck10").checked;
-
-  // Verificar se todos os campos estão marcados como "is-valid"
-  var camposValidos =
-    document
-      .getElementById("whatsappProfessor")
-      .classList.contains("is-valid") &&
-    document.getElementById("whatsappEstudante").classList.contains("is-valid");
-  if (camposValidos) {
-    // Verificar se todos os campos estão preenchidos
-    if (
-      respostas1 &&
-      respostas21 &&
-      respostas22 &&
-      respostas31 &&
-      respostas32 &&
-      respostas33 &&
-      respostas34 &&
-      respostas41 &&
-      respostas42 &&
-      respostas51 &&
-      respostas52 &&
-      respostas61 &&
-      respostas62 &&
-      respostas71 &&
-      respostas72 &&
-      respostas73 &&
-      respostas8 &&
-      respostas9 &&
-      respostas101 &&
-      respostas102 &&
-      respostasDrop1 &&
-      respostasDrop2 &&
-      respostasDrop3 &&
-      respostasDrop4 &&
-      respostasDrop5 &&
-      respostasDrop6 &&
-      respostasDrop7 &&
-      respostasDrop8 &&
-      respostasCompr1 &&
-      respostasCompr2 &&
-      respostasCompr3 &&
-      nomeEstudante &&
-      nomeProfessor &&
-      contatoProfessor
-    ) {
-      var linkBase = "https://otaviano07.github.io/aprendendomais/";
-      var linkGerado =
-        linkBase +
-        nomeEstudoBiblico +
-        "/" +
-        temaEstudoBiblico +
-        "/?nameProfessor=" +
-        encodeURIComponent(nameProfessor) +
-        "&contatoProfessor=" +
-        contatoProfessor +
-        "&nameEstudante=" +
-        encodeURIComponent(nameEstudante) +
-        "&contatoEstudante=" +
-        contatoEstudante +
-        "&respostas1=" +
-        encodeURIComponent(respostas1) +
-        "&respostas21=" +
-        encodeURIComponent(respostas21) +
-        "&respostas22=" +
-        encodeURIComponent(respostas22) +
-        "&respostas31=" +
-        encodeURIComponent(respostas31) +
-        "&respostas32=" +
-        encodeURIComponent(respostas32) +
-        "&respostas33=" +
-        encodeURIComponent(respostas33) +
-        "&respostas34=" +
-        encodeURIComponent(respostas34) +
-        "&respostas41=" +
-        encodeURIComponent(respostas41) +
-        "&respostas42=" +
-        encodeURIComponent(respostas42) +
-        "&respostas51=" +
-        encodeURIComponent(respostas51) +
-        "&respostas52=" +
-        encodeURIComponent(respostas52) +
-        "&respostas61=" +
-        encodeURIComponent(respostas61) +
-        "&respostas62=" +
-        encodeURIComponent(respostas62) +
-        "&respostas71=" +
-        encodeURIComponent(respostas71) +
-        "&respostas72=" +
-        encodeURIComponent(respostas72) +
-        "&respostas73=" +
-        encodeURIComponent(respostas73) +
-        "&respostas8=" +
-        encodeURIComponent(respostas8) +
-        "&respostas9=" +
-        encodeURIComponent(respostas9) +
-        "&respostas101=" +
-        encodeURIComponent(respostas101) +
-        "&respostas102=" +
-        encodeURIComponent(respostas102) +
-        "&respostasDrop1=" +
-        encodeURIComponent(respostasDrop1) +
-        "&respostasDrop2=" +
-        encodeURIComponent(respostasDrop2) +
-        "&respostasDrop3=" +
-        encodeURIComponent(respostasDrop3) +
-        "&respostasDrop4=" +
-        encodeURIComponent(respostasDrop4) +
-        "&respostasDrop5=" +
-        encodeURIComponent(respostasDrop5) +
-        "&respostasDrop6=" +
-        encodeURIComponent(respostasDrop6) +
-        "&respostasDrop7=" +
-        encodeURIComponent(respostasDrop7) +
-        "&respostasDrop8=" +
-        encodeURIComponent(respostasDrop8) +
-        "&respostasCompr1=" +
-        encodeURIComponent(respostasCompr1) +
-        "&respostasCompr2=" +
-        encodeURIComponent(respostasCompr2) +
-        "&respostasCompr3=" +
-        encodeURIComponent(respostasCompr3);
+    // Verificar se todos os campos estão marcados como "is-valid"
+    /*var camposValidos =
+      document
+        .getElementById("whatsappProfessor")
+        .classList.contains("is-valid") &&
+      document
+        .getElementById("whatsappEstudante")
+        .classList.contains("is-valid");
+    if (camposValidos) {*/
+      // Verificar se todos os campos estão preenchidos
+      if (
+        respostas1 &&
+        respostas21 &&
+        respostas22 &&
+        respostas31 &&
+        respostas32 &&
+        respostas33 &&
+        respostas34 &&
+        respostas41 &&
+        respostas42 &&
+        respostas51 &&
+        respostas52 &&
+        respostas61 &&
+        respostas62 &&
+        respostas71 &&
+        respostas72 &&
+        respostas73 &&
+        respostas8 &&
+        respostas9 &&
+        respostas101 &&
+        respostas102 &&
+        respostasDrop1 &&
+        respostasDrop2 &&
+        respostasDrop3 &&
+        respostasDrop4 &&
+        respostasDrop5 &&
+        respostasDrop6 &&
+        respostasDrop7 &&
+        respostasDrop8 &&
+        nomeEstudante &&
+        nomeProfessor &&
+        contatoProfessor
+      ) {
+        var linkBase = "https://otaviano07.github.io/aprendendomais/";
+        var linkGerado =
+          linkBase +
+          estudoBiblico +
+          "/" +
+          tema +
+          "/?nameProfessor=" +
+          encodeURIComponent(nomeProfessor) +
+          "&contatoProfessor=" +
+          contatoProfessor +
+          "&nameEstudante=" +
+          encodeURIComponent(nomeEstudante) +
+          "&contatoEstudante=" +
+          contatoEstudante +
+          "&respostas1=" +
+          encodeURIComponent(respostas1) +
+          "&respostas21=" +
+          encodeURIComponent(respostas21) +
+          "&respostas22=" +
+          encodeURIComponent(respostas22) +
+          "&respostas31=" +
+          encodeURIComponent(respostas31) +
+          "&respostas32=" +
+          encodeURIComponent(respostas32) +
+          "&respostas33=" +
+          encodeURIComponent(respostas33) +
+          "&respostas34=" +
+          encodeURIComponent(respostas34) +
+          "&respostas41=" +
+          encodeURIComponent(respostas41) +
+          "&respostas42=" +
+          encodeURIComponent(respostas42) +
+          "&respostas51=" +
+          encodeURIComponent(respostas51) +
+          "&respostas52=" +
+          encodeURIComponent(respostas52) +
+          "&respostas61=" +
+          encodeURIComponent(respostas61) +
+          "&respostas62=" +
+          encodeURIComponent(respostas62) +
+          "&respostas71=" +
+          encodeURIComponent(respostas71) +
+          "&respostas72=" +
+          encodeURIComponent(respostas72) +
+          "&respostas73=" +
+          encodeURIComponent(respostas73) +
+          "&respostas8=" +
+          encodeURIComponent(respostas8) +
+          "&respostas9=" +
+          encodeURIComponent(respostas9) +
+          "&respostas101=" +
+          encodeURIComponent(respostas101) +
+          "&respostas102=" +
+          encodeURIComponent(respostas102) +
+          "&respostasDrop1=" +
+          encodeURIComponent(respostasDrop1) +
+          "&respostasDrop2=" +
+          encodeURIComponent(respostasDrop2) +
+          "&respostasDrop3=" +
+          encodeURIComponent(respostasDrop3) +
+          "&respostasDrop4=" +
+          encodeURIComponent(respostasDrop4) +
+          "&respostasDrop5=" +
+          encodeURIComponent(respostasDrop5) +
+          "&respostasDrop6=" +
+          encodeURIComponent(respostasDrop6) +
+          "&respostasDrop7=" +
+          encodeURIComponent(respostasDrop7) +
+          "&respostasDrop8=" +
+          encodeURIComponent(respostasDrop8) +
+          "&respostasCompr1=" +
+          encodeURIComponent(respostasCompr1) +
+          "&respostasCompr2=" +
+          encodeURIComponent(respostasCompr2) +
+          "&respostasCompr3=" +
+          encodeURIComponent(respostasCompr3);
 
         var mensagem =
-        "Olá " +
-        nameProfessor +
-        ", tudo bem!\n\nConsegui terminar o estudo bíblico " + estudoBiblico + " com o tema " +
-        tema +
-        ". Gostaria que você fizesse a correção das minhas respostas para ver como me saí.\nSegue o link: " +
-        linkGerado +
-        "\n\nAguardo ansiosamente pelo seu feedback!\n\nAtenciosamente,\n" +
-        nameEstudante;
+          "Olá " +
+          nomeProfessor +
+          ", tudo bem!\n\nConsegui terminar o estudo bíblico " +
+          estudoBiblico +
+          " com o tema " +
+          tema +
+          ". Gostaria que você fizesse a correção das minhas respostas para ver como me saí.\nSegue o link: " +
+          linkGerado +
+          "\n\nAguardo ansiosamente pelo seu feedback!\n\nAtenciosamente,\n" +
+          nomeEstudante;
 
-      var linkWhatsapp =
-        apiWhatsapp +
-        contantoProfessor +
-        "&text=" +
-        encodeURIComponent(mensagem);
+        var linkWhatsapp =
+          apiWhatsapp +
+          contatoProfessor +
+          "&text=" +
+          encodeURIComponent(mensagem);
 
-      // Abre o link do WhatsApp em uma nova janela ou guia
-      window.open(linkWhatsapp);
+        // Abre o link do WhatsApp em uma nova janela ou guia
+        window.open(linkWhatsapp);
+      //}
+    } else {
+      alert(
+        "Por favor, responda todas as perguntas antes de enviar as respostas para o professor."
+      );
     }
-  } else {
-    alert(
-      "Por favor, responda todas as perguntas antes de enviar as respostas para o professor."
-    );
   }
-}
 
 //Editar campo dados participantes
 function editarInput(id) {
