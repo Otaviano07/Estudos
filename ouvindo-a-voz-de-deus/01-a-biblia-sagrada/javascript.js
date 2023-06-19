@@ -17,52 +17,336 @@ verseButtons.forEach(function (button) {
 document
   .getElementById("respostasButton")
   .addEventListener("click", function () {
-    var apiWhatsapp = "https://api.whatsapp.com/send?phone=55";
-
-    var nomeEstudante = document.getElementById("nameEstudante").value;
-    var nomeProfessor = document.getElementById("nameProfessor").value;
-    var contantoProfessor = document.getElementById("whatsappProfessor").value;
-    var estudoBiblico = "Ouvindo a Voz de Deus";
-    var tema = "01 - A Bliblia Sagrada";
-
-    var respostas1 = document.getElementById("resposta1").value;
-    var respostas21 = document.getElementById("resposta21").value;
-    var respostas22 = document.getElementById("resposta22").value;
-    var respostas31 = document.getElementById("labelText01").value;
-    var respostas32 = document.getElementById("labelText02").value;
-    var respostas33 = document.getElementById("labelText03").value;
-    var respostas34 = document.getElementById("labelText04").value;
-    var respostas41 = document.getElementById("resposta41").value;
-    var respostas42 = document.getElementById("resposta42").value;
-    var respostas51 = document.getElementById("resposta51").value;
-    var respostas52 = document.getElementById("resposta52").value;
-    var respostas61 = document.getElementById("resposta61").value;
-    var respostas62 = document.getElementById("resposta62").value;
-    var respostas71 = document.getElementById("labelText05").value;
-    var respostas72 = document.getElementById("labelText06").value;
-    var respostas73 = document.getElementById("labelText07").value;
-    var respostas8 = document.getElementById("resposta8").value;
-    var respostas9 = document.getElementById("resposta9").value;
-    var respostas101 = document.getElementById("resposta101").value;
-    var respostas102 = document.getElementById("resposta102").value;
-    var respostasDrop1 = document.getElementById("drop-area1").value;
-    var respostasDrop2 = document.getElementById("drop-area2").value;
-    var respostasDrop3 = document.getElementById("drop-area3").value;
-    var respostasDrop4 = document.getElementById("drop-area4").value;
-    var respostasDrop5 = document.getElementById("drop-area5").value;
-    var respostasDrop6 = document.getElementById("drop-area6").value;
-    var respostasDrop7 = document.getElementById("drop-area7").value;
-    var respostasDrop8 = document.getElementById("drop-area8").value;
-    var respostasCompr1 = document.getElementById("flexCheck08").checked;
-    var respostasCompr2 = document.getElementById("flexCheck09").checked;
-    var respostasCompr3 = document.getElementById("flexCheck10").checked;
-
-    var linkWhatsapp =
-      apiWhatsapp + contantoProfessor + "&text=" + encodeURIComponent(mensagem);
-
-    // Abre o link do WhatsApp em uma nova janela ou guia
-    window.open(linkWhatsapp);
+    enviarResposta();
   });
+
+function enviarResposta() {
+  var apiWhatsapp = "https://web.whatsapp.com/send/?phone=55";
+
+  var nomeEstudante = document.getElementById("nameEstudante").value;
+  var nomeProfessor = document.getElementById("nameProfessor").value;
+  var contantoProfessor = document.getElementById("whatsappProfessor").value;
+  var estudoBiblico = "Ouvindo a Voz de Deus";
+  var tema = "01 - A Bliblia Sagrada";
+
+  var respostas1 = document.getElementById("resposta1").value;
+  var respostas21 = document.getElementById("resposta21").value;
+  var respostas22 = document.getElementById("resposta22").value;
+  var respostas31 = document.getElementById("labelText01").value;
+  var respostas32 = document.getElementById("labelText02").value;
+  var respostas33 = document.getElementById("labelText03").value;
+  var respostas34 = document.getElementById("labelText04").value;
+  var respostas41 = document.getElementById("resposta41").value;
+  var respostas42 = document.getElementById("resposta42").value;
+  var respostas51 = document.getElementById("resposta51").value;
+  var respostas52 = document.getElementById("resposta52").value;
+  var respostas61 = document.getElementById("resposta61").value;
+  var respostas62 = document.getElementById("resposta62").value;
+  var respostas71 = document.getElementById("labelText05").value;
+  var respostas72 = document.getElementById("labelText06").value;
+  var respostas73 = document.getElementById("labelText07").value;
+  var respostas8 = document.getElementById("resposta8").value;
+  var respostas9 = document.getElementById("resposta9").value;
+  var respostas101 = document.getElementById("resposta101").value;
+  var respostas102 = document.getElementById("resposta102").value;
+  var respostasDrop1 = document.getElementById("drop-area1").value;
+  var respostasDrop2 = document.getElementById("drop-area2").value;
+  var respostasDrop3 = document.getElementById("drop-area3").value;
+  var respostasDrop4 = document.getElementById("drop-area4").value;
+  var respostasDrop5 = document.getElementById("drop-area5").value;
+  var respostasDrop6 = document.getElementById("drop-area6").value;
+  var respostasDrop7 = document.getElementById("drop-area7").value;
+  var respostasDrop8 = document.getElementById("drop-area8").value;
+  var respostasCompr1 = document.getElementById("flexCheck08").checked;
+  var respostasCompr2 = document.getElementById("flexCheck09").checked;
+  var respostasCompr3 = document.getElementById("flexCheck10").checked;
+
+  // Verificar se todos os campos estão marcados como "is-valid"
+  var camposValidos =
+    document
+      .getElementById("whatsappProfessor")
+      .classList.contains("is-valid") &&
+    document.getElementById("whatsappEstudante").classList.contains("is-valid");
+  if (camposValidos) {
+    // Verificar se todos os campos estão preenchidos
+    if (
+      respostas1 &&
+      respostas21 &&
+      respostas22 &&
+      respostas31 &&
+      respostas32 &&
+      respostas33 &&
+      respostas34 &&
+      respostas41 &&
+      respostas42 &&
+      respostas51 &&
+      respostas52 &&
+      respostas61 &&
+      respostas62 &&
+      respostas71 &&
+      respostas72 &&
+      respostas73 &&
+      respostas8 &&
+      respostas9 &&
+      respostas101 &&
+      respostas102 &&
+      respostasDrop1 &&
+      respostasDrop2 &&
+      respostasDrop3 &&
+      respostasDrop4 &&
+      respostasDrop5 &&
+      respostasDrop6 &&
+      respostasDrop7 &&
+      respostasDrop8 &&
+      respostasCompr1 &&
+      respostasCompr2 &&
+      respostasCompr3 &&
+      nomeEstudante &&
+      nomeProfessor &&
+      contatoProfessor
+    ) {
+      var linkBase = "https://otaviano07.github.io/aprendendomais/";
+      var linkGerado =
+        linkBase +
+        nomeEstudoBiblico +
+        "/" +
+        temaEstudoBiblico +
+        "/?nameProfessor=" +
+        encodeURIComponent(nameProfessor) +
+        "&contatoProfessor=" +
+        contatoProfessor +
+        "&nameEstudante=" +
+        encodeURIComponent(nameEstudante) +
+        "&contatoEstudante=" +
+        contatoEstudante +
+        "&respostas1=" +
+        encodeURIComponent(respostas1) +
+        "&respostas21=" +
+        encodeURIComponent(respostas21) +
+        "&respostas22=" +
+        encodeURIComponent(respostas22) +
+        "&respostas31=" +
+        encodeURIComponent(respostas31) +
+        "&respostas32=" +
+        encodeURIComponent(respostas32) +
+        "&respostas33=" +
+        encodeURIComponent(respostas33) +
+        "&respostas34=" +
+        encodeURIComponent(respostas34) +
+        "&respostas41=" +
+        encodeURIComponent(respostas41) +
+        "&respostas42=" +
+        encodeURIComponent(respostas42) +
+        "&respostas51=" +
+        encodeURIComponent(respostas51) +
+        "&respostas52=" +
+        encodeURIComponent(respostas52) +
+        "&respostas61=" +
+        encodeURIComponent(respostas61) +
+        "&respostas62=" +
+        encodeURIComponent(respostas62) +
+        "&respostas71=" +
+        encodeURIComponent(respostas71) +
+        "&respostas72=" +
+        encodeURIComponent(respostas72) +
+        "&respostas73=" +
+        encodeURIComponent(respostas73) +
+        "&respostas8=" +
+        encodeURIComponent(respostas8) +
+        "&respostas9=" +
+        encodeURIComponent(respostas9) +
+        "&respostas101=" +
+        encodeURIComponent(respostas101) +
+        "&respostas102=" +
+        encodeURIComponent(respostas102) +
+        "&respostasDrop1=" +
+        encodeURIComponent(respostasDrop1) +
+        "&respostasDrop2=" +
+        encodeURIComponent(respostasDrop2) +
+        "&respostasDrop3=" +
+        encodeURIComponent(respostasDrop3) +
+        "&respostasDrop4=" +
+        encodeURIComponent(respostasDrop4) +
+        "&respostasDrop5=" +
+        encodeURIComponent(respostasDrop5) +
+        "&respostasDrop6=" +
+        encodeURIComponent(respostasDrop6) +
+        "&respostasDrop7=" +
+        encodeURIComponent(respostasDrop7) +
+        "&respostasDrop8=" +
+        encodeURIComponent(respostasDrop8) +
+        "&respostasCompr1=" +
+        encodeURIComponent(respostasCompr1) +
+        "&respostasCompr2=" +
+        encodeURIComponent(respostasCompr2) +
+        "&respostasCompr3=" +
+        encodeURIComponent(respostasCompr3);
+
+        var mensagem =
+        "Olá " +
+        nameProfessor +
+        ", tudo bem!\n\nConsegui terminar o estudo bíblico " + estudoBiblico + " com o tema " +
+        tema +
+        ". Gostaria que você fizesse a correção das minhas respostas para ver como me saí.\nSegue o link: " +
+        linkGerado +
+        "\n\nAguardo ansiosamente pelo seu feedback!\n\nAtenciosamente,\n" +
+        nameEstudante;
+
+      var linkWhatsapp =
+        apiWhatsapp +
+        contantoProfessor +
+        "&text=" +
+        encodeURIComponent(mensagem);
+
+      // Abre o link do WhatsApp em uma nova janela ou guia
+      window.open(linkWhatsapp);
+    }
+  } else {
+    alert(
+      "Por favor, responda todas as perguntas antes de enviar as respostas para o professor."
+    );
+  }
+}
+
+//Editar campo dados participantes
+function editarInput(id) {
+  var inputElement = document.getElementById(id);
+  inputElement.removeAttribute("readonly");
+  inputElement.focus();
+
+  // Escutar evento 'blur' para voltar ao modo 'somente leitura' quando o input perder o foco
+  inputElement.addEventListener("blur", function () {
+    inputElement.setAttribute("readonly", "readonly");
+  });
+}
+
+//Mascara para telefone
+function mascaraTelefone(input) {
+  input.value = input.value.replace(/[^\d()\-]/g, "");
+
+  if (input.value.match(/[^\d()\-]/)) {
+    alert("Digite somente números no campo de telefone.");
+    input.value = input.value.replace(/[^\d()\-]/g, "");
+  }
+}
+
+//Verificar numero de whatsapp
+function validarDDD(telefone) {
+  const dddsValidos = [
+    "119", // São Paulo (SP)
+    "129", // São José dos Campos e Região (SP)
+    "139", // Baixada Santista (SP)
+    "149", // Bauru e Região (SP)
+    "159", // Sorocaba e Região (SP)
+    "169", // Ribeirão Preto e Região (SP)
+    "179", // São José do Rio Preto e Região (SP)
+    "189", // Presidente Prudente e Região (SP)
+    "199", // Campinas e Região (SP)
+    "219", // Rio de Janeiro (RJ)
+    "229", // Norte Fluminense (RJ)
+    "249", // Serrana e Região (RJ)
+    "279", // Espírito Santo (ES)
+    "289", // Sul do Espírito Santo (ES)
+    "319", // Belo Horizonte e Região (MG)
+    "329", // Juiz de Fora e Região (MG)
+    "339", // Governador Valadares e Região (MG)
+    "349", // Uberlândia e Região (MG)
+    "359", // Poços de Caldas e Região (MG)
+    "379", // Divinópolis e Região (MG)
+    "389", // Montes Claros e Região (MG)
+    "419", // Curitiba e Região (PR)
+    "429", // Ponta Grossa e Região (PR)
+    "439", // Londrina e Região (PR)
+    "449", // Maringá e Região (PR)
+    "459", // Foz do Iguaçu e Região (PR)
+    "469", // Francisco Beltrão e Região (PR)
+    "479", // Joinville e Região (SC)
+    "489", // Florianópolis e Região (SC)
+    "499", // Chapecó e Região (SC)
+    "519", // Porto Alegre e Região (RS)
+    "539", // Pelotas e Região (RS)
+    "549", // Caxias do Sul e Região (RS)
+    "559", // Santa Maria e Região (RS)
+    "619", // Distrito Federal (DF)
+    "629", // Goiânia e Região (GO)
+    "639", // Tocantins (TO)
+    "649", // Rio Verde e Região (GO)
+    "659", // Cuiabá e Região (MT)
+    "669", // Rondonópolis e Região (MT)
+    "679", // Mato Grosso do Sul (MS)
+    "689", // Amapá (AP)
+    "699", // Rondônia (RO)
+    "719", // Salvador e Região (BA)
+    "739", // Sul da Bahia (BA)
+    "749", // Juazeiro e Região (BA)
+    "759", // Feira de Santana e Região (BA)
+    "769", // Rondônia e Região (RO)
+    "779", // Barreiras e Região (BA)
+    "789", // Tocantins (TO)
+    "819", // Recife e Região (PE)
+    "829", // Alagoas (AL)
+    "839", // Paraíba (PB)
+    "849", // Rio Grande do Norte (RN)
+    "859", // Fortaleza e Região (CE)
+    "869", // Piauí (PI)
+    "879", // Petrolina e Região (PE)
+    "889", // Ceará (CE)
+    "899", // Sudoeste do Piauí (PI)
+    "919", // Belém e Região (PA)
+    "929", // Amazonas (AM)
+    "939", // Oeste do Pará (PA)
+    "949", // Marabá e Região (PA)
+    "959", // Roraima (RR)
+    "969", // Amapá (AP)
+    "979", // Roraima e Região (RR)
+    "989", // Maranhão (MA)
+    "999", // Sul do Maranhão (MA)
+  ];
+
+  const dddTelefone = telefone.substring(0, 3);
+
+  if (dddsValidos.includes(dddTelefone)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function verificarTelefone() {
+  const telEstudante = document.getElementById("whatsappEstudante");
+  const mensagemErroEstudante = document.getElementById(
+    "mensagemErroEstudante"
+  );
+
+  const telProfessor = document.getElementById("whatsappProfessor");
+  const mensagemErroProfessor = document.getElementById(
+    "mensagemErroProfessor"
+  );
+
+  if (telEstudante.value.length > 0) {
+    if (!validarDDD(telEstudante.value) || telEstudante.value.length < 11) {
+      mensagemErroEstudante.innerText = "Número inválido.";
+      telEstudante.classList.remove("is-valid");
+      telEstudante.classList.add("is-invalid");
+    } else {
+      mensagemErroEstudante.innerText = "";
+      telEstudante.classList.remove("is-invalid");
+      telEstudante.classList.add("is-valid");
+    }
+  }
+
+  if (telProfessor.value.length > 0) {
+    if (!validarDDD(telProfessor.value) || telProfessor.value.length < 11) {
+      mensagemErroProfessor.innerText = "Número inválido.";
+      telProfessor.classList.remove("is-valid");
+      telProfessor.classList.add("is-invalid");
+    } else {
+      mensagemErroProfessor.innerText = "";
+      telProfessor.classList.remove("is-invalid");
+      telProfessor.classList.add("is-valid");
+    }
+  }
+}
 
 function allowDrop(event) {
   event.preventDefault();
@@ -400,12 +684,75 @@ const contatoProfessor = params.get("contatoProfessor");
 const contatoEstudante = params.get("contatoEstudante");
 const nomeProfessor = params.get("nameProfessor");
 const nomeEstudante = params.get("nameEstudante");
+const respostas1 = params.get("respostas1");
+const respostas21 = params.get("respostas21");
+const respostas22 = params.get("respostas22");
+const respostas31 = params.get("respostas31");
+const respostas32 = params.get("respostas32");
+const respostas33 = params.get("respostas33");
+const respostas34 = params.get("respostas34");
+const respostas41 = params.get("respostas41");
+const respostas42 = params.get("respostas42");
+const respostas51 = params.get("respostas51");
+const respostas52 = params.get("respostas52");
+const respostas61 = params.get("respostas61");
+const respostas62 = params.get("respostas62");
+const respostas71 = params.get("respostas71");
+const respostas72 = params.get("respostas72");
+const respostas73 = params.get("respostas73");
+const respostas8 = params.get("respostas8");
+const respostas9 = params.get("respostas9");
+const respostas101 = params.get("respostas101");
+const respostas102 = params.get("respostas102");
+const respostasDrop1 = params.get("respostasDrop1");
+const respostasDrop2 = params.get("respostasDrop2");
+const respostasDrop3 = params.get("respostasDrop3");
+const respostasDrop4 = params.get("respostasDrop4");
+const respostasDrop5 = params.get("respostasDrop5");
+const respostasDrop6 = params.get("respostasDrop6");
+const respostasDrop7 = params.get("respostasDrop7");
+const respostasDrop8 = params.get("respostasDrop8");
+const respostasCompr1 = params.get("respostasCompr1");
+const respostasCompr2 = params.get("respostasCompr2");
+const respostasCompr3 = params.get("respostasCompr3");
 
 // Preenchimento dos campos do formulário
 document.getElementById("whatsappProfessor").value = contatoProfessor;
 document.getElementById("nameProfessor").value = nomeProfessor;
 document.getElementById("whatsappEstudante").value = contatoEstudante;
 document.getElementById("nameEstudante").value = nomeEstudante;
+document.getElementById("respostas1").value = decodeURIComponent(respostas1);
+document.getElementById("respostas21").value = decodeURIComponent(respostas21);
+document.getElementById("respostas22").value = decodeURIComponent(respostas22);
+document.getElementById("respostas31").value = decodeURIComponent(respostas31);
+document.getElementById("respostas32").value = decodeURIComponent(respostas32);
+document.getElementById("respostas33").value = decodeURIComponent(respostas33);
+document.getElementById("respostas34").value = decodeURIComponent(respostas34);
+document.getElementById("respostas41").value = decodeURIComponent(respostas41);
+document.getElementById("respostas42").value = decodeURIComponent(respostas42);
+document.getElementById("respostas51").value = decodeURIComponent(respostas51);
+document.getElementById("respostas52").value = decodeURIComponent(respostas52);
+document.getElementById("respostas61").value = decodeURIComponent(respostas61);
+document.getElementById("respostas62").value = decodeURIComponent(respostas62);
+document.getElementById("respostas71").value = decodeURIComponent(respostas71);
+document.getElementById("respostas72").value = decodeURIComponent(respostas72);
+document.getElementById("respostas73").value = decodeURIComponent(respostas73);
+document.getElementById("respostas8").value = decodeURIComponent(respostas8);
+document.getElementById("respostas9").value = decodeURIComponent(respostas9);
+document.getElementById("respostas101").value = decodeURIComponent(respostas101);
+document.getElementById("respostas102").value = decodeURIComponent(respostas102);
+document.getElementById("respostasDrop1").value = decodeURIComponent(respostasDrop1);
+document.getElementById("respostasDrop2").value = decodeURIComponent(respostasDrop2);
+document.getElementById("respostasDrop3").value = decodeURIComponent(respostasDrop3);
+document.getElementById("respostasDrop4").value = decodeURIComponent(respostasDrop4);
+document.getElementById("respostasDrop5").value = decodeURIComponent(respostasDrop5);
+document.getElementById("respostasDrop6").value = decodeURIComponent(respostasDrop6);
+document.getElementById("respostasDrop7").value = decodeURIComponent(respostasDrop7);
+document.getElementById("respostasDrop8").value = decodeURIComponent(respostasDrop8);
+document.getElementById("respostasCompr1").value = decodeURIComponent(respostasCompr1);
+document.getElementById("respostasCompr2").value = decodeURIComponent(respostasCompr2);
+document.getElementById("respostasCompr3").value = decodeURIComponent(respostasCompr3);
+
 
 var utterance = null; // Variável global para controlar a síntese de fala
 
@@ -429,9 +776,9 @@ function lerVersiculo(versiculoId) {
   // Remover tags HTML do versículo
   var regexTags = /<[^>]+>/g;
   var regexNumeros = /\d+/g;
-  
-  versiculo = versiculo.replace(regexTags, '');
-  versiculo = versiculo.replace(regexNumeros, '');  
+
+  versiculo = versiculo.replace(regexTags, "");
+  versiculo = versiculo.replace(regexNumeros, "");
 
   utterance = new SpeechSynthesisUtterance(versiculo);
 
@@ -439,8 +786,8 @@ function lerVersiculo(versiculoId) {
   var voices = speechSynthesis.getVoices();
 
   // Selecione uma voz feminina em português
-  var selectedVoice = voices.find(function(voice) {
-    if (voice.lang === 'pt-BR' && voice.name.includes('Feminino')) {
+  var selectedVoice = voices.find(function (voice) {
+    if (voice.lang === "pt-BR" && voice.name.includes("Feminino")) {
       return voice;
     }
   });
@@ -472,12 +819,17 @@ function ajustarVelocidade(velocidade) {
   }
 }
 
-function pararAudio() {
-    if (utterance && speechSynthesis.speaking) {
-      // Interrompa a síntese de fala
-      speechSynthesis.cancel();
-    }
-    isPlaying = false; // Define o estado de reprodução como false
-    isPaused = false; // Define o estado de pausa como false
-    audioPosition = 0; // Redefine a posição de reprodução
+function pararAudio(versiculoId) {
+  if (utterance && speechSynthesis.speaking) {
+    // Interrompa a síntese de fala
+    speechSynthesis.cancel();
   }
+
+  // Redefina o estado de reprodução do versículo específico
+  var versiculoElement = document.getElementById(versiculoId);
+  if (versiculoElement) {
+    versiculoElement.dataset.playing = "false";
+    versiculoElement.dataset.paused = "false";
+    versiculoElement.dataset.position = "0";
+  }
+}

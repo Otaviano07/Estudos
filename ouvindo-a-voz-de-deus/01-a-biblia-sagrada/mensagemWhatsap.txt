@@ -1,10 +1,9 @@
-Olá #nameProfessor#, tudo bem! 
+Olá #nameProfessor#, tudo bem!
 
-Conseguie terminar o meu primeiro estudo da palavra de Deus com o tema #tema#. Então preciso que você faça a correção das minhas respostas. Segue abaixo:
+Consegui terminar o meu primeiro estudo da palavra de Deus com o tema #tema#. Gostaria que você fizesse a correção das minhas respostas para ver como me saí.
+Segue link: #linkGerado#
 
+Aguardo ansiosamente pelo seu feedback!
 
-
-
-
-
+Atenciosamente,
 #nameEstudante#

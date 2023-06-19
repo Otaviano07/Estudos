@@ -514,34 +514,20 @@ function isDispositivoMobile() {
 
 //Abrir Link gerado
 function abrirLink() {
-  var nomeEstudoBiblico = gerarSlug(
-    document.getElementById("nomeEstudoBiblico").value
-  );
-  var temaEstudoBiblico = gerarSlug(
-    document.getElementById("temaEstudoBiblico").value
-  );
+  var nomeEstudoBiblico = gerarSlug(document.getElementById("nomeEstudoBiblico").value);
+  var temaEstudoBiblico = gerarSlug(document.getElementById("temaEstudoBiblico").value);
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
   var contatoProfessor = document.getElementById("contatoProfessor").value;
   var contatoEstudante = document.getElementById("contatoEstudante").value;
-  
 
   // Verificar se todos os campos estão marcados como "is-valid"
-  var camposValidos =
-    document
-      .getElementById("nomeEstudoBiblico")
-      .classList.contains("is-valid") &&
-    document
-      .getElementById("temaEstudoBiblico")
-      .classList.contains("is-valid") &&
+  var camposValidos = document.getElementById("nomeEstudoBiblico").classList.contains("is-valid") &&
+    document.getElementById("temaEstudoBiblico").classList.contains("is-valid") &&
     document.getElementById("nameProfessor").classList.contains("is-valid") &&
     document.getElementById("nameEstudante").classList.contains("is-valid") &&
-    document
-      .getElementById("contatoProfessor")
-      .classList.contains("is-valid") &&
-    document
-      .getElementById("contatoEstudante")
-      .classList.contains("is-valid")
+    document.getElementById("contatoProfessor").classList.contains("is-valid") &&
+    document.getElementById("contatoEstudante").classList.contains("is-valid")
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
