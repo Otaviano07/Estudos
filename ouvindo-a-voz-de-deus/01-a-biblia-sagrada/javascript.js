@@ -20,6 +20,7 @@ document
     enviarResposta();
   });
 
+
   function shortenUrl(longUrl, customSlug) {
     var apiUrl =
       "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(longUrl);
@@ -48,36 +49,36 @@ document
     var estudoBiblico = "ouvindo-a-voz-de-deus";
     var tema ="01-a-biblia-sagrada";
     var resposta1 = document.getElementById("resposta1").value;
-    var resposta2 = document.getElementById("resposta21").value;
-    var resposta3 = document.getElementById("resposta22").value;
-    var resposta4 = document.getElementById("flexCheck01").value;
-    var resposta5 = document.getElementById("flexCheck02").value;
-    var resposta6 = document.getElementById("flexCheck03").value;
-    var resposta7 = document.getElementById("flexCheck04").value;
-    var resposta8 = document.getElementById("resposta41").value;
-    var resposta9 = document.getElementById("resposta42").value;
-    var resposta10 = document.getElementById("resposta51").value;
-    var resposta11 = document.getElementById("resposta52").value;
-    var resposta12 = document.getElementById("resposta61").value;
-    var resposta13 = document.getElementById("resposta62").value;
-    var resposta14 = document.getElementById("flexCheck05").value;
-    var resposta15 = document.getElementById("flexCheck06").value;
-    var resposta16 = document.getElementById("flexCheck07").value;
-    var resposta17 = document.getElementById("resposta8").value;
-    var resposta18 = document.getElementById("resposta9").value;
-    var resposta19 = document.getElementById("resposta101").value;
-    var resposta20 = document.getElementById("resposta102").value;
-    var resposta21 = document.getElementById("drop-area1").value;
-    var resposta22 = document.getElementById("drop-area2").value;
-    var resposta23 = document.getElementById("drop-area3").value;
-    var resposta24 = document.getElementById("drop-area4").value;
-    var resposta25 = document.getElementById("drop-area5").value;
-    var resposta26 = document.getElementById("drop-area6").value;
-    var resposta27 = document.getElementById("drop-area7").value;
-    var resposta28 = document.getElementById("drop-area8").value;
-    var resposta29 = document.getElementById("flexCheck08").checked;
-    var resposta30 = document.getElementById("flexCheck09").checked;
-    var resposta31 = document.getElementById("flexCheck10").checked;
+    var resposta2 = document.getElementById("resposta2").value;
+    var resposta3 = document.getElementById("resposta3").value;
+    var resposta4 = document.getElementById("resposta4").value;
+    var resposta5 = document.getElementById("resposta5").value;
+    var resposta6 = document.getElementById("resposta6").value;
+    var resposta7 = document.getElementById("resposta7").value;
+    var resposta8 = document.getElementById("resposta8").value;
+    var resposta9 = document.getElementById("resposta9").value;
+    var resposta10 = document.getElementById("resposta10").value;
+    var resposta11 = document.getElementById("resposta11").value;
+    var resposta12 = document.getElementById("resposta12").value;
+    var resposta13 = document.getElementById("resposta13").value;
+    var resposta14 = document.getElementById("resposta14").value;
+    var resposta15 = document.getElementById("resposta15").value;
+    var resposta16 = document.getElementById("resposta16").value;
+    var resposta17 = document.getElementById("resposta17").value;
+    var resposta18 = document.getElementById("resposta18").value;
+    var resposta19 = document.getElementById("resposta19").value;
+    var resposta20 = document.getElementById("resposta20").value;
+    var resposta21 = document.getElementById("resposta21").textContent;
+    var resposta22 = document.getElementById("resposta22").textContent;
+    var resposta23 = document.getElementById("resposta23").textContent;
+    var resposta24 = document.getElementById("resposta24").textContent;
+    var resposta25 = document.getElementById("resposta25").textContent;
+    var resposta26 = document.getElementById("resposta26").textContent;
+    var resposta27 = document.getElementById("resposta27").textContent;
+    var resposta28 = document.getElementById("resposta28").textContent;
+    var resposta29 = document.getElementById("resposta29").checked;
+    var resposta30 = document.getElementById("resposta30").checked;
+    var resposta31 = document.getElementById("resposta31").checked;
 
     // Verificar se todos os campos estão marcados como "is-valid"
     /*var camposValidos =
@@ -105,7 +106,7 @@ document
         nomeEstudante &&
         nomeProfessor &&
         contatoProfessor &&
-        contatoEstudande
+        contatoEstudante
       ) {
         var linkBase = "https://otaviano07.github.io/revelacaobiblica/";
         var linkGerado =
@@ -123,65 +124,65 @@ document
           contatoEstudante +
           "&resposta1=" +
           encodeURIComponent(resposta1) +
-          "&resposta21=" +
+          "&resposta2=" +
           encodeURIComponent(resposta2) +
-          "&resposta22=" +
+          "&resposta3=" +
           encodeURIComponent(resposta3) +
-          "&flexCheck01=" +
+          "&resposta4=" +
           encodeURIComponent(resposta4) +
-          "&flexCheck02=" +
+          "&resposta5=" +
           encodeURIComponent(resposta5) +
-          "&flexCheck03=" +
+          "&resposta6=" +
           encodeURIComponent(resposta6) +
-          "&flexCheck04=" +
+          "&resposta7=" +
           encodeURIComponent(resposta7) +
-          "&resposta41=" +
-          encodeURIComponent(resposta8) +
-          "&resposta42=" +
-          encodeURIComponent(resposta9) +
-          "&resposta51=" +
-          encodeURIComponent(resposta10) +
-          "&resposta52=" +
-          encodeURIComponent(resposta11) +
-          "&resposta61=" +
-          encodeURIComponent(resposta12) +
-          "&resposta62=" +
-          encodeURIComponent(resposta13) +
-          "&flexCheck05=" +
-          encodeURIComponent(resposta14) +
-          "&flexCheck06=" +
-          encodeURIComponent(resposta15) +
-          "&flexCheck07=" +
-          encodeURIComponent(resposta16) +
           "&resposta8=" +
-          encodeURIComponent(resposta17) +
+          encodeURIComponent(resposta8) +
           "&resposta9=" +
+          encodeURIComponent(resposta9) +
+          "&resposta10=" +
+          encodeURIComponent(resposta10) +
+          "&resposta11=" +
+          encodeURIComponent(resposta11) +
+          "&resposta12=" +
+          encodeURIComponent(resposta12) +
+          "&resposta13=" +
+          encodeURIComponent(resposta13) +
+          "&resposta14=" +
+          encodeURIComponent(resposta14) +
+          "&resposta15=" +
+          encodeURIComponent(resposta15) +
+          "&resposta16=" +
+          encodeURIComponent(resposta16) +
+          "&resposta17=" +
+          encodeURIComponent(resposta17) +
+          "&resposta18=" +
           encodeURIComponent(resposta18) +
-          "&resposta101=" +
+          "&resposta19=" +
           encodeURIComponent(resposta19) +
-          "&resposta102=" +
+          "&resposta20=" +
           encodeURIComponent(resposta20) +
-          "&respostaDrop1=" +
+          "&resposta21=" +
           encodeURIComponent(resposta21) +
-          "&respostaDrop2=" +
+          "&resposta22=" +
           encodeURIComponent(resposta22) +
-          "&respostaDrop3=" +
+          "&resposta23=" +
           encodeURIComponent(resposta23) +
-          "&respostaDrop4=" +
+          "&resposta24=" +
           encodeURIComponent(resposta24) +
-          "&respostaDrop5=" +
+          "&resposta25=" +
           encodeURIComponent(resposta25) +
-          "&respostaDrop6=" +
+          "&resposta26=" +
           encodeURIComponent(resposta26) +
-          "&respostaDrop7=" +
+          "&resposta27=" +
           encodeURIComponent(resposta27) +
-          "&respostaDrop8=" +
+          "&resposta28=" +
           encodeURIComponent(resposta28) +
-          "&respostaCompr1=" +
+          "&resposta29=" +
           encodeURIComponent(resposta29) +
-          "&respostaCompr2=" +
+          "&resposta30=" +
           encodeURIComponent(resposta30)+
-          "&respostaCompr3=" +
+          "&resposta31=" +
           encodeURIComponent(resposta31);
 
           //linkGerado = shortenUrl(linkGerado, "EstudoBiblico");
@@ -387,20 +388,7 @@ function dropWord(event) {
   }
 }
 
-function resetExercise() {
-  var dropAreas = document.querySelectorAll(".drop-area");
-  var selectedWords = document.querySelectorAll(".selected-word");
-
-  dropAreas.forEach(function (dropArea) {
-    dropArea.textContent = "";
-    dropArea.classList.remove("green"); // Remove a classe "green" das drop-areas
-  });
-
-  selectedWords.forEach(function (selectedWord) {
-    selectedWord.style.display = "block";
-  });
-}
-
+/*
 function updateCheckboxLabel(checkboxId) {
   var checkbox = document.getElementById(checkboxId);
   var labelText = document.getElementById("labelText" + checkboxId.slice(-2));
@@ -410,7 +398,7 @@ function updateCheckboxLabel(checkboxId) {
   } else {
     labelText.textContent = "F";
   }
-}
+}*/
 
 //<!--Funcao para saber mais sobre o assunto-->
 
@@ -604,7 +592,7 @@ var snowEffect = function () {
     }
   })();
 };
-document.getElementById("flexCheck08").addEventListener("click", function () {
+document.getElementById("resposta08").addEventListener("click", function () {
   if (this.checked) {
     fireworksEffect();
     schoolprideEffect();
@@ -612,7 +600,7 @@ document.getElementById("flexCheck08").addEventListener("click", function () {
   }
 });
 
-document.getElementById("flexCheck09").addEventListener("click", function () {
+document.getElementById("resposta09").addEventListener("click", function () {
   if (this.checked) {
     fireworksEffect();
     realisticlookEffect();
@@ -621,7 +609,7 @@ document.getElementById("flexCheck09").addEventListener("click", function () {
   }
 });
 
-document.getElementById("flexCheck10").addEventListener("click", function () {
+document.getElementById("resposta10").addEventListener("click", function () {
   if (this.checked) {
     schoolprideEffect();
     realisticlookEffect();
@@ -635,14 +623,6 @@ function ajustarTamanhoCampo(input) {
 }
 
 var currentTouchElement = null;
-
-function allowDrop(event) {
-  event.preventDefault();
-}
-
-function dragWord(event) {
-  event.dataTransfer.setData("text", event.target.dataset.word);
-}
 
 function touchStart(event) {
   currentTouchElement = event.target;
@@ -685,83 +665,6 @@ function resetExercise() {
     selectedWord.style.display = "block";
   });
 }
-
-// Captura dos parâmetros da URL
-const params = new URLSearchParams(window.location.search);
-const contatoProfessor = params.get("contatoProfessor");
-const contatoEstudante = params.get("contatoEstudante");
-const nomeProfessor = params.get("nameProfessor");
-const nomeEstudante = params.get("nameEstudante");
-const resposta1 = params.get("resposta1");
-const resposta2 = params.get("resposta21");
-const resposta3 = params.get("resposta22");
-const resposta4 = params.get("resposta31");
-const resposta5 = params.get("resposta32");
-const resposta6 = params.get("resposta33");
-const resposta7 = params.get("resposta34");
-const resposta8 = params.get("resposta41");
-const resposta9 = params.get("resposta42");
-const resposta10 = params.get("resposta51");
-const resposta11 = params.get("resposta52");
-const resposta12 = params.get("resposta61");
-const resposta13 = params.get("resposta62");
-const resposta14 = params.get("resposta71");
-const resposta15 = params.get("resposta72");
-const resposta16 = params.get("resposta73");
-const resposta17 = params.get("resposta8");
-const resposta18 = params.get("resposta9");
-const resposta19 = params.get("resposta101");
-const resposta20 = params.get("resposta102");
-const resposta21 = params.get("respostaDrop1");
-const resposta22 = params.get("respostaDrop2");
-const resposta33 = params.get("respostaDrop3");
-const resposta24 = params.get("respostaDrop4");
-const resposta25 = params.get("respostaDrop5");
-const resposta26 = params.get("respostaDrop6");
-const resposta27 = params.get("respostaDrop7");
-const resposta28 = params.get("respostaDrop8");
-const resposta29 = params.get("respostaCompr1");
-const resposta30 = params.get("respostaCompr2");
-const resposta31 = params.get("respostaCompr3");
-
-// Preenchimento dos campos do formulário
-document.getElementById("whatsappProfessor").value = contatoProfessor ? contatoProfessor : "";
-document.getElementById("nameProfessor").value = nomeProfessor ? nomeProfessor : "";
-document.getElementById("whatsappEstudante").value = contatoEstudante ? contatoEstudante : "";
-document.getElementById("nameEstudante").value = nomeEstudante ? nomeEstudante : "";
-document.getElementById("resposta1").value = resposta1 ? decodeURIComponent(resposta1) : "";
-document.getElementById("resposta21").value = resposta2 ? decodeURIComponent(resposta2) : "";
-document.getElementById("resposta22").value = resposta3 ? decodeURIComponent(resposta3) : "";
-document.getElementById("flexCheck01").value = resposta4 ? decodeURIComponent(resposta4) : "";
-document.getElementById("flexCheck02").value = resposta5 ? decodeURIComponent(resposta5) : "";
-document.getElementById("flexCheck03").value = resposta6 ? decodeURIComponent(resposta6) : "";
-document.getElementById("flexCheck04").value = resposta7 ? decodeURIComponent(resposta7) : "";
-document.getElementById("resposta41").value = resposta8 ? decodeURIComponent(resposta8) : "";
-document.getElementById("resposta42").value = resposta9 ? decodeURIComponent(resposta9) : "";
-document.getElementById("resposta51").value = resposta10 ? decodeURIComponent(resposta10) : "";
-document.getElementById("resposta52").value = resposta11 ? decodeURIComponent(resposta11) : "";
-document.getElementById("resposta61").value = resposta12 ? decodeURIComponent(resposta12) : "";
-document.getElementById("resposta62").value = resposta13 ? decodeURIComponent(resposta13) : "";
-document.getElementById("flexCheck05").value = resposta14 ? decodeURIComponent(resposta14) : "";
-document.getElementById("flexCheck06").value = resposta15 ? decodeURIComponent(resposta15) : "";
-document.getElementById("flexCheck07").value = resposta16 ? decodeURIComponent(resposta16) : "";
-document.getElementById("resposta8").value = resposta17 ? decodeURIComponent(resposta17) : "";
-document.getElementById("resposta9").value = resposta18 ? decodeURIComponent(resposta18) : "";
-document.getElementById("resposta101").value = resposta19 ? decodeURIComponent(resposta19) : "";
-document.getElementById("resposta102").value = resposta20 ? decodeURIComponent(resposta20) : "";
-document.getElementById("respostaDrop1").value = resposta21 ? decodeURIComponent(resposta21) : "";
-document.getElementById("respostaDrop2").value = resposta22 ? decodeURIComponent(resposta22) : "";
-document.getElementById("respostaDrop3").value = resposta23 ? decodeURIComponent(resposta23) : "";
-document.getElementById("respostaDrop4").value = resposta24 ? decodeURIComponent(resposta24) : "";
-document.getElementById("respostaDrop5").value = resposta25 ? decodeURIComponent(resposta25) : "";
-document.getElementById("respostaDrop6").value = resposta26 ? decodeURIComponent(resposta26) : "";
-document.getElementById("respostaDrop7").value = resposta27 ? decodeURIComponent(resposta27) : "";
-document.getElementById("respostaDrop8").value = resposta28 ? decodeURIComponent(resposta28) : "";
-document.getElementById("respostaCompr1").value = resposta29 ? decodeURIComponent(resposta29) : "";
-document.getElementById("respostaCompr2").value = resposta30 ? decodeURIComponent(resposta30) : "";
-document.getElementById("respostaCompr3").value = resposta31 ? decodeURIComponent(resposta31) : "";
-
-
 
 var utterance = null; // Variável global para controlar a síntese de fala
 
@@ -842,3 +745,22 @@ function pararAudio(versiculoId) {
     versiculoElement.dataset.position = "0";
   }
 }
+
+    // Obter os dados das áreas de soltar
+    function getDropAreasData() {
+      var dropAreas = document.getElementsByClassName("drop-area");
+      var respostas = {};
+
+      for (var i = 0; i < dropAreas.length; i++) {
+          var dropArea = dropAreas[i];
+          var resposta = dropArea.getAttribute("data-resposta");
+          var conteudo = dropArea.textContent;
+          respostas[resposta] = conteudo;
+      }
+
+      return respostas;
+  }
+
+  // Exemplo de uso: obter os dados e exibi-los no console
+  var respostas = getDropAreasData();
+  console.log(respostas);
