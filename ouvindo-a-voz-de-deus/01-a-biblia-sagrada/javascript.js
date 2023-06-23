@@ -47,8 +47,8 @@ document
     var nomeEstudante = document.getElementById("nameEstudante").value;
     var nomeProfessor = document.getElementById("nameProfessor").value;
     var contatoProfessor = document.getElementById("whatsappProfessor").value;
-    var estudoBiblico = "Ouvindo a Voz de Deus";
-    var tema = "01 - A Bíblia Sagrada";
+    var estudoBiblico = "ouvindo-a-voz-de-deus";
+    var tema ="01-a-biblia-sagrada";
     var resposta1 = document.getElementById("resposta1").value;
     var resposta2 = document.getElementById("resposta21").value;
     var resposta3 = document.getElementById("resposta22").value;
@@ -108,7 +108,7 @@ document
         nomeProfessor &&
         contatoProfessor
       ) {
-        var linkBase = "https://otaviano07.github.io/aprendendomais/";
+        var linkBase = "https://otaviano07.github.io/revelacaobiblica/";
         var linkGerado =
           linkBase +
           estudoBiblico +
@@ -210,9 +210,9 @@ document
       //}
     } else {
       console.log("Campos preenchidos: " + resposta1 + ", " + resposta2 + ", " + resposta3 + ", " + resposta4 + ", " + resposta5 + ", " + resposta6 + ", " + resposta7 + ", " + resposta8 + ", " + resposta9 + ", " + resposta10 + ", " + resposta11 + ", " + resposta12 + ", " + resposta13 + ", " + resposta14 + ", " + resposta15 + ", " + resposta16 + ", " + resposta17 + ", " + resposta18 + ", " + resposta19 + ", " + resposta20 + ", " + resposta21 + ", " + resposta22 + ", " + resposta23 + ", " + resposta24 + ", " + resposta25 + ", " + resposta26 + ", " + resposta27 + ", " + resposta28 + ", " + resposta29 + ", " + resposta30 + ", " + resposta31);
-      /*alert(
+      alert(
         "Por favor, responda todas as perguntas antes de enviar as respostas para o professor."
-      );*/
+      );
       
     }
   }

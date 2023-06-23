@@ -179,7 +179,7 @@ function gerarLink() {
       contatoProfessor &&
       contatoEstudante
     ) {
-      var linkBase = "https://otaviano07.github.io/aprendendomais/";
+      var linkBase = "https://otaviano07.github.io/revelacaobiblica/";
 
       var linkGerado =
         linkBase +
