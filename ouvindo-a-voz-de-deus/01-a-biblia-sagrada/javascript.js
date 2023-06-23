@@ -38,9 +38,7 @@ document
       .catch(function (error) {
         console.log("Erro ao encurtar o link:", error);
       });
-  }
-  
-
+  }  
 
   function enviarResposta() {
     var apiWhatsapp = "https://web.whatsapp.com/send/?phone=55";
@@ -106,7 +104,8 @@ document
         resposta19 &&
         nomeEstudante &&
         nomeProfessor &&
-        contatoProfessor
+        contatoProfessor &&
+        contatoEstudande
       ) {
         var linkBase = "https://otaviano07.github.io/revelacaobiblica/";
         var linkGerado =
