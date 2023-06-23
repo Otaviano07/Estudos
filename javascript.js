@@ -352,7 +352,7 @@ function encurtarLink() {
     }
   } else {
     alert(
-      "Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link."
+      "Por favor, preencha todos os campos antes de encurtar o link. Para depois clicar em Gerar Link."
     );
   }
 }
@@ -424,7 +424,7 @@ function copiarLink() {
     }
   } else {
     alert(
-      "Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link."
+      "Por favor, preencha todos os campos antes de copiar o link. Para depois clicar em Gerar Link."
     );
   }
 }
@@ -500,7 +500,7 @@ function enviarMensagemWhatsapp() {
     }
   } else {
     alert(
-      "Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link"
+      "Por favor, preencha todos os campos antes de enviar mensagem para o Whatsapp. Para depois clicar em Gerar Link"
     );
   }
 }
@@ -544,7 +544,7 @@ function abrirLink() {
     }
   } else {
     alert(
-      "Por favor, preencha todos os campos antes de gerar o link. Para depois clicar em Gerar Link."
+      "Por favor, preencha todos os campos antes de abrir o link. Para depois clicar em Gerar Link."
     );
   }
 }
