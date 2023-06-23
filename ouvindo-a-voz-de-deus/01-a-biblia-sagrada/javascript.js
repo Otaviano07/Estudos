@@ -27,37 +27,75 @@ document
     var contatoProfessor = document.getElementById("whatsappProfessor").value;
     var estudoBiblico = "Ouvindo a Voz de Deus";
     var tema = "01 - A Bíblia Sagrada";
-    var respostas1 = document.getElementById("resposta1").value;
-    var respostas21 = document.getElementById("resposta21").value;
-    var respostas22 = document.getElementById("resposta22").value;
-    var respostas31 = document.getElementById("flexCheck01").value;
-    var respostas32 = document.getElementById("flexCheck02").value;
-    var respostas33 = document.getElementById("flexCheck03").value;
-    var respostas34 = document.getElementById("flexCheck04").value;
-    var respostas41 = document.getElementById("resposta41").value;
-    var respostas42 = document.getElementById("resposta42").value;
-    var respostas51 = document.getElementById("resposta51").value;
-    var respostas52 = document.getElementById("resposta52").value;
-    var respostas61 = document.getElementById("resposta61").value;
-    var respostas62 = document.getElementById("resposta62").value;
-    var respostas71 = document.getElementById("flexCheck05").value;
-    var respostas72 = document.getElementById("flexCheck06").value;
-    var respostas73 = document.getElementById("flexCheck07").value;
-    var respostas8 = document.getElementById("resposta8").value;
-    var respostas9 = document.getElementById("resposta9").value;
-    var respostas101 = document.getElementById("resposta101").value;
-    var respostas102 = document.getElementById("resposta102").value;
-    var respostasDrop1 = document.getElementById("drop-area1").value;
-    var respostasDrop2 = document.getElementById("drop-area2").value;
-    var respostasDrop3 = document.getElementById("drop-area3").value;
-    var respostasDrop4 = document.getElementById("drop-area4").value;
-    var respostasDrop5 = document.getElementById("drop-area5").value;
-    var respostasDrop6 = document.getElementById("drop-area6").value;
-    var respostasDrop7 = document.getElementById("drop-area7").value;
-    var respostasDrop8 = document.getElementById("drop-area8").value;
-    var respostasCompr1 = document.getElementById("flexCheck08").checked;
-    var respostasCompr2 = document.getElementById("flexCheck09").checked;
-    var respostasCompr3 = document.getElementById("flexCheck10").checked;
+    var resposta1 = document.getElementById("resposta1").value;
+    var resposta21 = document.getElementById("resposta21").value;
+    var resposta22 = document.getElementById("resposta22").value;
+    var resposta31 = document.getElementById("flexCheck01").value;
+    var resposta32 = document.getElementById("flexCheck02").value;
+    var resposta33 = document.getElementById("flexCheck03").value;
+    var resposta34 = document.getElementById("flexCheck04").value;
+    var resposta41 = document.getElementById("resposta41").value;
+    var resposta42 = document.getElementById("resposta42").value;
+    var resposta51 = document.getElementById("resposta51").value;
+    var resposta52 = document.getElementById("resposta52").value;
+    var resposta61 = document.getElementById("resposta61").value;
+    var resposta62 = document.getElementById("resposta62").value;
+    var resposta71 = document.getElementById("flexCheck05").value;
+    var resposta72 = document.getElementById("flexCheck06").value;
+    var resposta73 = document.getElementById("flexCheck07").value;
+    var resposta8 = document.getElementById("resposta8").value;
+    var resposta9 = document.getElementById("resposta9").value;
+    var resposta101 = document.getElementById("resposta101").value;
+    var resposta102 = document.getElementById("resposta102").value;
+    var respostaDrop1 = document.getElementById("drop-area1").value;
+    var respostaDrop2 = document.getElementById("drop-area2").value;
+    var respostaDrop3 = document.getElementById("drop-area3").value;
+    var respostaDrop4 = document.getElementById("drop-area4").value;
+    var respostaDrop5 = document.getElementById("drop-area5").value;
+    var respostaDrop6 = document.getElementById("drop-area6").value;
+    var respostaDrop7 = document.getElementById("drop-area7").value;
+    var respostaDrop8 = document.getElementById("drop-area8").value;
+    var respostaCompr1 = document.getElementById("flexCheck08").checked;
+    var respostaCompr2 = document.getElementById("flexCheck09").checked;
+    var respostaCompr3 = document.getElementById("flexCheck10").checked;
+
+    console.log(nomeEstudante);
+console.log(nomeProfessor);
+console.log(contatoProfessor);
+console.log(estudoBiblico);
+console.log(tema);
+console.log(resposta1);
+console.log(resposta21);
+console.log(resposta22);
+console.log(resposta31);
+console.log(resposta32);
+console.log(resposta33);
+console.log(resposta34);
+console.log(resposta41);
+console.log(resposta42);
+console.log(resposta51);
+console.log(resposta52);
+console.log(resposta61);
+console.log(resposta62);
+console.log(resposta71);
+console.log(resposta72);
+console.log(resposta73);
+console.log(resposta8);
+console.log(resposta9);
+console.log(resposta101);
+console.log(resposta102);
+console.log(respostaDrop1);
+console.log(respostaDrop2);
+console.log(respostaDrop3);
+console.log(respostaDrop4);
+console.log(respostaDrop5);
+console.log(respostaDrop6);
+console.log(respostaDrop7);
+console.log(respostaDrop8);
+console.log(respostaCompr1);
+console.log(respostaCompr2);
+console.log(respostaCompr3);
+
 
     // Verificar se todos os campos estão marcados como "is-valid"
     /*var camposValidos =
@@ -70,34 +108,34 @@ document
     if (camposValidos) {*/
       // Verificar se todos os campos estão preenchidos
       if (
-        respostas1 &&
-        respostas21 &&
-        respostas22 &&
-        respostas31 &&
-        respostas32 &&
-        respostas33 &&
-        respostas34 &&
-        respostas41 &&
-        respostas42 &&
-        respostas51 &&
-        respostas52 &&
-        respostas61 &&
-        respostas62 &&
-        respostas71 &&
-        respostas72 &&
-        respostas73 &&
-        respostas8 &&
-        respostas9 &&
-        respostas101 &&
-        respostas102 &&
-        respostasDrop1 &&
-        respostasDrop2 &&
-        respostasDrop3 &&
-        respostasDrop4 &&
-        respostasDrop5 &&
-        respostasDrop6 &&
-        respostasDrop7 &&
-        respostasDrop8 &&
+        resposta1 &&
+        resposta21 &&
+        resposta22 &&
+        resposta31 &&
+        resposta32 &&
+        resposta33 &&
+        resposta34 &&
+        resposta41 &&
+        resposta42 &&
+        resposta51 &&
+        resposta52 &&
+        resposta61 &&
+        resposta62 &&
+        resposta71 &&
+        resposta72 &&
+        resposta73 &&
+        resposta8 &&
+        resposta9 &&
+        resposta101 &&
+        resposta102 &&
+        respostaDrop1 &&
+        respostaDrop2 &&
+        respostaDrop3 &&
+        respostaDrop4 &&
+        respostaDrop5 &&
+        respostaDrop6 &&
+        respostaDrop7 &&
+        respostaDrop8 &&
         nomeEstudante &&
         nomeProfessor &&
         contatoProfessor
@@ -116,68 +154,68 @@ document
           encodeURIComponent(nomeEstudante) +
           "&contatoEstudante=" +
           contatoEstudante +
-          "&respostas1=" +
-          encodeURIComponent(respostas1) +
-          "&respostas21=" +
-          encodeURIComponent(respostas21) +
-          "&respostas22=" +
-          encodeURIComponent(respostas22) +
-          "&respostas31=" +
-          encodeURIComponent(respostas31) +
-          "&respostas32=" +
-          encodeURIComponent(respostas32) +
-          "&respostas33=" +
-          encodeURIComponent(respostas33) +
-          "&respostas34=" +
-          encodeURIComponent(respostas34) +
-          "&respostas41=" +
-          encodeURIComponent(respostas41) +
-          "&respostas42=" +
-          encodeURIComponent(respostas42) +
-          "&respostas51=" +
-          encodeURIComponent(respostas51) +
-          "&respostas52=" +
-          encodeURIComponent(respostas52) +
-          "&respostas61=" +
-          encodeURIComponent(respostas61) +
-          "&respostas62=" +
-          encodeURIComponent(respostas62) +
-          "&respostas71=" +
-          encodeURIComponent(respostas71) +
-          "&respostas72=" +
-          encodeURIComponent(respostas72) +
-          "&respostas73=" +
-          encodeURIComponent(respostas73) +
-          "&respostas8=" +
-          encodeURIComponent(respostas8) +
-          "&respostas9=" +
-          encodeURIComponent(respostas9) +
-          "&respostas101=" +
-          encodeURIComponent(respostas101) +
-          "&respostas102=" +
-          encodeURIComponent(respostas102) +
-          "&respostasDrop1=" +
-          encodeURIComponent(respostasDrop1) +
-          "&respostasDrop2=" +
-          encodeURIComponent(respostasDrop2) +
-          "&respostasDrop3=" +
-          encodeURIComponent(respostasDrop3) +
-          "&respostasDrop4=" +
-          encodeURIComponent(respostasDrop4) +
-          "&respostasDrop5=" +
-          encodeURIComponent(respostasDrop5) +
-          "&respostasDrop6=" +
-          encodeURIComponent(respostasDrop6) +
-          "&respostasDrop7=" +
-          encodeURIComponent(respostasDrop7) +
-          "&respostasDrop8=" +
-          encodeURIComponent(respostasDrop8) +
-          "&respostasCompr1=" +
-          encodeURIComponent(respostasCompr1) +
-          "&respostasCompr2=" +
-          encodeURIComponent(respostasCompr2) +
-          "&respostasCompr3=" +
-          encodeURIComponent(respostasCompr3);
+          "&resposta1=" +
+          encodeURIComponent(resposta1) +
+          "&resposta21=" +
+          encodeURIComponent(resposta21) +
+          "&resposta22=" +
+          encodeURIComponent(resposta22) +
+          "&resposta31=" +
+          encodeURIComponent(resposta31) +
+          "&resposta32=" +
+          encodeURIComponent(resposta32) +
+          "&resposta33=" +
+          encodeURIComponent(resposta33) +
+          "&resposta34=" +
+          encodeURIComponent(resposta34) +
+          "&resposta41=" +
+          encodeURIComponent(resposta41) +
+          "&resposta42=" +
+          encodeURIComponent(resposta42) +
+          "&resposta51=" +
+          encodeURIComponent(resposta51) +
+          "&resposta52=" +
+          encodeURIComponent(resposta52) +
+          "&resposta61=" +
+          encodeURIComponent(resposta61) +
+          "&resposta62=" +
+          encodeURIComponent(resposta62) +
+          "&resposta71=" +
+          encodeURIComponent(resposta71) +
+          "&resposta72=" +
+          encodeURIComponent(resposta72) +
+          "&resposta73=" +
+          encodeURIComponent(resposta73) +
+          "&resposta8=" +
+          encodeURIComponent(resposta8) +
+          "&resposta9=" +
+          encodeURIComponent(resposta9) +
+          "&resposta101=" +
+          encodeURIComponent(resposta101) +
+          "&resposta102=" +
+          encodeURIComponent(resposta102) +
+          "&respostaDrop1=" +
+          encodeURIComponent(respostaDrop1) +
+          "&respostaDrop2=" +
+          encodeURIComponent(respostaDrop2) +
+          "&respostaDrop3=" +
+          encodeURIComponent(respostaDrop3) +
+          "&respostaDrop4=" +
+          encodeURIComponent(respostaDrop4) +
+          "&respostaDrop5=" +
+          encodeURIComponent(respostaDrop5) +
+          "&respostaDrop6=" +
+          encodeURIComponent(respostaDrop6) +
+          "&respostaDrop7=" +
+          encodeURIComponent(respostaDrop7) +
+          "&respostaDrop8=" +
+          encodeURIComponent(respostaDrop8) +
+          "&respostaCompr1=" +
+          encodeURIComponent(respostaCompr1) +
+          "&respostaCompr2=" +
+          encodeURIComponent(respostaCompr2) +
+          "&respostaCompr3=" +
+          encodeURIComponent(respostaCompr3);
 
         var mensagem =
           "Olá " +
@@ -186,7 +224,7 @@ document
           estudoBiblico +
           " com o tema " +
           tema +
-          ". Gostaria que você fizesse a correção das minhas respostas para ver como me saí.\nSegue o link: " +
+          ". Gostaria que você fizesse a correção das minhas resposta para ver como me saí.\nSegue o link: " +
           linkGerado +
           "\n\nAguardo ansiosamente pelo seu feedback!\n\nAtenciosamente,\n" +
           nomeEstudante;
@@ -683,74 +721,74 @@ const contatoProfessor = params.get("contatoProfessor");
 const contatoEstudante = params.get("contatoEstudante");
 const nomeProfessor = params.get("nameProfessor");
 const nomeEstudante = params.get("nameEstudante");
-const respostas1 = params.get("respostas1");
-const respostas21 = params.get("respostas21");
-const respostas22 = params.get("respostas22");
-const respostas31 = params.get("respostas31");
-const respostas32 = params.get("respostas32");
-const respostas33 = params.get("respostas33");
-const respostas34 = params.get("respostas34");
-const respostas41 = params.get("respostas41");
-const respostas42 = params.get("respostas42");
-const respostas51 = params.get("respostas51");
-const respostas52 = params.get("respostas52");
-const respostas61 = params.get("respostas61");
-const respostas62 = params.get("respostas62");
-const respostas71 = params.get("respostas71");
-const respostas72 = params.get("respostas72");
-const respostas73 = params.get("respostas73");
-const respostas8 = params.get("respostas8");
-const respostas9 = params.get("respostas9");
-const respostas101 = params.get("respostas101");
-const respostas102 = params.get("respostas102");
-const respostasDrop1 = params.get("respostasDrop1");
-const respostasDrop2 = params.get("respostasDrop2");
-const respostasDrop3 = params.get("respostasDrop3");
-const respostasDrop4 = params.get("respostasDrop4");
-const respostasDrop5 = params.get("respostasDrop5");
-const respostasDrop6 = params.get("respostasDrop6");
-const respostasDrop7 = params.get("respostasDrop7");
-const respostasDrop8 = params.get("respostasDrop8");
-const respostasCompr1 = params.get("respostasCompr1");
-const respostasCompr2 = params.get("respostasCompr2");
-const respostasCompr3 = params.get("respostasCompr3");
+const resposta1 = params.get("resposta1");
+const resposta21 = params.get("resposta21");
+const resposta22 = params.get("resposta22");
+const resposta31 = params.get("resposta31");
+const resposta32 = params.get("resposta32");
+const resposta33 = params.get("resposta33");
+const resposta34 = params.get("resposta34");
+const resposta41 = params.get("resposta41");
+const resposta42 = params.get("resposta42");
+const resposta51 = params.get("resposta51");
+const resposta52 = params.get("resposta52");
+const resposta61 = params.get("resposta61");
+const resposta62 = params.get("resposta62");
+const resposta71 = params.get("resposta71");
+const resposta72 = params.get("resposta72");
+const resposta73 = params.get("resposta73");
+const resposta8 = params.get("resposta8");
+const resposta9 = params.get("resposta9");
+const resposta101 = params.get("resposta101");
+const resposta102 = params.get("resposta102");
+const respostaDrop1 = params.get("respostaDrop1");
+const respostaDrop2 = params.get("respostaDrop2");
+const respostaDrop3 = params.get("respostaDrop3");
+const respostaDrop4 = params.get("respostaDrop4");
+const respostaDrop5 = params.get("respostaDrop5");
+const respostaDrop6 = params.get("respostaDrop6");
+const respostaDrop7 = params.get("respostaDrop7");
+const respostaDrop8 = params.get("respostaDrop8");
+const respostaCompr1 = params.get("respostaCompr1");
+const respostaCompr2 = params.get("respostaCompr2");
+const respostaCompr3 = params.get("respostaCompr3");
 
 // Preenchimento dos campos do formulário
 document.getElementById("whatsappProfessor").value = contatoProfessor;
 document.getElementById("nameProfessor").value = nomeProfessor;
 document.getElementById("whatsappEstudante").value = contatoEstudante;
 document.getElementById("nameEstudante").value = nomeEstudante;
-document.getElementById("respostas1").value = decodeURIComponent(respostas1);
-document.getElementById("respostas21").value = decodeURIComponent(respostas21);
-document.getElementById("respostas22").value = decodeURIComponent(respostas22);
-document.getElementById("respostas31").value = decodeURIComponent(respostas31);
-document.getElementById("respostas32").value = decodeURIComponent(respostas32);
-document.getElementById("respostas33").value = decodeURIComponent(respostas33);
-document.getElementById("respostas34").value = decodeURIComponent(respostas34);
-document.getElementById("respostas41").value = decodeURIComponent(respostas41);
-document.getElementById("respostas42").value = decodeURIComponent(respostas42);
-document.getElementById("respostas51").value = decodeURIComponent(respostas51);
-document.getElementById("respostas52").value = decodeURIComponent(respostas52);
-document.getElementById("respostas61").value = decodeURIComponent(respostas61);
-document.getElementById("respostas62").value = decodeURIComponent(respostas62);
-document.getElementById("respostas71").value = decodeURIComponent(respostas71);
-document.getElementById("respostas72").value = decodeURIComponent(respostas72);
-document.getElementById("respostas73").value = decodeURIComponent(respostas73);
-document.getElementById("respostas8").value = decodeURIComponent(respostas8);
-document.getElementById("respostas9").value = decodeURIComponent(respostas9);
-document.getElementById("respostas101").value = decodeURIComponent(respostas101);
-document.getElementById("respostas102").value = decodeURIComponent(respostas102);
-document.getElementById("respostasDrop1").value = decodeURIComponent(respostasDrop1);
-document.getElementById("respostasDrop2").value = decodeURIComponent(respostasDrop2);
-document.getElementById("respostasDrop3").value = decodeURIComponent(respostasDrop3);
-document.getElementById("respostasDrop4").value = decodeURIComponent(respostasDrop4);
-document.getElementById("respostasDrop5").value = decodeURIComponent(respostasDrop5);
-document.getElementById("respostasDrop6").value = decodeURIComponent(respostasDrop6);
-document.getElementById("respostasDrop7").value = decodeURIComponent(respostasDrop7);
-document.getElementById("respostasDrop8").value = decodeURIComponent(respostasDrop8);
-document.getElementById("respostasCompr1").value = decodeURIComponent(respostasCompr1);
-document.getElementById("respostasCompr2").value = decodeURIComponent(respostasCompr2);
-document.getElementById("respostasCompr3").value = decodeURIComponent(respostasCompr3);
+document.getElementById("resposta1").value = decodeURIComponent(resposta1);
+document.getElementById("resposta21").value = decodeURIComponent(resposta21);
+document.getElementById("resposta22").value = decodeURIComponent(resposta22);
+document.getElementById("resposta31").value = decodeURIComponent(resposta31);
+document.getElementById("resposta32").value = decodeURIComponent(resposta32);
+document.getElementById("resposta33").value = decodeURIComponent(resposta33);
+document.getElementById("resposta34").value = decodeURIComponent(resposta34);
+document.getElementById("resposta41").value = decodeURIComponent(resposta41);
+document.getElementById("resposta42").value = decodeURIComponent(resposta42);
+document.getElementById("resposta51").value = decodeURIComponent(resposta51);
+document.getElementById("resposta52").value = decodeURIComponent(resposta52);
+document.getElementById("resposta61").value = decodeURIComponent(resposta61);
+document.getElementById("resposta62").value = decodeURIComponent(resposta62);
+document.getElementById("resposta71").value = decodeURIComponent(resposta71);
+document.getElementById("resposta72").value = decodeURIComponent(resposta72);
+document.getElementById("resposta73").value = decodeURIComponent(resposta73);
+document.getElementById("resposta8").value = decodeURIComponent(resposta8);
+document.getElementById("resposta9").value = decodeURIComponent(resposta9);
+document.getElementById("resposta101").value = decodeURIComponent(resposta101);
+document.getElementById("resposta102").value = decodeURIComponent(resposta102);
+document.getElementById("respostaDrop1").value = decodeURIComponent(respostaDrop1);
+document.getElementById("respostaDrop2").value = decodeURIComponent(respostaDrop2);
+document.getElementById("respostaDrop3").value = decodeURIComponent(respostaDrop3);
+document.getElementById("respostaDrop4").value = decodeURIComponent(respostaDrop4);
+document.getElementById("respostaDrop5").value = decodeURIComponent(respostaDrop5);
+document.getElementById("respostaDrop6").value = decodeURIComponent(respostaDrop6);
+document.getElementById("respostaDrop7").value = decodeURIComponent(respostaDrop7);
+document.getElementById("respostaDrop8").value = decodeURIComponent(respostaDrop8);
+document.getElementById("respostaCompr1").value = decodeURIComponent(respostaCompr1);
+document.getElementById("respostaCompr2").value = decodeURIComponent(respostaCompr2);
+document.getElementById("respostaCompr3").value = decodeURIComponent(respostaCompr3);
 
 
 var utterance = null; // Variável global para controlar a síntese de fala
