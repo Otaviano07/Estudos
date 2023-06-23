@@ -186,7 +186,7 @@ function gerarLink() {
         nomeEstudoBiblico +
         "/" +
         temaEstudoBiblico +
-        "/?nameProfessor=" +
+        "/index.html?nameProfessor=" +
         encodeURIComponent(nameProfessor) +
         "&contatoProfessor=" +
         contatoProfessor +
