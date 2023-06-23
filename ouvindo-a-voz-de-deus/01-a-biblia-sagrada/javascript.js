@@ -20,6 +20,28 @@ document
     enviarResposta();
   });
 
+  function shortenUrl(longUrl, customSlug) {
+    var apiUrl =
+      "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(longUrl);
+    if (customSlug) {
+      apiUrl += "&alias=" + encodeURIComponent(customSlug);
+    }
+  
+    //Seria para colocar a url original em id="url"
+    //document.getElementById("linkGerado").value = longUrl;
+    //document.getElementById("url").value = apiUrl;
+  
+    return fetch(apiUrl)
+      .then(function (response) {
+        return response.text();
+      })
+      .catch(function (error) {
+        console.log("Erro ao encurtar o link:", error);
+      });
+  }
+  
+
+
   function enviarResposta() {
     var apiWhatsapp = "https://web.whatsapp.com/send/?phone=55";
     var nomeEstudante = document.getElementById("nameEstudante").value;
@@ -59,44 +81,6 @@ document
     var resposta30 = document.getElementById("flexCheck09").checked;
     var resposta31 = document.getElementById("flexCheck10").checked;
 
-console.log(nomeEstudante);
-console.log(nomeProfessor);
-console.log(contatoProfessor);
-console.log(estudoBiblico);
-console.log(tema);
-console.log(resposta1);
-console.log(resposta2);
-console.log(resposta3);
-console.log(resposta4);
-console.log(resposta5);
-console.log(resposta6);
-console.log(resposta7);
-console.log(resposta8);
-console.log(resposta9);
-console.log(resposta10);
-console.log(resposta11);
-console.log(resposta12);
-console.log(resposta13);
-console.log(resposta14);
-console.log(resposta15);
-console.log(resposta16);
-console.log(resposta17);
-console.log(resposta18);
-console.log(resposta19);
-console.log(resposta20);
-console.log(resposta21);
-console.log(resposta22);
-console.log(resposta23);
-console.log(resposta24);
-console.log(resposta25);
-console.log(resposta26);
-console.log(resposta27);
-console.log(resposta28);
-console.log(resposta29);
-console.log(resposta30);
-console.log(resposta31);
-
-
     // Verificar se todos os campos estão marcados como "is-valid"
     /*var camposValidos =
       document
@@ -111,35 +95,15 @@ console.log(resposta31);
         resposta1 &&
         resposta2 &&
         resposta3 &&
-        resposta4 &&
-        resposta5 &&
-        resposta6 &&
-        resposta6 &&
-        resposta7 &&
         resposta8 &&
         resposta9 &&
         resposta10 &&
         resposta11 &&
         resposta12 &&
         resposta13 &&
-        resposta14 &&
-        resposta15 &&
-        resposta16 &&
         resposta17 &&
         resposta18 &&
         resposta19 &&
-        resposta20 &&
-        resposta21 &&
-        resposta22 &&
-        resposta23 &&
-        resposta24 &&
-        resposta25 &&
-        resposta26 &&
-        resposta27 &&
-        resposta28 &&
-        resposta29 &&
-        resposta30 &&
-        resposta31 &&
         nomeEstudante &&
         nomeProfessor &&
         contatoProfessor
@@ -150,7 +114,7 @@ console.log(resposta31);
           estudoBiblico +
           "/" +
           tema +
-          "/?nameProfessor=" +
+          "/index.html?nameProfessor=" +
           encodeURIComponent(nomeProfessor) +
           "&contatoProfessor=" +
           contatoProfessor +
@@ -221,7 +185,9 @@ console.log(resposta31);
           "&respostaCompr3=" +
           encodeURIComponent(resposta31);
 
-        var mensagem =
+          //linkGerado = shortenUrl(linkGerado, "EstudoBiblico");
+
+        var mensagem = (linkGerado);
           "Olá " +
           nomeProfessor +
           ", tudo bem!\n\nConsegui terminar o estudo bíblico " +
@@ -243,9 +209,11 @@ console.log(resposta31);
         window.open(linkWhatsapp);
       //}
     } else {
-      alert(
+      console.log("Campos preenchidos: " + resposta1 + ", " + resposta2 + ", " + resposta3 + ", " + resposta4 + ", " + resposta5 + ", " + resposta6 + ", " + resposta7 + ", " + resposta8 + ", " + resposta9 + ", " + resposta10 + ", " + resposta11 + ", " + resposta12 + ", " + resposta13 + ", " + resposta14 + ", " + resposta15 + ", " + resposta16 + ", " + resposta17 + ", " + resposta18 + ", " + resposta19 + ", " + resposta20 + ", " + resposta21 + ", " + resposta22 + ", " + resposta23 + ", " + resposta24 + ", " + resposta25 + ", " + resposta26 + ", " + resposta27 + ", " + resposta28 + ", " + resposta29 + ", " + resposta30 + ", " + resposta31);
+      /*alert(
         "Por favor, responda todas as perguntas antes de enviar as respostas para o professor."
-      );
+      );*/
+      
     }
   }
 
@@ -758,41 +726,42 @@ const resposta30 = params.get("respostaCompr2");
 const resposta31 = params.get("respostaCompr3");
 
 // Preenchimento dos campos do formulário
-document.getElementById("whatsappProfessor").value = contatoProfessor;
-document.getElementById("nameProfessor").value = nomeProfessor;
-document.getElementById("whatsappEstudante").value = contatoEstudante;
-document.getElementById("nameEstudante").value = nomeEstudante;
-document.getElementById("resposta1").value = decodeURIComponent(resposta1);
-document.getElementById("resposta21").value = decodeURIComponent(resposta2);
-document.getElementById("resposta22").value = decodeURIComponent(resposta3);
-document.getElementById("flexCheck01").value = decodeURIComponent(resposta4);
-document.getElementById("flexCheck02").value = decodeURIComponent(resposta5);
-document.getElementById("flexCheck03").value = decodeURIComponent(resposta6);
-document.getElementById("flexCheck04").value = decodeURIComponent(resposta7);
-document.getElementById("resposta41").value = decodeURIComponent(resposta8);
-document.getElementById("resposta42").value = decodeURIComponent(resposta9);
-document.getElementById("resposta51").value = decodeURIComponent(resposta10);
-document.getElementById("resposta52").value = decodeURIComponent(resposta11);
-document.getElementById("resposta61").value = decodeURIComponent(resposta12);
-document.getElementById("resposta62").value = decodeURIComponent(resposta13);
-document.getElementById("flexCheck05").value = decodeURIComponent(resposta14);
-document.getElementById("flexCheck06").value = decodeURIComponent(resposta15);
-document.getElementById("flexCheck07").value = decodeURIComponent(resposta16);
-document.getElementById("resposta8").value = decodeURIComponent(resposta17);
-document.getElementById("resposta9").value = decodeURIComponent(resposta18);
-document.getElementById("resposta101").value = decodeURIComponent(resposta19);
-document.getElementById("resposta102").value = decodeURIComponent(resposta20);
-document.getElementById("respostaDrop1").value = decodeURIComponent(resposta21);
-document.getElementById("respostaDrop2").value = decodeURIComponent(resposta22);
-document.getElementById("respostaDrop3").value = decodeURIComponent(resposta23);
-document.getElementById("respostaDrop4").value = decodeURIComponent(resposta24);
-document.getElementById("respostaDrop5").value = decodeURIComponent(resposta25);
-document.getElementById("respostaDrop6").value = decodeURIComponent(resposta26);
-document.getElementById("respostaDrop7").value = decodeURIComponent(resposta27);
-document.getElementById("respostaDrop8").value = decodeURIComponent(resposta28);
-document.getElementById("respostaCompr1").value = decodeURIComponent(resposta29);
-document.getElementById("respostaCompr2").value = decodeURIComponent(resposta30);
-document.getElementById("respostaCompr3").value = decodeURIComponent(resposta31);
+document.getElementById("whatsappProfessor").value = contatoProfessor ? contatoProfessor : "";
+document.getElementById("nameProfessor").value = nomeProfessor ? nomeProfessor : "";
+document.getElementById("whatsappEstudante").value = contatoEstudante ? contatoEstudante : "";
+document.getElementById("nameEstudante").value = nomeEstudante ? nomeEstudante : "";
+document.getElementById("resposta1").value = resposta1 ? decodeURIComponent(resposta1) : "";
+document.getElementById("resposta21").value = resposta2 ? decodeURIComponent(resposta2) : "";
+document.getElementById("resposta22").value = resposta3 ? decodeURIComponent(resposta3) : "";
+document.getElementById("flexCheck01").value = resposta4 ? decodeURIComponent(resposta4) : "";
+document.getElementById("flexCheck02").value = resposta5 ? decodeURIComponent(resposta5) : "";
+document.getElementById("flexCheck03").value = resposta6 ? decodeURIComponent(resposta6) : "";
+document.getElementById("flexCheck04").value = resposta7 ? decodeURIComponent(resposta7) : "";
+document.getElementById("resposta41").value = resposta8 ? decodeURIComponent(resposta8) : "";
+document.getElementById("resposta42").value = resposta9 ? decodeURIComponent(resposta9) : "";
+document.getElementById("resposta51").value = resposta10 ? decodeURIComponent(resposta10) : "";
+document.getElementById("resposta52").value = resposta11 ? decodeURIComponent(resposta11) : "";
+document.getElementById("resposta61").value = resposta12 ? decodeURIComponent(resposta12) : "";
+document.getElementById("resposta62").value = resposta13 ? decodeURIComponent(resposta13) : "";
+document.getElementById("flexCheck05").value = resposta14 ? decodeURIComponent(resposta14) : "";
+document.getElementById("flexCheck06").value = resposta15 ? decodeURIComponent(resposta15) : "";
+document.getElementById("flexCheck07").value = resposta16 ? decodeURIComponent(resposta16) : "";
+document.getElementById("resposta8").value = resposta17 ? decodeURIComponent(resposta17) : "";
+document.getElementById("resposta9").value = resposta18 ? decodeURIComponent(resposta18) : "";
+document.getElementById("resposta101").value = resposta19 ? decodeURIComponent(resposta19) : "";
+document.getElementById("resposta102").value = resposta20 ? decodeURIComponent(resposta20) : "";
+document.getElementById("respostaDrop1").value = resposta21 ? decodeURIComponent(resposta21) : "";
+document.getElementById("respostaDrop2").value = resposta22 ? decodeURIComponent(resposta22) : "";
+document.getElementById("respostaDrop3").value = resposta23 ? decodeURIComponent(resposta23) : "";
+document.getElementById("respostaDrop4").value = resposta24 ? decodeURIComponent(resposta24) : "";
+document.getElementById("respostaDrop5").value = resposta25 ? decodeURIComponent(resposta25) : "";
+document.getElementById("respostaDrop6").value = resposta26 ? decodeURIComponent(resposta26) : "";
+document.getElementById("respostaDrop7").value = resposta27 ? decodeURIComponent(resposta27) : "";
+document.getElementById("respostaDrop8").value = resposta28 ? decodeURIComponent(resposta28) : "";
+document.getElementById("respostaCompr1").value = resposta29 ? decodeURIComponent(resposta29) : "";
+document.getElementById("respostaCompr2").value = resposta30 ? decodeURIComponent(resposta30) : "";
+document.getElementById("respostaCompr3").value = resposta31 ? decodeURIComponent(resposta31) : "";
+
 
 
 var utterance = null; // Variável global para controlar a síntese de fala
