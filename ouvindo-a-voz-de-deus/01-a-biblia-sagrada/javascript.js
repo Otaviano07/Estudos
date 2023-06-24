@@ -79,7 +79,7 @@ document
     var resposta29 = document.getElementById("resposta29").checked;
     var resposta30 = document.getElementById("resposta30").checked;
     var resposta31 = document.getElementById("resposta31").checked;
-    
+
 
     // Verificar se todos os campos estão marcados como "is-valid"
     /*var camposValidos =
@@ -104,6 +104,18 @@ document
         resposta17 &&
         resposta18 &&
         resposta19 &&
+        resposta20 &&
+        resposta21 &&
+        resposta22 &&
+        resposta23 &&
+        resposta24 &&
+        resposta25 &&
+        resposta26 &&
+        resposta27 &&
+        resposta28 &&
+        resposta29 &&
+        resposta30 &&
+        resposta31 &&
         nomeEstudante &&
         nomeProfessor &&
         contatoProfessor &&
