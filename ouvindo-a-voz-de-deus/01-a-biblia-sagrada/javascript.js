@@ -1,3 +1,23 @@
+function imprimirPagina() {
+  window.print();
+}
+
+function baixarPDF() {
+  // Opções para a geração do PDF
+  var options = {
+    filename: 'arquivo.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait', margin: [50, 80, 50, 50] }
+  };
+
+  // Elemento HTML que deseja converter em PDF
+  var conteudoHTML = document.documentElement;
+
+  // Função html2pdf para converter o conteúdo HTML em PDF e fazer o download
+  html2pdf().set(options).from(conteudoHTML).save();
+}
+
 //Exiber versos biblicos
 var verseButtons = document.querySelectorAll(".show-verse");
 verseButtons.forEach(function (button) {
@@ -15,7 +35,7 @@ verseButtons.forEach(function (button) {
 //<!--Enviar respostas para contato do professor-->
 // Adicione um event listener ao botão
 document
-  .getElementById("respostasButton")
+  .getElementById("btnRespostas")
   .addEventListener("click", function () {
     enviarResposta();
   });
@@ -444,7 +464,7 @@ function leiaMais(pontosId, maisId, btnId) {
   var maisTexto = document.getElementById(maisId);
   var btnLeiaMais = document.getElementById(btnId);
 
-  if (maisTexto.style.display === "none") {
+  if (maisTexto.style.display === "none" || maisTexto.style.display === "") {
     pontos.style.display = "none";
     maisTexto.style.display = "inline";
     btnLeiaMais.innerHTML = "Leia menos";
@@ -456,6 +476,7 @@ function leiaMais(pontosId, maisId, btnId) {
     btnLeiaMais.className = "btn btn-info";
   }
 }
+
 
 //<!--Função para conffecion-->
 
@@ -786,7 +807,8 @@ function lerVersiculo(versiculoId) {
 function pausarVersiculo() {
   if (utterance && speechSynthesis.speaking) {
     // Pausa a síntese de fala
-    speechSynthesis.pause();
+    //speechSynthesis.pause();
+    window.speechSynthesis.pause();
   }
 }
 
@@ -920,3 +942,48 @@ function preencherFormulario() {
     document.getElementById('resposta30').value = resposta30;
     document.getElementById('resposta31').value = resposta31;
 }
+
+var inputs = [
+  document.getElementById("resposta1"),
+  document.getElementById("resposta2"),
+  document.getElementById("resposta3"),
+  document.getElementById("resposta4"),
+  document.getElementById("resposta5"),
+  document.getElementById("resposta6"),
+  document.getElementById("resposta7"),
+  document.getElementById("resposta8"),
+  document.getElementById("resposta9"),
+  document.getElementById("resposta10"),
+  document.getElementById("resposta11"),
+  document.getElementById("resposta12"),
+  document.getElementById("resposta13"),
+  document.getElementById("resposta14"),
+  document.getElementById("resposta15"),
+  document.getElementById("resposta16"),
+  document.getElementById("resposta17"),
+  document.getElementById("resposta18"),
+  document.getElementById("resposta19"),
+  document.getElementById("resposta20"),
+  document.getElementById("resposta21"),
+  document.getElementById("resposta22"),
+  document.getElementById("resposta23"),
+  document.getElementById("resposta24"),
+  document.getElementById("resposta25"),
+  document.getElementById("resposta26"),
+  document.getElementById("resposta27"),
+  document.getElementById("resposta28"),
+  document.getElementById("resposta29"),
+  document.getElementById("resposta30"),
+  document.getElementById("resposta31")
+];
+
+inputs.forEach(function(input) {
+  input.addEventListener('input', function() {
+    if (input.value !== '' || input.checked || input.textContent !== '') {
+      input.classList.add('filled');
+    } else {
+      input.classList.remove('filled');
+    }
+  });
+});
+

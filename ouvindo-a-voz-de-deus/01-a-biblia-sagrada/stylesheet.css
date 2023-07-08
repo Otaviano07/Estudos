@@ -36,9 +36,16 @@ a {
     margin-top: 6px;
 }
 
-#respostasButton{
+#btnRespostas,
+#btnImprimir,
+#btnBaixarPDF{
     margin-top: 20px;
     margin-bottom: 30px;
+    width: 150px;
+}
+
+.btn-group-toggle {
+    text-align: center;
 }
 
 .letter-a {
@@ -202,6 +209,12 @@ h2 {
     text-align: center;
 }
 
+.filled {
+    border-color: #A2E5F8;
+    background-color: #A2E5F8;
+    font-weight: bold;
+}
+
 .question-number {
     display: inline-block;
     width: 30px;
@@ -215,37 +228,9 @@ h2 {
     margin-right: 10px;
 }
 
-/* Estilos para o contêiner do vídeo */
-.player-container {
-    width: 90%;
-    /* Largura de 80% em dispositivos maiores */
-    max-width: 640px;
-    /* Largura máxima em pixels */
-    margin: 0 auto;
-    /* Centralizar horizontalmente */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-/* Estilos para tornar o contêiner responsivo em dispositivos móveis */
-@media only screen and (max-width: 600px) {
-    .player-container {
-        width: 100%;
-        /* Largura de 100% em dispositivos móveis */
-    }
-}
-
-/* Estilos para o vídeo */
-.player-container iframe {
-    max-width: 100%;
-    /* Ajuste de tamanho em dispositivos móveis */
-}
-
 .botao-laranja {
     background-color: orange;
-  }
+}
 
 .material-symbols-outlined {
     font-variation-settings:
@@ -267,8 +252,19 @@ h2 {
     }
 
 
+/* Estilos para o player de áudio */
+.audio-player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
 
-
-
-
-
+  /* Estilos para os botões */
+  .audio-player button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
