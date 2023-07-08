@@ -841,3 +841,86 @@ function pararAudio(versiculoId) {
   // Exemplo de uso: obter os dados e exibi-los no console
   var respostas = getDropAreasData();
   console.log(respostas);
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    preencherFormulario();
+});
+
+function preencherFormulario() {
+    // Extrai os parâmetros da URL
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Obtém os valores dos parâmetros
+    const nameProfessor = urlParams.get('nameProfessor');
+    const contatoProfessor = urlParams.get('contatoProfessor');
+    const nameEstudante = urlParams.get('nameEstudante');
+    const contatoEstudante = urlParams.get('contatoEstudante');
+    const resposta1 = urlParams.get('resposta1');
+    const resposta2 = urlParams.get('resposta2');
+    const resposta3 = urlParams.get('resposta3');
+    const resposta4 = urlParams.get('resposta4');
+    const resposta5 = urlParams.get('resposta5');
+    const resposta6 = urlParams.get('resposta6');
+    const resposta7 = urlParams.get('resposta7');
+    const resposta8 = urlParams.get('resposta8');
+    const resposta9 = urlParams.get('resposta9');
+    const resposta10 = urlParams.get('resposta10');
+    const resposta11 = urlParams.get('resposta11');
+    const resposta12 = urlParams.get('resposta12');
+    const resposta13 = urlParams.get('resposta13');
+    const resposta14 = urlParams.get('resposta14');
+    const resposta15 = urlParams.get('resposta15');
+    const resposta16 = urlParams.get('resposta16');
+    const resposta17 = urlParams.get('resposta17');
+    const resposta18 = urlParams.get('resposta18');
+    const resposta19 = urlParams.get('resposta19');
+    const resposta20 = urlParams.get('resposta20');
+    const resposta21 = urlParams.get('resposta21');
+    const resposta22 = urlParams.get('resposta22');
+    const resposta23 = urlParams.get('resposta23');
+    const resposta24 = urlParams.get('resposta24');
+    const resposta25 = urlParams.get('resposta25');
+    const resposta26 = urlParams.get('resposta26');
+    const resposta27 = urlParams.get('resposta27');
+    const resposta28 = urlParams.get('resposta28');
+    const resposta29 = urlParams.get('resposta29');
+    const resposta30 = urlParams.get('resposta30');
+    const resposta31 = urlParams.get('resposta31');
+
+    // Preenche os campos do formulário
+    document.getElementById('nameProfessor').value = nameProfessor;
+    document.getElementById('whatsappProfessor').value = contatoProfessor;
+    document.getElementById('nameEstudante').value = nameEstudante;
+    document.getElementById('whatsappEstudante').value = contatoEstudante;
+    document.getElementById('resposta1').value = resposta1;
+    document.getElementById('resposta2').value = resposta2;
+    document.getElementById('resposta3').value = resposta3;
+    document.getElementById('resposta4').value = resposta4;
+    document.getElementById('resposta5').value = resposta5;
+    document.getElementById('resposta6').value = resposta6;
+    document.getElementById('resposta7').value = resposta7;
+    document.getElementById('resposta8').value = resposta8;
+    document.getElementById('resposta9').value = resposta9;
+    document.getElementById('resposta10').value = resposta10;
+    document.getElementById('resposta11').value = resposta11;
+    document.getElementById('resposta12').value = resposta12;
+    document.getElementById('resposta13').value = resposta13;
+    document.getElementById('resposta14').value = resposta14;
+    document.getElementById('resposta15').value = resposta15;
+    document.getElementById('resposta16').value = resposta16;
+    document.getElementById('resposta17').value = resposta17;
+    document.getElementById('resposta18').value = resposta18;
+    document.getElementById('resposta19').value = resposta19;
+    document.getElementById('resposta20').value = resposta20;
+    document.getElementById('resposta21').value = resposta21;
+    document.getElementById('resposta22').value = resposta22;
+    document.getElementById('resposta23').value = resposta23;
+    document.getElementById('resposta24').value = resposta24;
+    document.getElementById('resposta25').value = resposta25;
+    document.getElementById('resposta26').value = resposta26;
+    document.getElementById('resposta27').value = resposta27;
+    document.getElementById('resposta28').value = resposta28;
+    document.getElementById('resposta29').value = resposta29;
+    document.getElementById('resposta30').value = resposta30;
+    document.getElementById('resposta31').value = resposta31;
+}
