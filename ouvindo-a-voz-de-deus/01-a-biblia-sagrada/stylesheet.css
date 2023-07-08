@@ -243,6 +243,10 @@ h2 {
     /* Ajuste de tamanho em dispositivos móveis */
 }
 
+.botao-laranja {
+    background-color: orange;
+  }
+
 .material-symbols-outlined {
     font-variation-settings:
     'FILL' 0,

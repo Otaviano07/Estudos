@@ -756,7 +756,7 @@ function lerVersiculo(versiculoId) {
     return;
   }
 
-  var versiculo = versiculoElement.textContent.trim();
+  var versiculo = versiculoElement.innerText.trim();
 
   // Remover tags HTML do versículo
   var regexTags = /<[^>]+>/g;
