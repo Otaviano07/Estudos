@@ -251,20 +251,3 @@ h2 {
         margin-bottom: 20px;
     }
 
-
-/* Estilos para o player de áudio */
-.audio-player {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  /* Estilos para os botões */
-  .audio-player button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-  }

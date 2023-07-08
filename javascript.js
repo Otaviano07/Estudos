@@ -281,10 +281,6 @@ function shortenUrl(longUrl, customSlug) {
     apiUrl += "&alias=" + encodeURIComponent(customSlug);
   }
 
-  //Seria para colocar a url original em id="url"
-  //document.getElementById("linkGerado").value = longUrl;
-  //document.getElementById("url").value = apiUrl;
-
   return fetch(apiUrl)
     .then(function (response) {
       return response.text();
@@ -348,6 +344,7 @@ function encurtarLink() {
       shortenUrl(urlLongo).then(function (shortUrl) {
         updateUrl(shortUrl, urlLongo);
       });
+
       document.getElementById("url").value = "";
     }
   } else {

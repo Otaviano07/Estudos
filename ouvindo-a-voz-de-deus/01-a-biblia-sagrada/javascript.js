@@ -41,25 +41,22 @@ document
   });
 
 
-  function shortenUrl(longUrl, customSlug) {
-    var apiUrl =
-      "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(longUrl);
-    if (customSlug) {
-      apiUrl += "&alias=" + encodeURIComponent(customSlug);
-    }
-  
-    //Seria para colocar a url original em id="url"
-    //document.getElementById("linkGerado").value = longUrl;
-    //document.getElementById("url").value = apiUrl;
-  
-    return fetch(apiUrl)
-      .then(function (response) {
-        return response.text();
-      })
-      .catch(function (error) {
-        console.log("Erro ao encurtar o link:", error);
-      });
-  }  
+//Encurtador de link
+function shortenUrl(longUrl, customSlug) {
+  var apiUrl =
+    "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(longUrl);
+  if (customSlug) {
+    apiUrl += "&alias=" + encodeURIComponent(customSlug);
+  }
+
+  return fetch(apiUrl)
+    .then(function (response) {
+      return response.text();
+    })
+    .catch(function (error) {
+      console.log("Erro ao encurtar o link:", error);
+    });
+} 
 
   function enviarResposta() {
     var apiWhatsapp = "https://web.whatsapp.com/send/?phone=55";
@@ -102,16 +99,6 @@ document
     var resposta31 = document.getElementById("resposta31").checked;
 
 
-    // Verificar se todos os campos estão marcados como "is-valid"
-    /*var camposValidos =
-      document
-        .getElementById("whatsappProfessor")
-        .classList.contains("is-valid") &&
-      document
-        .getElementById("whatsappEstudante")
-        .classList.contains("is-valid");
-    if (camposValidos) {*/
-      // Verificar se todos os campos estão preenchidos
       if (
         resposta1 &&
         resposta2 &&
@@ -134,9 +121,6 @@ document
         resposta26 &&
         resposta27 &&
         resposta28 &&
-        resposta29 &&
-        resposta30 &&
-        resposta31 &&
         nomeEstudante &&
         nomeProfessor &&
         contatoProfessor &&
@@ -150,11 +134,11 @@ document
           tema +
           "/index.html?nameProfessor=" +
           encodeURIComponent(nomeProfessor) +
-          "&contatoProfessor=" +
+          "&whatsappProfessor=" +
           contatoProfessor +
           "&nameEstudante=" +
           encodeURIComponent(nomeEstudante) +
-          "&contatoEstudante=" +
+          "&whatsappEstudante=" +
           contatoEstudante +
           "&resposta1=" +
           encodeURIComponent(resposta1) +
@@ -219,7 +203,11 @@ document
           "&resposta31=" +
           encodeURIComponent(resposta31);
 
-        linkGerado = shortenUrl(linkGerado, "EstudoBiblico");
+        //linkGerado = shortenUrl(linkGerado, "EstudoBiblico");
+
+        shortenUrl(linkGerado).then(function (shortUrl) {
+          linkGerado = shortUrl;
+        });
 
         var mensagem = "Olá " +
           nomeProfessor +
@@ -476,7 +464,6 @@ function leiaMais(pontosId, maisId, btnId) {
     btnLeiaMais.className = "btn btn-info";
   }
 }
-
 
 //<!--Função para conffecion-->
 
@@ -842,7 +829,7 @@ function pararAudio(versiculoId) {
 }
 
     // Obter os dados das áreas de soltar
-    function getDropAreasData() {
+function getDropAreasData() {
       var dropAreas = document.getElementsByClassName("drop-area");
       var respostas = {};
 
@@ -854,15 +841,17 @@ function pararAudio(versiculoId) {
       }
 
       return respostas;
-  }
+}
 
   // Exemplo de uso: obter os dados e exibi-los no console
-  var respostas = getDropAreasData();
+var respostas = getDropAreasData();
   console.log(respostas);
 
   window.addEventListener('DOMContentLoaded', (event) => {
     preencherFormulario();
 });
+
+//document.addEventListener('DOMContentLoaded', preencherFormulario);
 
 function preencherFormulario() {
     // Extrai os parâmetros da URL
@@ -930,14 +919,14 @@ function preencherFormulario() {
     document.getElementById('resposta18').value = resposta18;
     document.getElementById('resposta19').value = resposta19;
     document.getElementById('resposta20').value = resposta20;
-    document.getElementById('resposta21').value = resposta21;
-    document.getElementById('resposta22').value = resposta22;
-    document.getElementById('resposta23').value = resposta23;
-    document.getElementById('resposta24').value = resposta24;
-    document.getElementById('resposta25').value = resposta25;
-    document.getElementById('resposta26').value = resposta26;
-    document.getElementById('resposta27').value = resposta27;
-    document.getElementById('resposta28').value = resposta28;
+    document.getElementById('resposta21').textContent = resposta21;
+    document.getElementById('resposta22').textContent = resposta22;
+    document.getElementById('resposta23').textContent = resposta23;
+    document.getElementById('resposta24').textContent = resposta24;
+    document.getElementById('resposta25').textContent = resposta25;
+    document.getElementById('resposta26').textContent = resposta26;
+    document.getElementById('resposta27').textContent = resposta27;
+    document.getElementById('resposta28').textContent = resposta28;
     document.getElementById('resposta29').value = resposta29;
     document.getElementById('resposta30').value = resposta30;
     document.getElementById('resposta31').value = resposta31;
