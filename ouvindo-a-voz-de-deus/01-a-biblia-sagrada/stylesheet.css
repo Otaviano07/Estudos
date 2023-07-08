@@ -139,14 +139,14 @@ h2 {
     display: inline-block;
     width: -webkit-fit-content;
     width: -moz-fit-content;
+    width: 140px;
     transition: background-color 0.4s;
     font-size: inherit;
-    /* Adicionando esta linha */
+    text-align: center;
+    white-space:nowrap;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-
-
-
 
 .drop-area.green {
     background-color: rgb(98, 240, 85);
@@ -198,6 +198,8 @@ h2 {
     /* Largura inicial do campo */
     min-width: 100px;
     /* Largura mínima do campo */
+    
+    text-align: center;
 }
 
 .question-number {

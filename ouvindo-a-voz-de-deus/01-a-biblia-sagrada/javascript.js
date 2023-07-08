@@ -46,6 +46,7 @@ document
     var nomeEstudante = document.getElementById("nameEstudante").value;
     var nomeProfessor = document.getElementById("nameProfessor").value;
     var contatoProfessor = document.getElementById("whatsappProfessor").value;
+    var contatoEstudante = document.getElementById("whatsappEstudante").value;
     var estudoBiblico = "ouvindo-a-voz-de-deus";
     var tema ="01-a-biblia-sagrada";
     var resposta1 = document.getElementById("resposta1").value;
@@ -382,24 +383,48 @@ function dropWord(event) {
   event.preventDefault();
   var word = event.dataTransfer.getData("text");
   var dropArea = event.target;
-  var selectedWord = document.querySelector(
-    '.draggable-word[data-word="' + word + '"]'
-  );
+  var selectedWord = document.querySelector('.draggable-word[data-word="' + word + '"]');
 
   if (dropArea.classList.contains("drop-area")) {
     if (!dropArea.textContent) {
-      // Se a área estiver vazia, simplesmente adiciona a palavra
       dropArea.textContent = word;
       selectedWord.style.display = "none";
-      dropArea.classList.add("green"); // Adiciona a classe "green" para a drop-area
     } else {
-      // Se a área já contiver uma palavra, troca as palavras
       var currentWord = dropArea.textContent;
       dropArea.textContent = word;
       selectedWord.textContent = currentWord;
     }
+    checkWords();
   }
 }
+
+function checkWords() {
+  var dropAreas = document.getElementsByClassName("drop-area");
+  var palavrasCorretas = {
+    "resposta21": "VERDADE",
+    "resposta22": "ENTENDEM",
+    "resposta23": "POUCO",
+    "resposta24": "ALI",
+    "resposta25": "ASSUNTO",
+    "resposta26": "DEUS",
+    "resposta27": "TIRAR",
+    "resposta28": "ACRESCENTAR"
+  };
+
+  for (var i = 0; i < dropAreas.length; i++) {
+    var dropArea = dropAreas[i];
+    var palavra = dropArea.textContent;
+    var id = dropArea.id;
+
+    if (palavrasCorretas[id] === palavra) {
+      dropArea.classList.add("green");
+    } else {
+      dropArea.classList.remove("green");
+    }
+  }
+}
+
+
 
 /*
 function updateCheckboxLabel(checkboxId) {
@@ -636,6 +661,10 @@ function ajustarTamanhoCampo(input) {
 }
 
 var currentTouchElement = null;
+var previousDropArea = null;
+var previousWord = null;
+var previousDropAreaText = "";
+
 
 function touchStart(event) {
   currentTouchElement = event.target;
@@ -653,17 +682,52 @@ function touchEnd(event) {
         dropArea.textContent = word;
         selectedWord.style.display = "none";
         dropArea.classList.add("green"); // Adiciona a classe "green" para a drop-area
+
+        // Armazena o movimento anterior
+        previousDropArea = dropArea;
+        previousWord = selectedWord;
+        previousDropAreaText = "";
       } else {
         // Se a área já contiver uma palavra, troca as palavras
         var currentWord = dropArea.textContent;
         dropArea.textContent = word;
         selectedWord.textContent = currentWord;
+
+        // Exibe a palavra anteriormente oculta
+        selectedWord.style.display = "inline-block";
+        selectedWord.classList.remove("green");
+
+        // Armazena o movimento anterior
+        previousDropArea = dropArea;
+        previousWord = selectedWord;
+        previousDropAreaText = currentWord;
       }
     }
 
     currentTouchElement = null;
   }
+
+  checkWords();
 }
+
+function undoPreviousMove() {
+  if (previousDropArea && previousWord) {
+    // Restaura a palavra à sua posição anterior
+    previousDropArea.textContent = previousDropAreaText;
+    previousWord.style.display = "inline-block";
+    previousWord.classList.add("green");
+
+    previousDropArea = null;
+    previousWord = null;
+    previousDropAreaText = "";
+  }
+
+  checkWords();
+}
+
+
+
+
 
 function resetExercise() {
   var dropAreas = document.querySelectorAll(".drop-area");
