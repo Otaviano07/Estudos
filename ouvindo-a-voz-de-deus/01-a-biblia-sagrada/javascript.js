@@ -199,10 +199,9 @@ document
           "&resposta31=" +
           encodeURIComponent(resposta31);
 
-          //linkGerado = shortenUrl(linkGerado, "EstudoBiblico");
+        linkGerado = shortenUrl(linkGerado, "EstudoBiblico");
 
-        var mensagem = (linkGerado);
-          "Olá " +
+        var mensagem = "Olá " +
           nomeProfessor +
           ", tudo bem!\n\nConsegui terminar o estudo bíblico " +
           estudoBiblico +
@@ -726,9 +725,6 @@ function undoPreviousMove() {
 }
 
 
-
-
-
 function resetExercise() {
   var dropAreas = document.querySelectorAll(".drop-area");
   var selectedWords = document.querySelectorAll(".selected-word");
@@ -852,9 +848,9 @@ function preencherFormulario() {
 
     // Obtém os valores dos parâmetros
     const nameProfessor = urlParams.get('nameProfessor');
-    const contatoProfessor = urlParams.get('contatoProfessor');
+    const contatoProfessor = urlParams.get('whatsappProfessor');
     const nameEstudante = urlParams.get('nameEstudante');
-    const contatoEstudante = urlParams.get('contatoEstudante');
+    const contatoEstudante = urlParams.get('whatsappEstudante');
     const resposta1 = urlParams.get('resposta1');
     const resposta2 = urlParams.get('resposta2');
     const resposta3 = urlParams.get('resposta3');
