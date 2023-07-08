@@ -51,19 +51,19 @@ document
     var resposta1 = document.getElementById("resposta1").value;
     var resposta2 = document.getElementById("resposta2").value;
     var resposta3 = document.getElementById("resposta3").value;
-    var resposta4 = document.getElementById("resposta4").value;
-    var resposta5 = document.getElementById("resposta5").value;
-    var resposta6 = document.getElementById("resposta6").value;
-    var resposta7 = document.getElementById("resposta7").value;
+    var resposta4 = document.getElementById("resposta4").checked;
+    var resposta5 = document.getElementById("resposta5").checked;
+    var resposta6 = document.getElementById("resposta6").checked;
+    var resposta7 = document.getElementById("resposta7").checked;
     var resposta8 = document.getElementById("resposta8").value;
     var resposta9 = document.getElementById("resposta9").value;
     var resposta10 = document.getElementById("resposta10").value;
     var resposta11 = document.getElementById("resposta11").value;
     var resposta12 = document.getElementById("resposta12").value;
     var resposta13 = document.getElementById("resposta13").value;
-    var resposta14 = document.getElementById("resposta14").value;
-    var resposta15 = document.getElementById("resposta15").value;
-    var resposta16 = document.getElementById("resposta16").value;
+    var resposta14 = document.getElementById("resposta14").checked;
+    var resposta15 = document.getElementById("resposta15").checked;
+    var resposta16 = document.getElementById("resposta16").checked;
     var resposta17 = document.getElementById("resposta17").value;
     var resposta18 = document.getElementById("resposta18").value;
     var resposta19 = document.getElementById("resposta19").value;
@@ -605,7 +605,7 @@ var snowEffect = function () {
     }
   })();
 };
-document.getElementById("resposta08").addEventListener("click", function () {
+document.getElementById("resposta29").addEventListener("click", function () {
   if (this.checked) {
     fireworksEffect();
     schoolprideEffect();
@@ -613,7 +613,7 @@ document.getElementById("resposta08").addEventListener("click", function () {
   }
 });
 
-document.getElementById("resposta09").addEventListener("click", function () {
+document.getElementById("resposta30").addEventListener("click", function () {
   if (this.checked) {
     fireworksEffect();
     realisticlookEffect();
@@ -622,7 +622,7 @@ document.getElementById("resposta09").addEventListener("click", function () {
   }
 });
 
-document.getElementById("resposta10").addEventListener("click", function () {
+document.getElementById("resposta31").addEventListener("click", function () {
   if (this.checked) {
     schoolprideEffect();
     realisticlookEffect();

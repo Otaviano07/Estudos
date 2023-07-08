@@ -16,6 +16,31 @@ body {
     object-fit: cover;
 }
 
+a {
+    text-decoration: underline;
+    color: blue;
+}
+#mais1, #mais2, #mais3, #mais4, #mais5, #mais6, #mais7, #mais8, #mais9, #mais10 {
+  display: none;
+}
+ 
+#mensagemErroEstudante {
+    display: none;
+}
+
+#mensagemErroProfessor {
+    display: none;
+}
+
+.my-custom-style {
+    margin-top: 6px;
+}
+
+#respostasButton{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 .letter-a {
     font-size: 48px; /* Tamanho da letra "A" */
     line-height: 1.2; /* Espaçamento entre linhas */
@@ -112,11 +137,16 @@ h2 {
     max-width: 400px;
     word-wrap: break-word;
     display: inline-block;
-    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     transition: background-color 0.4s;
     font-size: inherit;
-    /* Adicionado esta linha */
+    /* Adicionando esta linha */
 }
+
+
+
+
 
 .drop-area.green {
     background-color: rgb(98, 240, 85);
@@ -145,8 +175,10 @@ h2 {
     display: inline-block;
     margin: 5px;
     text-align: center;
+    -webkit-user-select: none;
     user-select: none;
 }
+
 
 #buttonMais1,
 #buttonMais2,
