@@ -60,10 +60,10 @@ function shortenUrl(longUrl, customSlug) {
 
   function enviarResposta() {
     var apiWhatsapp = "https://web.whatsapp.com/send/?phone=55";
-    var nomeEstudante = document.getElementById("nameEstudante").value;
-    var nomeProfessor = document.getElementById("nameProfessor").value;
-    var contatoProfessor = document.getElementById("whatsappProfessor").value;
-    var contatoEstudante = document.getElementById("whatsappEstudante").value;
+    var nameEstudante = document.getElementById("nameEstudante").value;
+    var nameProfessor = document.getElementById("nameProfessor").value;
+    var whatsappProfessor = document.getElementById("whatsappProfessor").value;
+    var whatsappEstudante = document.getElementById("whatsappEstudante").value;
     var estudoBiblico = "ouvindo-a-voz-de-deus";
     var tema ="01-a-biblia-sagrada";
     var resposta1 = document.getElementById("resposta1").value;
@@ -121,10 +121,10 @@ function shortenUrl(longUrl, customSlug) {
         resposta26 &&
         resposta27 &&
         resposta28 &&
-        nomeEstudante &&
-        nomeProfessor &&
-        contatoProfessor &&
-        contatoEstudante
+        nameEstudante &&
+        nameProfessor &&
+        whatsappProfessor &&
+        whatsappEstudante
       ) {
         var linkBase = "https://otaviano07.github.io/revelacaobiblica/";
         var linkGerado =
@@ -133,13 +133,13 @@ function shortenUrl(longUrl, customSlug) {
           "/" +
           tema +
           "/index.html?nameProfessor=" +
-          encodeURIComponent(nomeProfessor) +
+          encodeURIComponent(nameProfessor) +
           "&whatsappProfessor=" +
-          contatoProfessor +
+          whatsappProfessor +
           "&nameEstudante=" +
-          encodeURIComponent(nomeEstudante) +
+          encodeURIComponent(nameEstudante) +
           "&whatsappEstudante=" +
-          contatoEstudante +
+          whatsappEstudante +
           "&resposta1=" +
           encodeURIComponent(resposta1) +
           "&resposta2=" +
@@ -210,7 +210,7 @@ function shortenUrl(longUrl, customSlug) {
         });
 
         var mensagem = "Olá " +
-          nomeProfessor +
+          nameProfessor +
           ", tudo bem!\n\nConsegui terminar o estudo bíblico " +
           estudoBiblico +
           " com o tema " +
@@ -218,11 +218,11 @@ function shortenUrl(longUrl, customSlug) {
           ". Gostaria que você fizesse a correção das minhas resposta para ver como me saí.\nSegue o link: " +
           linkGerado +
           "\n\nAguardo ansiosamente pelo seu feedback!\n\nAtenciosamente,\n" +
-          nomeEstudante;
+          nameEstudante;
 
         var linkWhatsapp =
           apiWhatsapp +
-          contatoProfessor +
+          whatsappProfessor +
           "&text=" +
           encodeURIComponent(mensagem);
 
@@ -430,8 +430,6 @@ function checkWords() {
     }
   }
 }
-
-
 
 /*
 function updateCheckboxLabel(checkboxId) {
@@ -859,9 +857,9 @@ function preencherFormulario() {
 
     // Obtém os valores dos parâmetros
     const nameProfessor = urlParams.get('nameProfessor');
-    const contatoProfessor = urlParams.get('whatsappProfessor');
+    const whatsappProfessor = urlParams.get('whatsappProfessor');
     const nameEstudante = urlParams.get('nameEstudante');
-    const contatoEstudante = urlParams.get('whatsappEstudante');
+    const whatsappEstudante = urlParams.get('whatsappEstudante');
     const resposta1 = urlParams.get('resposta1');
     const resposta2 = urlParams.get('resposta2');
     const resposta3 = urlParams.get('resposta3');
@@ -896,9 +894,9 @@ function preencherFormulario() {
 
     // Preenche os campos do formulário
     document.getElementById('nameProfessor').value = nameProfessor;
-    document.getElementById('whatsappProfessor').value = contatoProfessor;
+    document.getElementById('whatsappProfessor').value = whatsappProfessor;
     document.getElementById('nameEstudante').value = nameEstudante;
-    document.getElementById('whatsappEstudante').value = contatoEstudante;
+    document.getElementById('whatsappEstudante').value = whatsappEstudante;
     document.getElementById('resposta1').value = resposta1;
     document.getElementById('resposta2').value = resposta2;
     document.getElementById('resposta3').value = resposta3;
