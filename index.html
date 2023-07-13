@@ -35,8 +35,8 @@
         <input type="text" class="form-control" id="nameProfessor" placeholder="Nome completo" name="nameProfessor" required>
       </div>
       <div class="col-md-3 col-sm-12" style="margin-top: 20px;">
-        <label for="contatoProfessor"><strong>Contato do Professor</strong></label>
-        <input type="tel" class="form-control" id="contatoProfessor" minlength="11" maxlength="11" onkeyup="mascaraTelefone(this); verificarNumeroWhatsapp();" placeholder="Whatsapp" name="contatoProfessor" required>
+        <label for="whatsappProfessor"><strong>Contato do Professor</strong></label>
+        <input type="tel" class="form-control" id="whatsappProfessor" minlength="11" maxlength="11" onkeyup="mascaraTelefone(this); verificarNumeroWhatsapp(); verificarTelefone()" placeholder="Whatsapp" name="whatsappProfessor" required>
         <div id="mensagemErroProfessor" class="alert alert-danger" style="display: none;"></div>
       </div>
     </div>
@@ -47,8 +47,8 @@
         <input type="text" class="form-control" id="nameEstudante" placeholder="Nome completo" name="nameEstudante" required>
       </div>
       <div class="col-md-3 col-sm-12" style="margin-top: 20px;">
-        <label for="contatoEstudante"><strong>Contato do Estudante</strong></label>
-        <input type="tel" class="form-control" id="contatoEstudante" minlength="11" maxlength="11" onkeyup="mascaraTelefone(this); verificarTelefone();" placeholder="WhatsApp" name="contatoEstudante" required>
+        <label for="whatsappEstudante"><strong>Contato do Estudante</strong></label>
+        <input type="tel" class="form-control" id="whatsappEstudante" minlength="11" maxlength="11" onkeyup="mascaraTelefone(this); verificarNumeroWhatsapp(); verificarTelefone();" placeholder="WhatsApp" name="whatsappEstudante" required>
         <div id="mensagemErroEstudante" class="alert alert-danger" style="display: none;"></div>
       </div>
     </div>
@@ -58,6 +58,10 @@
       <div class="input-group">
         <input type="text" class="form-control" id="linkGerado" readonly>
       </div>
+    </div>
+
+    <div id="mensagemCopiado" class="alert alert-warning" role="alert">
+      Link copiado com sucesso!
     </div>
 
     <div class="form-row justify-content-center mb-2" style="margin-bottom: 30px;">
@@ -72,7 +76,6 @@
           <button class="btn btn-primary btn-block" type="button" id="btnCopiarLink" onclick="copiarLink()" data-toggle="buttons" data-placement="bottom" title="Copiar Link">
             <strong>Copiar</strong>
           </button>
-          <span class="message-instant">Link copiado com sucesso!</span>
         </div>
     
         <div class="col-md-3 col-6 mb-2">

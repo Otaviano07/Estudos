@@ -1,4 +1,9 @@
-.material-symbols-outlined {
+  body {
+    background-color: #99D3EC; /* Branco como a neve */
+    position: relative;
+  }
+  
+  .material-symbols-outlined {
     font-variation-settings:
     'FILL' 0,
     'wght' 400,
@@ -6,15 +11,17 @@
     'opsz' 48
   }
 
-  .message-instant {
-    font-size: 12px;
-    color: green;
-    margin-left: 10px;
+  #mensagemCopiado {
     display: none;
   }
-
-  body {
-    background-color: #99D3EC; /* Branco como a neve */
-    position: relative;
+  
+  #mensagemCopiado.show {
+    display: block;
   }
+
+  .show {
+    display: block !important;
+  }
+
+
   
