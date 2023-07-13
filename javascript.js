@@ -11,13 +11,16 @@ function gerarSlug(texto) {
 
 //Mascara para telefone
 function mascaraTelefone(input) {
+  // Remove todos os caracteres não numéricos, exceto parênteses e hífens
   input.value = input.value.replace(/[^\d()\-]/g, "");
 
+  // Verifica se há caracteres não numéricos após a remoção
   if (input.value.match(/[^\d()\-]/)) {
     alert("Digite somente números no campo de telefone.");
     input.value = input.value.replace(/[^\d()\-]/g, "");
   }
 }
+
 
 //Verificar numero de whatsapp
 function validarDDD(telefone) {
@@ -102,29 +105,68 @@ function validarDDD(telefone) {
 }
 
 function verificarNumeroWhatsapp() {
-  const telProfessor = document.getElementById("contatoProfessor");
-  const mensagemErroProfessor = document.getElementById(
-    "mensagemErroProfessor"
-  );
+  const telProfessor = document.getElementById("whatsappProfessor");
+  const telEstudante = document.getElementById("whatsappEstudante");
+  const mensagemErroProfessor = document.getElementById("mensagemErroProfessor");
+  const mensagemErroEstudante = document.getElementById("mensagemErroEstudante");
 
   if (telProfessor.value.length > 0) {
     if (!validarDDD(telProfessor.value) || telProfessor.value.length < 11) {
       mensagemErroProfessor.innerText = "Número inválido.";
       telProfessor.classList.remove("is-valid");
       telProfessor.classList.add("is-invalid");
+      mensagemErroProfessor.style.display = "block"; // Exibir a mensagem de erro
     } else {
       mensagemErroProfessor.innerText = "";
       telProfessor.classList.remove("is-invalid");
       telProfessor.classList.add("is-valid");
+      mensagemErroProfessor.style.display = "none"; // Ocultar a mensagem de erro
     }
+  } else {
+    mensagemErroProfessor.innerText = "";
+    telProfessor.classList.remove("is-invalid");
+    telProfessor.classList.remove("is-valid");
+    mensagemErroProfessor.style.display = "none"; // Ocultar a mensagem de erro
+  }
+
+  if (telEstudante.value.length > 0) {
+    if (!validarDDD(telEstudante.value) || telEstudante.value.length < 11) {
+      mensagemErroEstudante.innerText = "Número inválido.";
+      telEstudante.classList.remove("is-valid");
+      telEstudante.classList.add("is-invalid");
+      mensagemErroEstudante.style.display = "block"; // Exibir a mensagem de erro
+    } else {
+      mensagemErroEstudante.innerText = "";
+      telEstudante.classList.remove("is-invalid");
+      telEstudante.classList.add("is-valid");
+      mensagemErroEstudante.style.display = "none"; // Ocultar a mensagem de erro
+    }
+  } else {
+    mensagemErroEstudante.innerText = "";
+    telEstudante.classList.remove("is-invalid");
+    telEstudante.classList.remove("is-valid");
+    mensagemErroEstudante.style.display = "none"; // Ocultar a mensagem de erro
   }
 }
 
+
 function verificarTelefone() {
-  const telEstudante = document.getElementById("contatoEstudante");
+  const telEstudante = document.getElementById("whatsappEstudante");
   const mensagemErroEstudante = document.getElementById(
     "mensagemErroEstudante"
   );
+
+  if (telEstudante.value.length > 0) {
+    if (!validarDDD(telEstudante.value) || telEstudante.value.length < 11) {
+      mensagemErroEstudante.innerText = "Número inválido.";
+      telEstudante.classList.remove("is-valid");
+      telEstudante.classList.add("is-invalid");
+    } else {
+      mensagemErroEstudante.innerText = "";
+      telEstudante.classList.remove("is-invalid");
+      telEstudante.classList.add("is-valid");
+    }
+  }
 
   if (telEstudante.value.length > 0) {
     if (!validarDDD(telEstudante.value) || telEstudante.value.length < 11) {
@@ -141,6 +183,7 @@ function verificarTelefone() {
 
 //Gera o link para enviar estudo
 function gerarLink() {
+  var linkGeradoInput = document.getElementById("linkGerado");
   var nomeEstudoBiblico = gerarSlug(
     document.getElementById("nomeEstudoBiblico").value
   );
@@ -149,8 +192,8 @@ function gerarLink() {
   );
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
-  var contatoProfessor = document.getElementById("contatoProfessor").value;
-  var contatoEstudante = document.getElementById("contatoEstudante").value;
+  var whatsappProfessor = document.getElementById("whatsappProfessor").value;
+  var whatsappEstudante = document.getElementById("whatsappEstudante").value;
 
   // Verificar se todos os campos estão marcados como "is-valid"
   var camposValidos =
@@ -163,10 +206,10 @@ function gerarLink() {
     document.getElementById("nameProfessor").classList.contains("is-valid") &&
     document.getElementById("nameEstudante").classList.contains("is-valid") &&
     document
-      .getElementById("contatoProfessor")
+      .getElementById("whatsappProfessor")
       .classList.contains("is-valid") &&
     document
-      .getElementById("contatoEstudante")
+      .getElementById("whatsappEstudante")
       .classList.contains("is-valid")
 
   if (camposValidos) {
@@ -176,8 +219,8 @@ function gerarLink() {
       temaEstudoBiblico &&
       nameProfessor &&
       nameEstudante &&
-      contatoProfessor &&
-      contatoEstudante
+      whatsappProfessor &&
+      whatsappEstudante
     ) {
       var linkBase = "https://otaviano07.github.io/revelacaobiblica/";
 
@@ -188,15 +231,17 @@ function gerarLink() {
         temaEstudoBiblico +
         "/index.html?nameProfessor=" +
         encodeURIComponent(nameProfessor) +
-        "&contatoProfessor=" +
-        contatoProfessor +
+        "&whatsappProfessor=" +
+        whatsappProfessor +
         "&nameEstudante=" +
         encodeURIComponent(nameEstudante) +
-        "&contatoEstudante=" +
-        contatoEstudante;
+        "&whatsappEstudante=" +
+        whatsappEstudante;
 
       document.getElementById("linkGerado").value = linkGerado;
       document.getElementById("url").value = linkGerado;
+      linkGeradoInput.classList.remove("is-invalid");
+      linkGeradoInput.classList.add("is-valid");
     }
   } else {
     alert("Por favor, preencha todos os campos antes de Gerar o link.");
@@ -299,6 +344,7 @@ function updateUrl(shortUrl, longUrl) {
 }
 
 function encurtarLink() {
+  var linkGeradoInput = document.getElementById("linkGerado");
   var nomeEstudoBiblico = gerarSlug(
     document.getElementById("nomeEstudoBiblico").value
   );
@@ -307,8 +353,8 @@ function encurtarLink() {
   );
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
-  var contatoProfessor = document.getElementById("contatoProfessor").value;
-  var contatoEstudante = document.getElementById("contatoEstudante").value;
+  var whatsappProfessor = document.getElementById("whatsappProfessor").value;
+  var whatsappEstudante = document.getElementById("whatsappEstudante").value;
   
 
   // Verificar se todos os campos estão marcados como "is-valid"
@@ -322,11 +368,14 @@ function encurtarLink() {
     document.getElementById("nameProfessor").classList.contains("is-valid") &&
     document.getElementById("nameEstudante").classList.contains("is-valid") &&
     document
-      .getElementById("contatoProfessor")
+      .getElementById("whatsappProfessor")
       .classList.contains("is-valid") &&
     document
-      .getElementById("contatoEstudante")
-      .classList.contains("is-valid")
+      .getElementById("whatsappEstudante")
+      .classList.contains("is-valid") &&
+      document
+        .getElementById("linkGerado")
+        .classList.contains("is-valid")
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
@@ -335,8 +384,9 @@ function encurtarLink() {
       temaEstudoBiblico &&
       nameProfessor &&
       nameEstudante &&
-      contatoProfessor &&
-      contatoEstudante
+      whatsappProfessor &&
+      whatsappEstudante &&
+      linkGeradoInput
     ) {
       var urlInput = document.getElementById("url");
       var urlLongo = urlInput.value;
@@ -364,8 +414,9 @@ function copiarLink() {
   );
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
-  var contatoProfessor = document.getElementById("contatoProfessor").value;
-  var contatoEstudante = document.getElementById("contatoEstudante").value;
+  var whatsappProfessor = document.getElementById("whatsappProfessor").value;
+  var whatsappEstudante = document.getElementById("whatsappEstudante").value;
+  var linkGeradoInput = document.getElementById("linkGerado");
   
 
   // Verificar se todos os campos estão marcados como "is-valid"
@@ -379,10 +430,13 @@ function copiarLink() {
     document.getElementById("nameProfessor").classList.contains("is-valid") &&
     document.getElementById("nameEstudante").classList.contains("is-valid") &&
     document
-      .getElementById("contatoProfessor")
+      .getElementById("whatsappProfessor")
       .classList.contains("is-valid") &&
     document
-      .getElementById("contatoEstudante")
+      .getElementById("whatsappEstudante")
+      .classList.contains("is-valid") &&
+    document
+      .getElementById("linkGerado")
       .classList.contains("is-valid")
 
   if (camposValidos) {
@@ -392,10 +446,10 @@ function copiarLink() {
       temaEstudoBiblico &&
       nameProfessor &&
       nameEstudante &&
-      contatoProfessor &&
-      contatoEstudante
+      whatsappProfessor &&
+      whatsappEstudante &&
+      linkGeradoInput
     ) {
-      var linkGeradoInput = document.getElementById("linkGerado");
       linkGeradoInput.select();
 
       if (navigator.clipboard) {
@@ -426,12 +480,32 @@ function copiarLink() {
   }
 }
 
+
+// Função para mostrar a mensagem e agendar o desaparecimento
 function exibirMensagemInstantanea() {
-  var mensagemInstantanea = document.querySelector(".message-instant");
-  mensagemInstantanea.style.display = "inline";
-  setTimeout(function () {
-    mensagemInstantanea.style.display = "none";
-  }, 2000); // Exibe a mensagem por 2 segundos
+  var mensagemCopiado = document.getElementById("mensagemCopiado");
+  mensagemCopiado.classList.add("show");
+
+  setTimeout(function() {
+    mensagemCopiado.classList.remove("show");
+  }, 2000); // 2000 milissegundos = 2 segundos
+}
+
+
+
+function formatarTexto(texto) {
+  var palavras = texto.split('-'); // Divide o texto em um array de palavras separadas por hífens
+  var resultado = "";
+
+  for (var i = 0; i < palavras.length; i++) {
+    var palavra = palavras[i];
+    var primeiraLetra = palavra.charAt(0).toUpperCase(); // Obtém a primeira letra da palavra e converte para maiúscula
+    var restante = palavra.slice(1); // Obtém o restante da palavra (exceto a primeira letra)
+    var palavraFormatada = primeiraLetra + restante;
+    resultado += palavraFormatada + " ";
+  }
+
+  return resultado.trim(); // Remove espaços extras no início e no final da string
 }
 
 //Envia a mensagem para o estudante pelo whatsapp
@@ -444,8 +518,9 @@ function enviarMensagemWhatsapp() {
   );
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
-  var contatoProfessor = document.getElementById("contatoProfessor").value;
-  var contatoEstudante = document.getElementById("contatoEstudante").value;
+  var whatsappProfessor = document.getElementById("whatsappProfessor").value;
+  var whatsappEstudante = document.getElementById("whatsappEstudante").value;
+  var linkGeradoInput = document.getElementById("linkGerado").value;
   
 
   // Verificar se todos os campos estão marcados como "is-valid"
@@ -459,11 +534,14 @@ function enviarMensagemWhatsapp() {
     document.getElementById("nameProfessor").classList.contains("is-valid") &&
     document.getElementById("nameEstudante").classList.contains("is-valid") &&
     document
-      .getElementById("contatoProfessor")
+      .getElementById("whatsappProfessor")
       .classList.contains("is-valid") &&
     document
-      .getElementById("contatoEstudante")
-      .classList.contains("is-valid")
+      .getElementById("whatsappEstudante")
+      .classList.contains("is-valid") &&
+      document
+        .getElementById("linkGerado")
+        .classList.contains("is-valid")
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
@@ -472,12 +550,17 @@ function enviarMensagemWhatsapp() {
       temaEstudoBiblico &&
       nameProfessor &&
       nameEstudante &&
-      contatoProfessor &&
-      contatoEstudante
+      whatsappProfessor &&
+      whatsappEstudante &&
+      linkGeradoInput
     ) {
-      var numeroEstudante = document.getElementById("contatoEstudante").value;
+      
+      nomeEstudoBiblico = formatarTexto(nomeEstudoBiblico);
+      temaEstudoBiblico = formatarTexto(temaEstudoBiblico);
+
+      var numeroEstudante = document.getElementById("whatsappEstudante").value;
       var linkGerado = document.getElementById("linkGerado").value;
-      var mensagem = "Olá! Aqui está o link para o estudo: " + linkGerado;
+      var mensagem = "Olá! "+ nameEstudante +" segue abaixo link para o estudo "+ nomeEstudoBiblico +" com o tema "+ temaEstudoBiblico +":\n\nClique aqui:👉 "+ linkGerado + "Atenciosamente\n" + nameProfessor;
 
       if (isDispositivoMobile()) {
         var url =
@@ -515,16 +598,18 @@ function abrirLink() {
   var temaEstudoBiblico = gerarSlug(document.getElementById("temaEstudoBiblico").value);
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
-  var contatoProfessor = document.getElementById("contatoProfessor").value;
-  var contatoEstudante = document.getElementById("contatoEstudante").value;
+  var whatsappProfessor = document.getElementById("whatsappProfessor").value;
+  var whatsappEstudante = document.getElementById("whatsappEstudante").value;
+  var linkGeradoInput = document.getElementById("linkGerado").value;
 
   // Verificar se todos os campos estão marcados como "is-valid"
   var camposValidos = document.getElementById("nomeEstudoBiblico").classList.contains("is-valid") &&
     document.getElementById("temaEstudoBiblico").classList.contains("is-valid") &&
     document.getElementById("nameProfessor").classList.contains("is-valid") &&
     document.getElementById("nameEstudante").classList.contains("is-valid") &&
-    document.getElementById("contatoProfessor").classList.contains("is-valid") &&
-    document.getElementById("contatoEstudante").classList.contains("is-valid")
+    document.getElementById("whatsappProfessor").classList.contains("is-valid") &&
+    document.getElementById("whatsappEstudante").classList.contains("is-valid") &&
+    document.getElementById("linkGerado").classList.contains("is-valid") 
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
@@ -533,8 +618,9 @@ function abrirLink() {
       temaEstudoBiblico &&
       nameProfessor &&
       nameEstudante &&
-      contatoProfessor &&
-      contatoEstudante
+      whatsappProfessor &&
+      whatsappEstudante &&
+      linkGeradoInput
     ) {
       var linkGerado = document.getElementById("linkGerado").value;
       window.open(linkGerado, "_blank");
@@ -560,9 +646,10 @@ function verificarCampos() {
   var nomeEstudoBiblico = document.getElementById("nomeEstudoBiblico");
   var temaEstudoBiblico = document.getElementById("temaEstudoBiblico");
   var nameProfessor = document.getElementById("nameProfessor");
-  var contatoProfessor = document.getElementById("contatoProfessor");
+  var whatsappProfessor = document.getElementById("whatsappProfessor");
   var nameEstudante = document.getElementById("nameEstudante");
-  var contatoEstudante = document.getElementById("contatoEstudante");
+  var whatsappEstudante = document.getElementById("whatsappEstudante");
+  var linkGeradoInput = document.getElementById("linkGerado");
 
   if (nomeEstudoBiblico.value === "") {
     nomeEstudoBiblico.classList.remove("is-valid");
@@ -588,12 +675,12 @@ function verificarCampos() {
     nameProfessor.classList.add("is-valid");
   }
 
-  if (contatoProfessor.value === "") {
-    contatoProfessor.classList.remove("is-valid");
-    contatoProfessor.classList.add("is-invalid");
+  if (whatsappProfessor.value === "") {
+    whatsappProfessor.classList.remove("is-valid");
+    whatsappProfessor.classList.add("is-invalid");
   } else {
-    contatoProfessor.classList.remove("is-invalid");
-    contatoProfessor.classList.add("is-valid");
+    whatsappProfessor.classList.remove("is-invalid");
+    whatsappProfessor.classList.add("is-valid");
   }
 
   if (nameEstudante.value === "") {
@@ -604,11 +691,19 @@ function verificarCampos() {
     nameEstudante.classList.add("is-valid");
   }
 
-  if (contatoEstudante.value === "") {
-    contatoEstudante.classList.remove("is-valid");
-    contatoEstudante.classList.add("is-invalid");
+  if (whatsappEstudante.value === "") {
+    whatsappEstudante.classList.remove("is-valid");
+    whatsappEstudante.classList.add("is-invalid");
   } else {
-    contatoEstudante.classList.remove("is-invalid");
-    contatoEstudante.classList.add("is-valid");
+    whatsappEstudante.classList.remove("is-invalid");
+    whatsappEstudante.classList.add("is-valid");
+  }
+
+  if (linkGeradoInput.value === "") {
+    linkGeradoInput.classList.remove("is-valid");
+    linkGeradoInput.classList.add("is-invalid");
+  } else {
+    linkGeradoInput.classList.remove("is-invalid");
+    linkGeradoInput.classList.add("is-valid");
   }
 }
