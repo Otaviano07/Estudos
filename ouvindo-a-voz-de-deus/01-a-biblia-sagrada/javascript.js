@@ -5,10 +5,15 @@ function imprimirPagina() {
 function baixarPDF() {
   // Opções para a geração do PDF
   var options = {
-    filename: 'arquivo.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
+    filename: "arquivo.pdf",
+    image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2 },
-    jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait', margin: [50, 80, 50, 50] }
+    jsPDF: {
+      unit: "pt",
+      format: "a4",
+      orientation: "portrait",
+      margin: [50, 80, 50, 50],
+    },
   };
 
   // Elemento HTML que deseja converter em PDF
@@ -34,12 +39,14 @@ verseButtons.forEach(function (button) {
 
 //<!--Enviar respostas para contato do professor-->
 // Adicione um event listener ao botão
-document
-  .getElementById("btnRespostas")
-  .addEventListener("click", function () {
-    enviarResposta();
-  });
+document.getElementById("btnRespostas").addEventListener("click", function () {
+    enviarResposta();  
+});
 
+function updateUrl(shortUrl) {
+  var linkGeradoInput = document.getElementById("linkGerado");
+  linkGeradoInput.value = shortUrl;
+}
 
 //Encurtador de link
 function shortenUrl(longUrl, customSlug) {
@@ -58,220 +65,226 @@ function shortenUrl(longUrl, customSlug) {
     });
 }
 
-  function enviarResposta() {
-    var apiWhatsappWeb = "https://web.whatsapp.com/send/?phone=55";
-    var apiWhatsappMobile =  "https://wa.me/55";
-    var nameEstudante = document.getElementById("nameEstudante").value;
-    var nameProfessor = document.getElementById("nameProfessor").value;
-    var whatsappProfessor = document.getElementById("whatsappProfessor").value;
-    var whatsappEstudante = document.getElementById("whatsappEstudante").value;
-    var estudoBiblico = "ouvindo-a-voz-de-deus";
-    var tema ="01-a-biblia-sagrada";
-    var resposta1 = document.getElementById("resposta1").value;
-    var resposta2 = document.getElementById("resposta2").value;
-    var resposta3 = document.getElementById("resposta3").value;
-    var resposta4 = document.getElementById("resposta4").checked;
-    var resposta5 = document.getElementById("resposta5").checked;
-    var resposta6 = document.getElementById("resposta6").checked;
-    var resposta7 = document.getElementById("resposta7").checked;
-    var resposta8 = document.getElementById("resposta8").value;
-    var resposta9 = document.getElementById("resposta9").value;
-    var resposta10 = document.getElementById("resposta10").value;
-    var resposta11 = document.getElementById("resposta11").value;
-    var resposta12 = document.getElementById("resposta12").value;
-    var resposta13 = document.getElementById("resposta13").value;
-    var resposta14 = document.getElementById("resposta14").checked;
-    var resposta15 = document.getElementById("resposta15").checked;
-    var resposta16 = document.getElementById("resposta16").checked;
-    var resposta17 = document.getElementById("resposta17").value;
-    var resposta18 = document.getElementById("resposta18").value;
-    var resposta19 = document.getElementById("resposta19").value;
-    var resposta20 = document.getElementById("resposta20").value;
-    var resposta21 = document.getElementById("resposta21").textContent;
-    var resposta22 = document.getElementById("resposta22").textContent;
-    var resposta23 = document.getElementById("resposta23").textContent;
-    var resposta24 = document.getElementById("resposta24").textContent;
-    var resposta25 = document.getElementById("resposta25").textContent;
-    var resposta26 = document.getElementById("resposta26").textContent;
-    var resposta27 = document.getElementById("resposta27").textContent;
-    var resposta28 = document.getElementById("resposta28").textContent;
-    var resposta29 = document.getElementById("resposta29").checked;
-    var resposta30 = document.getElementById("resposta30").checked;
-    var resposta31 = document.getElementById("resposta31").checked;
+function enviarResposta() {
+  var apiWhatsappWeb = "https://web.whatsapp.com/send/?phone=55";
+  var apiWhatsappMobile = "https://wa.me/55";
+  var nameEstudante = document.getElementById("nameEstudante").value;
+  var nameProfessor = document.getElementById("nameProfessor").value;
+  var whatsappProfessor = document.getElementById("whatsappProfessor").value;
+  var whatsappEstudante = document.getElementById("whatsappEstudante").value;
+  var estudoBiblico = "ouvindo-a-voz-de-deus";
+  var tema = "01-a-biblia-sagrada";
+  var resposta1 = document.getElementById("resposta1").value;
+  var resposta2 = document.getElementById("resposta2").value;
+  var resposta3 = document.getElementById("resposta3").value;
+  var resposta4 = document.getElementById("resposta4").checked;
+  var resposta5 = document.getElementById("resposta5").checked;
+  var resposta6 = document.getElementById("resposta6").checked;
+  var resposta7 = document.getElementById("resposta7").checked;
+  var resposta8 = document.getElementById("resposta8").value;
+  var resposta9 = document.getElementById("resposta9").value;
+  var resposta10 = document.getElementById("resposta10").value;
+  var resposta11 = document.getElementById("resposta11").value;
+  var resposta12 = document.getElementById("resposta12").value;
+  var resposta13 = document.getElementById("resposta13").value;
+  var resposta14 = document.getElementById("resposta14").checked;
+  var resposta15 = document.getElementById("resposta15").checked;
+  var resposta16 = document.getElementById("resposta16").checked;
+  var resposta17 = document.getElementById("resposta17").value;
+  var resposta18 = document.getElementById("resposta18").value;
+  var resposta19 = document.getElementById("resposta19").value;
+  var resposta20 = document.getElementById("resposta20").value;
+  var resposta21 = document.getElementById("resposta21").textContent;
+  var resposta22 = document.getElementById("resposta22").textContent;
+  var resposta23 = document.getElementById("resposta23").textContent;
+  var resposta24 = document.getElementById("resposta24").textContent;
+  var resposta25 = document.getElementById("resposta25").textContent;
+  var resposta26 = document.getElementById("resposta26").textContent;
+  var resposta27 = document.getElementById("resposta27").textContent;
+  var resposta28 = document.getElementById("resposta28").textContent;
+  var resposta29 = document.getElementById("resposta29").checked;
+  var resposta30 = document.getElementById("resposta30").checked;
+  var resposta31 = document.getElementById("resposta31").checked;
 
+  if (
+    resposta1 &&
+    resposta2 &&
+    resposta3 &&
+    resposta8 &&
+    resposta9 &&
+    resposta10 &&
+    resposta11 &&
+    resposta12 &&
+    resposta13 &&
+    resposta17 &&
+    resposta18 &&
+    resposta19 &&
+    resposta20 &&
+    resposta21 &&
+    resposta22 &&
+    resposta23 &&
+    resposta24 &&
+    resposta25 &&
+    resposta26 &&
+    resposta27 &&
+    resposta28 &&
+    nameEstudante &&
+    nameProfessor &&
+    whatsappProfessor &&
+    whatsappEstudante
+  ) {
+    var linkBase = "https://otaviano07.github.io/revelacaobiblica/";
+    var linkEstudo =
+      linkBase +
+      estudoBiblico +
+      "/" +
+      tema +
+      "/index.html?nameProfessor=" +
+      encodeURIComponent(nameProfessor) +
+      "&whatsappProfessor=" +
+      whatsappProfessor +
+      "&nameEstudante=" +
+      encodeURIComponent(nameEstudante) +
+      "&whatsappEstudante=" +
+      whatsappEstudante +
+      "&resposta1=" +
+      encodeURIComponent(resposta1) +
+      "&resposta2=" +
+      encodeURIComponent(resposta2) +
+      "&resposta3=" +
+      encodeURIComponent(resposta3) +
+      "&resposta4=" +
+      encodeURIComponent(resposta4) +
+      "&resposta5=" +
+      encodeURIComponent(resposta5) +
+      "&resposta6=" +
+      encodeURIComponent(resposta6) +
+      "&resposta7=" +
+      encodeURIComponent(resposta7) +
+      "&resposta8=" +
+      encodeURIComponent(resposta8) +
+      "&resposta9=" +
+      encodeURIComponent(resposta9) +
+      "&resposta10=" +
+      encodeURIComponent(resposta10) +
+      "&resposta11=" +
+      encodeURIComponent(resposta11) +
+      "&resposta12=" +
+      encodeURIComponent(resposta12) +
+      "&resposta13=" +
+      encodeURIComponent(resposta13) +
+      "&resposta14=" +
+      encodeURIComponent(resposta14) +
+      "&resposta15=" +
+      encodeURIComponent(resposta15) +
+      "&resposta16=" +
+      encodeURIComponent(resposta16) +
+      "&resposta17=" +
+      encodeURIComponent(resposta17) +
+      "&resposta18=" +
+      encodeURIComponent(resposta18) +
+      "&resposta19=" +
+      encodeURIComponent(resposta19) +
+      "&resposta20=" +
+      encodeURIComponent(resposta20) +
+      "&resposta21=" +
+      encodeURIComponent(resposta21) +
+      "&resposta22=" +
+      encodeURIComponent(resposta22) +
+      "&resposta23=" +
+      encodeURIComponent(resposta23) +
+      "&resposta24=" +
+      encodeURIComponent(resposta24) +
+      "&resposta25=" +
+      encodeURIComponent(resposta25) +
+      "&resposta26=" +
+      encodeURIComponent(resposta26) +
+      "&resposta27=" +
+      encodeURIComponent(resposta27) +
+      "&resposta28=" +
+      encodeURIComponent(resposta28) +
+      "&resposta29=" +
+      encodeURIComponent(resposta29) +
+      "&resposta30=" +
+      encodeURIComponent(resposta30) +
+      "&resposta31=" +
+      encodeURIComponent(resposta31);
 
-      if (
-        resposta1 &&
-        resposta2 &&
-        resposta3 &&
-        resposta8 &&
-        resposta9 &&
-        resposta10 &&
-        resposta11 &&
-        resposta12 &&
-        resposta13 &&
-        resposta17 &&
-        resposta18 &&
-        resposta19 &&
-        resposta20 &&
-        resposta21 &&
-        resposta22 &&
-        resposta23 &&
-        resposta24 &&
-        resposta25 &&
-        resposta26 &&
-        resposta27 &&
-        resposta28 &&
-        nameEstudante &&
-        nameProfessor &&
-        whatsappProfessor &&
-        whatsappEstudante
-      ) {
-        var linkBase = "https://otaviano07.github.io/revelacaobiblica/";
-        var linkEstudo =
-          linkBase +
-          estudoBiblico +
-          "/" +
-          tema +
-          "/index.html?nameProfessor=" +
-          encodeURIComponent(nameProfessor) +
-          "&whatsappProfessor=" +
-          whatsappProfessor +
-          "&nameEstudante=" +
-          encodeURIComponent(nameEstudante) +
-          "&whatsappEstudante=" +
-          whatsappEstudante +
-          "&resposta1=" +
-          encodeURIComponent(resposta1) +
-          "&resposta2=" +
-          encodeURIComponent(resposta2) +
-          "&resposta3=" +
-          encodeURIComponent(resposta3) +
-          "&resposta4=" +
-          encodeURIComponent(resposta4) +
-          "&resposta5=" +
-          encodeURIComponent(resposta5) +
-          "&resposta6=" +
-          encodeURIComponent(resposta6) +
-          "&resposta7=" +
-          encodeURIComponent(resposta7) +
-          "&resposta8=" +
-          encodeURIComponent(resposta8) +
-          "&resposta9=" +
-          encodeURIComponent(resposta9) +
-          "&resposta10=" +
-          encodeURIComponent(resposta10) +
-          "&resposta11=" +
-          encodeURIComponent(resposta11) +
-          "&resposta12=" +
-          encodeURIComponent(resposta12) +
-          "&resposta13=" +
-          encodeURIComponent(resposta13) +
-          "&resposta14=" +
-          encodeURIComponent(resposta14) +
-          "&resposta15=" +
-          encodeURIComponent(resposta15) +
-          "&resposta16=" +
-          encodeURIComponent(resposta16) +
-          "&resposta17=" +
-          encodeURIComponent(resposta17) +
-          "&resposta18=" +
-          encodeURIComponent(resposta18) +
-          "&resposta19=" +
-          encodeURIComponent(resposta19) +
-          "&resposta20=" +
-          encodeURIComponent(resposta20) +
-          "&resposta21=" +
-          encodeURIComponent(resposta21) +
-          "&resposta22=" +
-          encodeURIComponent(resposta22) +
-          "&resposta23=" +
-          encodeURIComponent(resposta23) +
-          "&resposta24=" +
-          encodeURIComponent(resposta24) +
-          "&resposta25=" +
-          encodeURIComponent(resposta25) +
-          "&resposta26=" +
-          encodeURIComponent(resposta26) +
-          "&resposta27=" +
-          encodeURIComponent(resposta27) +
-          "&resposta28=" +
-          encodeURIComponent(resposta28) +
-          "&resposta29=" +
-          encodeURIComponent(resposta29) +
-          "&resposta30=" +
-          encodeURIComponent(resposta30)+
-          "&resposta31=" +
-          encodeURIComponent(resposta31);
+      var linkGerado = document.getElementById("linkGerado");
 
-          var link = document.getElementById("linkGerado");
-          console.log(link);
-
-          shortenUrl(linkEstudo).then(function (shortUrl) {
-            link.value = shortUrl;
-          });
-        
-
+      shortenUrl(linkEstudo).then(function (shortUrl) {
+        linkGerado.value = shortUrl;
+        console.log("Link gerado: " + shortUrl);
+  
         estudoBiblico = formatarTexto(estudoBiblico);
         tema = formatarTexto(tema);
-
-        var linkGerado = document.getElementById("linkGerado");
-        console.log(linkGerado.value);
-
-        var mensagem = "Olá *" +
+  
+        var mensagem =
+          "Olá *" +
           nameProfessor +
           "*, tudo bem!\n\nConsegui terminar o estudo bíblico *" +
           estudoBiblico +
           "* com o tema *" +
           tema +
           "*. Gostaria que você fizesse a correção das minhas resposta para ver como me saí.\n\nSegue o link: " +
-          linkGerado +
+          shortUrl +
           "\n\nAguardo ansiosamente pelo seu feedback!\n\nAtenciosamente,\n" +
           nameEstudante;
-
-          
-          if(detectDevice()){
-            var pre = apiWhatsappMobile + whatsappProfessor + "?text=";
-          }
-          else{
-            var pre = apiWhatsappWeb + whatsappProfessor + "&text=";
-          }
-
+  
+        if (detectDevice()) {
+          var pre = apiWhatsappMobile + whatsappProfessor + "?text=";
+        } else {
+          var pre = apiWhatsappWeb + whatsappProfessor + "&text=";
+        }
+  
         var linkWhatsapp = pre + encodeURIComponent(mensagem);
-
+  
         // Abre o link do WhatsApp em uma nova janela ou guia
         window.open(linkWhatsapp);
-      //}
+      });
     } else {
-      console.log("Campos preenchidos: " + resposta1 + ", " + resposta2 + ", " + resposta3 + ", " + resposta4 + ", " + resposta5 + ", " + resposta6 + ", " + resposta7 + ", " + resposta8 + ", " + resposta9 + ", " + resposta10 + ", " + resposta11 + ", " + resposta12 + ", " + resposta13 + ", " + resposta14 + ", " + resposta15 + ", " + resposta16 + ", " + resposta17 + ", " + resposta18 + ", " + resposta19 + ", " + resposta20 + ", " + resposta21 + ", " + resposta22 + ", " + resposta23 + ", " + resposta24 + ", " + resposta25 + ", " + resposta26 + ", " + resposta27 + ", " + resposta28 + ", " + resposta29 + ", " + resposta30 + ", " + resposta31);
+      console.log(
+        "Campos preenchidos: " +
+          resposta1 +
+          ", " +
+          resposta2 +
+          ", " +
+          resposta3 +
+          ", " +
+          resposta4 +
+          ", " +
+          resposta5 +
+          // Resto do código...
+          ", " +
+          resposta31
+      );
       alert(
         "Por favor, responda todas as perguntas antes de enviar as respostas para o professor."
       );
-      
     }
   }
 
-  function formatarTexto(texto) {
-    var palavras = texto.split('-'); // Divide o texto em um array de palavras separadas por hífens
-    var resultado = "";
-  
-    for (var i = 0; i < palavras.length; i++) {
-      var palavra = palavras[i];
-      var primeiraLetra = palavra.charAt(0).toUpperCase(); // Obtém a primeira letra da palavra e converte para maiúscula
-      var restante = palavra.slice(1); // Obtém o restante da palavra (exceto a primeira letra)
-      var palavraFormatada = primeiraLetra + restante;
-      resultado += palavraFormatada + " ";
-    }
-  
-    return resultado.trim(); // Remove espaços extras no início e no final da string
+function formatarTexto(texto) {
+  var palavras = texto.split("-"); // Divide o texto em um array de palavras separadas por hífens
+  var resultado = "";
+
+  for (var i = 0; i < palavras.length; i++) {
+    var palavra = palavras[i];
+    var primeiraLetra = palavra.charAt(0).toUpperCase(); // Obtém a primeira letra da palavra e converte para maiúscula
+    var restante = palavra.slice(1); // Obtém o restante da palavra (exceto a primeira letra)
+    var palavraFormatada = primeiraLetra + restante;
+    resultado += palavraFormatada + " ";
   }
 
-  function detectDevice() {
-    var userAgent = navigator.userAgent;
-    var isMobile = /Mobi|(iPhone|iPad|iPod|Android|Windows Phone|BlackBerry)/i.test(userAgent);
-    return isMobile;
-  }
+  return resultado.trim(); // Remove espaços extras no início e no final da string
+}
 
+function detectDevice() {
+  var userAgent = navigator.userAgent;
+  var isMobile =
+    /Mobi|(iPhone|iPad|iPod|Android|Windows Phone|BlackBerry)/i.test(userAgent);
+  return isMobile;
+}
 
 //Editar campo dados participantes
 function editarInput(id) {
@@ -425,7 +438,9 @@ function dropWord(event) {
   event.preventDefault();
   var word = event.dataTransfer.getData("text");
   var dropArea = event.target;
-  var selectedWord = document.querySelector('.draggable-word[data-word="' + word + '"]');
+  var selectedWord = document.querySelector(
+    '.draggable-word[data-word="' + word + '"]'
+  );
 
   if (dropArea.classList.contains("drop-area")) {
     if (!dropArea.textContent) {
@@ -443,14 +458,14 @@ function dropWord(event) {
 function checkWords() {
   var dropAreas = document.getElementsByClassName("drop-area");
   var palavrasCorretas = {
-    "resposta21": "VERDADE",
-    "resposta22": "ENTENDEM",
-    "resposta23": "POUCO",
-    "resposta24": "ALI",
-    "resposta25": "ASSUNTO",
-    "resposta26": "DEUS",
-    "resposta27": "TIRAR",
-    "resposta28": "ACRESCENTAR"
+    resposta21: "VERDADE",
+    resposta22: "ENTENDEM",
+    resposta23: "POUCO",
+    resposta24: "ALI",
+    resposta25: "ASSUNTO",
+    resposta26: "DEUS",
+    resposta27: "TIRAR",
+    resposta28: "ACRESCENTAR",
   };
 
   for (var i = 0; i < dropAreas.length; i++) {
@@ -705,7 +720,6 @@ var previousDropArea = null;
 var previousWord = null;
 var previousDropAreaText = "";
 
-
 function touchStart(event) {
   currentTouchElement = event.target;
 }
@@ -764,7 +778,6 @@ function undoPreviousMove() {
 
   checkWords();
 }
-
 
 function resetExercise() {
   var dropAreas = document.querySelectorAll(".drop-area");
@@ -861,108 +874,108 @@ function pararAudio(versiculoId) {
   }
 }
 
-    // Obter os dados das áreas de soltar
+// Obter os dados das áreas de soltar
 function getDropAreasData() {
-      var dropAreas = document.getElementsByClassName("drop-area");
-      var respostas = {};
+  var dropAreas = document.getElementsByClassName("drop-area");
+  var respostas = {};
 
-      for (var i = 0; i < dropAreas.length; i++) {
-          var dropArea = dropAreas[i];
-          var resposta = dropArea.getAttribute("data-resposta");
-          var conteudo = dropArea.textContent;
-          respostas[resposta] = conteudo;
-      }
+  for (var i = 0; i < dropAreas.length; i++) {
+    var dropArea = dropAreas[i];
+    var resposta = dropArea.getAttribute("data-resposta");
+    var conteudo = dropArea.textContent;
+    respostas[resposta] = conteudo;
+  }
 
-      return respostas;
+  return respostas;
 }
 
-  // Exemplo de uso: obter os dados e exibi-los no console
+// Exemplo de uso: obter os dados e exibi-los no console
 var respostas = getDropAreasData();
-  console.log(respostas);
+console.log(respostas);
 
-  window.addEventListener('DOMContentLoaded', (event) => {
-    preencherFormulario();
+window.addEventListener("DOMContentLoaded", (event) => {
+  preencherFormulario();
 });
 
 //document.addEventListener('DOMContentLoaded', preencherFormulario);
 
 function preencherFormulario() {
-    // Extrai os parâmetros da URL
-    const urlParams = new URLSearchParams(window.location.search);
+  // Extrai os parâmetros da URL
+  const urlParams = new URLSearchParams(window.location.search);
 
-    // Obtém os valores dos parâmetros
-    const nameProfessor = urlParams.get('nameProfessor');
-    const whatsappProfessor = urlParams.get('whatsappProfessor');
-    const nameEstudante = urlParams.get('nameEstudante');
-    const whatsappEstudante = urlParams.get('whatsappEstudante');
-    const resposta1 = urlParams.get('resposta1');
-    const resposta2 = urlParams.get('resposta2');
-    const resposta3 = urlParams.get('resposta3');
-    const resposta4 = urlParams.get('resposta4');
-    const resposta5 = urlParams.get('resposta5');
-    const resposta6 = urlParams.get('resposta6');
-    const resposta7 = urlParams.get('resposta7');
-    const resposta8 = urlParams.get('resposta8');
-    const resposta9 = urlParams.get('resposta9');
-    const resposta10 = urlParams.get('resposta10');
-    const resposta11 = urlParams.get('resposta11');
-    const resposta12 = urlParams.get('resposta12');
-    const resposta13 = urlParams.get('resposta13');
-    const resposta14 = urlParams.get('resposta14');
-    const resposta15 = urlParams.get('resposta15');
-    const resposta16 = urlParams.get('resposta16');
-    const resposta17 = urlParams.get('resposta17');
-    const resposta18 = urlParams.get('resposta18');
-    const resposta19 = urlParams.get('resposta19');
-    const resposta20 = urlParams.get('resposta20');
-    const resposta21 = urlParams.get('resposta21');
-    const resposta22 = urlParams.get('resposta22');
-    const resposta23 = urlParams.get('resposta23');
-    const resposta24 = urlParams.get('resposta24');
-    const resposta25 = urlParams.get('resposta25');
-    const resposta26 = urlParams.get('resposta26');
-    const resposta27 = urlParams.get('resposta27');
-    const resposta28 = urlParams.get('resposta28');
-    const resposta29 = urlParams.get('resposta29');
-    const resposta30 = urlParams.get('resposta30');
-    const resposta31 = urlParams.get('resposta31');
+  // Obtém os valores dos parâmetros
+  const nameProfessor = urlParams.get("nameProfessor");
+  const whatsappProfessor = urlParams.get("whatsappProfessor");
+  const nameEstudante = urlParams.get("nameEstudante");
+  const whatsappEstudante = urlParams.get("whatsappEstudante");
+  const resposta1 = urlParams.get("resposta1");
+  const resposta2 = urlParams.get("resposta2");
+  const resposta3 = urlParams.get("resposta3");
+  const resposta4 = urlParams.get("resposta4");
+  const resposta5 = urlParams.get("resposta5");
+  const resposta6 = urlParams.get("resposta6");
+  const resposta7 = urlParams.get("resposta7");
+  const resposta8 = urlParams.get("resposta8");
+  const resposta9 = urlParams.get("resposta9");
+  const resposta10 = urlParams.get("resposta10");
+  const resposta11 = urlParams.get("resposta11");
+  const resposta12 = urlParams.get("resposta12");
+  const resposta13 = urlParams.get("resposta13");
+  const resposta14 = urlParams.get("resposta14");
+  const resposta15 = urlParams.get("resposta15");
+  const resposta16 = urlParams.get("resposta16");
+  const resposta17 = urlParams.get("resposta17");
+  const resposta18 = urlParams.get("resposta18");
+  const resposta19 = urlParams.get("resposta19");
+  const resposta20 = urlParams.get("resposta20");
+  const resposta21 = urlParams.get("resposta21");
+  const resposta22 = urlParams.get("resposta22");
+  const resposta23 = urlParams.get("resposta23");
+  const resposta24 = urlParams.get("resposta24");
+  const resposta25 = urlParams.get("resposta25");
+  const resposta26 = urlParams.get("resposta26");
+  const resposta27 = urlParams.get("resposta27");
+  const resposta28 = urlParams.get("resposta28");
+  const resposta29 = urlParams.get("resposta29");
+  const resposta30 = urlParams.get("resposta30");
+  const resposta31 = urlParams.get("resposta31");
 
-    // Preenche os campos do formulário
-    document.getElementById('nameProfessor').value = nameProfessor;
-    document.getElementById('whatsappProfessor').value = whatsappProfessor;
-    document.getElementById('nameEstudante').value = nameEstudante;
-    document.getElementById('whatsappEstudante').value = whatsappEstudante;
-    document.getElementById('resposta1').value = resposta1;
-    document.getElementById('resposta2').value = resposta2;
-    document.getElementById('resposta3').value = resposta3;
-    document.getElementById('resposta4').value = resposta4;
-    document.getElementById('resposta5').value = resposta5;
-    document.getElementById('resposta6').value = resposta6;
-    document.getElementById('resposta7').value = resposta7;
-    document.getElementById('resposta8').value = resposta8;
-    document.getElementById('resposta9').value = resposta9;
-    document.getElementById('resposta10').value = resposta10;
-    document.getElementById('resposta11').value = resposta11;
-    document.getElementById('resposta12').value = resposta12;
-    document.getElementById('resposta13').value = resposta13;
-    document.getElementById('resposta14').value = resposta14;
-    document.getElementById('resposta15').value = resposta15;
-    document.getElementById('resposta16').value = resposta16;
-    document.getElementById('resposta17').value = resposta17;
-    document.getElementById('resposta18').value = resposta18;
-    document.getElementById('resposta19').value = resposta19;
-    document.getElementById('resposta20').value = resposta20;
-    document.getElementById('resposta21').textContent = resposta21;
-    document.getElementById('resposta22').textContent = resposta22;
-    document.getElementById('resposta23').textContent = resposta23;
-    document.getElementById('resposta24').textContent = resposta24;
-    document.getElementById('resposta25').textContent = resposta25;
-    document.getElementById('resposta26').textContent = resposta26;
-    document.getElementById('resposta27').textContent = resposta27;
-    document.getElementById('resposta28').textContent = resposta28;
-    document.getElementById('resposta29').value = resposta29;
-    document.getElementById('resposta30').value = resposta30;
-    document.getElementById('resposta31').value = resposta31;
+  // Preenche os campos do formulário
+  document.getElementById("nameProfessor").value = nameProfessor;
+  document.getElementById("whatsappProfessor").value = whatsappProfessor;
+  document.getElementById("nameEstudante").value = nameEstudante;
+  document.getElementById("whatsappEstudante").value = whatsappEstudante;
+  document.getElementById("resposta1").value = resposta1;
+  document.getElementById("resposta2").value = resposta2;
+  document.getElementById("resposta3").value = resposta3;
+  document.getElementById("resposta4").value = resposta4;
+  document.getElementById("resposta5").value = resposta5;
+  document.getElementById("resposta6").value = resposta6;
+  document.getElementById("resposta7").value = resposta7;
+  document.getElementById("resposta8").value = resposta8;
+  document.getElementById("resposta9").value = resposta9;
+  document.getElementById("resposta10").value = resposta10;
+  document.getElementById("resposta11").value = resposta11;
+  document.getElementById("resposta12").value = resposta12;
+  document.getElementById("resposta13").value = resposta13;
+  document.getElementById("resposta14").value = resposta14;
+  document.getElementById("resposta15").value = resposta15;
+  document.getElementById("resposta16").value = resposta16;
+  document.getElementById("resposta17").value = resposta17;
+  document.getElementById("resposta18").value = resposta18;
+  document.getElementById("resposta19").value = resposta19;
+  document.getElementById("resposta20").value = resposta20;
+  document.getElementById("resposta21").textContent = resposta21;
+  document.getElementById("resposta22").textContent = resposta22;
+  document.getElementById("resposta23").textContent = resposta23;
+  document.getElementById("resposta24").textContent = resposta24;
+  document.getElementById("resposta25").textContent = resposta25;
+  document.getElementById("resposta26").textContent = resposta26;
+  document.getElementById("resposta27").textContent = resposta27;
+  document.getElementById("resposta28").textContent = resposta28;
+  document.getElementById("resposta29").value = resposta29;
+  document.getElementById("resposta30").value = resposta30;
+  document.getElementById("resposta31").value = resposta31;
 }
 
 var inputs = [
@@ -996,16 +1009,15 @@ var inputs = [
   document.getElementById("resposta28"),
   document.getElementById("resposta29"),
   document.getElementById("resposta30"),
-  document.getElementById("resposta31")
+  document.getElementById("resposta31"),
 ];
 
-inputs.forEach(function(input) {
-  input.addEventListener('input', function() {
-    if (input.value !== '' || input.checked || input.textContent !== '') {
-      input.classList.add('filled');
+inputs.forEach(function (input) {
+  input.addEventListener("input", function () {
+    if (input.value !== "" || input.checked || input.textContent !== "") {
+      input.classList.add("filled");
     } else {
-      input.classList.remove('filled');
+      input.classList.remove("filled");
     }
   });
 });
-
