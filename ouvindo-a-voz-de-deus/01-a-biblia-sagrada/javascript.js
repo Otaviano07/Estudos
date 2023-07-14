@@ -710,31 +710,25 @@ document.getElementById("resposta31").addEventListener("click", function () {
   }
 });
 
-//Aumentar o tamanho dos inputs conforme letras forem sendo adicionada
-function ajustarTamanhoCampo(input) {
-  input.style.width = (input.value.length + 1) * 8 + "px"; // Ajusta a largura do campo
-}
+// Seletor CSS para todos os campos de entrada que deseja ajustar o tamanho
+var camposDeEntrada = document.querySelectorAll('.blank');
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Selecionar todos os campos de entrada
-  var campos = document.querySelectorAll("input");
-
-  campos.forEach(function (input) {
-    // Obtém os estilos computados do campo
-    var style = window.getComputedStyle(input);
-    var font = style.getPropertyValue("font");
-    var canvas = document.createElement("canvas");
-    var context = canvas.getContext("2d");
-
-    context.font = font;
-    var width = context.measureText(input.value).width;
-
-    input.style.width = width + "px";
+// Adicionar o ouvinte de eventos 'input' para cada campo
+camposDeEntrada.forEach(function(campo) {
+  campo.addEventListener('input', function() {
+    ajustarTamanhoCampo(campo);
   });
 });
 
-
-
+//Aumentar o tamanho dos inputs conforme letras forem sendo adicionada
+function ajustarTamanhoCampo(input) {
+  var quantidadeLetras = input.value.length;
+  var tamanhoLetra = 11; // Tamanho aproximado de cada letra, em pixels
+  var larguraMinima = 100; // Largura mínima do campo, em pixels
+  
+  var novaLargura = Math.max(quantidadeLetras * tamanhoLetra, larguraMinima) + 'px';
+  input.style.width = novaLargura;
+}
 
 var currentTouchElement = null;
 var previousDropArea = null;
