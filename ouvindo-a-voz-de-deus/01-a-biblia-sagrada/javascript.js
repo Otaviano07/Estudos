@@ -715,6 +715,27 @@ function ajustarTamanhoCampo(input) {
   input.style.width = (input.value.length + 1) * 8 + "px"; // Ajusta a largura do campo
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Selecionar todos os campos de entrada
+  var campos = document.querySelectorAll("input");
+
+  campos.forEach(function (input) {
+    // Obtém os estilos computados do campo
+    var style = window.getComputedStyle(input);
+    var font = style.getPropertyValue("font");
+    var canvas = document.createElement("canvas");
+    var context = canvas.getContext("2d");
+
+    context.font = font;
+    var width = context.measureText(input.value).width;
+
+    input.style.width = width + "px";
+  });
+});
+
+
+
+
 var currentTouchElement = null;
 var previousDropArea = null;
 var previousWord = null;
@@ -948,19 +969,19 @@ function preencherFormulario() {
   document.getElementById("resposta1").value = resposta1;
   document.getElementById("resposta2").value = resposta2;
   document.getElementById("resposta3").value = resposta3;
-  document.getElementById("resposta4").value = resposta4;
-  document.getElementById("resposta5").value = resposta5;
-  document.getElementById("resposta6").value = resposta6;
-  document.getElementById("resposta7").value = resposta7;
+  document.getElementById("resposta4").checked = resposta4 === "true";
+  document.getElementById("resposta5").checked = resposta5 === "true";
+  document.getElementById("resposta6").checked = resposta6 === "true";
+  document.getElementById("resposta7").checked = resposta7 === "true";
   document.getElementById("resposta8").value = resposta8;
   document.getElementById("resposta9").value = resposta9;
   document.getElementById("resposta10").value = resposta10;
   document.getElementById("resposta11").value = resposta11;
   document.getElementById("resposta12").value = resposta12;
   document.getElementById("resposta13").value = resposta13;
-  document.getElementById("resposta14").value = resposta14;
-  document.getElementById("resposta15").value = resposta15;
-  document.getElementById("resposta16").value = resposta16;
+  document.getElementById("resposta14").checked = resposta14 === "true";
+  document.getElementById("resposta15").checked = resposta15 === "true";
+  document.getElementById("resposta16").checked = resposta16 === "true";
   document.getElementById("resposta17").value = resposta17;
   document.getElementById("resposta18").value = resposta18;
   document.getElementById("resposta19").value = resposta19;
@@ -973,9 +994,9 @@ function preencherFormulario() {
   document.getElementById("resposta26").textContent = resposta26;
   document.getElementById("resposta27").textContent = resposta27;
   document.getElementById("resposta28").textContent = resposta28;
-  document.getElementById("resposta29").value = resposta29;
-  document.getElementById("resposta30").value = resposta30;
-  document.getElementById("resposta31").value = resposta31;
+  document.getElementById("resposta29").checked = resposta29 === "true";
+  document.getElementById("resposta30").checked = resposta30 === "true";
+  document.getElementById("resposta31").checked = resposta31 === "true";
 }
 
 var inputs = [
