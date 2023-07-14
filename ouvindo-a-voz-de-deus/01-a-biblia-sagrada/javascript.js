@@ -212,7 +212,7 @@ function enviarResposta() {
       "&resposta31=" +
       encodeURIComponent(resposta31);+
       "&viewProfessor="+
-      encodeURIComponent(viewProfessor)
+      encodeURIComponent(viewProfessor);
 
       var linkGerado = document.getElementById("linkGerado");
 
@@ -1052,9 +1052,13 @@ function viewElementosProfessor() {
 
   var viewProfessor = document.getElementById("viewProfessor");
 
-  if(viewProfessor.value === false){
+  if(viewProfessor.value === "false"){
     // Selecione todos os elementos com a classe "selected-word"
     var selectedWords = document.querySelectorAll(".selected-word");
+    var inputGroupAppends = document.querySelectorAll(".input-group-append");
+    var btnLimparDropArea = document.getElementById("btnLimparDropArea");
+    var h1Element = document.querySelector("h1");
+    var divComentario = document.querySelectorAll(".comentario");
 
     // Percorra todos os elementos selecionados
     selectedWords.forEach(function(element) {
@@ -1062,9 +1066,27 @@ function viewElementosProfessor() {
       element.classList.add("oculto");
     });
 
+    inputs.forEach(function (input) {
+      input.readOnly = true; // Definir como somente leitura
+      input.disabled = true; // Desabilitar checkbox
+    });
+      // Percorra todos os elementos selecionados
+    inputGroupAppends.forEach(function(element) {
+      // Adicione a classe "oculto" para tornar o elemento oculto
+      element.classList.add("oculto");
+    });
+
+    divComentario.forEach(function(element) {
+      element.style.display = "block";
+    });
+
+    btnLimparDropArea.classList.add("oculto");
+    h1Element.style.display = "block";
+    
   }
   else{
-    viewProfessor.value = true;
+    h1Element.style.display = "none";
+    divComentario.style.display = "none";
   }
-
 }
+

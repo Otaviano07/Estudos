@@ -46,6 +46,8 @@
             para o homem atual? Essas perguntas serão respondidas neste estudo.</p>
     </div>
 
+    <h1>Correção do Estudo Bíblico</h1>
+
     <div class="questions">
         <!-- Adicione as classes "question01" e "modal-container" à div principal -->
         <div class="question">
@@ -100,6 +102,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="comentario">
+            <label><strong>Comentário do Professor:</strong></label>
+            <textarea class="form-control" id="comentario1"></textarea>
         </div>
 
         <div class="leiaMais">
@@ -275,6 +282,11 @@
             </div>
         </div>
 
+        <div class="comentario">
+            <label><strong>Comentário do Professor:</strong></label>
+            <textarea class="form-control" id="comentario2"></textarea>
+        </div>
+
         <div class="leiaMais">
             <p class="sabemais text-justify">À semelhança do eunuco, há milhares de pessoas que anelam compreender
                 plenamente <span id="pontos2">...</span><span id="mais2">as Escrituras.
@@ -419,6 +431,11 @@
             </div>
         </div>
 
+        <div class="comentario">
+            <label><strong>Comentário do Professor:</strong></label>
+            <textarea class="form-control" id="comentario3"></textarea>
+        </div>
+
         <div class="leiaMais">
             <p class="sabemais text-justify">Ao estudar as Escrituras devemos lembrar que a Bíblia é sua própria <span
                     id="pontos3">...</span><span id="mais3">intérprete. A abordagem moderna
@@ -489,6 +506,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="comentario">
+            <label><strong>Comentário do Professor:</strong></label>
+            <textarea class="form-control" id="comentario4"></textarea>
         </div>
 
         <div class="leiaMais">
@@ -633,6 +655,11 @@
             </div>
         </div>
 
+        <div class="comentario">
+            <label><strong>Comentário do Professor:</strong></label>
+            <textarea class="form-control" id="comentario5"></textarea>
+        </div>
+
         <div class="leiaMais">
             <p class="sabemais text-justify">Embora nem todas as pessoas aceitem as verdades <span
                     id="pontos5">...</span><span id="mais5">contidas na Palavra de Deus, elas
@@ -704,6 +731,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="comentario">
+            <label><strong>Comentário do Professor:</strong></label>
+            <textarea class="form-control" id="comentario6"></textarea>
         </div>
 
         <div class="leiaMais">
@@ -1320,6 +1352,11 @@
             </div>
         </div>
 
+        <div class="comentario">
+            <label><strong>Comentário do Professor:</strong></label>
+            <textarea class="form-control" id="comentario7"></textarea>
+        </div>
+
         <div class="leiaMais">
             <p class="sabemais text-justify">Segundo este texto, a Bíblia é útil para o ensino, repreensão, correção e
                 <span id="pontos7">...</span><span id="mais7">para a educação na justiça. Pela
@@ -1388,6 +1425,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="comentario">
+            <label><strong>Comentário do Professor:</strong></label>
+            <textarea class="form-control" id="comentario8"></textarea>
         </div>
 
         <div class="leiaMais">
@@ -1483,6 +1525,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="comentario">
+            <label><strong>Comentário do Professor:</strong></label>
+            <textarea class="form-control" id="comentario9"></textarea>
         </div>
 
         <div class="leiaMais">
@@ -1627,6 +1674,11 @@
             </div>
         </div>
 
+        <div class="comentario">
+            <label><strong>Comentário do Professor:</strong></label>
+            <textarea class="form-control" id="comentario10"></textarea>
+        </div>
+
         <div class="leiaMais">
             <p class="sabemais text-justify">Nesta declaração Jesus apresenta a fórmula do crescimento espiritual. A
                 <span id="pontos10">...</span><span id="mais10">felicidade, portanto, resulta de
@@ -1685,7 +1737,7 @@
             nada às Escrituras.
         </p>
 
-        <button class="btn btn-primary" onclick="resetExercise()">Limpar</button>
+        <button class="btn btn-primary" id="btnLimparDropArea" onclick="resetExercise()">Limpar</button>
 
     </div>
 
@@ -1732,7 +1784,7 @@
                         <input type="text" class="form-control" id="nameEstudante" placeholder="Nome Completo"
                             name="nameEstudante" readonly>
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="button" onclick="editarInput('nameEstudante')">
+                            <button class="btn btn-primary" type="button" id="btnName" onclick="editarInput('nameEstudante')">
                                 <i class="material-icons">edit</i>
                             </button>
                         </div>
@@ -1746,7 +1798,7 @@
                             onkeyup="mascaraTelefone(this); verificarTelefone();" placeholder="WhatsApp"
                             name="whatsappEstudante" readonly>
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="button" onclick="editarInput('whatsappEstudante')">
+                            <button class="btn btn-primary" type="button" id="btnWhatsapp" onclick="editarInput('whatsappEstudante')">
                                 <i class="material-icons">edit</i>
                             </button>
                             <div id="mensagemErroEstudante" class="alert alert-danger"></div>
@@ -1762,7 +1814,7 @@
                         <input type="text" class="form-control" id="nameProfessor" placeholder="Nome Completo"
                             name="nameProfessor" readonly>
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="button" onclick="editarInput('nameProfessor')">
+                            <button class="btn btn-primary" type="button" id="btnName" onclick="editarInput('nameProfessor')">
                                 <i class="material-icons">edit</i>
                             </button>
                         </div>
@@ -1776,7 +1828,7 @@
                             onkeyup="mascaraTelefone(this); verificarTelefone();" placeholder="WhatsApp"
                             name="whatsappProfessor" readonly>
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="button" onclick="editarInput('whatsappProfessor')">
+                            <button class="btn btn-primary" type="button" id="btnWhatsapp" onclick="editarInput('whatsappProfessor')">
                                 <i class="material-icons">edit</i>
                             </button>
                             <div id="mensagemErroProfessor" class="alert alert-danger"></div>
