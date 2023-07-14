@@ -560,7 +560,7 @@ function enviarMensagemWhatsapp() {
 
       var numeroEstudante = document.getElementById("whatsappEstudante").value;
       var linkGerado = document.getElementById("linkGerado").value;
-      var mensagem = "Olá! "+ nameEstudante +" segue abaixo link para o estudo "+ nomeEstudoBiblico +" com o tema "+ temaEstudoBiblico +":\n\nClique aqui:👉 "+ linkGerado + "Atenciosamente\n" + nameProfessor;
+      var mensagem = "Olá! *"+ nameEstudante +"* segue abaixo link para o estudo *"+ nomeEstudoBiblico +"* com o tema *"+ temaEstudoBiblico +"*:\n\n*_Clique aqui_*:👉 "+ linkGerado + "\n\nAtenciosamente\n" + nameProfessor;
 
       if (isDispositivoMobile()) {
         var url =

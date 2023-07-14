@@ -56,10 +56,11 @@ function shortenUrl(longUrl, customSlug) {
     .catch(function (error) {
       console.log("Erro ao encurtar o link:", error);
     });
-} 
+}
 
   function enviarResposta() {
-    var apiWhatsapp = "https://web.whatsapp.com/send/?phone=55";
+    var apiWhatsappWeb = "https://web.whatsapp.com/send/?phone=55";
+    var apiWhatsappMobile =  "https://wa.me/55";
     var nameEstudante = document.getElementById("nameEstudante").value;
     var nameProfessor = document.getElementById("nameProfessor").value;
     var whatsappProfessor = document.getElementById("whatsappProfessor").value;
@@ -127,7 +128,7 @@ function shortenUrl(longUrl, customSlug) {
         whatsappEstudante
       ) {
         var linkBase = "https://otaviano07.github.io/revelacaobiblica/";
-        var linkGerado =
+        var linkEstudo =
           linkBase +
           estudoBiblico +
           "/" +
@@ -203,28 +204,40 @@ function shortenUrl(longUrl, customSlug) {
           "&resposta31=" +
           encodeURIComponent(resposta31);
 
-        //linkGerado = shortenUrl(linkGerado, "EstudoBiblico");
+          var link = document.getElementById("linkGerado");
+          console.log(link);
 
-        shortenUrl(linkGerado).then(function (shortUrl) {
-          linkGerado = shortUrl;
-        });
+          shortenUrl(linkEstudo).then(function (shortUrl) {
+            link.value = shortUrl;
+          });
+        
 
-        var mensagem = "Olá " +
+        estudoBiblico = formatarTexto(estudoBiblico);
+        tema = formatarTexto(tema);
+
+        var linkGerado = document.getElementById("linkGerado");
+        console.log(linkGerado.value);
+
+        var mensagem = "Olá *" +
           nameProfessor +
-          ", tudo bem!\n\nConsegui terminar o estudo bíblico " +
+          "*, tudo bem!\n\nConsegui terminar o estudo bíblico *" +
           estudoBiblico +
-          " com o tema " +
+          "* com o tema *" +
           tema +
-          ". Gostaria que você fizesse a correção das minhas resposta para ver como me saí.\nSegue o link: " +
+          "*. Gostaria que você fizesse a correção das minhas resposta para ver como me saí.\n\nSegue o link: " +
           linkGerado +
           "\n\nAguardo ansiosamente pelo seu feedback!\n\nAtenciosamente,\n" +
           nameEstudante;
 
-        var linkWhatsapp =
-          apiWhatsapp +
-          whatsappProfessor +
-          "&text=" +
-          encodeURIComponent(mensagem);
+          
+          if(detectDevice()){
+            var pre = apiWhatsappMobile + whatsappProfessor + "?text=";
+          }
+          else{
+            var pre = apiWhatsappWeb + whatsappProfessor + "&text=";
+          }
+
+        var linkWhatsapp = pre + encodeURIComponent(mensagem);
 
         // Abre o link do WhatsApp em uma nova janela ou guia
         window.open(linkWhatsapp);
@@ -237,6 +250,28 @@ function shortenUrl(longUrl, customSlug) {
       
     }
   }
+
+  function formatarTexto(texto) {
+    var palavras = texto.split('-'); // Divide o texto em um array de palavras separadas por hífens
+    var resultado = "";
+  
+    for (var i = 0; i < palavras.length; i++) {
+      var palavra = palavras[i];
+      var primeiraLetra = palavra.charAt(0).toUpperCase(); // Obtém a primeira letra da palavra e converte para maiúscula
+      var restante = palavra.slice(1); // Obtém o restante da palavra (exceto a primeira letra)
+      var palavraFormatada = primeiraLetra + restante;
+      resultado += palavraFormatada + " ";
+    }
+  
+    return resultado.trim(); // Remove espaços extras no início e no final da string
+  }
+
+  function detectDevice() {
+    var userAgent = navigator.userAgent;
+    var isMobile = /Mobi|(iPhone|iPad|iPod|Android|Windows Phone|BlackBerry)/i.test(userAgent);
+    return isMobile;
+  }
+
 
 //Editar campo dados participantes
 function editarInput(id) {

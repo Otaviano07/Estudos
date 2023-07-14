@@ -1,3 +1,18 @@
+sub,sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f1f1f1;
@@ -249,5 +264,9 @@ h2 {
     .reflexao p{
         margin-top: 20px;
         margin-bottom: 20px;
+    }
+
+    #linkGerado{
+        display:none;
     }
 
