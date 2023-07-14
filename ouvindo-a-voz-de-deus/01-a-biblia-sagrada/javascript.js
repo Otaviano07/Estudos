@@ -105,6 +105,8 @@ function enviarResposta() {
   var resposta29 = document.getElementById("resposta29").checked;
   var resposta30 = document.getElementById("resposta30").checked;
   var resposta31 = document.getElementById("resposta31").checked;
+  var viewProfessor = document.getElementById("viewProfessor").value;
+  viewProfessor.value = false;
 
   if (
     resposta1 &&
@@ -208,7 +210,9 @@ function enviarResposta() {
       "&resposta30=" +
       encodeURIComponent(resposta30) +
       "&resposta31=" +
-      encodeURIComponent(resposta31);
+      encodeURIComponent(resposta31);+
+      "&viewProfessor="+
+      encodeURIComponent(viewProfessor)
 
       var linkGerado = document.getElementById("linkGerado");
 
@@ -238,6 +242,8 @@ function enviarResposta() {
         }
   
         var linkWhatsapp = pre + encodeURIComponent(mensagem);
+
+      
   
         // Abre o link do WhatsApp em uma nova janela ou guia
         window.open(linkWhatsapp);
@@ -954,6 +960,7 @@ function preencherFormulario() {
   const resposta29 = urlParams.get("resposta29");
   const resposta30 = urlParams.get("resposta30");
   const resposta31 = urlParams.get("resposta31");
+  const viewProfessor = urlParams.get("viewProfessor");
 
   // Preenche os campos do formulário
   document.getElementById("nameProfessor").value = nameProfessor;
@@ -991,6 +998,8 @@ function preencherFormulario() {
   document.getElementById("resposta29").checked = resposta29 === "true";
   document.getElementById("resposta30").checked = resposta30 === "true";
   document.getElementById("resposta31").checked = resposta31 === "true";
+  document.getElementById("viewProfessor").value = viewProfessor;
+  viewElementosProfessor();
 }
 
 var inputs = [
@@ -1036,3 +1045,26 @@ inputs.forEach(function (input) {
     }
   });
 });
+
+//Ocultar elementos quando o professor visualizar as respostas
+
+function viewElementosProfessor() {
+
+  var viewProfessor = document.getElementById("viewProfessor");
+
+  if(viewProfessor.value === false){
+    // Selecione todos os elementos com a classe "selected-word"
+    var selectedWords = document.querySelectorAll(".selected-word");
+
+    // Percorra todos os elementos selecionados
+    selectedWords.forEach(function(element) {
+      // Adicione a classe "oculto" para tornar o elemento oculto
+      element.classList.add("oculto");
+    });
+
+  }
+  else{
+    viewProfessor.value = true;
+  }
+
+}

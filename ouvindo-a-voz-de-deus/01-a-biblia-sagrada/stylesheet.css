@@ -269,3 +269,7 @@ h2 {
     #linkGerado{
       display:none;
     }
+
+    .oculto {
+        display: none;
+    }
