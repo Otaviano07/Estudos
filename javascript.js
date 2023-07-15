@@ -31,7 +31,7 @@ function mascara(o, f) {
 function execmascara() {
   v_obj.value = v_fun(v_obj.value);
   validarDDD(v_obj.value);
-  verificarTelefone()
+  verificarTelefone(v_obj.value)
 }
 
 function mtel(v) {
@@ -147,7 +147,7 @@ function validarDDD(telefone) {
   }
 }
 
-function verificarTelefone() {
+function verificarTelefone(whatsapp) {
   const telProfessor = document.getElementById("whatsappProfessor");
   const telEstudante = document.getElementById("whatsappEstudante");
 
