@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gerar Link Preenchido</title>
+  <title>Gerar Link</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 </head>
 <body>
-  <h2 style="text-align: center;margin-bottom: 10px;margin-top: 20px;">Link para Estudo Bíblico</h2>
+  <h2 style="text-align: center;margin-bottom: 10px;margin-top: 20px;">Gerar link para Estudo Bíblico</h2>
   <form class="needs-validation" novalidate>
     <div class="container">
       <div class="form-row">
@@ -114,6 +114,12 @@
               <strong>Gerar</strong>
             </button>
           </div>
+
+          <div class="col-md-3 col-6 mb-2">
+            <button class="btn btn-secondary btn-block" type="reset" id="resert" data-toggle="buttons" data-placement="bottom" title="Limpar">
+              <strong>Limpar</strong>
+            </button>
+          </div>
       
           <div class="col-md-3 col-6 mb-2">
             <button class="btn btn-primary btn-block" type="button" id="btnCopiarLink" onclick="copiarLink();" data-toggle="buttons" data-placement="bottom" title="Copiar Link">
@@ -127,13 +133,13 @@
             </button>
           </div>
           
-          <div class="col-md-3 col-6 mb-2">
+          <div class="col-md-6 col-6 mb-2">
             <button class="btn btn-primary btn-block" type="button" id="btnAbrirLink" onclick="abrirLink();" data-toggle="buttons" data-placement="bottom" title="Abrir Link">
               <strong>Abrir</strong>
             </button>
           </div>
           
-          <div class="col-md-12 col-md-12 mb-2">  
+          <div class="col-md-6 col-6 mb-2">  
             <button class="btn btn-success btn-block" type="button" id="btnWhatsapp" onclick="enviarMensagemWhatsapp()" data-toggle="buttons" data-placement="bottom" title="Enviar pelo WhatsApp">
               <strong>Whatsapp</strong>
             </button>

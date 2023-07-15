@@ -754,14 +754,13 @@ function verificarCampos() {
 // Função para atualizar o progresso
 function atualizarProgresso() {
   var elementosValidos = document.querySelectorAll('.is-valid');
-  var linkGeradoInput = document.getElementById("linkGerado");
+  console.log(elementosValidos.length);
   var nameEstudoBiblico = document.getElementById("nomeEstudoBiblico").classList.contains("is-invalid"); 
   var temaEstudoBiblico = document.getElementById("temaEstudoBiblico").classList.contains("is-valid");
   var nameProfessor = document.getElementById("nameProfessor").classList.contains("is-valid"); 
   var nameEstudante = document.getElementById("nameEstudante").classList.contains("is-valid");
   var whatsappProfessor = document.getElementById("whatsappProfessor").classList.contains("is-valid");
   var whatsappEstudante = document.getElementById("whatsappEstudante").classList.contains("is-valid");
-  var linkGerado = document.getElementById("linkGerado").classList.contains("is-valid");
   
   var progresso = (elementosValidos.length / 7) * 100; // Total de elementos válidos dividido pelo número total de elementos
   // Atualizar a largura da barra de progresso
@@ -769,6 +768,7 @@ function atualizarProgresso() {
   progressBar.style.width = progresso + '%';
   progressBar.textContent = progresso.toFixed(2) + "%";
   
+  console.log(progresso);
   console.log(progressBar.style.width);
   
   // Atualizar o atributo 'aria-valuenow' para a leitura de acessibilidade
@@ -777,32 +777,62 @@ function atualizarProgresso() {
   
   // Verificar se algum campo voltou a ser inválido
   if (!nameEstudoBiblico || !temaEstudoBiblico || !nameEstudante || !nameProfessor || !whatsappEstudante || !whatsappProfessor) {
+    console.log(new Date());
   // Recalcular o valor da barra de progresso excluindo o campo inválido
-    progresso = ((elementosValidos.length - 1) / 7) * 100;
+    progresso = ((elementosValidos.length) / 7) * 100;
     
-  if (progresso < 0) {
-    progresso = 0;
-  }
+    if (progresso < 0) {
+      progresso = 0;
+    }
+
     progressBar.style.width = progresso + '%';
     progressBar.textContent = progresso.toFixed(2) + "%";
-    linkGeradoInput.value = "";
-    linkGeradoInput.classList.remove("is-valid");
   }
-
-  if(linkGerado){
-    progressBar.textContent = "100%";
-  }
-  }
+}
 
 
 
 // Event listener para verificar mudanças nos elementos válidos
 document.addEventListener('input', function(event) {
   var target = event.target;
+  var elementosValidos = document.querySelectorAll('.is-valid');
+  var linkGeradoInput = document.getElementById("linkGerado");
 
   // Verificar se o elemento é válido
   if (target.classList.contains('is-valid')) {
-    atualizarProgresso();
+    
+    if(elementosValidos.length < 7){
+      console.log("linha 803");
+      atualizarProgresso();
+    }
+    
   }
+  else{
+    console.log("linha 809");
+    linkGeradoInput.value = "";
+    var progress = document.querySelector('.progress');
+    progress.setAttribute('aria-valuenow', progresso);
+
+    var progresso = (elementosValidos.length / 7) * 100;
+    
+    if (progresso < 0) {
+      progresso = 0;
+    }
+    
+    var progressBar = document.querySelector('.progress-bar');
+    progressBar.style.width = progresso + '%';
+    progressBar.textContent = progresso.toFixed(2) + "%";
+  }
+});
+
+
+
+document.getElementById('resert').addEventListener('click', function() {
+  var elementosValidos = document.querySelectorAll('.is-valid');
+  elementosValidos.forEach(function(elemento) {
+    elemento.classList.remove('is-valid');
+    elemento.classList.add('is-invalid');
+    atualizarProgresso();
+  });
 });
 
