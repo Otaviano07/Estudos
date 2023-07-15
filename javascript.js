@@ -22,37 +22,37 @@ function mascaraTelefone(input) {
 }
 
 /* Máscaras ER */
-function mascara(o,f){
-  v_obj=o
-  v_fun=f
-  setTimeout("execmascara()",1)
+function mascara(o, f) {
+  v_obj = o;
+  v_fun = f;
+  setTimeout("execmascara()", 1);
 }
 
-function execmascara(){
-  v_obj.value=v_fun(v_obj.value)
+function execmascara() {
+  v_obj.value = v_fun(v_obj.value);
   validarDDD(v_obj.value);
-  verificarTelefone();
+  verificarTelefone()
 }
 
-function mtel(v){
-  v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
-  v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
-  v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+function mtel(v) {
+  v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
+  v = v.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+  v = v.replace(/(\d)(\d{4})$/, "$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
   return v;
 }
 
-function id( el ){
-  return document.getElementById( el );
+function id(el) {
+  return document.getElementById(el);
 }
 
-window.onload = function(){
-id('whatsappEstudante').onkeyup = function(){
-  mascara( this, mtel );
-}
-id('whatsappProfessor').onkeyup = function(){
-  mascara( this, mtel );
-}
-}
+window.onload = function () {
+  id("whatsappEstudante").onkeyup = function () {
+    mascara(this, mtel);
+  };
+  id("whatsappProfessor").onkeyup = function () {
+    mascara(this, mtel);
+  };
+};
 
 function mascaraNome(input) {
   // Remove todos os caracteres não alfabéticos
@@ -64,7 +64,6 @@ function mascaraNome(input) {
     input.value = input.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, "");
   }
 }
-
 
 //Verificar numero de whatsapp
 function validarDDD(telefone) {
@@ -138,7 +137,7 @@ function validarDDD(telefone) {
     "(98) 9", // Maranhão (MA)
     "(99) 9", // Sul do Maranhão (MA)
   ];
-  
+
   const dddTelefone = telefone.substring(0, 6);
 
   if (dddsValidos.includes(dddTelefone)) {
@@ -151,46 +150,29 @@ function validarDDD(telefone) {
 function verificarTelefone() {
   const telProfessor = document.getElementById("whatsappProfessor");
   const telEstudante = document.getElementById("whatsappEstudante");
-  //const mensagemErroProfessor = document.getElementById("mensagemErroProfessor");
-  //const mensagemErroEstudante = document.getElementById("mensagemErroEstudante");
-
 
   if (telProfessor.value.length > 0 && validarDDD(telProfessor.value)) {
-    //console.log(validarDDD(telProfessor.value) +" X "+ telProfessor.value.length);
     if (telProfessor.value.length < 15) {
-      //mensagemErroProfessor.innerText = "Número inválido.";
-      //mensagemErroProfessor.style.display = "block"; // Exibir a mensagem de erro      
       telProfessor.classList.remove("is-valid");
       telProfessor.classList.add("is-invalid");
     } else {
-      //mensagemErroProfessor.innerText = "";
-      //mensagemErroProfessor.style.display = "none"; // Ocultar a mensagem de erro
       telProfessor.classList.remove("is-invalid");
       telProfessor.classList.add("is-valid");
     }
   } else {
-    //mensagemErroProfessor.innerText = "";
-    //mensagemErroProfessor.style.display = "none"; // Ocultar a mensagem de erro
     telProfessor.classList.remove("is-valid");
     telProfessor.classList.add("is-invalid");
   }
 
   if (telEstudante.value.length > 0 && validarDDD(telEstudante.value)) {
-    //console.log(validarDDD(telEstudante.value) +" X "+ telEstudante.value.length);
     if (telEstudante.value.length < 15) {
-      //mensagemErroEstudante.innerText = "Número inválido.";
-      //mensagemErroEstudante.style.display = "block"; // Exibir a mensagem de erro      
       telEstudante.classList.remove("is-valid");
       telEstudante.classList.add("is-invalid");
     } else {
-      //mensagemErroEstudante.innerText = "";
-      //mensagemErroEstudante.style.display = "none"; // Ocultar a mensagem de erro
       telEstudante.classList.remove("is-invalid");
       telEstudante.classList.add("is-valid");
     }
   } else {
-    //mensagemErroEstudante.innerText = "";
-    //mensagemErroEstudante.style.display = "none"; // Ocultar a mensagem de erro
     telEstudante.classList.remove("is-valid");
     telEstudante.classList.add("is-invalid");
   }
@@ -210,7 +192,7 @@ function verificarNome() {
     }
   }
 
-  if (nameProfessor.value.length > 0 ) {
+  if (nameProfessor.value.length > 0) {
     if (nameProfessor.value.length < 5) {
       nameProfessor.classList.remove("is-valid");
       nameProfessor.classList.add("is-invalid");
@@ -221,16 +203,11 @@ function verificarNome() {
   }
 }
 
-
 //Gera o link para enviar estudo
-function runLink() {
+function gerandoLink() {
   var linkGeradoInput = document.getElementById("linkGerado");
-  var nomeEstudoBiblico = gerarSlug(
-    document.getElementById("nomeEstudoBiblico").value
-  );
-  var temaEstudoBiblico = gerarSlug(
-    document.getElementById("temaEstudoBiblico").value
-  );
+  var nameEstudoBiblico = gerarSlug(document.getElementById("nameEstudoBiblico").value);
+  var temaEstudoBiblico = gerarSlug(document.getElementById("temaEstudoBiblico").value);
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
   var whatsappProfessor = document.getElementById("whatsappProfessor").value;
@@ -238,36 +215,30 @@ function runLink() {
 
   // Verificar se todos os campos estão marcados como "is-valid"
   var camposValidos =
-    document
-      .getElementById("nomeEstudoBiblico")
-      .classList.contains("is-valid") &&
-    document
-      .getElementById("temaEstudoBiblico")
-      .classList.contains("is-valid") &&
+    document.getElementById("nameEstudoBiblico").classList.contains("is-valid") &&
+    document.getElementById("temaEstudoBiblico").classList.contains("is-valid") &&
     document.getElementById("nameProfessor").classList.contains("is-valid") &&
     document.getElementById("nameEstudante").classList.contains("is-valid") &&
-    document
-      .getElementById("whatsappProfessor")
-      .classList.contains("is-valid") &&
-    document
-      .getElementById("whatsappEstudante")
-      .classList.contains("is-valid");
+    document.getElementById("whatsappProfessor").classList.contains("is-valid") &&
+    document.getElementById("whatsappEstudante").classList.contains("is-valid");
+
+    console.log(camposValidos);
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
     if (
-      nomeEstudoBiblico &&
+      nameEstudoBiblico &&
       temaEstudoBiblico &&
       nameProfessor &&
       nameEstudante &&
       whatsappProfessor &&
       whatsappEstudante
     ) {
-      var linkBase = "https://otaviano07.github.io/revelacaobiblica/";
+      var linkBase = "https://otaviano07.github.io/estudos/estudandoaverdade/";
 
       var linkGerado =
         linkBase +
-        nomeEstudoBiblico +
+        nameEstudoBiblico +
         "/" +
         temaEstudoBiblico +
         "/index.html?nameProfessor=" +
@@ -291,75 +262,79 @@ function runLink() {
 }
 
 
-const nomeSelect = document.getElementById("nomeEstudoBiblico");
-const numeroSelect = document.getElementById("temaEstudoBiblico");
-const numeroPorNome = {
-  "Ouvindo a Voz de Deus": [
-    "01 - A Bíblia Sagrada",
-    "02 - A beleza da criação",
-    "03 - A origem do mal",
-    "04 - O plano da salvação",
-    "05 - Fé, arrependimento e confissão",
-    "06 - Sinais da volta de Cristo",
-    "07 - A volta de Cristo",
-    "08 - O Milênio",
-    "09 - A verdade sobre a morte",
-    "10 - A nova terra",
-    "11 - Salvação pela graça",
-    "12 - O Santuário",
-    "13 - O Juízo",
-    "14 - As leis na Bíblia",
-    "15 - A Lei Moral",
-    "16 - O mandamento esquecido",
-    "17 - Do sábado para o domingo",
-    "18 - Princípios de Saúde",
-    "19 - O dom de profecia",
-    "20 - O dízimo",
-    "21 - As ofertas",
-    "22 - A igreja verdadeira",
-    "23 - O Batismo",
-    "24 - Princípios de vida Cristã",
-    "25 - Educação Cristã",
-    "26 - Vida no Espírito",
-    "27 - Ministério para Todos",
-  ],
-  "Ensinos de Jesus": [
-    "01 - O que JESUS ensinou sobre as ESCRITURAS",
-    "02 - O que JESUS ensinou sobre a SALVAÇÃO",
-    "03 - O que JESUS ensinou sobre a SANTIFICAÇÃO",
-    "04 - O que JESUS ensinou sobre o ESPÍRITO SANTO",
-    "05 - O que JESUS ensinou sobre a ORAÇÃO",
-    "06 - O que JESUS ensinou sobre o PERDÃO",
-    "07 - O que JESUS ensinou sobre o DINHEIRO",
-    "08 - O que JESUS ensinou sobre SUA VOLTA",
-    "09 - O que JESUS ensinou sobre a MORTE",
-    "10 - O que JESUS ensinou sobre a RESSURREIÇÃO",
-    "11 - O que JESUS ensinou sobre o JUÍZO",
-    "12 - O que JESUS ensinou sobre a LEI",
-    "13 - O que JESUS ensinou sobre o SÁBADO",
-    "14 - O que JESUS ensinou sobre a IGREJA",
-    "15 - O que JESUS ensinou sobre os PROFETAS",
-    "16 - O que JESUS ensinou sobre o BATISMO",
-    "17 - O que JESUS ensinou sobre o CUIDADO COM O CORPO",
-    "18 - O que JESUS ensinou sobre ritos e TRADIÇÕES",
-  ],
-};
 
-nomeSelect.addEventListener("change", function () {
-  const selectedNome = this.value;
-  const numeros = numeroPorNome[selectedNome] || [];
+window.addEventListener("DOMContentLoaded", function () {
+  const nomeSelect = document.getElementById("nameEstudoBiblico");
+  const numeroSelect = document.getElementById("temaEstudoBiblico");
+  const numeroPorNome = {
+    "Ouvindo a Voz de Deus": [
+      "01 - A Bíblia Sagrada",
+      "02 - A beleza da criação",
+      "03 - A origem do mal",
+      "04 - O plano da salvação",
+      "05 - Fé, arrependimento e confissão",
+      "06 - Sinais da volta de Cristo",
+      "07 - A volta de Cristo",
+      "08 - O Milênio",
+      "09 - A verdade sobre a morte",
+      "10 - A nova terra",
+      "11 - Salvação pela graça",
+      "12 - O Santuário",
+      "13 - O Juízo",
+      "14 - As leis na Bíblia",
+      "15 - A Lei Moral",
+      "16 - O mandamento esquecido",
+      "17 - Do sábado para o domingo",
+      "18 - Princípios de Saúde",
+      "19 - O dom de profecia",
+      "20 - O dízimo",
+      "21 - As ofertas",
+      "22 - A igreja verdadeira",
+      "23 - O Batismo",
+      "24 - Princípios de vida Cristã",
+      "25 - Educação Cristã",
+      "26 - Vida no Espírito",
+      "27 - Ministério para Todos",
+    ],
+    "Ensinos de Jesus": [
+      "01 - O que JESUS ensinou sobre as ESCRITURAS",
+      "02 - O que JESUS ensinou sobre a SALVAÇÃO",
+      "03 - O que JESUS ensinou sobre a SANTIFICAÇÃO",
+      "04 - O que JESUS ensinou sobre o ESPÍRITO SANTO",
+      "05 - O que JESUS ensinou sobre a ORAÇÃO",
+      "06 - O que JESUS ensinou sobre o PERDÃO",
+      "07 - O que JESUS ensinou sobre o DINHEIRO",
+      "08 - O que JESUS ensinou sobre SUA VOLTA",
+      "09 - O que JESUS ensinou sobre a MORTE",
+      "10 - O que JESUS ensinou sobre a RESSURREIÇÃO",
+      "11 - O que JESUS ensinou sobre o JUÍZO",
+      "12 - O que JESUS ensinou sobre a LEI",
+      "13 - O que JESUS ensinou sobre o SÁBADO",
+      "14 - O que JESUS ensinou sobre a IGREJA",
+      "15 - O que JESUS ensinou sobre os PROFETAS",
+      "16 - O que JESUS ensinou sobre o BATISMO",
+      "17 - O que JESUS ensinou sobre o CUIDADO COM O CORPO",
+      "18 - O que JESUS ensinou sobre ritos e TRADIÇÕES",
+    ],
+  };
 
-  // Limpar as opções atuais do select
-  numeroSelect.innerHTML = '<option value="">Selecione um tema</option>';
+  nomeSelect.addEventListener("change", function () {
+    const selectedNome = this.value;
+    const numeros = numeroPorNome[selectedNome] || [];
 
-  // Adicionar as novas opções filtradas
-  numeros.forEach(function (numero) {
-    const option = document.createElement("option");
-    option.value = numero;
-    option.textContent = numero;
-    numeroSelect.appendChild(option);
+    // Limpar as opções atuais do select
+    numeroSelect.innerHTML = '<option value="">Selecione um tema</option>';
+
+    // Adicionar as novas opções filtradas
+    numeros.forEach(function (numero) {
+      const option = document.createElement("option");
+      option.value = numero;
+      option.textContent = numero;
+      numeroSelect.appendChild(option);
+    });
   });
 });
+
 
 //Encurtador de link
 function shortenUrl(longUrl, customSlug) {
@@ -388,42 +363,27 @@ function updateUrl(shortUrl, longUrl) {
 
 function encurtarLink() {
   var linkGeradoInput = document.getElementById("linkGerado");
-  var nomeEstudoBiblico = gerarSlug(
-    document.getElementById("nomeEstudoBiblico").value
-  );
-  var temaEstudoBiblico = gerarSlug(
-    document.getElementById("temaEstudoBiblico").value
-  );
+  var nameEstudoBiblico = gerarSlug( document.getElementById("nameEstudoBiblico").value);
+  var temaEstudoBiblico = gerarSlug(document.getElementById("temaEstudoBiblico").value);
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
   var whatsappProfessor = document.getElementById("whatsappProfessor").value;
   var whatsappEstudante = document.getElementById("whatsappEstudante").value;
-  
 
   // Verificar se todos os campos estão marcados como "is-valid"
   var camposValidos =
-    document
-      .getElementById("nomeEstudoBiblico")
-      .classList.contains("is-valid") &&
-    document
-      .getElementById("temaEstudoBiblico")
-      .classList.contains("is-valid") &&
+    document.getElementById("nameEstudoBiblico").classList.contains("is-valid") &&
+    document.getElementById("temaEstudoBiblico").classList.contains("is-valid") &&
     document.getElementById("nameProfessor").classList.contains("is-valid") &&
     document.getElementById("nameEstudante").classList.contains("is-valid") &&
-    document
-      .getElementById("whatsappProfessor")
-      .classList.contains("is-valid") &&
-    document
-      .getElementById("whatsappEstudante")
-      .classList.contains("is-valid") &&
-      document
-        .getElementById("linkGerado")
-        .classList.contains("is-valid")
+    document.getElementById("whatsappProfessor").classList.contains("is-valid") &&
+    document.getElementById("whatsappEstudante").classList.contains("is-valid") &&
+    document.getElementById("linkGerado").classList.contains("is-valid");
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
     if (
-      nomeEstudoBiblico &&
+      nameEstudoBiblico &&
       temaEstudoBiblico &&
       nameProfessor &&
       nameEstudante &&
@@ -449,43 +409,28 @@ function encurtarLink() {
 
 //Copia o link para outra area
 function copiarLink() {
-  var nomeEstudoBiblico = gerarSlug(
-    document.getElementById("nomeEstudoBiblico").value
-  );
-  var temaEstudoBiblico = gerarSlug(
-    document.getElementById("temaEstudoBiblico").value
-  );
+  var nameEstudoBiblico = gerarSlug(document.getElementById("nameEstudoBiblico").value);
+  var temaEstudoBiblico = gerarSlug(document.getElementById("temaEstudoBiblico").value);
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
   var whatsappProfessor = document.getElementById("whatsappProfessor").value;
   var whatsappEstudante = document.getElementById("whatsappEstudante").value;
   var linkGeradoInput = document.getElementById("linkGerado");
-  
 
   // Verificar se todos os campos estão marcados como "is-valid"
   var camposValidos =
-    document
-      .getElementById("nomeEstudoBiblico")
-      .classList.contains("is-valid") &&
-    document
-      .getElementById("temaEstudoBiblico")
-      .classList.contains("is-valid") &&
+    document.getElementById("nameEstudoBiblico").classList.contains("is-valid") &&
+    document.getElementById("temaEstudoBiblico").classList.contains("is-valid") &&
     document.getElementById("nameProfessor").classList.contains("is-valid") &&
     document.getElementById("nameEstudante").classList.contains("is-valid") &&
-    document
-      .getElementById("whatsappProfessor")
-      .classList.contains("is-valid") &&
-    document
-      .getElementById("whatsappEstudante")
-      .classList.contains("is-valid") &&
-    document
-      .getElementById("linkGerado")
-      .classList.contains("is-valid")
+    document.getElementById("whatsappProfessor").classList.contains("is-valid") &&
+    document.getElementById("whatsappEstudante").classList.contains("is-valid") &&
+    document.getElementById("linkGerado").classList.contains("is-valid");
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
     if (
-      nomeEstudoBiblico &&
+      nameEstudoBiblico &&
       temaEstudoBiblico &&
       nameProfessor &&
       nameEstudante &&
@@ -523,21 +468,18 @@ function copiarLink() {
   }
 }
 
-
 // Função para mostrar a mensagem e agendar o desaparecimento
 function exibirMensagemInstantanea() {
   var mensagemCopiado = document.getElementById("mensagemCopiado");
   mensagemCopiado.classList.add("show");
 
-  setTimeout(function() {
+  setTimeout(function () {
     mensagemCopiado.classList.remove("show");
   }, 2000); // 2000 milissegundos = 2 segundos
 }
 
-
-
 function formatarTexto(texto) {
-  var palavras = texto.split('-'); // Divide o texto em um array de palavras separadas por hífens
+  var palavras = texto.split("-"); // Divide o texto em um array de palavras separadas por hífens
   var resultado = "";
 
   for (var i = 0; i < palavras.length; i++) {
@@ -553,43 +495,28 @@ function formatarTexto(texto) {
 
 //Envia a mensagem para o estudante pelo whatsapp
 function enviarMensagemWhatsapp() {
-  var nomeEstudoBiblico = gerarSlug(
-    document.getElementById("nomeEstudoBiblico").value
-  );
-  var temaEstudoBiblico = gerarSlug(
-    document.getElementById("temaEstudoBiblico").value
-  );
+  var nameEstudoBiblico = gerarSlug(document.getElementById("nameEstudoBiblico").value);
+  var temaEstudoBiblico = gerarSlug(document.getElementById("temaEstudoBiblico").value);
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
   var whatsappProfessor = document.getElementById("whatsappProfessor").value;
   var whatsappEstudante = document.getElementById("whatsappEstudante").value;
   var linkGeradoInput = document.getElementById("linkGerado").value;
-  
 
   // Verificar se todos os campos estão marcados como "is-valid"
   var camposValidos =
-    document
-      .getElementById("nomeEstudoBiblico")
-      .classList.contains("is-valid") &&
-    document
-      .getElementById("temaEstudoBiblico")
-      .classList.contains("is-valid") &&
+    document.getElementById("nameEstudoBiblico").classList.contains("is-valid") &&
+    document.getElementById("temaEstudoBiblico").classList.contains("is-valid") &&
     document.getElementById("nameProfessor").classList.contains("is-valid") &&
     document.getElementById("nameEstudante").classList.contains("is-valid") &&
-    document
-      .getElementById("whatsappProfessor")
-      .classList.contains("is-valid") &&
-    document
-      .getElementById("whatsappEstudante")
-      .classList.contains("is-valid") &&
-      document
-        .getElementById("linkGerado")
-        .classList.contains("is-valid")
+    document.getElementById("whatsappProfessor").classList.contains("is-valid") &&
+    document.getElementById("whatsappEstudante").classList.contains("is-valid") &&
+    document.getElementById("linkGerado").classList.contains("is-valid");
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
     if (
-      nomeEstudoBiblico &&
+      nameEstudoBiblico &&
       temaEstudoBiblico &&
       nameProfessor &&
       nameEstudante &&
@@ -597,13 +524,22 @@ function enviarMensagemWhatsapp() {
       whatsappEstudante &&
       linkGeradoInput
     ) {
-      
-      nomeEstudoBiblico = formatarTexto(nomeEstudoBiblico);
+      nameEstudoBiblico = formatarTexto(nameEstudoBiblico);
       temaEstudoBiblico = formatarTexto(temaEstudoBiblico);
 
       var numeroEstudante = document.getElementById("whatsappEstudante").value;
       var linkGerado = document.getElementById("linkGerado").value;
-      var mensagem = "Olá! *"+ nameEstudante +"* segue abaixo link para o estudo *"+ nomeEstudoBiblico +"* com o tema *"+ temaEstudoBiblico +"*:\n\n*_Clique aqui_*:👉 "+ linkGerado + "\n\nAtenciosamente\n" + nameProfessor;
+      var mensagem =
+        "Olá! *" +
+        nameEstudante +
+        "* segue abaixo link para o estudo *" +
+        nameEstudoBiblico +
+        "* com o tema *" +
+        temaEstudoBiblico +
+        "*:\n\n*_Clique aqui_*:👉 " +
+        linkGerado +
+        "\n\nAtenciosamente\n" +
+        nameProfessor;
 
       if (isDispositivoMobile()) {
         var url =
@@ -637,7 +573,7 @@ function isDispositivoMobile() {
 
 //Abrir Link gerado
 function abrirLink() {
-  var nomeEstudoBiblico = gerarSlug(document.getElementById("nomeEstudoBiblico").value);
+  var nameEstudoBiblico = gerarSlug(document.getElementById("nameEstudoBiblico").value);
   var temaEstudoBiblico = gerarSlug(document.getElementById("temaEstudoBiblico").value);
   var nameProfessor = document.getElementById("nameProfessor").value;
   var nameEstudante = document.getElementById("nameEstudante").value;
@@ -646,18 +582,19 @@ function abrirLink() {
   var linkGeradoInput = document.getElementById("linkGerado").value;
 
   // Verificar se todos os campos estão marcados como "is-valid"
-  var camposValidos = document.getElementById("nomeEstudoBiblico").classList.contains("is-valid") &&
+  var camposValidos =
+    document.getElementById("nameEstudoBiblico").classList.contains("is-valid") &&
     document.getElementById("temaEstudoBiblico").classList.contains("is-valid") &&
     document.getElementById("nameProfessor").classList.contains("is-valid") &&
     document.getElementById("nameEstudante").classList.contains("is-valid") &&
     document.getElementById("whatsappProfessor").classList.contains("is-valid") &&
     document.getElementById("whatsappEstudante").classList.contains("is-valid") &&
-    document.getElementById("linkGerado").classList.contains("is-valid") 
+    document.getElementById("linkGerado").classList.contains("is-valid");
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
     if (
-      nomeEstudoBiblico &&
+      nameEstudoBiblico&&
       temaEstudoBiblico &&
       nameProfessor &&
       nameEstudante &&
@@ -686,7 +623,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function verificarCampos() {
-  var nomeEstudoBiblico = document.getElementById("nomeEstudoBiblico");
+  var nameEstudoBiblico = document.getElementById("nameEstudoBiblico");
   var temaEstudoBiblico = document.getElementById("temaEstudoBiblico");
   var nameProfessor = document.getElementById("nameProfessor");
   var whatsappProfessor = document.getElementById("whatsappProfessor");
@@ -694,12 +631,12 @@ function verificarCampos() {
   var whatsappEstudante = document.getElementById("whatsappEstudante");
   var linkGeradoInput = document.getElementById("linkGerado");
 
-  if (nomeEstudoBiblico.value === "") {
-    nomeEstudoBiblico.classList.remove("is-valid");
-    nomeEstudoBiblico.classList.add("is-invalid");
+  if (nameEstudoBiblico.value === "") {
+    nameEstudoBiblico.classList.remove("is-valid");
+    nameEstudoBiblico.classList.add("is-invalid");
   } else {
-    nomeEstudoBiblico.classList.remove("is-invalid");
-    nomeEstudoBiblico.classList.add("is-valid");
+    nameEstudoBiblico.classList.remove("is-invalid");
+    nameEstudoBiblico.classList.add("is-valid");
   }
 
   if (temaEstudoBiblico.value === "") {
@@ -753,86 +690,127 @@ function verificarCampos() {
 
 // Função para atualizar o progresso
 function atualizarProgresso() {
-  var elementosValidos = document.querySelectorAll('.is-valid');
-  console.log(elementosValidos.length);
-  var nameEstudoBiblico = document.getElementById("nomeEstudoBiblico").classList.contains("is-invalid"); 
+  var elementosValidos = document.querySelectorAll(".is-valid");
+  var nameEstudoBiblico= document.getElementById("nameEstudoBiblico").classList.contains("is-invalid");
   var temaEstudoBiblico = document.getElementById("temaEstudoBiblico").classList.contains("is-valid");
-  var nameProfessor = document.getElementById("nameProfessor").classList.contains("is-valid"); 
+  var nameProfessor = document.getElementById("nameProfessor").classList.contains("is-valid");
   var nameEstudante = document.getElementById("nameEstudante").classList.contains("is-valid");
   var whatsappProfessor = document.getElementById("whatsappProfessor").classList.contains("is-valid");
   var whatsappEstudante = document.getElementById("whatsappEstudante").classList.contains("is-valid");
-  
+
   var progresso = (elementosValidos.length / 7) * 100; // Total de elementos válidos dividido pelo número total de elementos
   // Atualizar a largura da barra de progresso
-  var progressBar = document.querySelector('.progress-bar');
-  progressBar.style.width = progresso + '%';
+  var progressBar = document.querySelector(".progress-bar");
+  progressBar.style.width = progresso + "%";
   progressBar.textContent = progresso.toFixed(2) + "%";
-  
-  console.log(progresso);
-  console.log(progressBar.style.width);
-  
+
   // Atualizar o atributo 'aria-valuenow' para a leitura de acessibilidade
-  var progress = document.querySelector('.progress');
-  progress.setAttribute('aria-valuenow', progresso);
-  
+  var progress = document.querySelector(".progress");
+  progress.setAttribute("aria-valuenow", progresso);
+
   // Verificar se algum campo voltou a ser inválido
-  if (!nameEstudoBiblico || !temaEstudoBiblico || !nameEstudante || !nameProfessor || !whatsappEstudante || !whatsappProfessor) {
-    console.log(new Date());
-  // Recalcular o valor da barra de progresso excluindo o campo inválido
-    progresso = ((elementosValidos.length) / 7) * 100;
-    
+  if (
+    !nameEstudoBiblico ||
+    !temaEstudoBiblico ||
+    !nameEstudante ||
+    !nameProfessor ||
+    !whatsappEstudante ||
+    !whatsappProfessor
+  ) {
+    // Recalcular o valor da barra de progresso excluindo o campo inválido
+    progresso = (elementosValidos.length / 7) * 100;
+
     if (progresso < 0) {
       progresso = 0;
     }
 
-    progressBar.style.width = progresso + '%';
+    progressBar.style.width = progresso + "%";
     progressBar.textContent = progresso.toFixed(2) + "%";
   }
 }
 
-
-
 // Event listener para verificar mudanças nos elementos válidos
-document.addEventListener('input', function(event) {
+document.addEventListener("input", function (event) {
   var target = event.target;
-  var elementosValidos = document.querySelectorAll('.is-valid');
+  var elementosValidos = document.querySelectorAll(".is-valid");
   var linkGeradoInput = document.getElementById("linkGerado");
 
   // Verificar se o elemento é válido
-  if (target.classList.contains('is-valid')) {
-    
-    if(elementosValidos.length < 7){
-      console.log("linha 803");
+  if (target.classList.contains("is-valid")) {
+    if (elementosValidos.length < 7) {
       atualizarProgresso();
+      verificarCampos();
     }
-    
-  }
-  else{
-    console.log("linha 809");
+  } else {
     linkGeradoInput.value = "";
-    var progress = document.querySelector('.progress');
-    progress.setAttribute('aria-valuenow', progresso);
+    var progress = document.querySelector(".progress");
+    progress.setAttribute("aria-valuenow", progresso);
 
     var progresso = (elementosValidos.length / 7) * 100;
-    
+
     if (progresso < 0) {
       progresso = 0;
     }
-    
-    var progressBar = document.querySelector('.progress-bar');
-    progressBar.style.width = progresso + '%';
+
+    var progressBar = document.querySelector(".progress-bar");
+    progressBar.style.width = progresso + "%";
     progressBar.textContent = progresso.toFixed(2) + "%";
   }
 });
 
-
-
-document.getElementById('resert').addEventListener('click', function() {
-  var elementosValidos = document.querySelectorAll('.is-valid');
-  elementosValidos.forEach(function(elemento) {
-    elemento.classList.remove('is-valid');
-    elemento.classList.add('is-invalid');
-    atualizarProgresso();
+window.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("btnReset").addEventListener("click", function () {
+    var elementosValidos = document.querySelectorAll(".is-valid");
+    elementosValidos.forEach(function (elemento) {
+      elemento.classList.remove("is-valid");
+      elemento.classList.add("is-invalid");
+      atualizarProgresso();
+    });
   });
 });
 
+window.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("input", function (event) {
+    if (
+      document
+        .getElementById("nameEstudoBiblico")
+        .classList.contains("is-valid")
+    ) {
+      console.log("nameEstudoBiblico = " + true);
+    }
+    if (
+      document
+        .getElementById("temaEstudoBiblico")
+        .classList.contains("is-valid")
+    ) {
+      console.log("temaEstudoBiblico = " + true);
+    }
+    if (
+      document.getElementById("nameProfessor").classList.contains("is-valid")
+    ) {
+      console.log("nameProfessor = " + true);
+    }
+    if (
+      document.getElementById("nameEstudante").classList.contains("is-valid")
+    ) {
+      console.log("nameEstudante = " + true);
+    }
+    if (
+      document
+        .getElementById("whatsappProfessor")
+        .classList.contains("is-valid")
+    ) {
+      console.log("whatsappProfessor = " + true);
+    }
+    if (
+      document
+        .getElementById("whatsappEstudante")
+        .classList.contains("is-valid")
+    ) {
+      console.log("whatsappEstudante =" + true);
+    }
+    if (document.getElementById("linkGerado").classList.contains("is-valid")) {
+      console.log("linkGerado = " + true);
+    }
+  });
+});
