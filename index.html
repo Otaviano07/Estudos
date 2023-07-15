@@ -11,113 +11,156 @@
 </head>
 <body>
   <h2 style="text-align: center;margin-bottom: 10px;margin-top: 20px;">Link para Estudo Bíblico</h2>
-  <div class="container">
-    <div class="form-row">
-      <div class="col-md-6 col-sm-12">
-        <label for="nomeEstudoBiblico" style="margin-top: 20px;"><strong>Nome do Estudo Bíblico:</strong></label>
-        <select class="form-control" id="nomeEstudoBiblico" name="nomeEstudoBiblico" required>
-          <option value="">Selecione um estudo</option>
-          <option value="Ouvindo a Voz de Deus">Ouvindo a Voz de Deus</option>
-          <option value="Ensinos de Jesus">Ensinos de Jesus</option>
-        </select>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <label for="temaEstudoBiblico" style="margin-top: 20px;"><strong>Tema do Estudo:</strong></label>
-        <select class="form-control" id="temaEstudoBiblico" name="temaEstudoBiblico" required>
-          <option value="">Selecione um tema</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="col-md-9 col-sm-12">
-        <label for="nameProfessor" style="margin-top: 20px;"><strong>Nome do Professor</strong></label>
-        <input type="text" class="form-control" id="nameProfessor" placeholder="Nome completo" name="nameProfessor" required>
-      </div>
-      <div class="col-md-3 col-sm-12" style="margin-top: 20px;">
-        <label for="whatsappProfessor"><strong>Contato do Professor</strong></label>
-        <input type="tel" class="form-control" id="whatsappProfessor" minlength="11" maxlength="11" onkeyup="mascaraTelefone(this); verificarNumeroWhatsapp(); verificarTelefone()" placeholder="Whatsapp" name="whatsappProfessor" required>
-        <div id="mensagemErroProfessor" class="alert alert-danger" style="display: none;"></div>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="col-md-9 col-sm-12" style="margin-top: 20px;">
-        <label for="nameEstudante"><strong>Nome do Estudante</strong></label>
-        <input type="text" class="form-control" id="nameEstudante" placeholder="Nome completo" name="nameEstudante" required>
-      </div>
-      <div class="col-md-3 col-sm-12" style="margin-top: 20px;">
-        <label for="whatsappEstudante"><strong>Contato do Estudante</strong></label>
-        <input type="tel" class="form-control" id="whatsappEstudante" minlength="11" maxlength="11" onkeyup="mascaraTelefone(this); verificarNumeroWhatsapp(); verificarTelefone();" placeholder="WhatsApp" name="whatsappEstudante" required>
-        <div id="mensagemErroEstudante" class="alert alert-danger" style="display: none;"></div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="linkGerado" style="margin-top: 20px;"><strong>Link Gerado:</strong></label>
-      <div class="input-group">
-        <input type="text" class="form-control" id="linkGerado" readonly>
-      </div>
-    </div>
-
-    <div id="mensagemCopiado" class="alert alert-warning" role="alert">
-      Link copiado com sucesso!
-    </div>
-
-    <div class="form-row justify-content-center mb-2" style="margin-bottom: 30px;">
+  <form class="needs-validation" novalidate>
+    <div class="container">
       <div class="form-row">
-        <div class="col-md-3 col-6 mb-2">
-          <button class="btn btn-warning btn-block" type="button" id="gerarLink" onclick="gerarLink()" data-toggle="buttons" data-placement="bottom" title="Gerar Link">
-            <strong>Gerar</strong>
-          </button>
+        <div class="col-md-6 col-sm-12">
+          <label for="nomeEstudoBiblico" style="margin-top: 20px;"><strong>Nome do Estudo Bíblico:</strong></label>
+          <select class="form-control" id="nomeEstudoBiblico" name="nomeEstudoBiblico" required>
+            <option value="">Selecione um estudo</option>
+            <option value="Ouvindo a Voz de Deus">Ouvindo a Voz de Deus</option>
+            <option value="Ensinos de Jesus">Ensinos de Jesus</option>
+          </select>
+          <div class="valid-feedback">
+            Muito bom!
+          </div>
+          <div class="invalid-feedback">
+            Selecione um estudo válido.
+          </div>
         </div>
-    
-        <div class="col-md-3 col-6 mb-2">
-          <button class="btn btn-primary btn-block" type="button" id="btnCopiarLink" onclick="copiarLink()" data-toggle="buttons" data-placement="bottom" title="Copiar Link">
-            <strong>Copiar</strong>
-          </button>
+        <div class="col-md-6 col-sm-12">
+          <label for="temaEstudoBiblico" style="margin-top: 20px;"><strong>Tema do Estudo:</strong></label>
+          <select class="form-control" id="temaEstudoBiblico" name="temaEstudoBiblico" required>
+            <option value="">Selecione um tema</option>
+          </select>
+          <div class="valid-feedback">
+            Muito bom!
+          </div>
+          <div class="invalid-feedback">
+            Selecione um tema válido.
+          </div>
         </div>
-    
-        <div class="col-md-3 col-6 mb-2">
-          <button class="btn btn-primary btn-block" type="button" id="encurtar" onclick="encurtarLink()" data-toggle="buttons" data-placement="bottom" title="Encurtar Link">
-            <strong>Encurtar</strong>
-          </button>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-9 col-sm-12">
+          <label for="nameProfessor" style="margin-top: 20px;"><strong>Nome do Professor</strong></label>
+          <input type="text" class="form-control" id="nameProfessor" onkeyup="verificarNome();mascaraNome(this);" placeholder="Nome completo" name="nameProfessor" required>
+          <div class="valid-feedback">
+            Muito bom!
+          </div>
+          <div class="invalid-feedback">
+            Digite um nome válido.
+          </div>
         </div>
-        
-        <div class="col-md-3 col-6 mb-2">
-          <button class="btn btn-primary btn-block" type="button" id="btnAbrirLink" onclick="abrirLink()" data-toggle="buttons" data-placement="bottom" title="Abrir Link">
-            <strong>Abrir</strong>
-          </button>
+        <div class="col-md-3 col-sm-12" style="margin-top: 20px;">
+          <label for="whatsappProfessor"><strong>Contato do Professor</strong></label>
+          <input type="tel" class="form-control" id="whatsappProfessor" minlength="15" maxlength="15" placeholder="Whatsapp" name="whatsappProfessor" required>
+          <!--<div id="mensagemErroProfessor" class="alert alert-danger" style="display: none;"></div>-->
+          <div class="valid-feedback">
+            Muito bom!
+          </div>
+          <div class="invalid-feedback">
+            Digite um número válido.
+          </div>
         </div>
-        
-        <div class="col-md-12 col-md-12 mb-2">  
-          <button class="btn btn-success btn-block" type="button" id="btnWhatsapp" onclick="enviarMensagemWhatsapp()" data-toggle="buttons" data-placement="bottom" title="Enviar pelo WhatsApp">
-            <strong>Whatsapp</strong>
-          </button>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-9 col-sm-12" style="margin-top: 20px;">
+          <label for="nameEstudante"><strong>Nome do Estudante</strong></label>
+          <input type="text" class="form-control" id="nameEstudante" onkeyup="verificarNome();mascaraNome(this);" placeholder="Nome completo" name="nameEstudante" required>
+          <div class="valid-feedback">
+            Muito bom!
+          </div>
+          <div class="invalid-feedback">
+            Digite um nome válido.
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-12" style="margin-top: 20px;">
+          <label for="whatsappEstudante"><strong>Contato do Estudante</strong></label>
+          <input type="tel" class="form-control" id="whatsappEstudante" minlength="15" maxlength="15" placeholder="WhatsApp" pattern="\d{2}[\s-]?\d{9}" name="whatsappEstudante" required>
+          <!--<div id="mensagemErroEstudante" class="alert alert-danger" style="display: none;"></div>-->
+          <div class="valid-feedback">
+            Muito bom!
+          </div>
+          <div class="invalid-feedback">
+            Digite um número válido.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="linkGerado" style="margin-top: 20px;"><strong>Link Gerado:</strong></label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="linkGerado" readonly>
+          <div class="valid-feedback">
+            Parabéns link gerado com sucesso!
+          </div>
+          <div class="invalid-feedback">
+            Nossa falta alguns dados para preecher ou clicar em Gerar.
+          </div>
+        </div>
+      </div>
+
+      <div id="mensagemCopiado" class="alert alert-warning" role="alert">
+        Link copiado com sucesso!
+      </div>
+
+      <div class="form-row justify-content-center mb-2" style="margin-bottom: 30px;">
+        <div class="form-row">
+          <div class="col-md-3 col-6 mb-2">
+            <button class="btn btn-warning btn-block" type="button" id="gerarLink" onclick="runLink();" data-toggle="buttons" data-placement="bottom" title="Gerar Link">
+              <strong>Gerar</strong>
+            </button>
+          </div>
+      
+          <div class="col-md-3 col-6 mb-2">
+            <button class="btn btn-primary btn-block" type="button" id="btnCopiarLink" onclick="copiarLink();" data-toggle="buttons" data-placement="bottom" title="Copiar Link">
+              <strong>Copiar</strong>
+            </button>
+          </div>
+      
+          <div class="col-md-3 col-6 mb-2">
+            <button class="btn btn-primary btn-block" type="button" id="encurtar" onclick="encurtarLink();" data-toggle="buttons" data-placement="bottom" title="Encurtar Link">
+              <strong>Encurtar</strong>
+            </button>
+          </div>
+          
+          <div class="col-md-3 col-6 mb-2">
+            <button class="btn btn-primary btn-block" type="button" id="btnAbrirLink" onclick="abrirLink();" data-toggle="buttons" data-placement="bottom" title="Abrir Link">
+              <strong>Abrir</strong>
+            </button>
+          </div>
+          
+          <div class="col-md-12 col-md-12 mb-2">  
+            <button class="btn btn-success btn-block" type="button" id="btnWhatsapp" onclick="enviarMensagemWhatsapp()" data-toggle="buttons" data-placement="bottom" title="Enviar pelo WhatsApp">
+              <strong>Whatsapp</strong>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group d-none">
+        <label for="url"><strong>Insira o URL longo:</strong></label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="url">
+          <div class="input-group-append">
+            <button class="btn btn-success btn-sm m-1" type="button" id="encurtado" onclick="encurtarLink();">
+            </button>
+            <p id="linkEncurtado"></p>
+          </div>
         </div>
       </div>
     </div>
-   
-        
-
-    <script>
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-    </script>
-
-    <div class="form-group d-none">
-      <label for="url"><strong>Insira o URL longo:</strong></label>
-      <div class="input-group">
-        <input type="text" class="form-control" id="url">
-        <div class="input-group-append">
-          <button class="btn btn-success btn-sm m-1" type="button" id="encurtado" onclick="encurtarLink()">
-          </button>
-          <p id="linkEncurtado"></p>
-        </div>
-      </div>
+    <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-success" >0%</div>
     </div>
-  </div>
+
+  </form>
+
+
+  
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

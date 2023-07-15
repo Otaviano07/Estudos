@@ -21,81 +21,125 @@ function mascaraTelefone(input) {
   }
 }
 
+/* Máscaras ER */
+function mascara(o,f){
+  v_obj=o
+  v_fun=f
+  setTimeout("execmascara()",1)
+}
+
+function execmascara(){
+  v_obj.value=v_fun(v_obj.value)
+  validarDDD(v_obj.value);
+  verificarTelefone();
+}
+
+function mtel(v){
+  v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
+  v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+  v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+  return v;
+}
+
+function id( el ){
+  return document.getElementById( el );
+}
+
+window.onload = function(){
+id('whatsappEstudante').onkeyup = function(){
+  mascara( this, mtel );
+}
+id('whatsappProfessor').onkeyup = function(){
+  mascara( this, mtel );
+}
+}
+
+function mascaraNome(input) {
+  // Remove todos os caracteres não alfabéticos
+  input.value = input.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, "");
+
+  // Verifica se há caracteres não alfabéticos após a remoção
+  if (input.value.match(/[^a-zA-ZÀ-ÿ\s]/)) {
+    alert("Digite somente letras no campo de nome.");
+    input.value = input.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, "");
+  }
+}
+
 
 //Verificar numero de whatsapp
 function validarDDD(telefone) {
   const dddsValidos = [
-    "119", // São Paulo (SP)
-    "129", // São José dos Campos e Região (SP)
-    "139", // Baixada Santista (SP)
-    "149", // Bauru e Região (SP)
-    "159", // Sorocaba e Região (SP)
-    "169", // Ribeirão Preto e Região (SP)
-    "179", // São José do Rio Preto e Região (SP)
-    "189", // Presidente Prudente e Região (SP)
-    "199", // Campinas e Região (SP)
-    "219", // Rio de Janeiro (RJ)
-    "229", // Norte Fluminense (RJ)
-    "249", // Serrana e Região (RJ)
-    "279", // Espírito Santo (ES)
-    "289", // Sul do Espírito Santo (ES)
-    "319", // Belo Horizonte e Região (MG)
-    "329", // Juiz de Fora e Região (MG)
-    "339", // Governador Valadares e Região (MG)
-    "349", // Uberlândia e Região (MG)
-    "359", // Poços de Caldas e Região (MG)
-    "379", // Divinópolis e Região (MG)
-    "389", // Montes Claros e Região (MG)
-    "419", // Curitiba e Região (PR)
-    "429", // Ponta Grossa e Região (PR)
-    "439", // Londrina e Região (PR)
-    "449", // Maringá e Região (PR)
-    "459", // Foz do Iguaçu e Região (PR)
-    "469", // Francisco Beltrão e Região (PR)
-    "479", // Joinville e Região (SC)
-    "489", // Florianópolis e Região (SC)
-    "499", // Chapecó e Região (SC)
-    "519", // Porto Alegre e Região (RS)
-    "539", // Pelotas e Região (RS)
-    "549", // Caxias do Sul e Região (RS)
-    "559", // Santa Maria e Região (RS)
-    "619", // Distrito Federal (DF)
-    "629", // Goiânia e Região (GO)
-    "639", // Tocantins (TO)
-    "649", // Rio Verde e Região (GO)
-    "659", // Cuiabá e Região (MT)
-    "669", // Rondonópolis e Região (MT)
-    "679", // Mato Grosso do Sul (MS)
-    "689", // Amapá (AP)
-    "699", // Rondônia (RO)
-    "719", // Salvador e Região (BA)
-    "739", // Sul da Bahia (BA)
-    "749", // Juazeiro e Região (BA)
-    "759", // Feira de Santana e Região (BA)
-    "769", // Rondônia e Região (RO)
-    "779", // Barreiras e Região (BA)
-    "789", // Tocantins (TO)
-    "819", // Recife e Região (PE)
-    "829", // Alagoas (AL)
-    "839", // Paraíba (PB)
-    "849", // Rio Grande do Norte (RN)
-    "859", // Fortaleza e Região (CE)
-    "869", // Piauí (PI)
-    "879", // Petrolina e Região (PE)
-    "889", // Ceará (CE)
-    "899", // Sudoeste do Piauí (PI)
-    "919", // Belém e Região (PA)
-    "929", // Amazonas (AM)
-    "939", // Oeste do Pará (PA)
-    "949", // Marabá e Região (PA)
-    "959", // Roraima (RR)
-    "969", // Amapá (AP)
-    "979", // Roraima e Região (RR)
-    "989", // Maranhão (MA)
-    "999", // Sul do Maranhão (MA)
+    "(11) 9", // São Paulo (SP)
+    "(12) 9", // São José dos Campos e Região (SP)
+    "(13) 9", // Baixada Santista (SP)
+    "(14) 9", // Bauru e Região (SP)
+    "(15) 9", // Sorocaba e Região (SP)
+    "(16) 9", // Ribeirão Preto e Região (SP)
+    "(17) 9", // São José do Rio Preto e Região (SP)
+    "(18) 9", // Presidente Prudente e Região (SP)
+    "(19) 9", // Campinas e Região (SP)
+    "(21) 9", // Rio de Janeiro (RJ)
+    "(22) 9", // Norte Fluminense (RJ)
+    "(24) 9", // Serrana e Região (RJ)
+    "(27) 9", // Espírito Santo (ES)
+    "(28) 9", // Sul do Espírito Santo (ES)
+    "(31) 9", // Belo Horizonte e Região (MG)
+    "(32) 9", // Juiz de Fora e Região (MG)
+    "(33) 9", // Governador Valadares e Região (MG)
+    "(34) 9", // Uberlândia e Região (MG)
+    "(35) 9", // Poços de Caldas e Região (MG)
+    "(37) 9", // Divinópolis e Região (MG)
+    "(38) 9", // Montes Claros e Região (MG)
+    "(41) 9", // Curitiba e Região (PR)
+    "(42) 9", // Ponta Grossa e Região (PR)
+    "(43) 9", // Londrina e Região (PR)
+    "(44) 9", // Maringá e Região (PR)
+    "(45) 9", // Foz do Iguaçu e Região (PR)
+    "(46) 9", // Francisco Beltrão e Região (PR)
+    "(47) 9", // Joinville e Região (SC)
+    "(48) 9", // Florianópolis e Região (SC)
+    "(49) 9", // Chapecó e Região (SC)
+    "(51) 9", // Porto Alegre e Região (RS)
+    "(53) 9", // Pelotas e Região (RS)
+    "(54) 9", // Caxias do Sul e Região (RS)
+    "(55) 9", // Santa Maria e Região (RS)
+    "(61) 9", // Distrito Federal (DF)
+    "(62) 9", // Goiânia e Região (GO)
+    "(63) 9", // Tocantins (TO)
+    "(64) 9", // Rio Verde e Região (GO)
+    "(65) 9", // Cuiabá e Região (MT)
+    "(66) 9", // Rondonópolis e Região (MT)
+    "(67) 9", // Mato Grosso do Sul (MS)
+    "(68) 9", // Amapá (AP)
+    "(69) 9", // Rondônia (RO)
+    "(71) 9", // Salvador e Região (BA)
+    "(73) 9", // Sul da Bahia (BA)
+    "(74) 9", // Juazeiro e Região (BA)
+    "(75) 9", // Feira de Santana e Região (BA)
+    "(76) 9", // Rondônia e Região (RO)
+    "(77) 9", // Barreiras e Região (BA)
+    "(78) 9", // Tocantins (TO)
+    "(81) 9", // Recife e Região (PE)
+    "(82) 9", // Alagoas (AL)
+    "(83) 9", // Paraíba (PB)
+    "(84) 9", // Rio Grande do Norte (RN)
+    "(85) 9", // Fortaleza e Região (CE)
+    "(86) 9", // Piauí (PI)
+    "(87) 9", // Petrolina e Região (PE)
+    "(88) 9", // Ceará (CE)
+    "(89) 9", // Sudoeste do Piauí (PI)
+    "(91) 9", // Belém e Região (PA)
+    "(92) 9", // Amazonas (AM)
+    "(93) 9", // Oeste do Pará (PA)
+    "(94) 9", // Marabá e Região (PA)
+    "(95) 9", // Roraima (RR)
+    "(96) 9", // Amapá (AP)
+    "(97) 9", // Roraima e Região (RR)
+    "(98) 9", // Maranhão (MA)
+    "(99) 9", // Sul do Maranhão (MA)
   ];
-
-  const dddTelefone = telefone.substring(0, 3);
+  
+  const dddTelefone = telefone.substring(0, 6);
 
   if (dddsValidos.includes(dddTelefone)) {
     return true;
@@ -104,85 +148,82 @@ function validarDDD(telefone) {
   }
 }
 
-function verificarNumeroWhatsapp() {
+function verificarTelefone() {
   const telProfessor = document.getElementById("whatsappProfessor");
   const telEstudante = document.getElementById("whatsappEstudante");
-  const mensagemErroProfessor = document.getElementById("mensagemErroProfessor");
-  const mensagemErroEstudante = document.getElementById("mensagemErroEstudante");
+  //const mensagemErroProfessor = document.getElementById("mensagemErroProfessor");
+  //const mensagemErroEstudante = document.getElementById("mensagemErroEstudante");
 
-  if (telProfessor.value.length > 0) {
-    if (!validarDDD(telProfessor.value) || telProfessor.value.length < 11) {
-      mensagemErroProfessor.innerText = "Número inválido.";
+
+  if (telProfessor.value.length > 0 && validarDDD(telProfessor.value)) {
+    //console.log(validarDDD(telProfessor.value) +" X "+ telProfessor.value.length);
+    if (telProfessor.value.length < 15) {
+      //mensagemErroProfessor.innerText = "Número inválido.";
+      //mensagemErroProfessor.style.display = "block"; // Exibir a mensagem de erro      
       telProfessor.classList.remove("is-valid");
       telProfessor.classList.add("is-invalid");
-      mensagemErroProfessor.style.display = "block"; // Exibir a mensagem de erro
     } else {
-      mensagemErroProfessor.innerText = "";
+      //mensagemErroProfessor.innerText = "";
+      //mensagemErroProfessor.style.display = "none"; // Ocultar a mensagem de erro
       telProfessor.classList.remove("is-invalid");
       telProfessor.classList.add("is-valid");
-      mensagemErroProfessor.style.display = "none"; // Ocultar a mensagem de erro
     }
   } else {
-    mensagemErroProfessor.innerText = "";
-    telProfessor.classList.remove("is-invalid");
+    //mensagemErroProfessor.innerText = "";
+    //mensagemErroProfessor.style.display = "none"; // Ocultar a mensagem de erro
     telProfessor.classList.remove("is-valid");
-    mensagemErroProfessor.style.display = "none"; // Ocultar a mensagem de erro
+    telProfessor.classList.add("is-invalid");
   }
 
-  if (telEstudante.value.length > 0) {
-    if (!validarDDD(telEstudante.value) || telEstudante.value.length < 11) {
-      mensagemErroEstudante.innerText = "Número inválido.";
+  if (telEstudante.value.length > 0 && validarDDD(telEstudante.value)) {
+    //console.log(validarDDD(telEstudante.value) +" X "+ telEstudante.value.length);
+    if (telEstudante.value.length < 15) {
+      //mensagemErroEstudante.innerText = "Número inválido.";
+      //mensagemErroEstudante.style.display = "block"; // Exibir a mensagem de erro      
       telEstudante.classList.remove("is-valid");
       telEstudante.classList.add("is-invalid");
-      mensagemErroEstudante.style.display = "block"; // Exibir a mensagem de erro
     } else {
-      mensagemErroEstudante.innerText = "";
+      //mensagemErroEstudante.innerText = "";
+      //mensagemErroEstudante.style.display = "none"; // Ocultar a mensagem de erro
       telEstudante.classList.remove("is-invalid");
       telEstudante.classList.add("is-valid");
-      mensagemErroEstudante.style.display = "none"; // Ocultar a mensagem de erro
     }
   } else {
-    mensagemErroEstudante.innerText = "";
-    telEstudante.classList.remove("is-invalid");
+    //mensagemErroEstudante.innerText = "";
+    //mensagemErroEstudante.style.display = "none"; // Ocultar a mensagem de erro
     telEstudante.classList.remove("is-valid");
-    mensagemErroEstudante.style.display = "none"; // Ocultar a mensagem de erro
+    telEstudante.classList.add("is-invalid");
   }
 }
 
+function verificarNome() {
+  const nameEstudante = document.getElementById("nameEstudante");
+  const nameProfessor = document.getElementById("nameProfessor");
 
-function verificarTelefone() {
-  const telEstudante = document.getElementById("whatsappEstudante");
-  const mensagemErroEstudante = document.getElementById(
-    "mensagemErroEstudante"
-  );
-
-  if (telEstudante.value.length > 0) {
-    if (!validarDDD(telEstudante.value) || telEstudante.value.length < 11) {
-      mensagemErroEstudante.innerText = "Número inválido.";
-      telEstudante.classList.remove("is-valid");
-      telEstudante.classList.add("is-invalid");
+  if (nameEstudante.value.length > 0) {
+    if (nameEstudante.value.length < 5) {
+      nameEstudante.classList.remove("is-valid");
+      nameEstudante.classList.add("is-invalid");
     } else {
-      mensagemErroEstudante.innerText = "";
-      telEstudante.classList.remove("is-invalid");
-      telEstudante.classList.add("is-valid");
+      nameEstudante.classList.remove("is-invalid");
+      nameEstudante.classList.add("is-valid");
     }
   }
 
-  if (telEstudante.value.length > 0) {
-    if (!validarDDD(telEstudante.value) || telEstudante.value.length < 11) {
-      mensagemErroEstudante.innerText = "Número inválido.";
-      telEstudante.classList.remove("is-valid");
-      telEstudante.classList.add("is-invalid");
+  if (nameProfessor.value.length > 0 ) {
+    if (nameProfessor.value.length < 5) {
+      nameProfessor.classList.remove("is-valid");
+      nameProfessor.classList.add("is-invalid");
     } else {
-      mensagemErroEstudante.innerText = "";
-      telEstudante.classList.remove("is-invalid");
-      telEstudante.classList.add("is-valid");
+      nameProfessor.classList.remove("is-invalid");
+      nameProfessor.classList.add("is-valid");
     }
   }
 }
+
 
 //Gera o link para enviar estudo
-function gerarLink() {
+function runLink() {
   var linkGeradoInput = document.getElementById("linkGerado");
   var nomeEstudoBiblico = gerarSlug(
     document.getElementById("nomeEstudoBiblico").value
@@ -210,7 +251,7 @@ function gerarLink() {
       .classList.contains("is-valid") &&
     document
       .getElementById("whatsappEstudante")
-      .classList.contains("is-valid")
+      .classList.contains("is-valid");
 
   if (camposValidos) {
     // Verificar se todos os campos estão preenchidos
@@ -242,11 +283,13 @@ function gerarLink() {
       document.getElementById("url").value = linkGerado;
       linkGeradoInput.classList.remove("is-invalid");
       linkGeradoInput.classList.add("is-valid");
+      atualizarProgresso();
     }
   } else {
     alert("Por favor, preencha todos os campos antes de Gerar o link.");
   }
 }
+
 
 const nomeSelect = document.getElementById("nomeEstudoBiblico");
 const numeroSelect = document.getElementById("temaEstudoBiblico");
@@ -707,3 +750,59 @@ function verificarCampos() {
     linkGeradoInput.classList.add("is-valid");
   }
 }
+
+// Função para atualizar o progresso
+function atualizarProgresso() {
+  var elementosValidos = document.querySelectorAll('.is-valid');
+  var linkGeradoInput = document.getElementById("linkGerado");
+  var nameEstudoBiblico = document.getElementById("nomeEstudoBiblico").classList.contains("is-invalid"); 
+  var temaEstudoBiblico = document.getElementById("temaEstudoBiblico").classList.contains("is-valid");
+  var nameProfessor = document.getElementById("nameProfessor").classList.contains("is-valid"); 
+  var nameEstudante = document.getElementById("nameEstudante").classList.contains("is-valid");
+  var whatsappProfessor = document.getElementById("whatsappProfessor").classList.contains("is-valid");
+  var whatsappEstudante = document.getElementById("whatsappEstudante").classList.contains("is-valid");
+  var linkGerado = document.getElementById("linkGerado").classList.contains("is-valid");
+  
+  var progresso = (elementosValidos.length / 7) * 100; // Total de elementos válidos dividido pelo número total de elementos
+  // Atualizar a largura da barra de progresso
+  var progressBar = document.querySelector('.progress-bar');
+  progressBar.style.width = progresso + '%';
+  progressBar.textContent = progresso.toFixed(2) + "%";
+  
+  console.log(progressBar.style.width);
+  
+  // Atualizar o atributo 'aria-valuenow' para a leitura de acessibilidade
+  var progress = document.querySelector('.progress');
+  progress.setAttribute('aria-valuenow', progresso);
+  
+  // Verificar se algum campo voltou a ser inválido
+  if (!nameEstudoBiblico || !temaEstudoBiblico || !nameEstudante || !nameProfessor || !whatsappEstudante || !whatsappProfessor) {
+  // Recalcular o valor da barra de progresso excluindo o campo inválido
+    progresso = ((elementosValidos.length - 1) / 7) * 100;
+    
+  if (progresso < 0) {
+    progresso = 0;
+  }
+    progressBar.style.width = progresso + '%';
+    progressBar.textContent = progresso.toFixed(2) + "%";
+    linkGeradoInput.value = "";
+    linkGeradoInput.classList.remove("is-valid");
+  }
+
+  if(linkGerado){
+    progressBar.textContent = "100%";
+  }
+  }
+
+
+
+// Event listener para verificar mudanças nos elementos válidos
+document.addEventListener('input', function(event) {
+  var target = event.target;
+
+  // Verificar se o elemento é válido
+  if (target.classList.contains('is-valid')) {
+    atualizarProgresso();
+  }
+});
+

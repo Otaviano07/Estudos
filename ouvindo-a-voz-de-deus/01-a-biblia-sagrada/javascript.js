@@ -1060,6 +1060,8 @@ function viewElementosProfessor() {
     var h1Element = document.querySelector("h1");
     var divComentario = document.querySelectorAll(".comentario");
 
+    checkWords();
+
     // Percorra todos os elementos selecionados
     selectedWords.forEach(function(element) {
       // Adicione a classe "oculto" para tornar o elemento oculto
@@ -1089,4 +1091,23 @@ function viewElementosProfessor() {
     divComentario.style.display = "none";
   }
 }
+
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
 
