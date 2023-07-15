@@ -234,7 +234,7 @@ h2 {
 .filled {
     border-color: #A2E5F8;
     background-color: #A2E5F8;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .question-number {
