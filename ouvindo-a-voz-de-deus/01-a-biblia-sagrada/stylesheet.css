@@ -19,9 +19,9 @@ div.comentario > textarea {
 body {
     font-family: Arial, sans-serif;
     background-color: #f1f1f1;
-    padding-left: 20px;
+    padding-left: 5%;
     /* Define o padding esquerdo */
-    padding-right: 20px;
+    padding-right: 5%;
     /* Define o padding direito */
 }
 
