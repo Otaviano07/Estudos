@@ -8,15 +8,21 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascript.js"></script>
+
 </head>
 <body>
-  <h2 style="text-align: center;margin-bottom: 10px;margin-top: 20px;">Gerar link para Estudo Bíblico</h2>
+  <h2 style="text-align: center;margin-bottom: 10px;margin-top: 20px;">Gerador de Link de Estudo Bíblico</h2>
   <form class="needs-validation" novalidate>
     <div class="container">
       <div class="form-row">
         <div class="col-md-6 col-sm-12">
-          <label for="nomeEstudoBiblico" style="margin-top: 20px;"><strong>Nome do Estudo Bíblico:</strong></label>
-          <select class="form-control" id="nomeEstudoBiblico" name="nomeEstudoBiblico" required>
+          <label for="nameEstudoBiblico" style="margin-top: 20px;"><strong>Nome do Estudo Bíblico:</strong></label>
+          <select class="form-control" id="nameEstudoBiblico" name="nameEstudoBiblico" required>
             <option value="">Selecione um estudo</option>
             <option value="Ouvindo a Voz de Deus">Ouvindo a Voz de Deus</option>
             <option value="Ensinos de Jesus">Ensinos de Jesus</option>
@@ -29,7 +35,7 @@
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
-          <label for="temaEstudoBiblico" style="margin-top: 20px;"><strong>Tema do Estudo:</strong></label>
+          <label for="temaEstudoBiblico" style="margin-top: 20px;"><strong>Tema do Estudo Bíblico:</strong></label>
           <select class="form-control" id="temaEstudoBiblico" name="temaEstudoBiblico" required>
             <option value="">Selecione um tema</option>
           </select>
@@ -109,32 +115,33 @@
 
       <div class="form-row justify-content-center mb-2" style="margin-bottom: 30px;">
         <div class="form-row">
+
           <div class="col-md-3 col-6 mb-2">
-            <button class="btn btn-warning btn-block" type="button" id="gerarLink" onclick="runLink();" data-toggle="buttons" data-placement="bottom" title="Gerar Link">
+            <button class="btn btn-warning btn-block" type="button" id="btnGerar" onclick="gerandoLink();" data-toggle="buttons" data-placement="bottom" title="Gerar Link">
               <strong>Gerar</strong>
+            </button>
+          </div>
+      
+          <div class="col-md-3 col-6 mb-2">
+            <button class="btn btn-primary btn-block" type="button" id="btnEncurtar" onclick="encurtarLink();" data-toggle="buttons" data-placement="bottom" title="Encurtar Link">
+              <strong>Encurtar</strong>
+            </button>
+          </div>
+      
+          <div class="col-md-3 col-6 mb-2">
+            <button class="btn btn-primary btn-block" type="button" id="btnCopiar" onclick="copiarLink();" data-toggle="buttons" data-placement="bottom" title="Copiar Link">
+              <strong>Copiar</strong>
             </button>
           </div>
 
           <div class="col-md-3 col-6 mb-2">
-            <button class="btn btn-secondary btn-block" type="reset" id="resert" data-toggle="buttons" data-placement="bottom" title="Limpar">
+            <button class="btn btn-secondary btn-block" type="reset" id="btnReset" data-toggle="buttons" data-placement="bottom" title="Limpar">
               <strong>Limpar</strong>
-            </button>
-          </div>
-      
-          <div class="col-md-3 col-6 mb-2">
-            <button class="btn btn-primary btn-block" type="button" id="btnCopiarLink" onclick="copiarLink();" data-toggle="buttons" data-placement="bottom" title="Copiar Link">
-              <strong>Copiar</strong>
-            </button>
-          </div>
-      
-          <div class="col-md-3 col-6 mb-2">
-            <button class="btn btn-primary btn-block" type="button" id="encurtar" onclick="encurtarLink();" data-toggle="buttons" data-placement="bottom" title="Encurtar Link">
-              <strong>Encurtar</strong>
             </button>
           </div>
           
           <div class="col-md-6 col-6 mb-2">
-            <button class="btn btn-primary btn-block" type="button" id="btnAbrirLink" onclick="abrirLink();" data-toggle="buttons" data-placement="bottom" title="Abrir Link">
+            <button class="btn btn-primary btn-block" type="button" id="btnAbrir" onclick="abrirLink();" data-toggle="buttons" data-placement="bottom" title="Abrir Link">
               <strong>Abrir</strong>
             </button>
           </div>
@@ -161,18 +168,8 @@
     </div>
     <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
       <div class="progress-bar bg-success" >0%</div>
-    </div>
-
-  </form>
-
-
-  
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="javascript.js"></script>
-
+    </div>    
+    </form>
 </body>
 
 </html>
