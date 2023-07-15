@@ -234,7 +234,7 @@ function gerandoLink() {
       whatsappProfessor &&
       whatsappEstudante
     ) {
-      var linkBase = "https://otaviano07.github.io/estudos/estudandoaverdade/";
+      var linkBase = "https://otaviano07.github.io/estudandoaverdade/estudos/";
 
       var linkGerado =
         linkBase +

@@ -135,7 +135,7 @@ function enviarResposta() {
     whatsappProfessor &&
     whatsappEstudante
   ) {
-    var linkBase = "https://otaviano07.github.io/revelacaobiblica/";
+    var linkBase = "https://otaviano07.github.io/estudandoaverdade/estudos/";
     var linkEstudo =
       linkBase +
       estudoBiblico +
