@@ -236,6 +236,9 @@ function gerandoLink() {
     ) {
       var linkBase = "https://otaviano07.github.io/estudandoaverdade/estudos/";
 
+      whatsappProfessor = onlyNumbers(whatsappProfessor);
+      whatsappEstudante = onlyNumbers(whatsappEstudante);
+
       var linkGerado =
         linkBase +
         nameEstudoBiblico +
@@ -259,6 +262,12 @@ function gerandoLink() {
   } else {
     alert("Por favor, preencha todos os campos antes de Gerar o link.");
   }
+}
+
+//Remove todos os outros caracteres e deixa somente numero
+function onlyNumbers(input) {
+  var output = input.replace(/\D/g, "");
+  return output;
 }
 
 
@@ -528,6 +537,7 @@ function enviarMensagemWhatsapp() {
       temaEstudoBiblico = formatarTexto(temaEstudoBiblico);
 
       var numeroEstudante = document.getElementById("whatsappEstudante").value;
+      console.log("531-numeroEstudante: " + numeroEstudante );
       var linkGerado = document.getElementById("linkGerado").value;
       var mensagem =
         "Olá! *" +
@@ -814,3 +824,5 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
