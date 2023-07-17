@@ -1111,3 +1111,37 @@ function viewElementosProfessor() {
   })
 })()
 
+
+
+/*Uma forma para botoes ficar none, precisa estudar para deixar legar
+
+const btnOuvir = document.getElementById("btnOuvir");
+const btnPausar = document.getElementById("btnPausar");
+const btnContinuar = document.getElementById("btnContinuar");
+const btnFechar = document.getElementById("btnFechar");
+
+  btnOuvir.addEventListener("click", () => {
+    btnOuvir.style.display = "none";
+    btnPausar.style.display = "block";
+    btnContinuar.style.display = "none";
+  });
+
+btnPausar.addEventListener("click", () => {
+  btnOuvir.style.display = "none";
+  btnPausar.style.display = "none";
+  btnContinuar.style.display = "block";
+});
+
+btnContinuar.addEventListener("click", () => {
+  btnOuvir.style.display = "none";
+  btnPausar.style.display = "block";
+  btnContinuar.style.display = "none";
+});
+
+btnFechar.addEventListener("click", () => {
+  btnOuvir.style.display = "block";
+  btnPausar.style.display = "none";
+  btnContinuar.style.display = "none";
+});
+
+*/
