@@ -1051,14 +1051,14 @@ inputs.forEach(function (input) {
 function viewElementosProfessor() {
 
   var viewProfessor = document.getElementById("viewProfessor");
+  // Selecione todos os elementos com a classe "selected-word"
+  var selectedWords = document.querySelectorAll(".selected-word");
+  var inputGroupAppends = document.querySelectorAll(".input-group-append");
+  var btnLimparDropArea = document.getElementById("btnLimparDropArea");
+  var h1Element = document.querySelector("h1");
+  var divComentario = document.querySelectorAll(".comentario");
 
   if(viewProfessor.value === "false"){
-    // Selecione todos os elementos com a classe "selected-word"
-    var selectedWords = document.querySelectorAll(".selected-word");
-    var inputGroupAppends = document.querySelectorAll(".input-group-append");
-    var btnLimparDropArea = document.getElementById("btnLimparDropArea");
-    var h1Element = document.querySelector("h1");
-    var divComentario = document.querySelectorAll(".comentario");
 
     checkWords();
 
@@ -1088,7 +1088,10 @@ function viewElementosProfessor() {
   }
   else{
     h1Element.style.display = "none";
-    divComentario.style.display = "none";
+
+    divComentario.forEach(function(element) {
+      element.style.display = "none";
+    });
   }
 }
 
@@ -1113,18 +1116,18 @@ function viewElementosProfessor() {
 
 
 
-/*Uma forma para botoes ficar none, precisa estudar para deixar legar
+//Uma forma para botoes ficar none, precisa estudar para deixar legar
 
 const btnOuvir = document.getElementById("btnOuvir");
 const btnPausar = document.getElementById("btnPausar");
 const btnContinuar = document.getElementById("btnContinuar");
 const btnFechar = document.getElementById("btnFechar");
 
-  btnOuvir.addEventListener("click", () => {
-    btnOuvir.style.display = "none";
-    btnPausar.style.display = "block";
-    btnContinuar.style.display = "none";
-  });
+btnOuvir.addEventListener("click", () => {
+  btnOuvir.style.display = "none";
+  btnPausar.style.display = "block";
+  btnContinuar.style.display = "none";
+});
 
 btnPausar.addEventListener("click", () => {
   btnOuvir.style.display = "none";
@@ -1138,10 +1141,9 @@ btnContinuar.addEventListener("click", () => {
   btnContinuar.style.display = "none";
 });
 
+
 btnFechar.addEventListener("click", () => {
   btnOuvir.style.display = "block";
   btnPausar.style.display = "none";
   btnContinuar.style.display = "none";
 });
-
-*/
