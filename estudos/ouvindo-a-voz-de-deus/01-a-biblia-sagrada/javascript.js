@@ -1174,3 +1174,8 @@ $(document).ready(function() {
     $(this).css('min-height', minHeight);
   });
 });
+
+// This code opens the app menu when the user clicks on the app icon.
+$('.app-icon').on('click', function() {
+  $('.app-menu').toggle();
+});
