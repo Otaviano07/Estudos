@@ -1147,3 +1147,30 @@ btnFechar.addEventListener("click", () => {
   btnPausar.style.display = "none";
   btnContinuar.style.display = "none";
 });
+
+
+//Função para aumentar e diminuir linha do textarea comentario professor.
+$(document).ready(function() {
+  $('textarea').on('input', function() {
+      var height = this.scrollHeight;
+      $(this).css('height', height);
+
+    // Configurar altura mínima e altura da linha
+    var minHeight = 3 * parseFloat($(this).css('line-height'));
+    var lineHeight = parseFloat($(this).css('line-height'));
+
+    // Calcular a altura do conteúdo
+    var contentHeight = this.scrollHeight - lineHeight;
+
+    // Ajustar a altura mínima para evitar saltos bruscos
+    if (contentHeight < minHeight) {
+      minHeight = contentHeight;
+    }
+
+    // Definir a altura do textarea
+    $(this).css('height', contentHeight);
+    
+    // Definir a altura mínima do textarea
+    $(this).css('min-height', minHeight);
+  });
+});

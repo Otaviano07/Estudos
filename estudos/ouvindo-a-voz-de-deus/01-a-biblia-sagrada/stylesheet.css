@@ -20,10 +20,16 @@ div.comentario {
 }
 
 div.comentario>textarea {
-    height: auto;
     background-color: #B7F7FF;
     font-weight: bold;
     color: black;
+    height: 3rem;
+    width: 80%;
+    resize: none;
+    overflow-y: hidden;
+    line-height: normal;
+    text-decoration: none solid rgb(20, 0, 0);
+    letter-spacing: normal;
 }
 
 .background-img {
