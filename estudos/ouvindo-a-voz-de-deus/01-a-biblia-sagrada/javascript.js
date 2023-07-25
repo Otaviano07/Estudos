@@ -1175,7 +1175,9 @@ $(document).ready(function() {
   });
 });
 
-// This code opens the app menu when the user clicks on the app icon.
-$('.app-icon').on('click', function() {
-  $('.app-menu').toggle();
+const btnExpandir = document.querySelector('.btn-expandir');
+const menuLateral = document.querySelector('.menu-lateral');
+
+btnExpandir.addEventListener('click', () => {
+    menuLateral.classList.toggle('show');
 });

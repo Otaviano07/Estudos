@@ -1,4 +1,7 @@
 body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f1f1f1;
     padding-left: 5%;
@@ -312,41 +315,83 @@ h2 {
 .resposta-mensagem {
     color: green;
     margin-left: 10px;
-  }
+}
 
-  .app-menu {
+nav.menu-lateral {
+    background-color: #333;
+    color: #fff;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0px;
     width: 200px;
-    height: 100vh;
-    background-color: #fff;
-    z-index: 100;
-    display: none;
-  }
-  
-  .app-icon {
-    width: 100px;
-    height: 100px;
-    margin: 20px 0;
+    height: 100%;
+    padding-top: 20px;
+    transition: left 0.3s;
+    box-shadow: 3px 0px 0px blue;
+}
+
+.btn-expandir {
+    width: 100%;
+    padding-left: 10px;
+}
+
+.btn-expandir > i{
+    color: white;
+    font-size: 24px;
     cursor: pointer;
-  }
-  
-  .app-menu-list {
+}
+
+ui li.item-menu{
+    transition: 1s;
+}
+
+ul li.item-menu:hover {
+    background: blue;
+}
+
+
+ul li.item-menu a .txt-link{
+    margin-left: 20px;
+}
+
+ul li.item-menu a .icon > i{
+    font-size: 30px;
+}
+
+.menu {
     list-style: none;
-    margin: 0;
     padding: 0;
-  }
-  
-  .app-menu-list a {
-    display: block;
-    padding: 10px 20px;
+    margin: 20px 0;
+}
+
+.item-menu {
+    margin-bottom: 10px;
+}
+
+ul li.item-menu a {
+    color: #fff;
     text-decoration: none;
-    color: #333;
-  }
-  
-  .app-menu-list a:hover {
-    background-color: #eee;
-    color: #000;
-  }
-  
+    display: block;
+    padding: 10px;
+    line-height: 40px;
+}
+
+.conteudo {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .menu-lateral {
+        left: -100%;
+    }
+
+    .btn-expandir {
+        display: block;
+    }
+
+    .conteudo {
+        margin-left: 0;
+    }
+}
