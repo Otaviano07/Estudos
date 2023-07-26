@@ -3,11 +3,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
+    background-color: #cfdeff;
     padding-left: 5%;
-    /* Define o padding esquerdo */
     padding-right: 5%;
-    /* Define o padding direito */
 }
 
 h1 {
@@ -36,7 +34,6 @@ div.comentario>textarea {
 }
 
 .background-img {
-    margin-top: 3%;
     margin-bottom: 3%;
     margin-left: 5px;
     width: 100%;
@@ -277,6 +274,10 @@ h2 {
     background-color: orange;
 }
 
+#nameEstudante, #nameProfessor, #whatsappEstudante, #whatsappProfessor{
+    background-color:white ;
+}
+
 .material-symbols-outlined {
     font-variation-settings:
         'FILL'0,
@@ -328,70 +329,79 @@ nav.menu-lateral {
     padding-top: 20px;
     transition: left 0.3s;
     box-shadow: 3px 0px 0px blue;
-}
-
-.btn-expandir {
+    /* Hidden when screen width is less than 768px */
+    @media screen and (max-width: 768px) {
+      left: -100%;
+    }
+  }
+  
+  .btn-expandir {
     width: 100%;
     padding-left: 10px;
-}
-
-.btn-expandir > i{
+  }
+  
+  .btn-expandir > i{
     color: white;
     font-size: 24px;
     cursor: pointer;
-}
-
-ui li.item-menu{
+  }
+  
+  ui li.item-menu{
     transition: 1s;
-}
-
-ul li.item-menu:hover {
+  }
+  
+  ul li.item-menu:hover {
     background: blue;
-}
-
-
-ul li.item-menu a .txt-link{
+  }
+  
+  
+  ul li.item-menu a .txt-link{
     margin-left: 20px;
-}
-
-ul li.item-menu a .icon > i{
+  }
+  
+  ul li.item-menu a .icon > i{
     font-size: 30px;
-}
-
-.menu {
+  }
+  
+  .menu {
     list-style: none;
     padding: 0;
     margin: 20px 0;
-}
-
-.item-menu {
+  }
+  
+  .item-menu {
     margin-bottom: 10px;
-}
-
-ul li.item-menu a {
+  }
+  
+  ul li.item-menu a {
     color: #fff;
     text-decoration: none;
     display: block;
     padding: 10px;
     line-height: 40px;
-}
-
-.conteudo {
+  }
+  
+  .conteudo {
     margin-left: 200px;
     padding: 20px;
-}
+  }
 
-/* Estilos para dispositivos móveis */
-@media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     .menu-lateral {
-        left: -100%;
+      left: -100%;
     }
-
-    .btn-expandir {
-        display: block;
-    }
-
     .conteudo {
-        margin-left: 0;
+      margin-left: 0;
     }
+  }
+
+.subitens-estudos {
+    display: none;
 }
+.subitens-estudos.show {
+    display: block;
+}
+
+ul li.item-menu:hover {
+    background: blue;
+  }

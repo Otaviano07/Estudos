@@ -1175,9 +1175,65 @@ $(document).ready(function() {
   });
 });
 
+const subitensEstudos = [
+    "01 - A Bíblia Sagrada",
+    "02 - A beleza da criação",
+    "03 - A origem do mal",
+    "04 - O plano da salvação",
+    "05 - Fé, arrependimento e confissão",
+    "06 - Sinais da volta de Cristo",
+    "07 - A volta de Cristo",
+    "08 - O Milênio",
+    "09 - A verdade sobre a morte",
+    "10 - A nova terra",
+    "11 - Salvação pela graça",
+    "12 - O Santuário",
+    "13 - O Juízo",
+    "14 - As leis na Bíblia",
+    "15 - A Lei Moral",
+    "16 - O mandamento esquecido",
+    "17 - Do sábado para o domingo",
+    "18 - Princípios de Saúde",
+    "19 - O dom de profecia",
+    "20 - O dízimo",
+    "21 - As ofertas",
+    "22 - A igreja verdadeira",
+    "23 - O Batismo",
+    "24 - Princípios de vida Cristã",
+    "25 - Educação Cristã",
+    "26 - Vida no Espírito",
+    "27 - Ministério para Todos",
+];
+
+// Função para criar os subitens na lista
+function criarSubitensEstudos() {
+  const subitensContainer = document.querySelector('.subitens-estudos');
+  subitensContainer.innerHTML = '';
+
+  subitensEstudos.forEach((subitem, index) => {
+      const li = document.createElement('li');
+      li.classList.add('subitem-menu');
+      li.innerHTML = `<a href="#">${subitem}</a>`;
+      subitensContainer.appendChild(li);
+  });
+}
+
+// Chama a função para criar os subitens assim que a página é carregada
+document.addEventListener('DOMContentLoaded', criarSubitensEstudos);
+
+// Adiciona um evento de clique no link "Estudos"
+const linkEstudos = document.querySelector('.link-estudos');
+linkEstudos.addEventListener('click', (event) => {
+  event.preventDefault();
+  const subitensContainer = document.querySelector('.subitens-estudos');
+  subitensContainer.classList.toggle('show');
+});
+
+
 const btnExpandir = document.querySelector('.btn-expandir');
 const menuLateral = document.querySelector('.menu-lateral');
 
 btnExpandir.addEventListener('click', () => {
     menuLateral.classList.toggle('show');
 });
+

@@ -44,11 +44,14 @@
                 </a>
             </li>
             <li class="item-menu">
-                <a href="#">
+                <a href="#" class="link-estudos">
                     <span class="icon"><i class="bi bi-book"></i></span>
                     <span class="txt-link">Estudos</span>
                 </a>
             </li>
+            <ul class="subitens-estudos">
+                <!-- Os subitens de "Estudos" serão gerados aqui dinamicamente -->
+            </ul>
             <li class="item-menu">
                 <a href="#">
                     <span class="icon"><i class="bi bi-cash-coin"></i></span>
@@ -56,10 +59,11 @@
                 </a>
             </li>
         </ul>
+
     </nav>
     
     <div class="conteudo">
-
+        <h6 style="text-align: left;margin-top: 10px;"><strong>Estudo Bíblico:</strong> Ouvindo a Voz de Deus</h6>
         <header>
             <img class="background-img" src="img/cabecalho.png" alt="estudo">
         </header>
@@ -407,7 +411,7 @@
                     <span class="question-number">3</span>
                     <strong>Qual é a maneira correta de estudar a Bíblia?</strong>
                     <span class="show-verse" data-toggle="modal" data-target="#verseModal3"><a href="#">Ler Isaías
-                            28:10</a></span> <span>(Marque uma ou mais verdadeira)</span>
+                            28:10</a></span> <span>(Marque as alternativas verdadeiras)</span>
                 </p>
             </div>
 
@@ -1396,7 +1400,7 @@
                     <span class="question-number">7</span>
                     <strong>Quanto do texto bíblico é inspirado por Deus?</strong>
                     <span class="show-verse" data-toggle="modal" data-target="#verseModal7"><a href="#">Ler Timóteo
-                            3:16</a></span> <span>(Marque uma ou mais verdadeira)</span>
+                            3:16</a></span> <span>(Marque as alternativas verdadeiras)</span>
                 </p>
             </div>
 
@@ -1933,7 +1937,7 @@
             <h5><strong>Dados:</strong></h5>
             <div class="form-group">
                 <div class="form-row">
-                    <div class="col-md-6 col-sm-12 my-custom-style">
+                    <div class="col-md-8 col-sm-12 my-custom-style">
                         <label for="nameEstudante"><strong>Nome do Estudante</strong></label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="nameEstudante" placeholder="Nome Completo"
@@ -1947,7 +1951,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 col-sm-12 my-custom-style">
+                    <div class="col-md-4 col-sm-12 my-custom-style">
                         <label for="whatsappEstudante"><strong>WhatsApp do Estudante</strong></label>
                         <div class="input-group">
                             <input type="tel" class="form-control" id="whatsappEstudante" maxlength="11"
@@ -1965,7 +1969,7 @@
                 </div>
 
                 <div class="form-row">
-                    <div class="col-md-6 col-sm-12 my-custom-style">
+                    <div class="col-md-8 col-sm-12 my-custom-style">
                         <label for="nameProfessor"><strong>Nome do Professor</strong></label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="nameProfessor" placeholder="Nome Completo"
@@ -1979,7 +1983,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 col-sm-12 my-custom-style">
+                    <div class="col-md-4 col-sm-12 my-custom-style">
                         <label for="whatsappProfessor"><strong>WhatsApp do Professor</strong></label>
                         <div class="input-group">
                             <input type="tel" class="form-control" id="whatsappProfessor" maxlength="11"
