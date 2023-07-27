@@ -424,12 +424,14 @@ ul li.item-menu:hover {
 
 
 .container_rodape {
+    position: absolute;
     width: 100%;
     max-width: 100%;
     background-color: #333;
 }
 
 footer {
+    position: absolute;
     width: 100%;
     max-width: 100%;
     background-color: #333;
