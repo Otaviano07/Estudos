@@ -72,9 +72,15 @@ a {
     margin-top: 6px;
 }
 
-#btnRespostas,
 #btnImprimir,
 #btnBaixarPDF {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 150px;
+    display: none;
+}
+
+#btnRespostas{
     margin-top: 20px;
     margin-bottom: 30px;
     width: 150px;
@@ -329,12 +335,9 @@ nav.menu-lateral {
     padding-top: 20px;
     transition: left 0.3s;
     box-shadow: 3px 0px 0px blue;
-    /* Hidden when screen width is less than 768px */
-    @media screen and (max-width: 768px) {
-      left: -100%;
-    }
+   
   }
-  
+
   .btn-expandir {
     width: 100%;
     padding-left: 10px;
@@ -393,6 +396,19 @@ nav.menu-lateral {
     .conteudo {
       margin-left: 0;
     }
+
+    nav.menu-lateral {
+        left: -100%;
+    }
+
+    .container_rodape{
+        font-size: 13px;
+    }
+
+    footer{
+        font-size: 12px;
+    }
+    
   }
 
 .subitens-estudos {
@@ -405,3 +421,19 @@ nav.menu-lateral {
 ul li.item-menu:hover {
     background: blue;
   }
+
+
+.container_rodape {
+    width: 100%;
+    max-width: 100%;
+    background-color: #333;
+}
+
+footer {
+    width: 100%;
+    max-width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
