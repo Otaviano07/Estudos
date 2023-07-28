@@ -318,7 +318,8 @@ h2 {
 
 
 #btnContinuar,
-#btnPausar {
+#btnPausar,
+#btnPararAudio {
     display: none;
 }
 

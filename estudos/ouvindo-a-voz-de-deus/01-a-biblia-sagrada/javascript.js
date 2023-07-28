@@ -1118,35 +1118,50 @@ function viewElementosProfessor() {
 
 //Uma forma para botoes ficar none, precisa estudar para deixar legar
 
-const btnOuvir = document.getElementById("btnOuvir");
-const btnPausar = document.getElementById("btnPausar");
-const btnContinuar = document.getElementById("btnContinuar");
-const btnFechar = document.getElementById("btnFechar");
+// Obter todas as divs com a classe "d-flex"
+const divs = document.querySelectorAll('.d-flex');
 
-btnOuvir.addEventListener("click", () => {
-  btnOuvir.style.display = "none";
-  btnPausar.style.display = "block";
-  btnContinuar.style.display = "none";
+divs.forEach(div => {
+  const btnOuvir = div.querySelector('.btn-ouvir');
+  const btnPausar = div.querySelector('.btn-pausar');
+  const btnContinuar = div.querySelector('.btn-continuar');
+  const btnParar = div.querySelector('.btn-parar');
+
+  // Adicionar o evento de clique para o botão "Play"
+  btnOuvir.addEventListener('click', () => {
+    btnOuvir.classList.remove('d-none');
+    btnPausar.classList.remove('d-none');
+    btnContinuar.classList.add('d-none');
+    btnParar.classList.remove('d-none');
+  });
+
+  // Adicionar o evento de clique para o botão "Pausar"
+  btnPausar.addEventListener('click', () => {
+    btnOuvir.classList.remove('d-none');
+    btnPausar.classList.add('d-none');
+    btnContinuar.classList.remove('d-none');
+    btnParar.classList.remove('d-none');
+  });
+
+  // Adicionar o evento de clique para o botão "Continuar"
+  btnContinuar.addEventListener('click', () => {
+    btnOuvir.classList.remove('d-none');
+    btnPausar.classList.remove('d-none');
+    btnContinuar.classList.add('d-none');
+    btnParar.classList.remove('d-none');
+  });
+
+  // Adicionar o evento de clique para o botão "Parar"
+  btnParar.addEventListener('click', () => {
+    btnOuvir.classList.remove('d-none');
+    btnPausar.classList.add('d-none');
+    btnContinuar.classList.add('d-none');
+    btnParar.classList.add('d-none');
+  });
 });
 
-btnPausar.addEventListener("click", () => {
-  btnOuvir.style.display = "none";
-  btnPausar.style.display = "none";
-  btnContinuar.style.display = "block";
-});
-
-btnContinuar.addEventListener("click", () => {
-  btnOuvir.style.display = "none";
-  btnPausar.style.display = "block";
-  btnContinuar.style.display = "none";
-});
 
 
-btnFechar.addEventListener("click", () => {
-  btnOuvir.style.display = "block";
-  btnPausar.style.display = "none";
-  btnContinuar.style.display = "none";
-});
 
 
 //Função para aumentar e diminuir linha do textarea comentario professor.
