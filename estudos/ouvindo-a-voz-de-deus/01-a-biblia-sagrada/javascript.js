@@ -1098,10 +1098,10 @@ function viewElementosProfessor() {
 (() => {
   'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  // Buscar todos os formulários aos quais queremos aplicar estilos personalizados de validação de Bootstrap
   const forms = document.querySelectorAll('.needs-validation')
 
-  // Loop over them and prevent submission
+  // Passe por cima deles e impeça a submissão
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
       if (!form.checkValidity()) {

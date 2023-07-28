@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
   <title>Gerar Link</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -153,7 +153,7 @@
           
           <div class="col-md-6 col-6 mb-2">  
             <button class="btn btn-success btn-block" type="button" id="btnWhatsapp" onclick="enviarMensagemWhatsapp()" data-toggle="buttons" data-placement="bottom" title="Enviar pelo WhatsApp">
-              <strong>Whatsapp</strong>
+              <strong>Enviar para Whatsapp</strong>
             </button>
           </div>
         </div>
@@ -175,6 +175,24 @@
       <div class="progress-bar bg-success" >0%</div>
     </div>    
     </form>
+
+    <div class="whats">
+        <a href="https://api.whatsapp.com/send/?phone=5588992784105" target="_blank">
+          <img src="/img/whatsapp.png" width="80" alt="Fale com conosco pelo whatsapp">
+        </a>
+    </div>
+
+    <div class="container_rodape">
+        <div class="row">
+            <div class="col-12" ng-show="showInformation">
+                <span class="text-light">ORSolution Desenvolvimento de Software - Russas - CE
+                </span>
+            </div>
+        </div>
+        <footer class="site-footer">
+          <p>&copy; 2023 ORSolution. Todos os direitos reservados.</p>
+        </footer>
+    </div>
 </body>
 
 </html>

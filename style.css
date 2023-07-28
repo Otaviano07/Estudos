@@ -1,6 +1,5 @@
   body {
     background-color: #99D3EC;
-    /* Branco como a neve */
     position: relative;
   }
 
@@ -9,15 +8,10 @@
     margin-bottom: 10px;
     margin-top: 20px;
     color: #082bf3;
-    /* cor do texto */
     font-size: 30px;
-    /* tamanho da fonte */
     font-weight: bold;
-    /* peso da fonte (negrito) */
     text-transform: uppercase;
-    /* transformação do texto em maiúsculas */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    /* sombra do texto */
   }
 
   .material-symbols-outlined {
@@ -81,7 +75,7 @@
   #btnCopiar {
     color: white;
     font-size: 15px;
-    background-color: gray;
+    background-color: orange;
     font-size: 15px;
     border-radius: 10px;
     /* Adicione esta linha */
@@ -90,7 +84,7 @@
   #btnReset {
     color: white;
     font-size: 15px;
-    background-color: orange;
+    background-color: gray;
     font-size: 15px;
     border-radius: 10px;
     /* Adicione esta linha */
@@ -116,72 +110,45 @@
     /* Adicione esta linha */
   }
 
-  /*
-  .loader {
-    color: #2331f0;
-    font-size: 25px;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    position: relative;
-    text-indent: -9999em;
-    animation: mulShdSpin 1.3s infinite linear;
-    transform: translateZ(0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .container_rodape {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    background-color: #333;
+    text-align: center;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+.whats {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    z-index: 9999;
+}
+
+  @media screen and (max-width: 768px) {
+
+    .container_rodape {
+      font-size: 13px;
+    }
+
+    footer {
+      font-size: 11px;
+    }
+
+    .whats {
+      bottom: 20px;
+      right: 10px;
+    }
+
   }
-  
-  @keyframes mulShdSpin {
-    0%, 100% {
-      box-shadow: 0 -3em 0 0.2em, 
-      2em -2em 0 0em, 3em 0 0 -1em, 
-      2em 2em 0 -1em, 0 3em 0 -1em, 
-      -2em 2em 0 -1em, -3em 0 0 -1em, 
-      -2em -2em 0 0;
-    }
-    12.5% {
-      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 
-      3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, 
-      -2em 2em 0 -1em, -3em 0 0 -1em, 
-      -2em -2em 0 -1em;
-    }
-    25% {
-      box-shadow: 0 -3em 0 -0.5em, 
-      2em -2em 0 0, 3em 0 0 0.2em, 
-      2em 2em 0 0, 0 3em 0 -1em, 
-      -2em 2em 0 -1em, -3em 0 0 -1em, 
-      -2em -2em 0 -1em;
-    }
-    37.5% {
-      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-      3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 -1em, 
-      -2em 2em 0 -1em, -3em 0 0 -1em, 
-      -2em -2em 0 -1em;
-    }
-    50% {
-      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-      3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, 
-      -2em 2em 0 0, -3em 0em 0 -1em, 
-      -2em -2em 0 -1em;
-    }
-    62.5% {
-      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, 
-      -2em 2em 0 0.2em, -3em 0 0 0, 
-      -2em -2em 0 -1em;
-    }
-    75% {
-      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 
-      3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
-      -2em 2em 0 0, -3em 0em 0 0.2em, 
-      -2em -2em 0 0;
-    }
-    87.5% {
-      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 
-      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
-      -2em 2em 0 0, -3em 0em 0 0, 
-      -2em -2em 0 0.2em;
-    }
-  }
-  */

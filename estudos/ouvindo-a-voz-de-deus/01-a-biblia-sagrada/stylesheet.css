@@ -80,7 +80,7 @@ a {
     display: none;
 }
 
-#btnRespostas{
+#btnRespostas {
     margin-top: 20px;
     margin-bottom: 30px;
     width: 150px;
@@ -280,8 +280,11 @@ h2 {
     background-color: orange;
 }
 
-#nameEstudante, #nameProfessor, #whatsappEstudante, #whatsappProfessor{
-    background-color:white ;
+#nameEstudante,
+#nameProfessor,
+#whatsappEstudante,
+#whatsappProfessor {
+    background-color: white;
 }
 
 .material-symbols-outlined {
@@ -335,92 +338,99 @@ nav.menu-lateral {
     padding-top: 20px;
     transition: left 0.3s;
     box-shadow: 3px 0px 0px blue;
-   
-  }
 
-  .btn-expandir {
+}
+
+.btn-expandir {
     width: 100%;
     padding-left: 10px;
-  }
-  
-  .btn-expandir > i{
+}
+
+.btn-expandir>i {
     color: white;
     font-size: 24px;
     cursor: pointer;
-  }
-  
-  ui li.item-menu{
+}
+
+ui li.item-menu {
     transition: 1s;
-  }
-  
-  ul li.item-menu:hover {
+}
+
+ul li.item-menu:hover {
     background: blue;
-  }
-  
-  
-  ul li.item-menu a .txt-link{
+}
+
+
+ul li.item-menu a .txt-link {
     margin-left: 20px;
-  }
-  
-  ul li.item-menu a .icon > i{
+}
+
+ul li.item-menu a .icon>i {
     font-size: 30px;
-  }
-  
-  .menu {
+}
+
+.menu {
     list-style: none;
     padding: 0;
     margin: 20px 0;
-  }
-  
-  .item-menu {
+}
+
+.item-menu {
     margin-bottom: 10px;
-  }
-  
-  ul li.item-menu a {
+}
+
+ul li.item-menu a {
     color: #fff;
     text-decoration: none;
     display: block;
     padding: 10px;
     line-height: 40px;
-  }
-  
-  .conteudo {
+}
+
+.conteudo {
     margin-left: 200px;
     padding: 20px;
-  }
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .menu-lateral {
-      left: -100%;
+        left: -100%;
     }
+
     .conteudo {
-      margin-left: 0;
+        margin-left: 0;
     }
 
     nav.menu-lateral {
         left: -100%;
     }
 
-    .container_rodape{
+    .container_rodape {
         font-size: 13px;
+      }
+  
+    footer {
+        font-size: 11px;
     }
 
-    footer{
-        font-size: 12px;
+    .whats {
+        bottom: 2px;
+        right: 10px;
     }
-    
-  }
+
+}
 
 .subitens-estudos {
     display: none;
 }
+
 .subitens-estudos.show {
     display: block;
 }
 
 ul li.item-menu:hover {
     background: blue;
-  }
+}
 
 
 .container_rodape {
@@ -428,6 +438,7 @@ ul li.item-menu:hover {
     width: 100%;
     max-width: 100%;
     background-color: #333;
+    text-align: center;
 }
 
 footer {
@@ -438,4 +449,12 @@ footer {
     color: white;
     text-align: center;
     font-size: 15px;
+}
+
+
+.whats {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    z-index: 9999;
 }
