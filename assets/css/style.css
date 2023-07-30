@@ -151,4 +151,9 @@ footer {
       right: 10px;
     }
 
+    .whats img {
+      width: 100px; /* Set the width you want */
+      height: auto; /* Set the height to "auto" to maintain the aspect ratio */
+    }
+
   }
